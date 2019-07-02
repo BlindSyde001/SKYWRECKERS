@@ -22,6 +22,16 @@ public class MovementControlsShip : MonoBehaviour
     public float transitionCooldown = 1F;
     private float transitionTimer = 0F;
 
+    public List<Transform> bulletEndsRight;
+    public List<Transform> bulletEndsLeft;
+    int number;
+    public Rigidbody bullet;
+    public Transform barrelEnd;
+    public float fireRate = 1f;
+    float nextFire;
+
+    private PlayerMovement player;
+
     //UPDATES
 
     private void Awake()
@@ -29,25 +39,31 @@ public class MovementControlsShip : MonoBehaviour
         shipRigidBody = GetComponent<Rigidbody>();
         forwardVelocity = 0f;
         yaw = transform.eulerAngles.y;
+
+        player = FindObjectOfType<PlayerMovement>();
     }
 
     private void Update()
     {
+        fullAuto();
         input.z = Input.GetAxisRaw("Cension");
         turnCap();
         calculateDirectionZ();
         rotation();
         if (transitionTimer <= 0F)
         {
-            if (Input.GetKeyDown(KeyCode.W))
+            if (player?.isControllingShip ?? true)
             {
-                accelerateModeCounter++;
-                transitionTimer = transitionCooldown;
-            }
-            if (Input.GetKeyDown(KeyCode.S))
-            {
-                accelerateModeCounter--;
-                transitionTimer = transitionCooldown;
+                if (Input.GetKeyDown(KeyCode.W))
+                {
+                    accelerateModeCounter++;
+                    transitionTimer = transitionCooldown;
+                }
+                if (Input.GetKeyDown(KeyCode.S))
+                {
+                    accelerateModeCounter--;
+                    transitionTimer = transitionCooldown;
+                }
             }
         }
         else
@@ -55,13 +71,16 @@ public class MovementControlsShip : MonoBehaviour
             transitionTimer -= Time.deltaTime;
         }
 
-        if (Input.GetKey(KeyCode.A))
+        if (player?.isControllingShip ?? true)
         {
-            yaw -= turnSpeed * Time.deltaTime;
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            yaw += turnSpeed * Time.deltaTime;
+            if (Input.GetKey(KeyCode.A))
+            {
+                yaw -= turnSpeed * Time.deltaTime;
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                yaw += turnSpeed * Time.deltaTime;
+            }
         }
 
         accelerateModeCounter = Mathf.Clamp(accelerateModeCounter, 0, 3);
@@ -89,9 +108,36 @@ public class MovementControlsShip : MonoBehaviour
     void turnCap()
     {
         turnSpeed = 100 - (accelerateModeCounter * 22);
-        if(accelerateModeCounter == 0)
+        if (accelerateModeCounter == 0)
         {
             turnSpeed = 25;
         }
     }
+
+    void fullAuto()
+    {
+        if (Input.GetMouseButton(1) && Time.time > nextFire)
+        {
+
+            nextFire = Time.time + fireRate;
+            Rigidbody bulletInstance;
+            foreach (Transform x in bulletEndsRight)
+            {
+                bulletInstance = Instantiate(bullet, x.position, x.rotation) as Rigidbody;
+                bulletInstance.AddForce(barrelEnd.forward * 4500);
+            }
+        }
+        else if (Input.GetMouseButton(0) && Time.time > nextFire)
+        {
+
+            nextFire = Time.time + fireRate;
+            Rigidbody bulletInstance;
+            foreach (Transform y in bulletEndsLeft)
+            {
+                bulletInstance = Instantiate(bullet, y.position, y.rotation) as Rigidbody;
+                bulletInstance.AddForce(barrelEnd.forward * -4500);
+            }
+        }
+    }
 }
+

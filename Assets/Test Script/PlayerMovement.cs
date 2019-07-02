@@ -1,25 +1,27 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    /// <summary>
-    /// 1. 8D movement
-    /// 2. Stop and face direction of movement
-    /// </summary>
-    #region Variables
+    
+    //VARIABLES
     public float velocity = 5f;
     public float turnSpeed = 10;
+
+    [NonSerialized]
+    public bool isControllingShip = true;
 
     private Vector2 input;
     private float angle;
     private Quaternion targetRotation;
     private Transform cam;
     Rigidbody rb;
-   
-    #endregion
 
+    public Transform dockPos;
+   
+    //UPDATES
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -32,39 +34,46 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        getInput();
-
-        if (Mathf.Abs(input.x) < 1 && Mathf.Abs(input.y) < 1) return;
+       
+        if (!isControllingShip)
         {
-            calculateDirection();
-            rotate();
-            Move();
+            getInput();
+
+            if (Mathf.Abs(input.x) < 1 && Mathf.Abs(input.y) < 1) return;
+            {
+                calculateDirection();
+                rotate();
+                Move();
+                
+            }
+        } else if(isControllingShip)
+        {
+            this.gameObject.transform.position = dockPos.position;
+            if(Input.GetKeyDown(KeyCode.E))
+                {
+                    isControllingShip = false;
+                    rb.useGravity = true;
+                }
         }
     }
 
-    /// <summary>
-    /// Input from movement keys
-    /// </summary>
+    //METHODS
     void getInput()
     {
         {
-            input.x = Input.GetAxisRaw("Horizontal Move");
-            input.y = Input.GetAxisRaw("Vertical Move");
+            input.x = Input.GetAxisRaw("Horizontal");
+            input.y = Input.GetAxisRaw("Vertical");
         }
     }
 
-    /// <summary>
-    /// direction relative to cmaera's rotation
-    /// </summary>
+   
     void calculateDirection()
     {
         angle = Mathf.Atan2(input.x, input.y);
         angle = Mathf.Rad2Deg * angle;
         angle += cam.eulerAngles.y;
     }
-    /// <summary>
-    /// Rotate towards calculated angle
-    /// </summary>
+   
     void rotate()
     {
         targetRotation = Quaternion.Euler(0, angle, 0);
