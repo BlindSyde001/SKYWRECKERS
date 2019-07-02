@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class CameraControlsShip : MonoBehaviour
 {
+    //VARIABLES
     public GameObject thirdPersonCamera;
     public GameObject overShoulderCamera;
 
@@ -11,7 +13,7 @@ public class CameraControlsShip : MonoBehaviour
     AudioListener overShoulderListener; 
 
 
-    // Start is called before the first frame update
+    //UPDATES
     void Start()
     {
         thirdPersonAudioLis = thirdPersonCamera.GetComponent<AudioListener>();
@@ -20,17 +22,20 @@ public class CameraControlsShip : MonoBehaviour
         cameraPositionChange(PlayerPrefs.GetInt("CameraPosition"));
     }
 
-    // Update is called once per frame
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            ChangeControls();
+        }
+    }
+
     void FixedUpdate()
     {
         switchCamera();
     }
 
-    public void cameraPositonM()
-    {
-        cameraChangeCounter();
-    }
-
+    //METHODS
     void switchCamera()
     {
         if (Input.GetKeyDown(KeyCode.V))
@@ -73,5 +78,10 @@ public class CameraControlsShip : MonoBehaviour
             overShoulderCamera.SetActive(false);
         }
 
+    }
+
+    void ChangeControls()
+    {
+        
     }
 }
