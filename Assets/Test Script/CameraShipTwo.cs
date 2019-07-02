@@ -65,7 +65,7 @@ public class CameraShipTwo : MonoBehaviour
         switch (changeCounter)
         {
             case 0:
-                distance = 4;
+                distance = 0.5f;
                 break;
             case 1:
                 distance = 10;
