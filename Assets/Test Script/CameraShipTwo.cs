@@ -33,12 +33,16 @@ public class CameraShipTwo : MonoBehaviour
         currentX += Input.GetAxis("Mouse X");
         currentY += Input.GetAxis("Mouse Y");
         currentY = Mathf.Clamp(currentY, yAngleMin, yAngleMax);
-        FreeRotateCamera();
 
         if (Input.GetKeyDown(KeyCode.V))
         {
             CameraPosChange();
         }
+    }
+
+    private void LateUpdate()
+    {
+        FreeRotateCamera();
     }
 
     //METHODS
@@ -65,7 +69,7 @@ public class CameraShipTwo : MonoBehaviour
         switch (changeCounter)
         {
             case 0:
-                distance = 0.5f;
+                distance = 1f;
                 break;
             case 1:
                 distance = 10;

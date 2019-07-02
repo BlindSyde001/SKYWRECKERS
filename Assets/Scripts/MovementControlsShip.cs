@@ -45,11 +45,7 @@ public class MovementControlsShip : MonoBehaviour
 
     private void Update()
     {
-        fullAuto();
-        input.z = Input.GetAxisRaw("Cension");
-        turnCap();
-        calculateDirectionZ();
-        rotation();
+        
         if (transitionTimer <= 0F)
         {
             if (player?.isControllingShip ?? true)
@@ -73,6 +69,12 @@ public class MovementControlsShip : MonoBehaviour
 
         if (player?.isControllingShip ?? true)
         {
+            fullAuto();
+            input.z = Input.GetAxisRaw("Cension");
+        turnCap();
+        calculateDirectionZ();
+        rotation();
+
             if (Input.GetKey(KeyCode.A))
             {
                 yaw -= turnSpeed * Time.deltaTime;

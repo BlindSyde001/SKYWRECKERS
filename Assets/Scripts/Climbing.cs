@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class Climbing : MonoBehaviour
 {
-    public GameObject playerCharacter;
+    //VARIABLES
+    public GameObject player;
 
     public Rigidbody rb;
-    // Start is called before the first frame update
+
+
+    //UPDATES
     void Start()
     {
-         rb = playerCharacter.GetComponent<Rigidbody>();
+         rb = player.GetComponent<Rigidbody>();
     }
 
+    //METHODS
     public void OnTriggerStay(Collider other)
     {
         
@@ -20,7 +24,7 @@ public class Climbing : MonoBehaviour
         {
             
             rb.useGravity = false;
-            playerCharacter.transform.Translate((Vector3.up *5) * Time.deltaTime, Space.World);
+            player.transform.Translate((Vector3.up *5) * Time.deltaTime, Space.World);
             Debug.Log("Climbing!");
         }
         else
