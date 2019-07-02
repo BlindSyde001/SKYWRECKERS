@@ -17394,46 +17394,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5915289143077969630, guid: 3e1b170c048707f4ea45c19a3702e140,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.9577
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915289143077969630, guid: 3e1b170c048707f4ea45c19a3702e140,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.9953
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915289143077969630, guid: 3e1b170c048707f4ea45c19a3702e140,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.116
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915289143077969630, guid: 3e1b170c048707f4ea45c19a3702e140,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3.0851269
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915289143077969630, guid: 3e1b170c048707f4ea45c19a3702e140,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.015
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915289143077969630, guid: 3e1b170c048707f4ea45c19a3702e140,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.029632
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915289143955732498, guid: 3e1b170c048707f4ea45c19a3702e140,
-        type: 3}
-      propertyPath: m_Name
-      value: Player Dock Pos
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915289144735450206, guid: 3e1b170c048707f4ea45c19a3702e140,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e1b170c048707f4ea45c19a3702e140, type: 3}
 --- !u!1 &1343518057
@@ -23035,7 +22995,7 @@ PrefabInstance:
     - target: {fileID: 3043401754319192000, guid: 90da31858ad29b8439d2c8e12c26d91f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.827
+      value: 3.267
       objectReference: {fileID: 0}
     - target: {fileID: 3043401754319192000, guid: 90da31858ad29b8439d2c8e12c26d91f,
         type: 3}

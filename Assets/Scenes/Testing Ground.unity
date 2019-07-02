@@ -951,7 +951,7 @@ PrefabInstance:
     - target: {fileID: 3043401754319192000, guid: 90da31858ad29b8439d2c8e12c26d91f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.83
+      value: 3.66
       objectReference: {fileID: 0}
     - target: {fileID: 3043401754319192000, guid: 90da31858ad29b8439d2c8e12c26d91f,
         type: 3}
@@ -1003,6 +1003,16 @@ PrefabInstance:
       propertyPath: dockPos
       value: 
       objectReference: {fileID: 749863954}
+    - target: {fileID: 3043401754319192002, guid: 90da31858ad29b8439d2c8e12c26d91f,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3043401754319192002, guid: 90da31858ad29b8439d2c8e12c26d91f,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 84
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90da31858ad29b8439d2c8e12c26d91f, type: 3}
 --- !u!1001 &5915289144430869507
