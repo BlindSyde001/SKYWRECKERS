@@ -53,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                     isControllingShip = false;
                     rb.useGravity = true;
+                Camera.main.SendMessage("SwitchButton");
                 }
         }
     }

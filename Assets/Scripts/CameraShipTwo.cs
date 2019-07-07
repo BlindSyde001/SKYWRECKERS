@@ -20,6 +20,7 @@ public class CameraShipTwo : MonoBehaviour
     public Transform orbitalPos;
     public Transform overShoulderPos;
     public int changeCounter = 0;
+    bool check;
 
     //UPDATES
     private void Start()
@@ -33,10 +34,13 @@ public class CameraShipTwo : MonoBehaviour
         currentX += Input.GetAxis("Mouse X");
         currentY += Input.GetAxis("Mouse Y");
         currentY = Mathf.Clamp(currentY, yAngleMin, yAngleMax);
-
         if (Input.GetKeyDown(KeyCode.V))
         {
-            CameraPosChange();
+            check = playerPos.GetComponent<PlayerMovement>().isControllingShip;
+            if (check)
+            {
+                CameraPosChange();
+            }
         }
     }
 
@@ -57,7 +61,7 @@ public class CameraShipTwo : MonoBehaviour
     void CameraPosChange()
     {
         changeCounter++;
-        if(changeCounter > 1)
+        if (changeCounter > 1)
         {
             changeCounter = 0;
         }
@@ -75,5 +79,11 @@ public class CameraShipTwo : MonoBehaviour
                 distance = 10;
                 break;
         }
+    }
+
+    public void SwitchButton()
+    {
+        changeCounter = 0;
+        movePostion();
     }
 }
