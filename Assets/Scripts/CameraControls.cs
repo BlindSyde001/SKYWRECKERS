@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class CameraShipTwo : MonoBehaviour
+public class CameraControls : MonoBehaviour
 {
     //VARIABLES
     public Transform playerPos;
@@ -17,8 +17,8 @@ public class CameraShipTwo : MonoBehaviour
     private const float yAngleMin = -45f;
     private const float yAngleMax = 45f;
 
-    public Transform orbitalPos;
-    public Transform overShoulderPos;
+    //public Transform orbitalPos;
+    //public Transform overShoulderPos;
     public int changeCounter = 0;
     bool check;
 
