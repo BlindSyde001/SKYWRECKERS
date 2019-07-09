@@ -27,6 +27,9 @@ public class PlayerMovement : MonoBehaviour
     public Transform dockPos;
     private MovementControlsShip ship;
 
+    //PlayerJumping
+    public bool isGrounded; //Checks if player is colliding with ground
+
     //UPDATES
     private void Awake()
     {
@@ -54,10 +57,12 @@ public class PlayerMovement : MonoBehaviour
             Move();
             ClimbingControls();
             Rotation();
-            if (!isClimbing && Input.GetKeyDown(KeyCode.Space))
-            {
-                playerJumping();
-            }
+            //if (!isClimbing && isGrounded && Input.GetKeyDown(KeyCode.Space))
+            //{
+            //    playerJumping();
+            //    isGrounded = false;
+            //}
+            playerJumping();
         }
         else
         {
@@ -67,12 +72,26 @@ public class PlayerMovement : MonoBehaviour
 
     //METHODS
 
-    void playerJumping()
+    void OnCollisionEnter(Collision collision)
     {
-        rb.AddForce(Vector3.up * jumpSpeed);
+        if (collision.gameObject.tag == ("Ground") && isGrounded == false)
+        {
+            isGrounded = true;
+            playerJumping();
+        }
     }
 
-    void Move()
+    void playerJumping()
+    {
+        if (!isClimbing && isGrounded && Input.GetKeyDown(KeyCode.Space))
+        {
+            isGrounded = false;
+            rb.AddForce(Vector3.up * jumpSpeed);
+        }
+
+    }
+
+    void Move() //Trialing and trialing this system
     {
         if (Input.GetKey(KeyCode.W))
         {

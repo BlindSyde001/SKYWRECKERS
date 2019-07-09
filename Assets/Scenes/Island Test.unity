@@ -29400,6 +29400,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ship
       objectReference: {fileID: 0}
+    - target: {fileID: 5915289144294958341, guid: 3e1b170c048707f4ea45c19a3702e140,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 5915289144294958340, guid: 3e1b170c048707f4ea45c19a3702e140,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -36506,6 +36511,16 @@ PrefabInstance:
     - target: {fileID: 1028548737, guid: 90da31858ad29b8439d2c8e12c26d91f, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.675
+      objectReference: {fileID: 0}
+    - target: {fileID: 3043401754319192002, guid: 90da31858ad29b8439d2c8e12c26d91f,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 3043401754319192002, guid: 90da31858ad29b8439d2c8e12c26d91f,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90da31858ad29b8439d2c8e12c26d91f, type: 3}
