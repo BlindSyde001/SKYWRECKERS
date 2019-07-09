@@ -1273,9 +1273,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eb69492359edef46bb30115442e0eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zeroToMaxPerSecond: 0.5
+  zeroToMaxPerSecond: 2
   forwardVelocity: 0
   accelerateModeCounter: 0
+  input: {x: 0, y: 0, z: 0}
   pitchSpeed: 1
   turnSpeed: 75
   transitionCooldown: 1
@@ -1292,6 +1293,7 @@ MonoBehaviour:
   bullet: {fileID: 8435406137501222767, guid: 2bbc56964caab2640aa4922a7b59ccd5, type: 3}
   barrelEnd: {fileID: 5915289144681290396}
   fireRate: 1
+  camera: {fileID: 0}
 --- !u!54 &5915289144294958346
 Rigidbody:
   m_ObjectHideFlags: 0

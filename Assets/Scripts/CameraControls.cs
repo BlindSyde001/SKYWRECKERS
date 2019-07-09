@@ -7,7 +7,6 @@ public class CameraControls : MonoBehaviour
 {
     //VARIABLES
     public Transform playerController;
-    public Transform camTransform;
 
     private Camera cam;
 
@@ -30,7 +29,7 @@ public class CameraControls : MonoBehaviour
 
     private void Update()
     {
-        //check = playerController.GetComponent<PlayerMovement>().isControllingShip;
+        check = playerController.GetComponent<PlayerMovement>().isControllingShip;
        
         if(check)
         {

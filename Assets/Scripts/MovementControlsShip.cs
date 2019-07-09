@@ -32,6 +32,8 @@ public class MovementControlsShip : MonoBehaviour
 
     private PlayerMovement player;
 
+    public new Camera camera;
+
     float currentY;
 
     //UPDATES

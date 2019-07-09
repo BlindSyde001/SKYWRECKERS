@@ -11,86 +11,67 @@ public class PlayerMovement : MonoBehaviour
     public float turnSpeed = 10;
     public float jumpSpeed = 150f;
 
+    public float distance = 2f;
+    private float currentX = 0f;
+    private float currentY = 0f;
+    private const float yAngleMin = -45f;
+    private const float yAngleMax = 45f;
+
     [NonSerialized]
     public bool isControllingShip = true;
-    public bool isClimbing = false; 
-
-    private Vector2 input;
-    private float angle;
-    private Quaternion targetRotation;
-    private Transform cam;
+    public bool isClimbing = false;
     Rigidbody rb;
 
+    public new Camera camera;
+
     public Transform dockPos;
-   
+    private MovementControlsShip ship;
+
     //UPDATES
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-    }
+        ship = FindObjectOfType<MovementControlsShip>();
 
-    private void Start()
-    {
-        cam = Camera.main.transform;
+        camera.gameObject.SetActive(!isControllingShip);
+        ship.camera.gameObject.SetActive(isControllingShip);
     }
 
     private void Update()
     {
-       
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            isControllingShip = !isControllingShip;
+            rb.useGravity = !isControllingShip;
+
+            camera.gameObject.SetActive(!isControllingShip);
+            ship.camera.gameObject.SetActive(isControllingShip);
+        }
+
         if (!isControllingShip)
         {
-            //getInput();
-            //calculateDirection();
-            //rotate();
+            Move();
             ClimbingControls();
+            Rotation();
             if (!isClimbing && Input.GetKeyDown(KeyCode.Space))
             {
                 playerJumping();
             }
-            //if (Mathf.Abs(input.x) < 1 && Mathf.Abs(input.y) < 1) return;
-            //{
-                Move();
-            //}
-
-        } else if(isControllingShip)
+        }
+        else
         {
-            this.gameObject.transform.position = dockPos.position;
-            if(Input.GetKeyDown(KeyCode.E))
-                {
-                    isControllingShip = false;
-                    rb.useGravity = true;
-                Camera.main.SendMessage("SwitchButton");
-                }
+            gameObject.transform.position = dockPos.position;
         }
     }
 
     //METHODS
-    void getInput()
-    {
-        {
-            input.x = Input.GetAxisRaw("Horizontal");
-            input.y = Input.GetAxisRaw("Vertical");
-        }
-    }
-
-
-    void calculateDirection()
-    {
-        angle = Mathf.Atan2(input.x, input.y);
-        angle = Mathf.Rad2Deg * angle;
-        angle += cam.eulerAngles.y;
-    }
 
     void playerJumping()
     {
         rb.AddForce(Vector3.up * jumpSpeed);
     }
 
-    void rotate()
-    {
-        targetRotation = Quaternion.Euler(0, angle , 0);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, turnSpeed * Time.deltaTime);
-    }
     void Move()
     {
         if (Input.GetKey(KeyCode.W))
@@ -112,6 +93,14 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    private void Rotation()
+    {
+        float horizontal = Input.GetAxis("Mouse X");
+
+        transform.Rotate(new Vector3(0F, horizontal * turnSpeed, 0F) * Time.deltaTime);
+    }
+
+    #region CLIMBING
     //CLIMBING - Testing placing climbing mechanic on player. Need to make the bool a toggle so that player can attach and detach freely.
     public void OnTriggerStay(Collider other)
     {
@@ -154,4 +143,5 @@ public class PlayerMovement : MonoBehaviour
                 break;
         }
     }
+    #endregion
 }
