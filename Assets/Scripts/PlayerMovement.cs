@@ -45,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
                 calculateDirection();
                 rotate();
                 Move();
+                ClimbingControls();
                 
             }
         } else if(isControllingShip)
@@ -83,17 +84,18 @@ public class PlayerMovement : MonoBehaviour
     }
     void Move()
     {
+        if (!isClimbing) 
         transform.position += transform.forward * velocity * Time.deltaTime;
     }
 
-    //CLIMBING - Testing placing climbing mechanic on player
+    //CLIMBING - Testing placing climbing mechanic on player. Need to make the bool a toggle so that player can attach and detach freely.
     public void OnTriggerStay(Collider other)
     {
-        if (Input.GetKey(KeyCode.L)&& other.gameObject.tag == "Wall")
+        if (Input.GetKeyDown(KeyCode.L) && other.gameObject.tag == "Wall")
         {
+            
             isClimbing = true;
             rb.useGravity = false;
-            transform.Translate((Vector3.up * 5) * Time.deltaTime, Space.World);
         }
     }
 
@@ -102,5 +104,31 @@ public class PlayerMovement : MonoBehaviour
         isClimbing = false;
         rb.useGravity = true;
     }
-
+    // Very quick and dirty climbing controls. Designed for simple functionality, not for final build.
+    //Currently does not work, as standard controls interfere with climbing.
+    public void ClimbingControls()
+    {
+        switch (isClimbing)
+        {
+            case true:
+                if (Input.GetKey(KeyCode.W))
+                {
+                    print("UP");
+                    transform.Translate((Vector3.up * 5) * Time.deltaTime, Space.World);
+                }
+                if (Input.GetKey(KeyCode.A))
+                {
+                    transform.Translate((Vector3.left * 5) * Time.deltaTime, Space.World);
+                }
+                if (Input.GetKey(KeyCode.S))
+                {
+                    transform.Translate((Vector3.down * 5) * Time.deltaTime, Space.World);
+                }
+                if (Input.GetKey(KeyCode.D))
+                {
+                    transform.Translate((Vector3.right * 5) * Time.deltaTime, Space.World);
+                }
+                break;
+        }
+    }
 }
