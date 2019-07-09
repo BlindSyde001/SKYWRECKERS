@@ -30,12 +30,15 @@ public class CameraControls : MonoBehaviour
 
     private void Update()
     {
-        currentX += Input.GetAxis("Mouse X");
-        currentY += Input.GetAxis("Mouse Y");
-        currentY = Mathf.Clamp(currentY, yAngleMin, yAngleMax);
+        check = playerController.GetComponent<PlayerMovement>().isControllingShip;
+        if (check)
+        {
+            currentX += Input.GetAxis("Mouse X");
+            currentY += Input.GetAxis("Mouse Y");
+            currentY = Mathf.Clamp(currentY, yAngleMin, yAngleMax);
+        }
         if (Input.GetKeyDown(KeyCode.V))
         {
-            check = playerController.GetComponent<PlayerMovement>().isControllingShip;
             if (check)
             {
                 CameraPosChange();

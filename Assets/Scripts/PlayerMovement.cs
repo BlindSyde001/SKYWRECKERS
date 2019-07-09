@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     //VARIABLES
     public float velocity = 5f;
     public float turnSpeed = 10;
+    public float jumpSpeed = 150f;
 
     [NonSerialized]
     public bool isControllingShip = true;
@@ -38,16 +39,19 @@ public class PlayerMovement : MonoBehaviour
        
         if (!isControllingShip)
         {
-            getInput();
-
-            if (Mathf.Abs(input.x) < 1 && Mathf.Abs(input.y) < 1) return;
+            //getInput();
+            //calculateDirection();
+            //rotate();
+            ClimbingControls();
+            if (!isClimbing && Input.GetKeyDown(KeyCode.Space))
             {
-                calculateDirection();
-                rotate();
-                Move();
-                ClimbingControls();
-                
+                playerJumping();
             }
+            //if (Mathf.Abs(input.x) < 1 && Mathf.Abs(input.y) < 1) return;
+            //{
+                Move();
+            //}
+
         } else if(isControllingShip)
         {
             this.gameObject.transform.position = dockPos.position;
@@ -61,31 +65,56 @@ public class PlayerMovement : MonoBehaviour
     }
 
     //METHODS
-    void getInput()
-    {
-        {
-            input.x = Input.GetAxisRaw("Horizontal");
-            input.y = Input.GetAxisRaw("Vertical");
-        }
-    }
+    //void getInput()
+    //{
+    //    {
+    //        input.x = Input.GetAxisRaw("Horizontal");
+    //        input.y = Input.GetAxisRaw("Vertical");
+    //    }
+    //}
 
    
-    void calculateDirection()
+    //void calculateDirection()
+    //{
+    //    angle = Mathf.Atan2(input.x, input.y);
+    //    angle = Mathf.Rad2Deg * angle;
+    //    angle += cam.eulerAngles.y;
+    //}
+
+    void playerJumping()
     {
-        angle = Mathf.Atan2(input.x, input.y);
-        angle = Mathf.Rad2Deg * angle;
-        angle += cam.eulerAngles.y;
+        rb.AddForce(Vector3.up * jumpSpeed);
     }
    
-    void rotate()
-    {
-        targetRotation = Quaternion.Euler(0, angle, 0);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, turnSpeed * Time.deltaTime);
-    }
+    //void rotate()
+    //{
+    //    targetRotation = Quaternion.Euler(0, angle, 0);
+    //    transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, turnSpeed * Time.deltaTime);
+    //}
     void Move()
     {
-        if (!isClimbing) 
-        transform.position += transform.forward * velocity * Time.deltaTime;
+        if (Input.GetKey(KeyCode.W))
+        {
+           transform.Translate((Vector3.forward * 5) * Time.deltaTime, Space.Self);
+            //transform.position += transform.forward * velocity * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.Translate((Vector3.back * 5) * Time.deltaTime, Space.Self);
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.Translate((Vector3.left * 5) * Time.deltaTime, Space.Self);
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.Translate((Vector3.right * 5) * Time.deltaTime, Space.Self);
+        }
+        //    if (!isClimbing)
+        //    {
+        //        transform.position += transform.forward * velocity * Time.deltaTime;
+        //    }
+
     }
 
     //CLIMBING - Testing placing climbing mechanic on player. Need to make the bool a toggle so that player can attach and detach freely.
