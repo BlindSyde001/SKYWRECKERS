@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
     [NonSerialized]
     public bool isControllingShip = true;
+    public bool isClimbing = false; 
 
     private Vector2 input;
     private float angle;
@@ -83,6 +84,23 @@ public class PlayerMovement : MonoBehaviour
     void Move()
     {
         transform.position += transform.forward * velocity * Time.deltaTime;
+    }
+
+    //CLIMBING - Testing placing climbing mechanic on player
+    public void OnTriggerStay(Collider other)
+    {
+        if (Input.GetKey(KeyCode.L)&& other.gameObject.tag == "Wall")
+        {
+            isClimbing = true;
+            rb.useGravity = false;
+            transform.Translate((Vector3.up * 5) * Time.deltaTime, Space.World);
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        isClimbing = false;
+        rb.useGravity = true;
     }
 
 }

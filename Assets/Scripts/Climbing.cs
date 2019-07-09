@@ -4,37 +4,46 @@ using UnityEngine;
 
 public class Climbing : MonoBehaviour
 {
-    //VARIABLES
-    public GameObject player;
+   // //VARIABLES
+   // public GameObject player;
 
-    public Rigidbody rb;
+   // public Rigidbody rb;
+
+   //// public bool isClimbing = false; 
 
 
-    //UPDATES
-    void Start()
-    {
-         rb = player.GetComponent<Rigidbody>();
-    }
+   // //UPDATES
+   // void Start()
+   // {
+   //      rb = player.GetComponent<Rigidbody>();
+   // }
 
-    //METHODS
-    public void OnTriggerStay(Collider other)
-    {
+   
+
+   // //METHODS
+   // public void OnTriggerStay(Collider other)
+   // {
         
-        if(Input.GetKey(KeyCode.L))
-        {
+   //     if(Input.GetKey(KeyCode.L))
+   //     {
+   //         isClimbing = true;
             
-            rb.useGravity = false;
-            player.transform.Translate((Vector3.up *5) * Time.deltaTime, Space.World);
-            Debug.Log("Climbing!");
-        }
-        else
-        {
-            rb.useGravity = true;
-        }
-    }
+   //             rb.useGravity = false;
+   //            // player.transform.Translate((Vector3.up * 5) * Time.deltaTime, Space.World);
+   //             Debug.Log("Climbing!");
 
-    public void OnTriggerExit(Collider other)
-    {
-        rb.useGravity = true;
-    }
+            
+   //     }
+   //     else
+   //     {
+   //         isClimbing = false;
+   //         rb.useGravity = true;
+   //     }
+   // }
+
+   // public void OnTriggerExit(Collider other)
+   // {
+   //     isClimbing = false;
+   //     rb.useGravity = true;
+   // }
 }
