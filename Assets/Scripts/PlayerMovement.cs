@@ -65,38 +65,37 @@ public class PlayerMovement : MonoBehaviour
     }
 
     //METHODS
-    //void getInput()
-    //{
-    //    {
-    //        input.x = Input.GetAxisRaw("Horizontal");
-    //        input.y = Input.GetAxisRaw("Vertical");
-    //    }
-    //}
+    void getInput()
+    {
+        {
+            input.x = Input.GetAxisRaw("Horizontal");
+            input.y = Input.GetAxisRaw("Vertical");
+        }
+    }
 
-   
-    //void calculateDirection()
-    //{
-    //    angle = Mathf.Atan2(input.x, input.y);
-    //    angle = Mathf.Rad2Deg * angle;
-    //    angle += cam.eulerAngles.y;
-    //}
+
+    void calculateDirection()
+    {
+        angle = Mathf.Atan2(input.x, input.y);
+        angle = Mathf.Rad2Deg * angle;
+        angle += cam.eulerAngles.y;
+    }
 
     void playerJumping()
     {
         rb.AddForce(Vector3.up * jumpSpeed);
     }
-   
-    //void rotate()
-    //{
-    //    targetRotation = Quaternion.Euler(0, angle, 0);
-    //    transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, turnSpeed * Time.deltaTime);
-    //}
+
+    void rotate()
+    {
+        targetRotation = Quaternion.Euler(0, angle , 0);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, turnSpeed * Time.deltaTime);
+    }
     void Move()
     {
         if (Input.GetKey(KeyCode.W))
         {
            transform.Translate((Vector3.forward * 5) * Time.deltaTime, Space.Self);
-            //transform.position += transform.forward * velocity * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.S))
         {
@@ -110,10 +109,6 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.Translate((Vector3.right * 5) * Time.deltaTime, Space.Self);
         }
-        //    if (!isClimbing)
-        //    {
-        //        transform.position += transform.forward * velocity * Time.deltaTime;
-        //    }
 
     }
 
@@ -142,7 +137,6 @@ public class PlayerMovement : MonoBehaviour
             case true:
                 if (Input.GetKey(KeyCode.W))
                 {
-                    print("UP");
                     transform.Translate((Vector3.up * 5) * Time.deltaTime, Space.World);
                 }
                 if (Input.GetKey(KeyCode.A))

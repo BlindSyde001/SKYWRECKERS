@@ -30,13 +30,17 @@ public class CameraControls : MonoBehaviour
 
     private void Update()
     {
-        check = playerController.GetComponent<PlayerMovement>().isControllingShip;
-        if (check)
+        //check = playerController.GetComponent<PlayerMovement>().isControllingShip;
+       
+        if(check)
         {
             currentX += Input.GetAxis("Mouse X");
             currentY += Input.GetAxis("Mouse Y");
             currentY = Mathf.Clamp(currentY, yAngleMin, yAngleMax);
+
         }
+            
+
         if (Input.GetKeyDown(KeyCode.V))
         {
             if (check)
@@ -56,8 +60,8 @@ public class CameraControls : MonoBehaviour
     {
         Vector3 dir = new Vector3(0, 0, -distance);
         Quaternion rotation = Quaternion.Euler(currentY, currentX, 0);
-        transform.position = shoulderCam.position + rotation * dir;
-        transform.LookAt(shoulderCam.position);
+        transform.position = playerController.position + rotation * dir;
+        transform.LookAt(playerController.position);
     }
 
     void CameraPosChange()
@@ -86,6 +90,8 @@ public class CameraControls : MonoBehaviour
     public void SwitchButton()
     {
         changeCounter = 0;
+        cam.transform.position = shoulderCam.transform.position;
+
         movePostion();
     }
 }
