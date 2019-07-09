@@ -6,7 +6,7 @@ using DG.Tweening;
 public class CameraControls : MonoBehaviour
 {
     //VARIABLES
-    public Transform playerPos;
+    public Transform playerController;
     public Transform camTransform;
 
     private Camera cam;
@@ -17,15 +17,14 @@ public class CameraControls : MonoBehaviour
     private const float yAngleMin = -45f;
     private const float yAngleMax = 45f;
 
-    //public Transform orbitalPos;
-    //public Transform overShoulderPos;
+    public Transform shoulderCam;
     public int changeCounter = 0;
     bool check;
 
     //UPDATES
     private void Start()
     {
-        playerPos = GameObject.Find("Player").transform;
+        playerController = GameObject.Find("Player").transform;
         cam = Camera.main;
     }
 
@@ -36,7 +35,7 @@ public class CameraControls : MonoBehaviour
         currentY = Mathf.Clamp(currentY, yAngleMin, yAngleMax);
         if (Input.GetKeyDown(KeyCode.V))
         {
-            check = playerPos.GetComponent<PlayerMovement>().isControllingShip;
+            check = playerController.GetComponent<PlayerMovement>().isControllingShip;
             if (check)
             {
                 CameraPosChange();
@@ -54,8 +53,8 @@ public class CameraControls : MonoBehaviour
     {
         Vector3 dir = new Vector3(0, 0, -distance);
         Quaternion rotation = Quaternion.Euler(currentY, currentX, 0);
-        transform.position = playerPos.position + rotation * dir;
-        transform.LookAt(playerPos.position);
+        transform.position = shoulderCam.position + rotation * dir;
+        transform.LookAt(shoulderCam.position);
     }
 
     void CameraPosChange()
@@ -73,7 +72,7 @@ public class CameraControls : MonoBehaviour
         switch (changeCounter)
         {
             case 0:
-                distance = 1f;
+                distance = 0.5f;
                 break;
             case 1:
                 distance = 10;

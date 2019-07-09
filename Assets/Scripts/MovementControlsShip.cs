@@ -12,7 +12,7 @@ public class MovementControlsShip : MonoBehaviour
     public int accelerateModeCounter = 0;
     private float speedVelocity;
 
-    private Vector3 input;
+    public Vector3 input;
     private Quaternion targetRotation;
     private float angle;
     public float pitchSpeed = 1;
@@ -31,6 +31,8 @@ public class MovementControlsShip : MonoBehaviour
     float nextFire;
 
     private PlayerMovement player;
+
+    float currentY;
 
     //UPDATES
 
@@ -69,24 +71,40 @@ public class MovementControlsShip : MonoBehaviour
 
         if (player?.isControllingShip ?? true)
         {
-            fullAuto();
-            input.z = Input.GetAxisRaw("Cension");
-        turnCap();
-        calculateDirectionZ();
-        rotation();
+            ShootingCannons();
+            if(accelerateModeCounter > 0)
+            {
+                input.z = Input.GetAxis("Cension");
+                turnCap();
+                calculateDirectionZ();
+                rotation();
 
-            if (Input.GetKey(KeyCode.A))
-            {
-                yaw -= turnSpeed * Time.deltaTime;
+                if (GetComponent<Rigidbody>().isKinematic == true)
+                {
+                    GetComponent<Rigidbody>().isKinematic = false;
+                }
+
+                if (Input.GetKey(KeyCode.A))
+                {
+                    yaw -= turnSpeed * Time.deltaTime;
+                }
+                else if (Input.GetKey(KeyCode.D))
+                {
+                    yaw += turnSpeed * Time.deltaTime;
+                }
+                
             }
-            else if (Input.GetKey(KeyCode.D))
-            {
-                yaw += turnSpeed * Time.deltaTime;
-            }
+        } else
+        {
+            GetComponent<Rigidbody>().isKinematic = true;
         }
 
         accelerateModeCounter = Mathf.Clamp(accelerateModeCounter, 0, 3);
         forwardVelocity = Mathf.SmoothDamp(forwardVelocity, 10 * accelerateModeCounter, ref speedVelocity, zeroToMaxPerSecond);
+        if (forwardVelocity < 0.01f)
+        {
+            forwardVelocity = 0;
+        }
     }
 
     private void LateUpdate()
@@ -98,7 +116,7 @@ public class MovementControlsShip : MonoBehaviour
 
     void rotation()
     {
-        targetRotation = Quaternion.Euler(angle, yaw, 0);
+        targetRotation = Quaternion.Euler(angle/2, yaw, 0);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, pitchSpeed * Time.deltaTime);
     }
     void calculateDirectionZ()
@@ -109,14 +127,28 @@ public class MovementControlsShip : MonoBehaviour
 
     void turnCap()
     {
-        turnSpeed = 100 - (accelerateModeCounter * 22);
-        if (accelerateModeCounter == 0)
+        switch(accelerateModeCounter)
         {
-            turnSpeed = 25;
+            case 0:
+                turnSpeed = 20;
+                break;
+
+            case 1:
+                turnSpeed = 30;
+                break;
+
+            case 2:
+                turnSpeed = 25;
+                break;
+
+            case 3:
+                turnSpeed = 20;
+                break;
         }
     }
 
-    void fullAuto()
+    #region Cannons
+    void ShootingCannons()
     {
         if (Input.GetMouseButton(1) && Time.time > nextFire)
         {
@@ -141,5 +173,6 @@ public class MovementControlsShip : MonoBehaviour
             }
         }
     }
+    #endregion
 }
 
