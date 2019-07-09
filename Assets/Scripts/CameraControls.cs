@@ -10,7 +10,7 @@ public class CameraControls : MonoBehaviour
 
     private Camera cam;
 
-    public float distance = 2f;
+    public float distance;
     private float currentX = 0f;
     private float currentY = 0f;
     private const float yAngleMin = -45f;
@@ -47,6 +47,8 @@ public class CameraControls : MonoBehaviour
                 CameraPosChange();
             }
         }
+
+        movePostion();
     }
 
     private void LateUpdate()
@@ -70,7 +72,6 @@ public class CameraControls : MonoBehaviour
         {
             changeCounter = 0;
         }
-        movePostion();
     }
 
     void movePostion()
@@ -78,10 +79,24 @@ public class CameraControls : MonoBehaviour
         switch (changeCounter)
         {
             case 0:
-                distance = 0.5f;
+                if(distance != 1f)
+                {
+                    distance -= 10 * Time.deltaTime;
+                }
+                if(distance <= 1f)
+                {
+                   distance = 1f;
+                }
                 break;
             case 1:
-                distance = 10;
+                if (distance != 10f)
+                {
+                    distance += 10 * Time.deltaTime;
+                }
+                if (distance >= 10f)
+                {
+                    distance = 10f;
+                }
                 break;
         }
     }
@@ -93,4 +108,5 @@ public class CameraControls : MonoBehaviour
 
         movePostion();
     }
+
 }
