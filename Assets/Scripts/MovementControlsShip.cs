@@ -73,28 +73,17 @@ public class MovementControlsShip : MonoBehaviour
 
         if (player?.isControllingShip ?? true)
         {
+            turnCap();
             ShootingCannons();
             if(accelerateModeCounter > 0)
             {
                 input.z = Input.GetAxis("Cension");
-                turnCap();
                 calculateDirectionZ();
-                rotation();
 
                 if (GetComponent<Rigidbody>().isKinematic == true)
                 {
                     GetComponent<Rigidbody>().isKinematic = false;
                 }
-
-                if (Input.GetKey(KeyCode.A))
-                {
-                    yaw -= turnSpeed * Time.deltaTime;
-                }
-                else if (Input.GetKey(KeyCode.D))
-                {
-                    yaw += turnSpeed * Time.deltaTime;
-                }
-                
             }
         } else
         {
@@ -106,6 +95,20 @@ public class MovementControlsShip : MonoBehaviour
         if (forwardVelocity < 0.01f)
         {
             forwardVelocity = 0;
+        }
+
+        if(forwardVelocity > 0.01)
+        {
+            if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+            {
+                yaw -= turnSpeed * Time.deltaTime;
+            }
+
+           if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
+            {
+                yaw += turnSpeed * Time.deltaTime;
+            }
+            rotation();
         }
     }
 
@@ -132,7 +135,7 @@ public class MovementControlsShip : MonoBehaviour
         switch(accelerateModeCounter)
         {
             case 0:
-                turnSpeed = 20;
+                turnSpeed = 15;
                 break;
 
             case 1:
