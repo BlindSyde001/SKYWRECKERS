@@ -37764,6 +37764,11 @@ PrefabInstance:
     - target: {fileID: 3043401754319192002, guid: 90da31858ad29b8439d2c8e12c26d91f,
         type: 3}
       propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3043401754319192002, guid: 90da31858ad29b8439d2c8e12c26d91f,
+        type: 3}
+      propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -37979,6 +37984,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb403f8ff442acb49be652509bef18ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  woodCount: 0
+  metalCount: 0
+  fabricCount: 0
   hasWood: 0
   hasMetal: 0
   hasFabric: 0

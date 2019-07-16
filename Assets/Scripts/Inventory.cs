@@ -7,6 +7,10 @@ public class Inventory : MonoBehaviour
 {
     public static Inventory Instance;
 
+    public int woodCount;
+    public int metalCount;
+    public int fabricCount;
+
     //Bools to know whether the player has the resource objects
     public bool hasWood;
     public bool hasMetal;
@@ -32,11 +36,12 @@ public class Inventory : MonoBehaviour
     }
 
 
-    void CheckInventory() //Pre set up for when the game needs to check for an ship upgrade
+    public void CheckInventory() //Pre set up for when the game needs to check for an ship upgrade
     {
-        Wood.gameObject.SetActive(hasWood);
-        Fabric.gameObject.SetActive(hasFabric);
-        Metal.gameObject.SetActive(hasMetal);
+        if (woodCount == 10)
+        {
+            Debug.Log("Wood Upgrade Available");
+        }
     }
 
     // Update is called once per frame

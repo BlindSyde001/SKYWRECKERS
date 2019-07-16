@@ -10,7 +10,6 @@ public class ResourcePickUp : MonoBehaviour
     public InventoryItem item; //Access to resource gameobjects in inventory script
     public string message; //Custom message that appears to pick up the resource gameobject
 
-
     public TextMeshProUGUI woodText;
     public TextMeshProUGUI fabricText;
     public TextMeshProUGUI metalText;
@@ -58,15 +57,26 @@ public class ResourcePickUp : MonoBehaviour
     private void PickUp()
     {
         //Inventory.Instance.hasLock = true;
-        if (item == InventoryItem.WOOD) //Item is picked up and appears in inventory
-            woodText.text = ("Wood 1/10");
-            Inventory.Instance.hasWood = true;
+        if (item == InventoryItem.WOOD) //Item is picked up and appears in inventory 
+        {
+            Inventory.Instance.woodCount++;
+            //Inventory.Instance.CheckInventory();
+            woodText.text = ("Wood " + Inventory.Instance.woodCount + "/10");
+        } 
+
         if (item == InventoryItem.FABRIC)
-            fabricText.text = ("Fabric 1/10");
-            Inventory.Instance.hasFabric = true;
+        {
+            Inventory.Instance.fabricCount++;
+            //Inventory.Instance.CheckInventory();
+            fabricText.text = ("Fabric " + Inventory.Instance.fabricCount + "/10");
+        }
         if (item == InventoryItem.METAL)
-            metalText.text = ("Metal 1/10");
-            Inventory.Instance.hasMetal = true;
+        {
+            Inventory.Instance.metalCount++;
+            //Inventory.Instance.CheckInventory();
+            metalText.text = ("Metal " + Inventory.Instance.metalCount + "/10");
+        }
+
         UIManager.Instance.ToggleText("");
         Destroy(gameObject);
     }
