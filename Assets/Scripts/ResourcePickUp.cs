@@ -22,7 +22,11 @@ public class ResourcePickUp : MonoBehaviour
         TextMeshProUGUI woodText = GetComponent<TextMeshProUGUI>(); //getting access to the text
         TextMeshProUGUI fabricText = GetComponent<TextMeshProUGUI>();
         TextMeshProUGUI metalText = GetComponent<TextMeshProUGUI>();
+        //woodText.text = "Wood";
+        //fabricText.text = "Fabric";
+        //metalText.text = "Metal";
     }
+
 
     // Update is called once per frame
     void FixedUpdate()
@@ -55,10 +59,13 @@ public class ResourcePickUp : MonoBehaviour
     {
         //Inventory.Instance.hasLock = true;
         if (item == InventoryItem.WOOD) //Item is picked up and appears in inventory
+            woodText.text = ("Wood 1/10");
             Inventory.Instance.hasWood = true;
         if (item == InventoryItem.FABRIC)
+            fabricText.text = ("Fabric 1/10");
             Inventory.Instance.hasFabric = true;
         if (item == InventoryItem.METAL)
+            metalText.text = ("Metal 1/10");
             Inventory.Instance.hasMetal = true;
         UIManager.Instance.ToggleText("");
         Destroy(gameObject);
