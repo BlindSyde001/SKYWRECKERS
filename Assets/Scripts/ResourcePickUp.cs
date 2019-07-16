@@ -58,20 +58,20 @@ public class ResourcePickUp : MonoBehaviour
         if (item == InventoryItem.WOOD) //Item is picked up and appears in inventory 
         {
             Inventory.Instance.woodCount++;
-            //Inventory.Instance.CheckInventory();
+            Inventory.Instance.CheckInventory();
             woodText.text = ("Wood " + Inventory.Instance.woodCount + "/10");
         } 
 
         if (item == InventoryItem.FABRIC)
         {
             Inventory.Instance.fabricCount++;
-            //Inventory.Instance.CheckInventory();
+            Inventory.Instance.CheckInventory();
             fabricText.text = ("Fabric " + Inventory.Instance.fabricCount + "/10");
         }
         if (item == InventoryItem.METAL)
         {
             Inventory.Instance.metalCount++;
-            //Inventory.Instance.CheckInventory();
+            Inventory.Instance.CheckInventory();
             metalText.text = ("Metal " + Inventory.Instance.metalCount + "/10");
         }
 
