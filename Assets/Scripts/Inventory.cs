@@ -5,6 +5,7 @@ using UnityEngine;
 public enum InventoryItem { WOOD, FABRIC, METAL }
 public class Inventory : MonoBehaviour
 {
+    //VARIABLES
     public static Inventory Instance;
 
     //Bools to know whether the player has the resource objects
@@ -20,6 +21,8 @@ public class Inventory : MonoBehaviour
     public GameObject Fabric;
     public GameObject Metal;
 
+
+    //UPDATES
     private void Awake()
     {
         Instance = this;
@@ -30,18 +33,18 @@ public class Inventory : MonoBehaviour
     {
         hasWood = hasMetal = hasFabric = false; //Player has not picked up any items yet
     }
+    
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 
-
+    //METHODS
     void CheckInventory() //Pre set up for when the game needs to check for an ship upgrade
     {
         Wood.gameObject.SetActive(hasWood);
         Fabric.gameObject.SetActive(hasFabric);
         Metal.gameObject.SetActive(hasMetal);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

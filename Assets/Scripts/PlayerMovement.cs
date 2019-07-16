@@ -23,9 +23,11 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody rb;
 
     public new Camera camera;
+    public GameObject shoulderPos;
 
     public Transform dockPos;
     private MovementControlsShip ship;
+    float shoulderRot;
 
     //PlayerJumping
     public bool isGrounded; //Checks if player is colliding with ground
@@ -57,11 +59,6 @@ public class PlayerMovement : MonoBehaviour
             Move();
             ClimbingControls();
             Rotation();
-            //if (!isClimbing && isGrounded && Input.GetKeyDown(KeyCode.Space))
-            //{
-            //    playerJumping();
-            //    isGrounded = false;
-            //}
             playerJumping();
         }
         else
@@ -91,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    void Move() //Trialing and trialing this system
+    void Move()
     {
         if (Input.GetKey(KeyCode.W))
         {
@@ -117,6 +114,12 @@ public class PlayerMovement : MonoBehaviour
         float horizontal = Input.GetAxis("Mouse X");
 
         transform.Rotate(new Vector3(0F, horizontal * turnSpeed, 0F) * Time.deltaTime);
+
+        float vertical = Input.GetAxis("Mouse Y");
+        shoulderRot += vertical;
+        shoulderRot = Mathf.Clamp(shoulderRot, -20, 20);
+
+        shoulderPos.transform.localEulerAngles = new Vector3(shoulderRot, transform.rotation.y, 0);
     }
 
     #region CLIMBING

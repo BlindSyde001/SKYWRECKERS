@@ -5,6 +5,7 @@ using TMPro;
 
 public class ResourcePickUp : MonoBehaviour
 {
+    //VARIABLES
     private bool pickUpAllowed; //Bool to allow the player to pick up the gameobject
 
     public InventoryItem item; //Access to resource gameobjects in inventory script
@@ -15,7 +16,7 @@ public class ResourcePickUp : MonoBehaviour
     public TextMeshProUGUI fabricText;
     public TextMeshProUGUI metalText;
 
-    // Use this for initialization
+    //UPDATES
     void Start()
     {
         //Hasn't been set up yet
@@ -23,8 +24,8 @@ public class ResourcePickUp : MonoBehaviour
         TextMeshProUGUI fabricText = GetComponent<TextMeshProUGUI>();
         TextMeshProUGUI metalText = GetComponent<TextMeshProUGUI>();
     }
+    
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         if (pickUpAllowed && Input.GetKeyDown(KeyCode.Q)) //Kept putting me back on the ship with E key
@@ -51,9 +52,10 @@ public class ResourcePickUp : MonoBehaviour
         }
     }
 
+    //METHODS
     private void PickUp()
     {
-        //Inventory.Instance.hasLock = true;
+
         if (item == InventoryItem.WOOD) //Item is picked up and appears in inventory
             Inventory.Instance.hasWood = true;
         if (item == InventoryItem.FABRIC)
