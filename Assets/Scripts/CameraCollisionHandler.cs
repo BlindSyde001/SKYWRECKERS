@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[DefaultExecutionOrder(32000)]
 public class CameraCollisionHandler : MonoBehaviour
 {
     //VARIABLES
@@ -19,7 +20,7 @@ public class CameraCollisionHandler : MonoBehaviour
     private float zoomVelocity = 0f;
 
     //UPDATES
-    private void Update()
+    private void LateUpdate()
     {
         Zoom();
     }

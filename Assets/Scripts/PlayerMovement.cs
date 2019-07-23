@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     //VARIABLES
     public float velocity = 5f;
     public float turnSpeed = 10;
-    public float jumpSpeed = 150f;
+    public float jumpSpeed = 3.5f;
 
     public float distance = 2f;
     private float currentX = 0f;
@@ -20,7 +20,8 @@ public class PlayerMovement : MonoBehaviour
     [NonSerialized]
     public bool isControllingShip = true;
     public bool isClimbing = false;
-    Rigidbody rb;
+    //Rigidbody rb;
+    CharacterController controller;
 
     public new Camera camera;
     public GameObject shoulderPos;
@@ -29,14 +30,20 @@ public class PlayerMovement : MonoBehaviour
     private MovementControlsShip ship;
     float shoulderRot;
 
-    //PlayerJumping
-    public bool isGrounded; //Checks if player is colliding with ground
+    private bool shipGrounded;
+
+    ////PlayerJumping
+    //public bool isGrounded; //Checks if player is colliding with ground
+
+    private float yVelocity;
+    private Vector3 movement;
 
     //UPDATES
     private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
         ship = FindObjectOfType<MovementControlsShip>();
+        controller = GetComponent<CharacterController>();
 
         camera.gameObject.SetActive(!isControllingShip);
         ship.camera.gameObject.SetActive(isControllingShip);
@@ -53,50 +60,64 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            gameObject.transform.position = dockPos.position;
+            transform.position = dockPos.position;
+
+            //if (attachedBody)
+            //    rb.velocity = attachedBody.velocity;
         }
     }
 
     //METHODS
 
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == ("Ground") && isGrounded == false)
-        {
-            isGrounded = true;
-            playerJumping();
-        }
-    }
-
     void playerJumping()
     {
-        if (!isClimbing && isGrounded && Input.GetKeyDown(KeyCode.Space))
+        if (!isClimbing && controller.isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
-            isGrounded = false;
-            rb.AddForce(Vector3.up * jumpSpeed);
+            yVelocity = jumpSpeed;
         }
 
     }
 
     void Move()
     {
-        if (Input.GetKey(KeyCode.W))
+        if(!isClimbing)
         {
-           transform.Translate((Vector3.forward * 5) * Time.deltaTime, Space.Self);
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            transform.Translate((Vector3.back * 5) * Time.deltaTime, Space.Self);
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Translate((Vector3.left * 5) * Time.deltaTime, Space.Self);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.Translate((Vector3.right * 5) * Time.deltaTime, Space.Self);
-        }
+            if (Input.GetKey(KeyCode.W))
+            {
+                movement += transform.forward * 5F;
 
+                //transform.Translate((Vector3.forward * 5) * Time.deltaTime, Space.Self);
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                movement += -transform.forward * 5F;
+
+                //transform.Translate((Vector3.back * 5) * Time.deltaTime, Space.Self);
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                movement += -transform.right * 5F;
+
+                //transform.Translate((Vector3.left * 5) * Time.deltaTime, Space.Self);
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                movement += transform.right * 5F;
+
+                //transform.Translate((Vector3.right * 5) * Time.deltaTime, Space.Self);
+            }
+            yVelocity += Physics.gravity.y * Time.deltaTime;
+        }else
+        {
+            yVelocity = 0;
+        }
+        
+        controller.Move((yVelocity * Vector3.up + movement + (shipGrounded ? ship.displacement : Vector3.zero)) * Time.deltaTime);
+        ship.displacement = Vector3.zero;
+        movement = Vector3.zero;
+
+        if (controller.isGrounded)
+            yVelocity = 0F;
     }
 
     private void Rotation()
@@ -118,29 +139,42 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if(other.CompareTag("Wheel"))
+            if(other.CompareTag("Wheel") && !ship.docking)
             {
                 isControllingShip = !isControllingShip;
-                rb.useGravity = !isControllingShip;
+                //rb.useGravity = !isControllingShip;
                 camera.gameObject.SetActive(!isControllingShip);
                 ship.camera.gameObject.SetActive(isControllingShip);
             }
 
             if (other.CompareTag("Wall"))
             {
-                isClimbing = true;
-                rb.useGravity = false;
+                isClimbing = !isClimbing;
+                //rb.useGravity = false;
             }
+        }
+        if(other.CompareTag("ShipGround"))
+        {
+            //transform.parent = other.transform;
+            shipGrounded = true;
         }
     }
 
     public void OnTriggerExit(Collider other)
     {
-        isClimbing = false;
-        rb.useGravity = true;
+        if(other.CompareTag("Wall"))
+        {
+            isClimbing = false;
+            //rb.useGravity = true;
+        }
+        if(other.CompareTag("ShipGround"))
+        {
+            shipGrounded = false;
+        }
+        
+
     }
-    // Very quick and dirty climbing controls. Designed for simple functionality, not for final build.
-    //Currently does not work, as standard controls interfere with climbing.
+
     public void ClimbingControls()
     {
         switch (isClimbing)
@@ -148,19 +182,23 @@ public class PlayerMovement : MonoBehaviour
             case true:
                 if (Input.GetKey(KeyCode.W))
                 {
-                    transform.Translate((Vector3.up * 5) * Time.deltaTime, Space.World);
+                    movement += transform.up * 5F;
+                    //transform.Translate((Vector3.up * 5) * Time.deltaTime, Space.World);
                 }
                 if (Input.GetKey(KeyCode.A))
                 {
-                    transform.Translate((Vector3.left * 5) * Time.deltaTime, Space.World);
+                    movement += transform.right * 5F;
+                    //transform.Translate((Vector3.left * 5) * Time.deltaTime, Space.World);
                 }
                 if (Input.GetKey(KeyCode.S))
                 {
-                    transform.Translate((Vector3.down * 5) * Time.deltaTime, Space.World);
+                    movement += -transform.up * 5F;
+                    //transform.Translate((Vector3.down * 5) * Time.deltaTime, Space.World);
                 }
                 if (Input.GetKey(KeyCode.D))
                 {
-                    transform.Translate((Vector3.right * 5) * Time.deltaTime, Space.World);
+                    movement += -transform.right * 5F;
+                    //transform.Translate((Vector3.right * 5) * Time.deltaTime, Space.World);
                 }
                 break;
         }

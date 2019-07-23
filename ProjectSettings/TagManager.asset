@@ -7,6 +7,9 @@ TagManager:
   - Wall
   - Ground
   - Wheel
+  - Dock
+  - Enemy
+  - ShipGround
   layers:
   - Default
   - TransparentFX
