@@ -44,16 +44,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            isControllingShip = !isControllingShip;
-            rb.useGravity = !isControllingShip;
-
-            camera.gameObject.SetActive(!isControllingShip);
-            ship.camera.gameObject.SetActive(isControllingShip);
-        }
-
         if (!isControllingShip)
         {
             Move();
@@ -122,10 +112,19 @@ public class PlayerMovement : MonoBehaviour
         shoulderPos.transform.localEulerAngles = new Vector3(shoulderRot, transform.rotation.y, 0);
     }
 
-    #region CLIMBING
+    #region MAGIC E
     //CLIMBING - Testing placing climbing mechanic on player. Need to make the bool a toggle so that player can attach and detach freely.
     public void OnTriggerStay(Collider other)
     {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if(other.CompareTag("Wheel"))
+            isControllingShip = !isControllingShip;
+            rb.useGravity = !isControllingShip;
+
+            camera.gameObject.SetActive(!isControllingShip);
+            ship.camera.gameObject.SetActive(isControllingShip);
+        }
         if (Input.GetKeyDown(KeyCode.L) && other.gameObject.tag == "Wall")
         {
             
