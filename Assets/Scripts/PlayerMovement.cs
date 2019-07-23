@@ -119,17 +119,18 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             if(other.CompareTag("Wheel"))
-            isControllingShip = !isControllingShip;
-            rb.useGravity = !isControllingShip;
+            {
+                isControllingShip = !isControllingShip;
+                rb.useGravity = !isControllingShip;
+                camera.gameObject.SetActive(!isControllingShip);
+                ship.camera.gameObject.SetActive(isControllingShip);
+            }
 
-            camera.gameObject.SetActive(!isControllingShip);
-            ship.camera.gameObject.SetActive(isControllingShip);
-        }
-        if (Input.GetKeyDown(KeyCode.L) && other.gameObject.tag == "Wall")
-        {
-            
-            isClimbing = true;
-            rb.useGravity = false;
+            if (other.CompareTag("Wall"))
+            {
+                isClimbing = true;
+                rb.useGravity = false;
+            }
         }
     }
 
