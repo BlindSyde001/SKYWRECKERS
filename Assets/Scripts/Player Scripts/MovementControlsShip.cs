@@ -196,23 +196,23 @@ public class MovementControlsShip : MonoBehaviour
         switch(accelerateModeCounter)
         {
             case 0:
-                turnSpeed = 15;
+                turnSpeed = 25;
                 speed = 0;
                 break;
 
             case 1:
-                turnSpeed = 30;
+                turnSpeed = 50;
                 speed = 5;
                 break;
 
             case 2:
-                turnSpeed = 25;
+                turnSpeed = 45;
                 speed = 10;
                 break;
 
             case 3:
-                turnSpeed = 20;
-                speed = 15;
+                turnSpeed = 30;
+                speed = 20;
                 break;
         }
     }
@@ -229,7 +229,6 @@ public class MovementControlsShip : MonoBehaviour
                     docking = true;
                     dockingPlacement = other.GetComponent<Dock>().dockingPlacement;
                     accelerateModeCounter = 0;
-                    //forwardVelocity = 0;
 
                 }
                 else

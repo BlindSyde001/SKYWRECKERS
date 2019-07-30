@@ -52,7 +52,7 @@ public class WhaleAI : MonoBehaviour
         _lookRotation = Quaternion.LookRotation(_direction);
         transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, rotateSpeed * Time.deltaTime);
 
-        Debug.Log(Vector3.Distance(transform.position, movePoints[currentPos].position));
+        //Debug.Log(Vector3.Distance(transform.position, movePoints[currentPos].position));
         transform.position += transform.forward * moveSpeed * Time.deltaTime;
     }
 
