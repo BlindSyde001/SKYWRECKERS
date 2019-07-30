@@ -18,17 +18,30 @@ public class WhaleAI : MonoBehaviour
     public List<Transform> movePoints;
     public Transform testPoint;
 
+    private Quaternion _lookRotation;
+    private Vector3 _direction;
+    public float speed;
     //UPDATES
 
     private void Start()
     {
-        transform.position = new Vector3(0, 0, 0);
+        //transform.position = new Vector3(0, 0, 0);
     }
 
     private void Update()
     {
-        transform.position += Vector3.MoveTowards(transform.position, testPoint.position, 0.00001f * Time.deltaTime);
+        //transform.position += new Vector3(0, Mathf.Sin(Time.time * moveSpeed), 0);
+        Rotation();
     }
 
     //METHODS
+
+    void Rotation()
+    {
+        _direction = (testPoint.position - transform.position).normalized;
+        _lookRotation = Quaternion.LookRotation(_direction);
+
+        transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, speed * Time.deltaTime);
+    }
+
 }

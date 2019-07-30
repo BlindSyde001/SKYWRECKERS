@@ -32,16 +32,12 @@ public class PlayerMovement : MonoBehaviour
 
     private bool shipGrounded;
 
-    ////PlayerJumping
-    //public bool isGrounded; //Checks if player is colliding with ground
-
     private float yVelocity;
     private Vector3 movement;
 
     //UPDATES
     private void Awake()
     {
-        //rb = GetComponent<Rigidbody>();
         ship = FindObjectOfType<MovementControlsShip>();
         controller = GetComponent<CharacterController>();
 
@@ -61,9 +57,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             transform.position = dockPos.position;
-
-            //if (attachedBody)
-            //    rb.velocity = attachedBody.velocity;
+            
         }
     }
 
