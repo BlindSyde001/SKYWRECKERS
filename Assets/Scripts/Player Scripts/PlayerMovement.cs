@@ -176,22 +176,22 @@ public class PlayerMovement : MonoBehaviour
             case true:
                 if (Input.GetKey(KeyCode.W))
                 {
-                    movement += transform.up * 5F;
+                    movement += transform.up * 2F;
                     //transform.Translate((Vector3.up * 5) * Time.deltaTime, Space.World);
                 }
                 if (Input.GetKey(KeyCode.A))
                 {
-                    movement += transform.right * 5F;
+                    movement += -transform.right * 2F;
                     //transform.Translate((Vector3.left * 5) * Time.deltaTime, Space.World);
                 }
                 if (Input.GetKey(KeyCode.S))
                 {
-                    movement += -transform.up * 5F;
+                    movement += -transform.up * 2F;
                     //transform.Translate((Vector3.down * 5) * Time.deltaTime, Space.World);
                 }
                 if (Input.GetKey(KeyCode.D))
                 {
-                    movement += -transform.right * 5F;
+                    movement += transform.right * 2F;
                     //transform.Translate((Vector3.right * 5) * Time.deltaTime, Space.World);
                 }
                 break;
