@@ -43,6 +43,7 @@ public class MovementControlsShip : MonoBehaviour
 
     private CharacterController controller;
     private Vector3 movement;
+    public Vector3 nudgeVector = Vector3.zero;
 
     [NonSerialized]
     public Vector3 displacement;
@@ -51,7 +52,6 @@ public class MovementControlsShip : MonoBehaviour
 
     private void Awake()
     {
-        //shipRigidBody = GetComponent<Rigidbody>();
         controller = GetComponent<CharacterController>();
         forwardVelocity = 0f;
         yaw = transform.eulerAngles.y;
@@ -127,8 +127,6 @@ public class MovementControlsShip : MonoBehaviour
         }
         else
         {
-            //transform.position = Vector3.Lerp(transform.position, dockingPlacement.position, 1/3f * Time.deltaTime);
-            //transform.rotation = Quaternion.Lerp(transform.rotation, dockingPlacement.rotation, 1/3f * Time.deltaTime);
             StartCoroutine(Dock());
         }
         
@@ -162,13 +160,14 @@ public class MovementControlsShip : MonoBehaviour
 
     private void LateUpdate()
     {
-        controller.Move((movement + transform.forward * forwardVelocity) * Time.deltaTime);
+        controller.Move((nudgeVector + movement + transform.forward * forwardVelocity) * Time.deltaTime);
 
         if(player.isControllingShip)
-            player.transform.position = player.dockPos.position;
+           player.transform.position = player.dockPos.position;
+
 
         movement = Vector3.zero;
-
+        nudgeVector = Vector3.Lerp(nudgeVector, Vector3.zero, 2f * Time.deltaTime);
         displacement = controller.velocity;
     }
 

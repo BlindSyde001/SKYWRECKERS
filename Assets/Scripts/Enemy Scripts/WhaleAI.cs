@@ -11,37 +11,58 @@ public class WhaleAI : MonoBehaviour
     //VARIABLES
     public Vector3 moveDirection;
     public float moveDistance;
-    public float moveSpeed;
+    public float moveSpeed = 10f;
 
     private Vector3 startPosition;
 
     public List<Transform> movePoints;
-    public Transform testPoint;
+    public int currentPos = 0;
 
     private Quaternion _lookRotation;
     private Vector3 _direction;
-    public float speed;
+    private float rotateSpeed = 0.75f;
+
     //UPDATES
 
     private void Start()
     {
-        //transform.position = new Vector3(0, 0, 0);
+
     }
 
     private void Update()
     {
-        //transform.position += new Vector3(0, Mathf.Sin(Time.time * moveSpeed), 0);
-        Rotation();
+        Patrol();
     }
+        
 
     //METHODS
 
-    void Rotation()
+    void Patrol()
     {
-        _direction = (testPoint.position - transform.position).normalized;
+        
+        if (Vector3.Distance(movePoints[currentPos].position, transform.position) < 5)
+        {
+            currentPos++;
+            if (currentPos >= movePoints.Count)
+            {
+                currentPos = 0;
+            }
+        }
+        _direction = (movePoints[currentPos].position - transform.position).normalized;
         _lookRotation = Quaternion.LookRotation(_direction);
+        transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, rotateSpeed * Time.deltaTime);
 
-        transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, speed * Time.deltaTime);
+        Debug.Log(Vector3.Distance(transform.position, movePoints[currentPos].position));
+        transform.position += transform.forward * moveSpeed * Time.deltaTime;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("ShipGround"))
+        {
+            Vector3 direction = (transform.position - other.transform.position).normalized;
+            direction.y = 0;
+            other.GetComponent<MovementControlsShip>().nudgeVector = -direction * 150f;
+        }
+    }
 }
