@@ -8,6 +8,8 @@ public class Inventory : MonoBehaviour
     //VARIABLES
     public static Inventory Instance;
 
+    public string message;
+
     public int woodCount;
     public int metalCount;
     public int fabricCount;
@@ -21,9 +23,9 @@ public class Inventory : MonoBehaviour
     //public string message;
 
     //Resorce Game Objects
-    public GameObject Wood;
-    public GameObject Fabric;
-    public GameObject Metal;
+    public GameObject WoodUpgrade;
+    public GameObject FabricUpgrade;
+    public GameObject MetalUpgrade;
 
 
     //UPDATES
@@ -50,6 +52,18 @@ public class Inventory : MonoBehaviour
         if (woodCount == 10)
         {
             Debug.Log("Wood Upgrade Available");
+            //WoodUpgrade.gameObject.SetActive(true);
         }
     }
+
+    //void OnTriggerStay(Collider other)
+    //{
+    //    UIManager.Instance.UpgradeToggleText(message);
+    //    if (other.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.E)) //if player is in build area and has an item, they press Q and item is placed
+    //    {
+    //        CheckInventory();
+    //        Debug.Log(name);
+    //    }
+
+    //}
 }
