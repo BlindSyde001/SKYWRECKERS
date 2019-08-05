@@ -33,7 +33,6 @@ public class WhaleAI : MonoBehaviour
     {
         Patrol();
     }
-        
 
     //METHODS
 
@@ -51,8 +50,6 @@ public class WhaleAI : MonoBehaviour
         _direction = (movePoints[currentPos].position - transform.position).normalized;
         _lookRotation = Quaternion.LookRotation(_direction);
         transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, rotateSpeed * Time.deltaTime);
-
-        //Debug.Log(Vector3.Distance(transform.position, movePoints[currentPos].position));
         transform.position += transform.forward * moveSpeed * Time.deltaTime;
     }
 
@@ -62,7 +59,7 @@ public class WhaleAI : MonoBehaviour
         {
             Vector3 direction = (transform.position - other.transform.position).normalized;
             direction.y = 0;
-            other.GetComponent<MovementControlsShip>().nudgeVector = -direction * 150f;
+            other.GetComponentInParent<MovementControlsShip>().nudgeVector = -direction * 150f;
         }
     }
 }

@@ -7,7 +7,6 @@ using System;
 public class MovementControlsShip : MonoBehaviour
 {
     //VARIABLES
-    //private Rigidbody shipRigidBody;
     public float zeroToMaxPerSecond;
     public float forwardVelocity;
     public int accelerateModeCounter = 0;

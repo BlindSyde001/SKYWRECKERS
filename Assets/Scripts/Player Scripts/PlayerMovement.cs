@@ -20,14 +20,14 @@ public class PlayerMovement : MonoBehaviour
     [NonSerialized]
     public bool isControllingShip = true;
     public bool isClimbing = false;
-    //Rigidbody rb;
+    public GameObject shipHP;
     CharacterController controller;
 
     public new Camera camera;
     public GameObject shoulderPos;
 
     public Transform dockPos;
-    private MovementControlsShip ship;
+    public MovementControlsShip ship;
     float shoulderRot;
 
     private bool shipGrounded;
@@ -53,11 +53,12 @@ public class PlayerMovement : MonoBehaviour
             ClimbingControls();
             Rotation();
             playerJumping();
+            shipHP.SetActive(false);
         }
         else
         {
             transform.position = dockPos.position;
-            
+            shipHP.SetActive(true);
         }
     }
 
@@ -128,7 +129,6 @@ public class PlayerMovement : MonoBehaviour
             if(other.CompareTag("Wheel") && !ship.docking)
             {
                 isControllingShip = !isControllingShip;
-                //rb.useGravity = !isControllingShip;
                 camera.gameObject.SetActive(!isControllingShip);
                 ship.camera.gameObject.SetActive(isControllingShip);
             }
@@ -136,12 +136,10 @@ public class PlayerMovement : MonoBehaviour
             if (other.CompareTag("Wall"))
             {
                 isClimbing = !isClimbing;
-                //rb.useGravity = false;
             }
         }
         if(other.CompareTag("ShipGround"))
         {
-            //transform.parent = other.transform;
             shipGrounded = true;
         }
     }
@@ -151,7 +149,6 @@ public class PlayerMovement : MonoBehaviour
         if(other.CompareTag("Wall"))
         {
             isClimbing = false;
-            //rb.useGravity = true;
         }
         if(other.CompareTag("ShipGround"))
         {
