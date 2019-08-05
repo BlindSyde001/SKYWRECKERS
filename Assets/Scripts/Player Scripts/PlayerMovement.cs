@@ -53,6 +53,8 @@ public class PlayerMovement : MonoBehaviour
             ClimbingControls();
             Rotation();
             playerJumping();
+
+            if(!shipGrounded)
             shipHP.SetActive(false);
         }
         else
