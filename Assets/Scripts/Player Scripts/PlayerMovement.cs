@@ -79,26 +79,18 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKey(KeyCode.W))
             {
                 movement += transform.forward * 5F;
-
-                //transform.Translate((Vector3.forward * 5) * Time.deltaTime, Space.Self);
             }
             if (Input.GetKey(KeyCode.S))
             {
                 movement += -transform.forward * 5F;
-
-                //transform.Translate((Vector3.back * 5) * Time.deltaTime, Space.Self);
             }
             if (Input.GetKey(KeyCode.A))
             {
                 movement += -transform.right * 5F;
-
-                //transform.Translate((Vector3.left * 5) * Time.deltaTime, Space.Self);
             }
             if (Input.GetKey(KeyCode.D))
             {
                 movement += transform.right * 5F;
-
-                //transform.Translate((Vector3.right * 5) * Time.deltaTime, Space.Self);
             }
             yVelocity += Physics.gravity.y * Time.deltaTime;
         }else

@@ -28,7 +28,6 @@ public class PirateShipAI : MonoBehaviour
         if(Vector3.Distance(transform.position, playerShip.position) < lookRadius)
         {
             comeAlongSideShip();
-            transform.position += transform.forward * moveSpeed * Time.deltaTime;
         }
         
     }
