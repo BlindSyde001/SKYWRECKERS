@@ -33,10 +33,10 @@ public class UIManager : MonoBehaviour
     }
     void Update()
     {
-        leftCannonHPText.text = leftCannonHP + "/100";
-        righCannonHPText.text = rightCannonHP + "/100";
-        sailsHPText.text = sailsHP + "/100";
-        hullHPText.text = hullHP + "/100";
+        leftCannonHPText.text = "LC " + leftCannonHP + "/100";
+        righCannonHPText.text = "RC " + rightCannonHP + "/100";
+        sailsHPText.text = "SL " + sailsHP + "/100";
+        hullHPText.text = "HL " + hullHP + "/100";
 
         if(leftCannonHP < 5 || rightCannonHP < 5 || sailsHP < 5 || hullHP < 5)
         {
