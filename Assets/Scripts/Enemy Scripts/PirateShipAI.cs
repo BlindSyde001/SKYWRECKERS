@@ -40,7 +40,7 @@ public class PirateShipAI : MonoBehaviour
         float rightDistance = Vector3.Distance(transform.position, playerShipRight.position);
         Transform alignPoint;
 
-        if(leftDistance > rightDistance)
+        if(leftDistance < rightDistance)
         {
             alignPoint = playerShipLeft;
         }
@@ -49,13 +49,18 @@ public class PirateShipAI : MonoBehaviour
         {
             alignPoint = playerShipRight;
         }
-            
-
+         
+        if(Vector3.Distance(transform.position, alignPoint.position) > 4)
+        {
         _direction = (alignPoint.position - transform.position).normalized;
         _lookRotation = Quaternion.LookRotation(_direction);
         transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, rotateSpeed * Time.deltaTime);
-
         transform.position += transform.forward * moveSpeed * Time.deltaTime;
+        } else
+        {
+            transform.position = Vector3.Lerp(transform.position, alignPoint.position, 1 * Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(transform.rotation, alignPoint.rotation, 1 * Time.deltaTime);
+        }
         print(alignPoint);
     }
 
