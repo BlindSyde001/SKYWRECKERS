@@ -27,7 +27,7 @@ public class ResourcePickUp : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (pickUpAllowed && Input.GetKeyDown(KeyCode.Q)) //Kept putting me back on the ship with E key
+        if (pickUpAllowed && Input.GetKeyDown(KeyCode.E)) //Kept putting me back on the ship with E key
             PickUp();
     }
 
