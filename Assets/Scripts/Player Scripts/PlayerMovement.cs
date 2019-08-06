@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private float currentY = 0f;
     private const float yAngleMin = -45f;
     private const float yAngleMax = 45f;
+    private Transform wallClimb;
 
     [NonSerialized]
     public bool isControllingShip = true;
@@ -117,15 +118,18 @@ public class PlayerMovement : MonoBehaviour
 
     private void Rotation()
     {
-        float horizontal = Input.GetAxis("Mouse X");
+        
+        
+            float horizontal = Input.GetAxis("Mouse X");
 
-        transform.Rotate(new Vector3(0F, horizontal * turnSpeed, 0F) * Time.deltaTime);
+            transform.Rotate(new Vector3(0F, horizontal * turnSpeed, 0F) * Time.deltaTime);
 
-        float vertical = Input.GetAxis("Mouse Y");
-        shoulderRot += vertical;
-        shoulderRot = Mathf.Clamp(shoulderRot, -20, 20);
+            float vertical = Input.GetAxis("Mouse Y");
+            shoulderRot += vertical;
+            shoulderRot = Mathf.Clamp(shoulderRot, -20, 20);
 
-        shoulderPos.transform.localEulerAngles = new Vector3(shoulderRot, transform.rotation.y, 0);
+            shoulderPos.transform.localEulerAngles = new Vector3(shoulderRot, transform.rotation.y, 0);
+        
     }
 
     #region MAGIC E
@@ -144,6 +148,7 @@ public class PlayerMovement : MonoBehaviour
             if (other.CompareTag("Wall"))
             {
                 isClimbing = !isClimbing;
+                wallClimb = other.transform;
             }
         }
         if(other.CompareTag("ShipGround"))
@@ -173,22 +178,22 @@ public class PlayerMovement : MonoBehaviour
             case true:
                 if (Input.GetKey(KeyCode.W))
                 {
-                    movement += transform.up * 2F;
+                    movement += wallClimb.up * 2F;
                     //transform.Translate((Vector3.up * 5) * Time.deltaTime, Space.World);
                 }
                 if (Input.GetKey(KeyCode.A))
                 {
-                    movement += -transform.right * 2F;
+                    movement += -wallClimb.right * 2F;
                     //transform.Translate((Vector3.left * 5) * Time.deltaTime, Space.World);
                 }
                 if (Input.GetKey(KeyCode.S))
                 {
-                    movement += -transform.up * 2F;
+                    movement += -wallClimb.up * 2F;
                     //transform.Translate((Vector3.down * 5) * Time.deltaTime, Space.World);
                 }
                 if (Input.GetKey(KeyCode.D))
                 {
-                    movement += transform.right * 2F;
+                    movement += wallClimb.right * 2F;
                     //transform.Translate((Vector3.right * 5) * Time.deltaTime, Space.World);
                 }
                 break;

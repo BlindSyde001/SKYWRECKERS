@@ -23,7 +23,7 @@ public class MovementControlsShip : MonoBehaviour
     public float dockTime = 5F;
 
     public float transitionCooldown = 1F;
-    private float transitionTimer = 0F;
+    public float transitionTimer = 0F;
 
     public List<Transform> bulletEndsRight;
     public List<Transform> bulletEndsLeft;
