@@ -31,10 +31,11 @@ public class PlayerMovement : MonoBehaviour
     float shoulderRot;
 
     private bool shipGrounded;
-
+    public GameObject Bedroom;
+    public float threshold;
     private float yVelocity;
     private Vector3 movement;
-
+   
     //UPDATES
     private void Awake()
     {
@@ -62,6 +63,11 @@ public class PlayerMovement : MonoBehaviour
             transform.position = dockPos.position;
             shipHP.SetActive(true);
         }
+    }
+    public void FixedUpdate()
+    {
+        if (transform.position.y < threshold)
+            transform.position = Bedroom.transform.position;
     }
 
     //METHODS
