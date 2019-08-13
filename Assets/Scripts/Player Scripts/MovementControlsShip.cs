@@ -43,6 +43,9 @@ public class MovementControlsShip : MonoBehaviour
     private CharacterController controller;
     private Vector3 movement;
     public Vector3 nudgeVector = Vector3.zero;
+    Vector3 windForce = Vector3.zero;
+
+    bool floorBarrier = false;
 
     [NonSerialized]
     public Vector3 displacement;
@@ -159,7 +162,7 @@ public class MovementControlsShip : MonoBehaviour
 
     private void LateUpdate()
     {
-        controller.Move((nudgeVector + movement + transform.forward * forwardVelocity) * Time.deltaTime);
+        controller.Move((windForce + nudgeVector + movement + transform.forward * forwardVelocity) * Time.deltaTime);
 
         if(player.isControllingShip)
            player.transform.position = player.dockPos.position;
@@ -167,6 +170,8 @@ public class MovementControlsShip : MonoBehaviour
 
         movement = Vector3.zero;
         nudgeVector = Vector3.Lerp(nudgeVector, Vector3.zero, 2f * Time.deltaTime);
+        
+        windForce = Vector3.Lerp(windForce, Vector3.zero, 2f * Time.deltaTime);
         displacement = controller.velocity;
     }
 
@@ -174,7 +179,7 @@ public class MovementControlsShip : MonoBehaviour
 
     void rotation()
     {
-        if(accelerateModeCounter == 0)
+        if (accelerateModeCounter == 0)
         {
             targetRotation = Quaternion.Euler(0, yaw, 0);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, pitchSpeed/2 * Time.deltaTime);
@@ -186,6 +191,20 @@ public class MovementControlsShip : MonoBehaviour
     }
     void calculateDirectionZ()
     {
+        if (transform.position.y <= -30)
+        {
+            windForce = Vector3.Lerp(windForce, new Vector3(0, 10, 0), 2f * Time.deltaTime);
+            floorBarrier = true;
+
+        }
+        if (floorBarrier)
+        {
+            input.z = -1;
+            if (transform.position.y > -15)
+            {
+                floorBarrier = !floorBarrier;
+            }
+        }
         angle = Mathf.Atan(input.z);
         angle = Mathf.Rad2Deg * angle;
     }
@@ -220,7 +239,7 @@ public class MovementControlsShip : MonoBehaviour
     {
         if (other.CompareTag("Dock"))
         {
-            if(Input.GetKeyDown(KeyCode.G) && !docking)
+            if(Input.GetKeyDown(KeyCode.G) && !docking && player.isControllingShip)
             {
                 print("PRINT");
                 if (!docking)
