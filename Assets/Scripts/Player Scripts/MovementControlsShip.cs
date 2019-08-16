@@ -43,6 +43,9 @@ public class MovementControlsShip : MonoBehaviour
     private CharacterController controller;
     private Vector3 movement;
     public Vector3 nudgeVector = Vector3.zero;
+    Vector3 windForce = Vector3.zero;
+
+    bool floorBarrier = false;
 
     [NonSerialized]
     public Vector3 displacement;
@@ -60,7 +63,7 @@ public class MovementControlsShip : MonoBehaviour
 
     private void Update()
     {
-            if (!docking)
+        if (!docking)
         {
             controller.enabled = true;
 
@@ -71,16 +74,16 @@ public class MovementControlsShip : MonoBehaviour
             if (transitionTimer <= 0F)
             {
 
-                    if (Input.GetKeyDown(KeyCode.W))
-                    {
-                        accelerateModeCounter++;
-                        transitionTimer = transitionCooldown;
-                    }
-                    if (Input.GetKeyDown(KeyCode.S))
-                    {
-                        accelerateModeCounter--;
-                        transitionTimer = transitionCooldown;
-                    }
+                if (Input.GetKeyDown(KeyCode.W))
+                {
+                    accelerateModeCounter++;
+                    transitionTimer = transitionCooldown;
+                }
+                if (Input.GetKeyDown(KeyCode.S))
+                {
+                    accelerateModeCounter--;
+                    transitionTimer = transitionCooldown;
+                }
             }
             else
             {
@@ -99,7 +102,7 @@ public class MovementControlsShip : MonoBehaviour
             }
             else
             {
-               //GetComponent<Rigidbody>().isKinematic = true;
+                //GetComponent<Rigidbody>().isKinematic = true;
             }
 
             accelerateModeCounter = Mathf.Clamp(accelerateModeCounter, 0, 3);
@@ -128,7 +131,7 @@ public class MovementControlsShip : MonoBehaviour
         {
             StartCoroutine(Dock());
         }
-        
+
     }
 
     private IEnumerator Dock()
@@ -140,7 +143,7 @@ public class MovementControlsShip : MonoBehaviour
         Vector3 startPos = transform.position;
         Quaternion startRot = transform.rotation;
 
-        while(time <= dockTime)
+        while (time <= dockTime)
         {
             time += Time.deltaTime;
 
@@ -159,14 +162,16 @@ public class MovementControlsShip : MonoBehaviour
 
     private void LateUpdate()
     {
-        controller.Move((nudgeVector + movement + transform.forward * forwardVelocity) * Time.deltaTime);
+        controller.Move((windForce + nudgeVector + movement + transform.forward * forwardVelocity) * Time.deltaTime);
 
-        if(player.isControllingShip)
-           player.transform.position = player.dockPos.position;
+        if (player.isControllingShip)
+            player.transform.position = player.dockPos.position;
 
 
         movement = Vector3.zero;
         nudgeVector = Vector3.Lerp(nudgeVector, Vector3.zero, 2f * Time.deltaTime);
+
+        windForce = Vector3.Lerp(windForce, Vector3.zero, 2f * Time.deltaTime);
         displacement = controller.velocity;
     }
 
@@ -174,11 +179,12 @@ public class MovementControlsShip : MonoBehaviour
 
     void rotation()
     {
-        if(accelerateModeCounter == 0)
+        if (accelerateModeCounter == 0)
         {
             targetRotation = Quaternion.Euler(0, yaw, 0);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, pitchSpeed/2 * Time.deltaTime);
-        } else
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, pitchSpeed / 2 * Time.deltaTime);
+        }
+        else
         {
             targetRotation = Quaternion.Euler(angle / 2, yaw, 0);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, pitchSpeed * Time.deltaTime);
@@ -186,13 +192,27 @@ public class MovementControlsShip : MonoBehaviour
     }
     void calculateDirectionZ()
     {
+        if (transform.position.y <= -30)
+        {
+            windForce = Vector3.Lerp(windForce, new Vector3(0, 10, 0), 2f * Time.deltaTime);
+            floorBarrier = true;
+
+        }
+        if (floorBarrier)
+        {
+            input.z = -1;
+            if (transform.position.y > -15)
+            {
+                floorBarrier = !floorBarrier;
+            }
+        }
         angle = Mathf.Atan(input.z);
         angle = Mathf.Rad2Deg * angle;
     }
 
     void turnCap()
     {
-        switch(accelerateModeCounter)
+        switch (accelerateModeCounter)
         {
             case 0:
                 turnSpeed = 25;
@@ -220,7 +240,7 @@ public class MovementControlsShip : MonoBehaviour
     {
         if (other.CompareTag("Dock"))
         {
-            if(Input.GetKeyDown(KeyCode.G) && !docking)
+            if (Input.GetKeyDown(KeyCode.G) && !docking && player.isControllingShip)
             {
                 print("PRINT");
                 if (!docking)
@@ -234,7 +254,7 @@ public class MovementControlsShip : MonoBehaviour
                 {
                     docking = false;
                 }
-                
+
             }
         }
     }
