@@ -32,8 +32,13 @@ public class Inventory : MonoBehaviour
     public GameObject metalButton;
     public GameObject upgradePanel;
 
+    public GameObject lockedWoodButton;
+    public GameObject lockedFabricButton;
+    public GameObject lockedMetalButton;
+
     //Trigger text
     public TextMeshProUGUI upgradeTableText;
+    public TextMeshProUGUI upgradeAvailableText;
 
     //Place Holder Upgrades for Testing
     public GameObject shipUpgradeWood;
@@ -59,6 +64,11 @@ public class Inventory : MonoBehaviour
         
     }
 
+    private void FixedUpdate()
+    {
+        CheckInventory();
+    }
+
     public void CursorOn()
     {
         Cursor.visible = true; //Turing cursor on so players can interact with menu
@@ -70,6 +80,7 @@ public class Inventory : MonoBehaviour
         Time.timeScale = 1.0f;
         Cursor.visible = false;
         upgradePanel.SetActive(false);
+        upgradeTableText.gameObject.SetActive(false);
     }
 
     void OnTriggerEnter(Collider other)
@@ -99,7 +110,7 @@ public class Inventory : MonoBehaviour
         if (other.gameObject.name.Equals("Player"))
         {
             //upgradeTableText.text = "";
-            upgradeTableText.gameObject.SetActive(true);
+            upgradeTableText.gameObject.SetActive(false);
             upgradePanel.SetActive(false);
         }
     }
@@ -110,18 +121,23 @@ public class Inventory : MonoBehaviour
         {
             //Debug.Log("Wood Upgrade Available");
             woodButton.SetActive(true);
+            lockedWoodButton.SetActive(false);
+            upgradeAvailableText.gameObject.SetActive(true);
+            //StartCoroutine(UpgradeAvailableTextGone()); //Text keeps flashing on and off again
         }
 
         if (fabricCount == 10)
         {
             //Debug.Log("Fabric Upgrade Available");
             fabricButton.SetActive(true);
+            lockedFabricButton.SetActive(false);
         }
 
         if (metalCount == 10)
         {
             //Debug.Log("Metal Upgrade Available");
             metalButton.SetActive(true);
+            lockedMetalButton.SetActive(false);
         }
     }
 
@@ -140,5 +156,12 @@ public class Inventory : MonoBehaviour
     {
         //Debug.Log("Metal Upgrade Complete");
         shipUpgradeMetal.SetActive(true);
+    }
+
+    public IEnumerator UpgradeAvailableTextGone()
+    {
+        yield return new WaitForSeconds(5);
+
+        upgradeAvailableText.gameObject.SetActive(false);
     }
 }
