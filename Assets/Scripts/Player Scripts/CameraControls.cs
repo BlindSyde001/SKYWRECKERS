@@ -8,9 +8,11 @@ public class CameraControls : MonoBehaviour
     //VARIABLES
     public Transform playerController;
 
-    private Camera cam;
+    public Camera cam;
 
-    public float distance;
+    private float targetDistance = 10f;
+    private float currentDistance = 10f;
+    public float cameraRelocate = 0.2f;
     private float currentX = 0f;
     private float currentY = 0f;
     private const float yAngleMin = -45f;
@@ -24,7 +26,6 @@ public class CameraControls : MonoBehaviour
     private void Start()
     {
         playerController = GameObject.Find("Player").transform;
-        cam = Camera.main;
     }
 
     private void Update()
@@ -54,15 +55,30 @@ public class CameraControls : MonoBehaviour
     private void LateUpdate()
     {
         FreeRotateCamera();
+        CameraClipping();
     }
 
     //METHODS
     void FreeRotateCamera()
     {
-        Vector3 dir = new Vector3(0, 0, -distance);
         Quaternion rotation = Quaternion.Euler(currentY, currentX, 0);
-        transform.position = playerController.position + rotation * dir;
-        transform.LookAt(playerController.position);
+        transform.rotation = rotation;
+    }
+
+    void CameraClipping()
+    {
+        Ray ray = new Ray(transform.position, -transform.forward);
+        RaycastHit hit;
+        if(Physics.Raycast(ray, out hit, targetDistance))
+        {
+            currentDistance = hit.distance;
+        }
+        else
+        {
+            currentDistance = targetDistance;
+        }
+        cam.transform.localPosition = new Vector3(0, 0, -currentDistance + cameraRelocate);
+        Debug.DrawRay(transform.position, -transform.forward * targetDistance);
     }
 
     void CameraPosChange()
@@ -79,23 +95,23 @@ public class CameraControls : MonoBehaviour
         switch (changeCounter)
         {
             case 0:
-                if(distance != 1f)
+                if(targetDistance != 1f)
                 {
-                    distance -= 10 * Time.deltaTime;
+                    targetDistance -= 10 * Time.deltaTime;
                 }
-                if(distance <= 1f)
+                if(targetDistance <= 1f)
                 {
-                   distance = 1f;
+                   targetDistance = 1f;
                 }
                 break;
             case 1:
-                if (distance != 10f)
+                if (targetDistance != 10f)
                 {
-                    distance += 10 * Time.deltaTime;
+                    targetDistance += 10 * Time.deltaTime;
                 }
-                if (distance >= 10f)
+                if (targetDistance >= 10f)
                 {
-                    distance = 10f;
+                    targetDistance = 10f;
                 }
                 break;
         }
