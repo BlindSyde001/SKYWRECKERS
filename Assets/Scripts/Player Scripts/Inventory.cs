@@ -35,6 +35,11 @@ public class Inventory : MonoBehaviour
     //Trigger text
     public TextMeshProUGUI upgradeTableText;
 
+    //Place Holder Upgrades for Testing
+    public GameObject shipUpgradeWood;
+    public GameObject shipUpgradeFabric;
+    public GameObject shipUpgradeMetal;
+
     //UPDATES
     private void Awake()
     {
@@ -54,17 +59,18 @@ public class Inventory : MonoBehaviour
         
     }
 
-    void CursorOn()
+    public void CursorOn()
     {
         Cursor.visible = true; //Turing cursor on so players can interact with menu
     }
 
-    void CursorOff() //For button click event
+
+    public void ShipUpgradeSettingsOff() //Turn off all settings for the upgrade panel
     {
+        Time.timeScale = 1.0f;
         Cursor.visible = false;
+        upgradePanel.SetActive(false);
     }
-
-
 
     void OnTriggerEnter(Collider other)
     {
@@ -83,6 +89,7 @@ public class Inventory : MonoBehaviour
             //upgradeTableText.text = "Press [E] To Access Ship Upgrades";
             upgradePanel.SetActive(true);
             CursorOn();
+            Time.timeScale = 0f;
             CheckInventory();
         }
     }
@@ -114,12 +121,24 @@ public class Inventory : MonoBehaviour
         if (metalCount == 10)
         {
             //Debug.Log("Metal Upgrade Available");
-            fabricButton.SetActive(true);
+            metalButton.SetActive(true);
         }
     }
 
-    void WoodUpgrade()
+    public void WoodUpgrade()
     {
+        shipUpgradeWood.SetActive(true); //Place holder to see if the function works
+    }
 
+    public void FabricUpgrade()
+    {
+        //Debug.Log("Fabric Upgrade Complete");
+        shipUpgradeFabric.SetActive(true);
+    }
+
+    public void MetalUpgrade()
+    {
+        //Debug.Log("Metal Upgrade Complete");
+        shipUpgradeMetal.SetActive(true);
     }
 }
