@@ -22,7 +22,7 @@ public class BioRockSwarmAI : MonoBehaviour
 
     private void Update()
     {
-        rb.velocity = Vector3.Normalize(playerShip.transform.position - transform.position) * 50f;
+        rb.velocity = Vector3.Normalize(playerShip.transform.position - transform.position) * 30f;
         
     }
     //METHODS
@@ -30,7 +30,7 @@ public class BioRockSwarmAI : MonoBehaviour
     {
         if(other.CompareTag("ShipGround"))
         {
-
+            Destroy(this.gameObject);
         }
     }
 }

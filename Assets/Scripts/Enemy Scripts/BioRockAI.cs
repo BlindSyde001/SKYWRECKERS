@@ -5,12 +5,12 @@ using UnityEngine;
 public class BioRockAI : EnemyStats
 {
     //VARIABLES
-    private float lookRadius = 100f;
+    private float lookRadius = 130f;
     private MovementControlsShip playerShip;
     public Transform swarmPoint;
     public Rigidbody swarmEnemy;
 
-    private float cooldownTimer = 3f;
+    private float cooldownTimer = 7f;
     public float cooldownTick = 0f;
 
     //UPDATES
@@ -21,7 +21,7 @@ public class BioRockAI : EnemyStats
     }
     private void Update()
     {
-        if (Vector3.Distance(transform.position, playerShip.transform.position) < lookRadius || Input.GetKeyDown(KeyCode.Alpha5))
+        if (Vector3.Distance(transform.position, playerShip.transform.position) < lookRadius)
         {
             SummonSwarm();
         }
