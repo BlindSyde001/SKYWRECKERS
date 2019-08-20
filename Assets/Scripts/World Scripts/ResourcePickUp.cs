@@ -60,8 +60,14 @@ public class ResourcePickUp : MonoBehaviour
             Inventory.Instance.woodCount++;
             Inventory.Instance.CheckInventory();
             woodText.text = ("Wood " + Inventory.Instance.woodCount + "/10");
+            if (Inventory.Instance.woodCount == 10)
+            {
+                print("Getting rid of text");
+                //Inventory.Instance.upgradeAvailableText.gameObject.SetActive(true);
+                Inventory.Instance.StartCoroutine(Inventory.Instance.UpgradeAvailableTextGone());
+            }
         } 
-
+        
         if (item == InventoryItem.FABRIC)
         {
             Inventory.Instance.fabricCount++;

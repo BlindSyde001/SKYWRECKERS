@@ -66,7 +66,7 @@ public class Inventory : MonoBehaviour
 
     private void FixedUpdate()
     {
-        CheckInventory();
+        //CheckInventory();
     }
 
     public void CursorOn()
@@ -85,8 +85,9 @@ public class Inventory : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name.Equals("Player"))
+        if (other.gameObject.tag == "Player")
         {
+            print("why?");
             //upgradeTableText.text = "Press [E] To Access Ship Upgrades";
             upgradeTableText.gameObject.SetActive(true);
         }
@@ -94,8 +95,8 @@ public class Inventory : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        upgradeTableText.gameObject.SetActive(true);
-        if (other.gameObject.name.Equals("Player") && Input.GetKeyDown(KeyCode.E))
+        //upgradeTableText.gameObject.SetActive(true);
+        if (other.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.E))
         {
             //upgradeTableText.text = "Press [E] To Access Ship Upgrades";
             upgradePanel.SetActive(true);
@@ -107,7 +108,7 @@ public class Inventory : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.name.Equals("Player"))
+        if (other.gameObject.tag == "Player")
         {
             //upgradeTableText.text = "";
             upgradeTableText.gameObject.SetActive(false);
@@ -117,27 +118,30 @@ public class Inventory : MonoBehaviour
 
     public void CheckInventory() //Pre set up for when the game needs to check for an ship upgrade
     {
-        if (woodCount == 10)
+        if (woodCount == 10 && !hasWood)
         {
             //Debug.Log("Wood Upgrade Available");
             woodButton.SetActive(true);
             lockedWoodButton.SetActive(false);
             upgradeAvailableText.gameObject.SetActive(true);
+            hasWood = true;
             //StartCoroutine(UpgradeAvailableTextGone()); //Text keeps flashing on and off again
         }
 
-        if (fabricCount == 10)
+        if (fabricCount == 10 && !hasFabric)
         {
             //Debug.Log("Fabric Upgrade Available");
             fabricButton.SetActive(true);
             lockedFabricButton.SetActive(false);
+            hasFabric = true;
         }
 
-        if (metalCount == 10)
+        if (metalCount == 10 && !hasMetal)
         {
             //Debug.Log("Metal Upgrade Available");
             metalButton.SetActive(true);
             lockedMetalButton.SetActive(false);
+            hasMetal = true;
         }
     }
 
