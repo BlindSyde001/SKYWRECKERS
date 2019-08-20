@@ -4823,7 +4823,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 1.16e-43, y: 1e-45, z: 1.56e-43, w: 0.015625}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -4841,6 +4841,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &268123701
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 268123702}
+  m_Layer: 0
+  m_Name: swarmPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &268123702
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268123701}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 3.2, z: 32.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 826147619}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &314910213
 GameObject:
   m_ObjectHideFlags: 0
@@ -5320,8 +5350,16 @@ MonoBehaviour:
   enemyMaxHP: 0
   enemyCurrentHP: 0
   damage: 0
-  swarmPoint: {fileID: 0}
-  swarmEnemy: {fileID: 0}
+  swarmPoint: {fileID: 268123702}
+  swarmEnemy: {fileID: -2866610228501382548, guid: 95b9ffb6c566d704aadec9d6293e2377,
+    type: 3}
+  cooldownTick: 0
+--- !u!4 &826147619 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 14e71434552791046a9d027e0d3728c1,
+    type: 3}
+  m_PrefabInstance: {fileID: 463672021}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &972174094
 GameObject:
   m_ObjectHideFlags: 0
@@ -7453,75 +7491,6 @@ Transform:
   m_Father: {fileID: 2289954036644041597}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &2591287346699785779
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6765525540640884403, guid: 95b9ffb6c566d704aadec9d6293e2377,
-        type: 3}
-      propertyPath: m_Name
-      value: BioRockSwarm
-      objectReference: {fileID: 0}
-    - target: {fileID: 3375342004096789338, guid: 95b9ffb6c566d704aadec9d6293e2377,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -13.738074
-      objectReference: {fileID: 0}
-    - target: {fileID: 3375342004096789338, guid: 95b9ffb6c566d704aadec9d6293e2377,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 20.242638
-      objectReference: {fileID: 0}
-    - target: {fileID: 3375342004096789338, guid: 95b9ffb6c566d704aadec9d6293e2377,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -45.541832
-      objectReference: {fileID: 0}
-    - target: {fileID: 3375342004096789338, guid: 95b9ffb6c566d704aadec9d6293e2377,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3375342004096789338, guid: 95b9ffb6c566d704aadec9d6293e2377,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3375342004096789338, guid: 95b9ffb6c566d704aadec9d6293e2377,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3375342004096789338, guid: 95b9ffb6c566d704aadec9d6293e2377,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3375342004096789338, guid: 95b9ffb6c566d704aadec9d6293e2377,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 3375342004096789338, guid: 95b9ffb6c566d704aadec9d6293e2377,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3375342004096789338, guid: 95b9ffb6c566d704aadec9d6293e2377,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3375342004096789338, guid: 95b9ffb6c566d704aadec9d6293e2377,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 95b9ffb6c566d704aadec9d6293e2377, type: 3}
 --- !u!1001 &3043401753458043585
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7721,12 +7690,12 @@ PrefabInstance:
     - target: {fileID: 5915289144294958340, guid: 3e1b170c048707f4ea45c19a3702e140,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.11
+      value: 72.5
       objectReference: {fileID: 0}
     - target: {fileID: 5915289144294958340, guid: 3e1b170c048707f4ea45c19a3702e140,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 75.2
       objectReference: {fileID: 0}
     - target: {fileID: 5915289144294958340, guid: 3e1b170c048707f4ea45c19a3702e140,
         type: 3}
