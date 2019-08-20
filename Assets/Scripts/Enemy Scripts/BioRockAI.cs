@@ -6,25 +6,27 @@ public class BioRockAI : EnemyStats
 {
     //VARIABLES
     private float lookRadius = 100f;
-    private PlayerMovement playerShip;
-    public GameObject swarmPoint;
-    public GameObject swarmEnemy;
+    private MovementControlsShip playerShip;
+    public Transform swarmPoint;
+    public Rigidbody swarmEnemy;
 
     private float cooldownTimer = 3f;
-    private float cooldownTick;
+    public float cooldownTick = 0f;
 
     //UPDATES
 
     private void Awake()
     {
-        playerShip = FindObjectOfType<PlayerMovement>();
+        playerShip = FindObjectOfType<MovementControlsShip>();
     }
     private void Update()
     {
-        if(Vector3.Distance(transform.position, playerShip.transform.position) < lookRadius)
+        if (Vector3.Distance(transform.position, playerShip.transform.position) < lookRadius || Input.GetKeyDown(KeyCode.Alpha5))
         {
             SummonSwarm();
         }
+        if(cooldownTick <= cooldownTimer)
+           cooldownTick += Time.deltaTime;
     }
 
     //METHODS
@@ -32,10 +34,11 @@ public class BioRockAI : EnemyStats
     {
         if(cooldownTick >= cooldownTimer)
         {
-            //shoot out swarm bullet thing.
-        } else
-        {
-            cooldownTick += Time.deltaTime;
+
+            Rigidbody swarmInstance;
+            swarmInstance = Instantiate(swarmEnemy, swarmPoint.transform.position, swarmPoint.transform.rotation) as Rigidbody;
+            swarmInstance.AddForce(swarmPoint.forward * 100);
+            cooldownTick = 0;
         }
     }
     private void OnDrawGizmosSelected()
