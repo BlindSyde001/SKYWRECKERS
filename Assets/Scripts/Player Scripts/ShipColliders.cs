@@ -13,6 +13,9 @@ public class ShipColliders : MonoBehaviour
     public bool hull = false;
     public bool sail = false;
     MovementControlsShip ship;
+
+    public int damage;
+
     //UPDATES
     private void Awake()
     {
@@ -25,6 +28,7 @@ public class ShipColliders : MonoBehaviour
     {
         if (ship.docking == false)
         {
+            #region Colliding
             if (other.CompareTag("Enemy") || other.CompareTag("Ground"))
             {
                 if (sail)
@@ -54,6 +58,37 @@ public class ShipColliders : MonoBehaviour
                     Debug.Log("HIT RIGHT");
                 }
             }
+            #endregion
+        }
+    }
+
+    public void DamageTaken()
+    {
+        if (sail)
+        {
+            UI.GetComponent<UIManager>().sailsHP -= damage;
+            Debug.Log("HIT SAIL");
+        }
+
+
+        if (hull)
+        {
+            UI.GetComponent<UIManager>().hullHP -= damage;
+            Debug.Log("HIT HULL");
+        }
+
+
+        if (left)
+        {
+            UI.GetComponent<UIManager>().leftCannonHP -= damage;
+            Debug.Log("HIT LEFT");
+        }
+
+
+        if (right)
+        {
+            UI.GetComponent<UIManager>().rightCannonHP -= damage;
+            Debug.Log("HIT RIGHT");
         }
     }
 }
