@@ -72,6 +72,7 @@ public class CameraControls : MonoBehaviour
         if(Physics.Raycast(ray, out hit, targetDistance))
         {
             currentDistance = hit.distance;
+            Debug.Log(hit.transform);
         }
         else
         {
@@ -97,7 +98,7 @@ public class CameraControls : MonoBehaviour
             case 0:
                 if(targetDistance != 1f)
                 {
-                    targetDistance -= 10 * Time.deltaTime;
+                   targetDistance -= 40f * Time.deltaTime;
                 }
                 if(targetDistance <= 1f)
                 {
@@ -105,13 +106,13 @@ public class CameraControls : MonoBehaviour
                 }
                 break;
             case 1:
-                if (targetDistance != 10f)
+                if (targetDistance != 40f)
                 {
-                    targetDistance += 10 * Time.deltaTime;
+                    targetDistance += 40f * Time.deltaTime;
                 }
-                if (targetDistance >= 10f)
+                if (targetDistance >= 40f)
                 {
-                    targetDistance = 10f;
+                    targetDistance = 40f;
                 }
                 break;
         }
