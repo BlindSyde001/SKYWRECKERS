@@ -9,8 +9,8 @@ public class PirateShipAI : EnemyStats
     private Vector3 _direction;
     private Transform playerShip;
     private Quaternion _lookRotation;
-    private float rotateSpeed = 1f;
-    public float moveSpeed = 7f;
+    private float rotateSpeed = 1.2f;
+    public float moveSpeed = 10f;
 
     public float lookRadius = 120;
     private Transform alignPoint;
@@ -65,8 +65,9 @@ public class PirateShipAI : EnemyStats
         transform.position += transform.forward * moveSpeed * Time.deltaTime;
         } else
         {
-            transform.position = Vector3.Lerp(transform.position, alignPoint.position, 1.2f * Time.deltaTime);
-            transform.rotation = Quaternion.Slerp(transform.rotation, alignPoint.rotation, 1.2f * Time.deltaTime);
+           // transform.position = Vector3.Lerp(transform.position, alignPoint.position, 1.2f * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, alignPoint.position, moveSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Lerp(transform.rotation, alignPoint.rotation, rotateSpeed  * Time.deltaTime);
             if(Vector3.Distance(transform.position, alignPoint.position) < 2)
             {
                 ShootingCannons();

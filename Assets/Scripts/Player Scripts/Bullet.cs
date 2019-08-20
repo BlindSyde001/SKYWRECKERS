@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public bool player = false;
+    public bool enemy = false;
+
     //UPDATES
     void Start()
     {
@@ -13,9 +16,16 @@ public class Bullet : MonoBehaviour
     //METHODS
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy") && player)
         {
-            Destroy(gameObject);
+            Destroy(this.gameObject);
+        }
+        else if(other.gameObject.CompareTag("ShipGround") && enemy)
+        {
+            other.GetComponent<ShipColliders>().damage = 10;
+            other.GetComponent<ShipColliders>().DamageTaken();
+            print("CANNON SHOT");
+            Destroy(this.gameObject);
         }
     }
 }

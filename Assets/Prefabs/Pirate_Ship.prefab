@@ -16066,7 +16066,7 @@ MonoBehaviour:
   enemyMaxHP: 0
   enemyCurrentHP: 0
   damage: 0
-  moveSpeed: 7
+  moveSpeed: 15
   lookRadius: 150
   playerShipLeft: {fileID: 0}
   playerShipRight: {fileID: 0}
@@ -16080,7 +16080,7 @@ MonoBehaviour:
   - {fileID: 5198178859841844421}
   - {fileID: 5198178860107013957}
   - {fileID: 5198178859355513944}
-  bullet: {fileID: 8435406137501222767, guid: 2bbc56964caab2640aa4922a7b59ccd5, type: 3}
+  bullet: {fileID: 8435406137501222767, guid: 9255f1b132a201d49b9527c491aeda55, type: 3}
   barrelEnd: {fileID: 5198178859700458550}
   fireRate: 1
 --- !u!1 &5198178860539287424
