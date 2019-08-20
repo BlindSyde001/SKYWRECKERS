@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PirateShipAI : MonoBehaviour
+public class PirateShipAI : EnemyStats
 {
 
     //VARIABLES
@@ -46,7 +46,6 @@ public class PirateShipAI : MonoBehaviour
         //check for which side the ship is on relative to the player and come along side the player on that side
         float leftDistance = Vector3.Distance(transform.position, playerShipLeft.position);
         float rightDistance = Vector3.Distance(transform.position, playerShipRight.position);
-        //Transform alignPoint;
 
         if(leftDistance < rightDistance)
         {

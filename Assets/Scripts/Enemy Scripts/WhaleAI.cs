@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class WhaleAI : MonoBehaviour
+public class WhaleAI : EnemyStats
 {
     //moving up and down; moving forward; moving between points on the map
 

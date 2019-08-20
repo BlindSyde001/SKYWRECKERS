@@ -179,22 +179,18 @@ public class PlayerMovement : MonoBehaviour
                 if (Input.GetKey(KeyCode.W))
                 {
                     movement += wallClimb.up * 2F;
-                    //transform.Translate((Vector3.up * 5) * Time.deltaTime, Space.World);
                 }
                 if (Input.GetKey(KeyCode.A))
                 {
                     movement += -wallClimb.right * 2F;
-                    //transform.Translate((Vector3.left * 5) * Time.deltaTime, Space.World);
                 }
                 if (Input.GetKey(KeyCode.S))
                 {
                     movement += -wallClimb.up * 2F;
-                    //transform.Translate((Vector3.down * 5) * Time.deltaTime, Space.World);
                 }
                 if (Input.GetKey(KeyCode.D))
                 {
                     movement += wallClimb.right * 2F;
-                    //transform.Translate((Vector3.right * 5) * Time.deltaTime, Space.World);
                 }
                 break;
         }

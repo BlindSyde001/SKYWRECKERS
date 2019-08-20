@@ -96,23 +96,23 @@ public class CameraControls : MonoBehaviour
         switch (changeCounter)
         {
             case 0:
-                if(targetDistance != 1f)
+                if(targetDistance != 5f)
                 {
                    targetDistance -= 40f * Time.deltaTime;
                 }
-                if(targetDistance <= 1f)
+                if(targetDistance <= 5f)
                 {
-                   targetDistance = 1f;
+                   targetDistance = 5f;
                 }
                 break;
             case 1:
-                if (targetDistance != 40f)
+                if (targetDistance != 80f)
                 {
-                    targetDistance += 40f * Time.deltaTime;
+                    targetDistance += 80f * Time.deltaTime;
                 }
-                if (targetDistance >= 40f)
+                if (targetDistance >= 80f)
                 {
-                    targetDistance = 40f;
+                    targetDistance = 80f;
                 }
                 break;
         }
