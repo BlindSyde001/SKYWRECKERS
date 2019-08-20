@@ -18,6 +18,7 @@ public class CameraControls : MonoBehaviour
     private const float yAngleMin = -45f;
     private const float yAngleMax = 45f;
 
+    public List<GameObject> shipClippingParts;
     public Transform shoulderCam;
     public int changeCounter = 0;
     bool check;
@@ -72,7 +73,7 @@ public class CameraControls : MonoBehaviour
         if(Physics.Raycast(ray, out hit, targetDistance))
         {
             currentDistance = hit.distance;
-            Debug.Log(hit.transform);
+            Debug.Log(hit.transform.name);
         }
         else
         {
@@ -98,11 +99,15 @@ public class CameraControls : MonoBehaviour
             case 0:
                 if(targetDistance != 5f)
                 {
-                   targetDistance -= 40f * Time.deltaTime;
+                     targetDistance -= 80f * Time.deltaTime;
                 }
                 if(targetDistance <= 5f)
                 {
                    targetDistance = 5f;
+                }
+                foreach (GameObject x in shipClippingParts)
+                {
+                    x.layer = 0;
                 }
                 break;
             case 1:
@@ -113,6 +118,10 @@ public class CameraControls : MonoBehaviour
                 if (targetDistance >= 80f)
                 {
                     targetDistance = 80f;
+                }
+                foreach(GameObject x in shipClippingParts)
+                {
+                    x.layer = 2;
                 }
                 break;
         }
