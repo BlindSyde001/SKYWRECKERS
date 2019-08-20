@@ -17,6 +17,10 @@ public class ShipColliders : MonoBehaviour
     public int damage;
     public bool dot = false;
 
+    float timer = 3f;
+    float timerTick = 0f;
+    int dotTicks = 0;
+
     //UPDATES
     private void Awake()
     {
@@ -102,10 +106,6 @@ public class ShipColliders : MonoBehaviour
     }
     public void DOTDamage()
     {
-        float timer = 3f;
-        float timerTick = 0f;
-        int dotTicks = 0;
-
         timerTick += Time.deltaTime;
         if(dotTicks >= 3)
         {
