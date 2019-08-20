@@ -30,6 +30,8 @@ public class BioRockSwarmAI : MonoBehaviour
     {
         if(other.CompareTag("ShipGround"))
         {
+            other.GetComponent<ShipColliders>().damage = 5;
+            other.GetComponent<ShipColliders>().dot = true;
             Destroy(this.gameObject);
         }
     }

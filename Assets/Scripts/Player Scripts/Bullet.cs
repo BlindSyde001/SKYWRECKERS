@@ -18,6 +18,7 @@ public class Bullet : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy") && player)
         {
+            
             Destroy(this.gameObject);
         }
         else if(other.gameObject.CompareTag("ShipGround") && enemy)

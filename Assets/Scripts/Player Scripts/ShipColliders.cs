@@ -15,12 +15,21 @@ public class ShipColliders : MonoBehaviour
     MovementControlsShip ship;
 
     public int damage;
+    public bool dot = false;
 
     //UPDATES
     private void Awake()
     {
         UI = FindObjectOfType<UIManager>();
         ship = FindObjectOfType<MovementControlsShip>();
+    }
+
+    private void Update()
+    {
+        if (dot)
+        {
+            DOTDamage();
+        }
     }
 
     //METHODS
@@ -89,6 +98,24 @@ public class ShipColliders : MonoBehaviour
         {
             UI.GetComponent<UIManager>().rightCannonHP -= damage;
             Debug.Log("HIT RIGHT");
+        }
+    }
+    public void DOTDamage()
+    {
+        float timer = 3f;
+        float timerTick = 0f;
+        int dotTicks = 0;
+
+        timerTick += Time.deltaTime;
+        if(dotTicks >= 3)
+        {
+            dot = false;
+        }
+        if(timerTick >= timer)
+        {
+            DamageTaken();
+            dotTicks++;
+            timerTick = 0;
         }
     }
 }
