@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 movement;
 
     //New MOVEMENT variables
-    public float fowardMovement = 2.5f;
+    public float fowardMovement = 2.5f; //Each movement variable is public so it can be changed when animations are imported
     public float backMovement = 2.25f;
     public float strafeMovement = 2f;
     public float slowMod = 0.5f;
@@ -95,11 +95,11 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.LeftShift))
             {
-                slowMovement = slowMod;
+                slowMovement = slowMod; //When player is holding shift movement is slowed down on each axis and they walk
             }
             else
             {
-                slowMovement = 1.0f;
+                slowMovement = 1.0f; //When player isn't holding shift slow movement is reset
             }
 
             if (Input.GetKey(KeyCode.W))
