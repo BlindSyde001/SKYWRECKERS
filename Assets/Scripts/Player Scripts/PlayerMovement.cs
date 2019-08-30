@@ -36,7 +36,14 @@ public class PlayerMovement : MonoBehaviour
     public float threshold;
     private float yVelocity;
     private Vector3 movement;
-   
+
+    //New MOVEMENT variables
+    public float fowardMovement = 2.5f;
+    public float backMovement = 2.25f;
+    public float strafeMovement = 2f;
+    public float slowMod = 0.5f;
+    private float slowMovement;
+
     //UPDATES
     private void Awake()
     {
@@ -86,21 +93,30 @@ public class PlayerMovement : MonoBehaviour
     {
         if(!isClimbing)
         {
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                slowMovement = slowMod;
+            }
+            else
+            {
+                slowMovement = 1.0f;
+            }
+
             if (Input.GetKey(KeyCode.W))
             {
-                movement += transform.forward * 2.5F;
+                movement += transform.forward * (fowardMovement * slowMovement);
             }
             if (Input.GetKey(KeyCode.S))
             {
-                movement += -transform.forward * 2F;
+                movement += -transform.forward * (backMovement * slowMovement);
             }
             if (Input.GetKey(KeyCode.A))
             {
-                movement += -transform.right * 2F;
+                movement += -transform.right * (strafeMovement * slowMovement);
             }
             if (Input.GetKey(KeyCode.D))
             {
-                movement += transform.right * 2F;
+                movement += transform.right * (strafeMovement * slowMovement);
             }
             yVelocity += Physics.gravity.y * Time.deltaTime;
         }else
@@ -108,8 +124,15 @@ public class PlayerMovement : MonoBehaviour
             yVelocity = 0;
         }
         
-        controller.Move((yVelocity * Vector3.up + movement + (shipGrounded ? ship.displacement : Vector3.zero)) * Time.deltaTime);
+        //controller.Move((yVelocity * Vector3.up + movement + (shipGrounded ? ship.displacement : Vector3.zero)) * Time.deltaTime);
+        //ship.displacement = Vector3.zero;
+        //movement = Vector3.zero;
+
+        Vector3 newMove = Vector3.Lerp(controller.velocity, movement, Time.deltaTime * 5f);
         ship.displacement = Vector3.zero;
+        controller.Move((yVelocity * Vector3.up + newMove + (shipGrounded ? ship.displacement : Vector3.zero)) * Time.deltaTime);
+        print(controller.velocity);
+        print("MOVEMENT: " + movement);
         movement = Vector3.zero;
 
         if (controller.isGrounded)
