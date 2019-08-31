@@ -148,18 +148,22 @@ public class Inventory : MonoBehaviour
     public void WoodUpgrade()
     {
         shipUpgradeWood.SetActive(true); //Place holder to see if the function works
+        UIManager.Instance.hullHP = 140f;
     }
 
     public void FabricUpgrade()
     {
         //Debug.Log("Fabric Upgrade Complete");
         shipUpgradeFabric.SetActive(true);
+        UIManager.Instance.sailsHP = 120f;
     }
 
     public void MetalUpgrade()
     {
         //Debug.Log("Metal Upgrade Complete");
         shipUpgradeMetal.SetActive(true);
+        UIManager.Instance.leftCannonHP = 120f;
+        UIManager.Instance.rightCannonHP = 120f;
     }
 
     public IEnumerator UpgradeAvailableTextGone()
