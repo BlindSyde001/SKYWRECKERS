@@ -36,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
     public float threshold;
     private float yVelocity;
     private Vector3 movement;
+    public float gravityScale;
 
     //New MOVEMENT variables
     public float fowardMovement = 2.5f; //Each movement variable is public so it can be changed when animations are imported
@@ -118,7 +119,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 movement += transform.right * (strafeMovement * slowMovement);
             }
-            yVelocity += Physics.gravity.y * Time.deltaTime;
+            yVelocity += Physics.gravity.y * gravityScale * Time.deltaTime;
         }else
         {
             yVelocity = 0;
