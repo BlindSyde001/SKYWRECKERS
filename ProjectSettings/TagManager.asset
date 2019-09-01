@@ -11,6 +11,8 @@ TagManager:
   - Enemy
   - ShipGround
   - Platform
+  - BIOROCK
+  - PIRATE
   layers:
   - Default
   - TransparentFX

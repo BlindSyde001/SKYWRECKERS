@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 614676535}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: -7.7800293}
+  m_LocalPosition: {x: 0, y: 3, z: -7.7800283}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1900710613}
@@ -98,11 +98,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1028548733}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.195, y: 0.33714408, z: -2.4105258}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
-  m_Father: {fileID: 5705613633756597711}
+  m_Father: {fileID: 4277914030592406856}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &1028548736
@@ -195,7 +195,8 @@ MonoBehaviour:
   playerController: {fileID: 0}
   cam: {fileID: 614676538}
   cameraRelocate: 0.2
-  shoulderCam: {fileID: 0}
+  shipClippingParts: []
+  shoulderCam: {fileID: 4277914030592406856}
   changeCounter: 0
 --- !u!1 &3043401754319191612
 GameObject:
@@ -229,7 +230,7 @@ Transform:
   m_LocalPosition: {x: 0.00999999, y: 2.83, z: -1.54}
   m_LocalScale: {x: 0.20000003, y: 0.20000003, z: 0.20000003}
   m_Children:
-  - {fileID: 5705613633756597711}
+  - {fileID: 4277914030592406856}
   - {fileID: 1900710613}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -298,11 +299,19 @@ MonoBehaviour:
   isClimbing: 0
   shipHP: {fileID: 0}
   camera: {fileID: 1028548736}
-  shoulderPos: {fileID: 5029925361638928897}
+  shoulderPos: {fileID: 8786357136179891640}
   dockPos: {fileID: 0}
   ship: {fileID: 0}
+  shipGrounded: 0
   Bedroom: {fileID: 0}
   threshold: -31
+  gravityScale: 0
+  fowardMovement: 2.5
+  backMovement: 2.25
+  strafeMovement: 2
+  slowMod: 0.5
+  plank: {fileID: 0}
+  gameover: {fileID: 0}
 --- !u!54 &3043401754319192002
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -337,7 +346,7 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &5029925361638928897
+--- !u!1 &8786357136179891640
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -345,7 +354,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5705613633756597711}
+  - component: {fileID: 4277914030592406856}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -353,16 +362,16 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5705613633756597711
+--- !u!4 &4277914030592406856
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5029925361638928897}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.195, y: 0.33714414, z: 0.089473724}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_GameObject: {fileID: 8786357136179891640}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1028548737}
   m_Father: {fileID: 3043401754319192000}

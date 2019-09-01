@@ -29,6 +29,8 @@ public class PirateShipAI : EnemyStats
     private void Awake()
     {
         playerShip = FindObjectOfType<MovementControlsShip>().transform;
+        enemyMaxHP = 100;
+        enemyCurrentHP = 100;
     }
 
     private void Update()
@@ -37,7 +39,10 @@ public class PirateShipAI : EnemyStats
         {
             comeAlongSideShip();
         }
-        
+        if (enemyCurrentHP <= 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
     //METHODS
 

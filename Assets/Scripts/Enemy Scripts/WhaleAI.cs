@@ -24,14 +24,19 @@ public class WhaleAI : EnemyStats
 
     //UPDATES
 
-    private void Start()
+    private void Awake()
     {
-
+        enemyMaxHP = 1000;
+        enemyCurrentHP = 1000;
     }
 
     private void Update()
     {
         Patrol();
+        if(enemyCurrentHP <= 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     //METHODS

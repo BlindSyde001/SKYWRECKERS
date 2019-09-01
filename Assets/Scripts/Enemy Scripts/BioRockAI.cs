@@ -17,6 +17,8 @@ public class BioRockAI : EnemyStats
 
     private void Awake()
     {
+        enemyMaxHP = 120;
+        enemyCurrentHP = 120;
         playerShip = FindObjectOfType<MovementControlsShip>();
     }
     private void Update()
@@ -27,6 +29,11 @@ public class BioRockAI : EnemyStats
         }
         if(cooldownTick <= cooldownTimer)
            cooldownTick += Time.deltaTime;
+
+        if (enemyCurrentHP <= 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     //METHODS

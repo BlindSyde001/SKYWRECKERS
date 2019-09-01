@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     //VARIABLES
     public float velocity = 5f;
     public float turnSpeed = 10;
-    public float jumpSpeed = 3.5f;
+    public float jumpSpeed = 7f;
 
     public float distance = 2f;
     private float currentX = 0f;
@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
     public MovementControlsShip ship;
     float shoulderRot;
 
-    private bool shipGrounded;
+    public bool shipGrounded;
     public GameObject Bedroom;
     public float threshold;
     private float yVelocity;
@@ -45,6 +45,8 @@ public class PlayerMovement : MonoBehaviour
     public float slowMod = 0.5f;
     private float slowMovement;
 
+    public GameObject plank;
+    public GameObject gameover;
     //UPDATES
     private void Awake()
     {
@@ -63,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
             ClimbingControls();
             Rotation();
             playerJumping();
-
+            plank.SetActive(true);
             if(!shipGrounded)
             shipHP.SetActive(false);
         }
@@ -71,12 +73,22 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.position = dockPos.position;
             shipHP.SetActive(true);
+            plank.SetActive(false);
         }
     }
     public void FixedUpdate()
     {
         if (transform.position.y < threshold)
-            transform.position = Bedroom.transform.position;
+        {
+            Time.timeScale = 0;
+            gameover.SetActive(true);
+            if (Time.timeScale == 0)
+            {
+                this.GetComponent<PlayerMovement>().enabled = false;
+            }
+
+        }
+            //transform.position = Bedroom.transform.position;
     }
 
     //METHODS
@@ -125,13 +137,13 @@ public class PlayerMovement : MonoBehaviour
             yVelocity = 0;
         }
         
-        //controller.Move((yVelocity * Vector3.up + movement + (shipGrounded ? ship.displacement : Vector3.zero)) * Time.deltaTime);
-        //ship.displacement = Vector3.zero;
-        //movement = Vector3.zero;
-
-        Vector3 newMove = Vector3.Lerp(controller.velocity, movement, Time.deltaTime * 5f);
+        controller.Move((yVelocity * Vector3.up + movement + (shipGrounded ? ship.displacement : Vector3.zero)) * Time.deltaTime);
         ship.displacement = Vector3.zero;
-        controller.Move((yVelocity * Vector3.up + newMove + (shipGrounded ? ship.displacement : Vector3.zero)) * Time.deltaTime);
+        movement = Vector3.zero;
+
+        //Vector3 newMove = Vector3.Lerp(controller.velocity, movement, Time.deltaTime * 5f);
+        ship.displacement = Vector3.zero;
+        //controller.Move((yVelocity * Vector3.up + newMove + (shipGrounded ? ship.displacement : Vector3.zero)) * Time.deltaTime);
         print(controller.velocity);
         print("MOVEMENT: " + movement);
         movement = Vector3.zero;

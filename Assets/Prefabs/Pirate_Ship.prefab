@@ -1728,7 +1728,7 @@ GameObject:
   - component: {fileID: 5198178858883635544}
   m_Layer: 2
   m_Name: Hull_Front
-  m_TagString: ShipGround
+  m_TagString: PIRATE
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1777,6 +1777,8 @@ MonoBehaviour:
   right: 0
   hull: 1
   sail: 0
+  damage: 0
+  dot: 0
 --- !u!1 &5198178858887873615
 GameObject:
   m_ObjectHideFlags: 0
@@ -2338,7 +2340,7 @@ GameObject:
   - component: {fileID: 5198178858968688717}
   m_Layer: 2
   m_Name: Cannon_Right
-  m_TagString: ShipGround
+  m_TagString: PIRATE
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2387,6 +2389,8 @@ MonoBehaviour:
   right: 1
   hull: 0
   sail: 0
+  damage: 0
+  dot: 0
 --- !u!1 &5198178858968984018
 GameObject:
   m_ObjectHideFlags: 0
@@ -3219,7 +3223,7 @@ GameObject:
   - component: {fileID: 5198178859086013941}
   m_Layer: 2
   m_Name: Hull_CrowsNest
-  m_TagString: ShipGround
+  m_TagString: PIRATE
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3268,6 +3272,8 @@ MonoBehaviour:
   right: 0
   hull: 1
   sail: 0
+  damage: 0
+  dot: 0
 --- !u!1 &5198178859090157199
 GameObject:
   m_ObjectHideFlags: 0
@@ -3988,7 +3994,7 @@ GameObject:
   - component: {fileID: 5198178859184885814}
   m_Layer: 2
   m_Name: Sail_Left
-  m_TagString: ShipGround
+  m_TagString: PIRATE
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4037,6 +4043,8 @@ MonoBehaviour:
   right: 0
   hull: 0
   sail: 1
+  damage: 0
+  dot: 0
 --- !u!1 &5198178859206549149
 GameObject:
   m_ObjectHideFlags: 0
@@ -6667,7 +6675,7 @@ GameObject:
   - component: {fileID: 5198178859453230724}
   m_Layer: 2
   m_Name: Cannon_Left
-  m_TagString: ShipGround
+  m_TagString: PIRATE
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6716,6 +6724,8 @@ MonoBehaviour:
   right: 0
   hull: 0
   sail: 0
+  damage: 0
+  dot: 0
 --- !u!1 &5198178859456651578
 GameObject:
   m_ObjectHideFlags: 0
@@ -6818,7 +6828,7 @@ GameObject:
   - component: {fileID: 5198178859457576149}
   m_Layer: 2
   m_Name: Right Chase
-  m_TagString: Untagged
+  m_TagString: PIRATE
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6940,7 +6950,7 @@ GameObject:
   - component: {fileID: 5198178859472784470}
   m_Layer: 2
   m_Name: Colliders
-  m_TagString: Untagged
+  m_TagString: PIRATE
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9059,7 +9069,7 @@ GameObject:
   - component: {fileID: 5198178859721751490}
   m_Layer: 2
   m_Name: Hull_Back
-  m_TagString: ShipGround
+  m_TagString: PIRATE
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9108,6 +9118,8 @@ MonoBehaviour:
   right: 0
   hull: 1
   sail: 0
+  damage: 0
+  dot: 0
 --- !u!1 &5198178859731572819
 GameObject:
   m_ObjectHideFlags: 0
@@ -11217,7 +11229,7 @@ GameObject:
   - component: {fileID: 5198178859902899131}
   m_Layer: 2
   m_Name: Left Chase
-  m_TagString: Untagged
+  m_TagString: PIRATE
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14047,7 +14059,7 @@ GameObject:
   - component: {fileID: 5198178860209344889}
   m_Layer: 2
   m_Name: Hull_Mast
-  m_TagString: ShipGround
+  m_TagString: PIRATE
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14096,6 +14108,8 @@ MonoBehaviour:
   right: 0
   hull: 1
   sail: 0
+  damage: 0
+  dot: 0
 --- !u!1 &5198178860265005718
 GameObject:
   m_ObjectHideFlags: 0
@@ -14789,7 +14803,7 @@ GameObject:
   - component: {fileID: 5198178860344434334}
   m_Layer: 2
   m_Name: Hull_Middle
-  m_TagString: ShipGround
+  m_TagString: PIRATE
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14838,6 +14852,8 @@ MonoBehaviour:
   right: 0
   hull: 1
   sail: 0
+  damage: 0
+  dot: 0
 --- !u!1 &5198178860362718898
 GameObject:
   m_ObjectHideFlags: 0
@@ -15703,7 +15719,7 @@ GameObject:
   - component: {fileID: 5198178860486197919}
   m_Layer: 2
   m_Name: Graphic
-  m_TagString: Untagged
+  m_TagString: PIRATE
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16012,7 +16028,7 @@ GameObject:
   - component: {fileID: 7090155429201338077}
   m_Layer: 2
   m_Name: Pirate_Ship
-  m_TagString: Untagged
+  m_TagString: PIRATE
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19580,7 +19596,7 @@ GameObject:
   - component: {fileID: 5198178860847323181}
   m_Layer: 2
   m_Name: Sail_Right
-  m_TagString: ShipGround
+  m_TagString: PIRATE
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19629,6 +19645,8 @@ MonoBehaviour:
   right: 0
   hull: 0
   sail: 1
+  damage: 0
+  dot: 0
 --- !u!1 &5198178860848868179
 GameObject:
   m_ObjectHideFlags: 0

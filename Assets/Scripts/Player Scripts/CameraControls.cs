@@ -15,8 +15,8 @@ public class CameraControls : MonoBehaviour
     public float cameraRelocate = 0.2f;
     private float currentX = 0f;
     private float currentY = 0f;
-    private const float yAngleMin = -45f;
-    private const float yAngleMax = 45f;
+    private float yAngleMin = -45f;
+    private float yAngleMax = 45f;
 
     public List<GameObject> shipClippingParts;
     public Transform shoulderCam;
@@ -49,12 +49,16 @@ public class CameraControls : MonoBehaviour
                 CameraPosChange();
             }
         }
-
         movePostion();
     }
 
     private void LateUpdate()
     {
+        if (Time.timeScale == 0)
+        {
+            Cursor.visible = true;
+            this.GetComponent<CameraControls>().enabled = false;
+        }
         FreeRotateCamera();
         CameraClipping();
     }
@@ -73,7 +77,7 @@ public class CameraControls : MonoBehaviour
         if(Physics.Raycast(ray, out hit, targetDistance))
         {
             currentDistance = hit.distance;
-            Debug.Log(hit.transform.name);
+            Debug.Log(hit.collider.name);
         }
         else
         {
@@ -109,6 +113,8 @@ public class CameraControls : MonoBehaviour
                 {
                     x.layer = 0;
                 }
+                cameraRelocate = -1;
+                yAngleMin = -3;
                 break;
             case 1:
                 if (targetDistance != 80f)
@@ -123,6 +129,8 @@ public class CameraControls : MonoBehaviour
                 {
                     x.layer = 2;
                 }
+                cameraRelocate = 0;
+                yAngleMin = -45;
                 break;
         }
     }

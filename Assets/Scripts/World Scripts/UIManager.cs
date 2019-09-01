@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     //VARIABLES
     public static UIManager Instance;
     public TextMeshProUGUI UIObjectText; //Text that appears when player is near resource gameobject
+    public GameObject gameover;
 
     #region SHIP HP
     public TextMeshProUGUI leftCannonHPText;
@@ -41,6 +42,7 @@ public class UIManager : MonoBehaviour
         if(leftCannonHP < 5 || rightCannonHP < 5 || sailsHP < 5 || hullHP < 5)
         {
             Time.timeScale = 0;
+            gameover.SetActive(true);
             Debug.Log("YOU LOSE!");
         }
     }
