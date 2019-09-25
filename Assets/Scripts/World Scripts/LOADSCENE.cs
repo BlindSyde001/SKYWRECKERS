@@ -21,6 +21,7 @@ public class LOADSCENE : MonoBehaviour
     {
         SceneManager.LoadScene(1);
         Time.timeScale = 1.0f;
+        Cursor.visible = false;
     }
 
     public void mainmenu()

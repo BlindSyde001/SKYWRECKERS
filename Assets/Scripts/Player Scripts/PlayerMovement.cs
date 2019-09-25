@@ -82,6 +82,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Time.timeScale = 0;
             gameover.SetActive(true);
+            Cursor.visible = true;
             if (Time.timeScale == 0)
             {
                 this.GetComponent<PlayerMovement>().enabled = false;
