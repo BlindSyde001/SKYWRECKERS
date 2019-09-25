@@ -20,6 +20,7 @@ public class LOADSCENE : MonoBehaviour
     public void LoadGame()
     {
         SceneManager.LoadScene(1);
+        Time.timeScale = 1.0f;
     }
 
     public void mainmenu()
