@@ -151598,6 +151598,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1064148403, guid: 18d6f57cec3a9bd4fa7044994ce31ab7, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064148403, guid: 18d6f57cec3a9bd4fa7044994ce31ab7, type: 3}
+      propertyPath: m_Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064148403, guid: 18d6f57cec3a9bd4fa7044994ce31ab7, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064148403, guid: 18d6f57cec3a9bd4fa7044994ce31ab7, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2233065150684141298, guid: 18d6f57cec3a9bd4fa7044994ce31ab7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -151719,25 +151735,9 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 4820628}
-    - target: {fileID: 1064148403, guid: 18d6f57cec3a9bd4fa7044994ce31ab7, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1064148403, guid: 18d6f57cec3a9bd4fa7044994ce31ab7, type: 3}
-      propertyPath: m_Value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1064148403, guid: 18d6f57cec3a9bd4fa7044994ce31ab7, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1064148403, guid: 18d6f57cec3a9bd4fa7044994ce31ab7, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 1695504836, guid: 18d6f57cec3a9bd4fa7044994ce31ab7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1695504836, guid: 18d6f57cec3a9bd4fa7044994ce31ab7, type: 3}
       propertyPath: m_AnchorMax.x
@@ -151754,6 +151754,14 @@ PrefabInstance:
     - target: {fileID: 1772416376, guid: 18d6f57cec3a9bd4fa7044994ce31ab7, type: 3}
       propertyPath: m_Color.b
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064148401, guid: 18d6f57cec3a9bd4fa7044994ce31ab7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1772416375, guid: 18d6f57cec3a9bd4fa7044994ce31ab7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18d6f57cec3a9bd4fa7044994ce31ab7, type: 3}

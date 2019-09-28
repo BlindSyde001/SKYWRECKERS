@@ -200,6 +200,10 @@ public class PlayerMovement : MonoBehaviour
             if(other.CompareTag("RepairPoint"))
             {
                 other.GetComponent<Repair>().on = true;
+                if(other.GetComponent<Repair>().healthSlider.gameObject.activeSelf == false)
+                {
+                    other.GetComponent<Repair>().healthSlider.gameObject.SetActive(true);
+                }
             }
         }else if (Input.GetKeyUp(KeyCode.E))
         {
@@ -207,6 +211,10 @@ public class PlayerMovement : MonoBehaviour
             {
                 other.GetComponent<Repair>().on = false;
                 other.GetComponent<Repair>().f = 0;
+                if (other.GetComponent<Repair>().healthSlider.gameObject.activeSelf == true)
+                {
+                    other.GetComponent<Repair>().healthSlider.gameObject.SetActive(false);
+                }
             }
         }
         #endregion
@@ -224,8 +232,13 @@ public class PlayerMovement : MonoBehaviour
         }
         if(other.CompareTag("RepairPoint"))
         {
+            print("EXITED");
             other.GetComponent<Repair>().on = false;
             other.GetComponent<Repair>().f = 0;
+            if (other.GetComponent<Repair>().healthSlider.gameObject.activeSelf == true)
+            {
+                other.GetComponent<Repair>().healthSlider.gameObject.SetActive(false);
+            }
         }
 
     }

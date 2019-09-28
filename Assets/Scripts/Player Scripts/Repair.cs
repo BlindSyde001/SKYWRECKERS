@@ -34,12 +34,14 @@ public class Repair : MonoBehaviour
     void RepairAreas()
     {
         #region Repair Parts
-        if (on == true)
+        if (on)
         {
+            print("ON");
             f += 3 * Time.deltaTime;
             healthSlider.gameObject.SetActive(true);
             if (sails)
             {
+                print("sails");
                 healthSlider.maxValue = UI.GetComponent<UIManager>().sailsMaxHP;
                 healthSlider.value = UI.GetComponent<UIManager>().sailsHP;
                 if (f >= 1)
@@ -50,6 +52,7 @@ public class Repair : MonoBehaviour
             }
             if (hull)
             {
+                print("hull");
                 healthSlider.maxValue = UI.GetComponent<UIManager>().hullMaxHP;
                 healthSlider.value = UI.GetComponent<UIManager>().hullHP;
                 if (f >= 1)
@@ -60,6 +63,7 @@ public class Repair : MonoBehaviour
             }
             if (left)
             {
+                print("left");
                 healthSlider.maxValue = UI.GetComponent<UIManager>().leftCannonMaxHP;
                 healthSlider.value = UI.GetComponent<UIManager>().leftCannonHP;
                 if (f >= 1)
@@ -70,6 +74,7 @@ public class Repair : MonoBehaviour
             }
             if (right)
             {
+                print("right");
                 healthSlider.maxValue = UI.GetComponent<UIManager>().rightCannonMaxHP;
                 healthSlider.value = UI.GetComponent<UIManager>().rightCannonHP;
                 if (f >= 1)
@@ -78,8 +83,11 @@ public class Repair : MonoBehaviour
                     f = 0;
                 }
             }
-        } else if(!on)
-        { healthSlider.gameObject.SetActive(false); }
+        } //else if(!on)
+        //{
+        //    print("OFF");
+        //    healthSlider.gameObject.SetActive(false);
+        //}
         #endregion
     }
 

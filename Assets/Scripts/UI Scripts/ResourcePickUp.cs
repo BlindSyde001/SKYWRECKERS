@@ -33,7 +33,7 @@ public class ResourcePickUp : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        Debug.Log(collision.name);
+        //Debug.Log(collision.name);
         if (collision.gameObject.name.Equals("Player")) //Text appears when Player is near item, through a collider
         {
             UIManager.Instance.ToggleText(message);
