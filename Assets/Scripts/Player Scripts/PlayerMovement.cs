@@ -222,7 +222,11 @@ public class PlayerMovement : MonoBehaviour
         {
             shipGrounded = false;
         }
-        
+        if(other.CompareTag("RepairPoint"))
+        {
+            other.GetComponent<Repair>().on = false;
+            other.GetComponent<Repair>().f = 0;
+        }
 
     }
 
