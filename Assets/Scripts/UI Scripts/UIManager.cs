@@ -43,7 +43,7 @@ public class UIManager : MonoBehaviour
         sailsHPText.text = "SL " + sailsHP + "/" + sailsMaxHP;
         hullHPText.text = "HL " + hullHP + "/" + hullMaxHP;
 
-        if(leftCannonHP < 5 || rightCannonHP < 5 || sailsHP < 5 || hullHP < 5)
+        if(leftCannonHP <= 0 || rightCannonHP <= 0 || sailsHP <= 0 || hullHP <= 0)
         {
             Time.timeScale = 0;
             gameover.SetActive(true);

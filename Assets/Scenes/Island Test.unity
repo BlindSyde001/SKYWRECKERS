@@ -14108,7 +14108,7 @@ GameObject:
   - component: {fileID: 175918893}
   - component: {fileID: 175918892}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14153,7 +14153,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'Press E
+  m_text: 'Hold E
 
     to Repair'
   m_isRightToLeft: 0
@@ -14224,7 +14224,7 @@ MonoBehaviour:
   m_margin: {x: -1.0009764, y: -0.4826259, z: -0.9977213, w: -0.49820894}
   m_textInfo:
     textComponent: {fileID: 175918892}
-    characterCount: 17
+    characterCount: 16
     spriteCount: 0
     spaceCount: 3
     wordCount: 4
@@ -81197,6 +81197,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1063837897}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1064148403 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1064148403, guid: 18d6f57cec3a9bd4fa7044994ce31ab7,
+    type: 3}
+  m_PrefabInstance: {fileID: 2233065149524839414}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1064856964
 GameObject:
   m_ObjectHideFlags: 0
@@ -81713,6 +81725,8 @@ MonoBehaviour:
   left: 0
   right: 0
   f: 0
+  healthSlider: {fileID: 1064148403}
+  ToolTip: {fileID: 1231305072}
 --- !u!1 &1087533597
 GameObject:
   m_ObjectHideFlags: 0
@@ -102408,7 +102422,7 @@ GameObject:
   - component: {fileID: 1369760983}
   - component: {fileID: 1369760982}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150112,10 +150126,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 1306565213, guid: 18d6f57cec3a9bd4fa7044994ce31ab7, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2233065150684141298, guid: 18d6f57cec3a9bd4fa7044994ce31ab7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -150221,11 +150231,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2233065150684141302, guid: 18d6f57cec3a9bd4fa7044994ce31ab7,
-        type: 3}
-      propertyPath: gameover
-      value: 
-      objectReference: {fileID: 1306565213}
     - target: {fileID: 69517013, guid: 18d6f57cec3a9bd4fa7044994ce31ab7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -150242,6 +150247,42 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 4820628}
+    - target: {fileID: 1064148403, guid: 18d6f57cec3a9bd4fa7044994ce31ab7, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064148403, guid: 18d6f57cec3a9bd4fa7044994ce31ab7, type: 3}
+      propertyPath: m_Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064148403, guid: 18d6f57cec3a9bd4fa7044994ce31ab7, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064148403, guid: 18d6f57cec3a9bd4fa7044994ce31ab7, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1695504836, guid: 18d6f57cec3a9bd4fa7044994ce31ab7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1695504836, guid: 18d6f57cec3a9bd4fa7044994ce31ab7, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1772416376, guid: 18d6f57cec3a9bd4fa7044994ce31ab7, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1772416376, guid: 18d6f57cec3a9bd4fa7044994ce31ab7, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1772416376, guid: 18d6f57cec3a9bd4fa7044994ce31ab7, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18d6f57cec3a9bd4fa7044994ce31ab7, type: 3}
 --- !u!224 &2233065149524839415 stripped
