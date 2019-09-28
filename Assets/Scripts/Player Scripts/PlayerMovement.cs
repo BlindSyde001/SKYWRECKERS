@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    
+
     //VARIABLES
+    private UIManager UI;
+
     public float velocity = 5f;
     public float turnSpeed = 10;
     public float jumpSpeed = 7f;
 
     public float distance = 2f;
-    private float currentX = 0f;
-    private float currentY = 0f;
     private const float yAngleMin = -45f;
     private const float yAngleMax = 45f;
     private Transform wallClimb;
@@ -145,8 +145,8 @@ public class PlayerMovement : MonoBehaviour
         //Vector3 newMove = Vector3.Lerp(controller.velocity, movement, Time.deltaTime * 5f);
         ship.displacement = Vector3.zero;
         //controller.Move((yVelocity * Vector3.up + newMove + (shipGrounded ? ship.displacement : Vector3.zero)) * Time.deltaTime);
-        print(controller.velocity);
-        print("MOVEMENT: " + movement);
+       // print(controller.velocity);
+      //  print("MOVEMENT: " + movement);
         movement = Vector3.zero;
 
         if (controller.isGrounded)
@@ -188,10 +188,28 @@ public class PlayerMovement : MonoBehaviour
                 wallClimb = other.transform;
             }
         }
-        if(other.CompareTag("ShipGround"))
+
+        if (other.CompareTag("ShipGround"))
         {
             shipGrounded = true;
         }
+
+        #region REPAIRING SHIP
+        if (Input.GetKey(KeyCode.E))
+        {
+            if(other.CompareTag("RepairPoint"))
+            {
+                other.GetComponent<Repair>().on = true;
+            }
+        }else if (Input.GetKeyUp(KeyCode.E))
+        {
+            if (other.CompareTag("RepairPoint"))
+            {
+                other.GetComponent<Repair>().on = false;
+                other.GetComponent<Repair>().f = 0;
+            }
+        }
+        #endregion
     }
 
     public void OnTriggerExit(Collider other)

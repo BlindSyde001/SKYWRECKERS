@@ -7,12 +7,13 @@ public class ShipColliders : MonoBehaviour
     //VARIABLES
     private UIManager UI;
     public UIManager hitPos;
+    MovementControlsShip ship;
 
     public bool left = false;
     public bool right = false;
     public bool hull = false;
     public bool sail = false;
-    MovementControlsShip ship;
+    
 
     public int damage;
     public bool dot = false;

@@ -18,7 +18,7 @@ public class Inventory : MonoBehaviour
     public bool hasMetal;
     public bool hasFabric;
 
-    //Pop up meesgae to get track how many of the resources you have
+    //Pop up meesage to get track how many of the resources you have
     //public string message;
 
     //Resorce Game Objects
@@ -148,22 +148,22 @@ public class Inventory : MonoBehaviour
     public void WoodUpgrade()
     {
         shipUpgradeWood.SetActive(true); //Place holder to see if the function works
-        UIManager.Instance.hullHP = 140f;
+        UIManager.Instance.hullMaxHP = 140;
     }
 
     public void FabricUpgrade()
     {
         //Debug.Log("Fabric Upgrade Complete");
         shipUpgradeFabric.SetActive(true);
-        UIManager.Instance.sailsHP = 120f;
+        UIManager.Instance.sailsMaxHP = 120;
     }
 
     public void MetalUpgrade()
     {
         //Debug.Log("Metal Upgrade Complete");
         shipUpgradeMetal.SetActive(true);
-        UIManager.Instance.leftCannonHP = 120f;
-        UIManager.Instance.rightCannonHP = 120f;
+        UIManager.Instance.leftCannonMaxHP = 120;
+        UIManager.Instance.rightCannonMaxHP = 120;
     }
 
     public IEnumerator UpgradeAvailableTextGone()

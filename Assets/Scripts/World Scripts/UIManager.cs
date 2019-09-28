@@ -16,10 +16,14 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI sailsHPText;
     public TextMeshProUGUI hullHPText;
 
-    public float leftCannonHP = 100f;
-    public float rightCannonHP = 100f;
-    public float sailsHP = 100f;
-    public float hullHP = 100f;
+    public int leftCannonHP = 100;
+    public int leftCannonMaxHP = 100;
+    public int rightCannonHP = 100;
+    public int rightCannonMaxHP = 100;
+    public int sailsHP = 100;
+    public int sailsMaxHP = 100;
+    public int hullHP = 100;
+    public int hullMaxHP = 100;
     #endregion
 
     //UPDATES
@@ -34,10 +38,10 @@ public class UIManager : MonoBehaviour
     }
     void Update()
     {
-        leftCannonHPText.text = "LC " + leftCannonHP + "/100";
-        righCannonHPText.text = "RC " + rightCannonHP + "/100";
-        sailsHPText.text = "SL " + sailsHP + "/100";
-        hullHPText.text = "HL " + hullHP + "/100";
+        leftCannonHPText.text = "LC " + leftCannonHP + "/" + leftCannonMaxHP;
+        righCannonHPText.text = "RC " + rightCannonHP + "/" + rightCannonHP;
+        sailsHPText.text = "SL " + sailsHP + "/" + sailsMaxHP;
+        hullHPText.text = "HL " + hullHP + "/" + hullMaxHP;
 
         if(leftCannonHP < 5 || rightCannonHP < 5 || sailsHP < 5 || hullHP < 5)
         {
@@ -45,6 +49,11 @@ public class UIManager : MonoBehaviour
             gameover.SetActive(true);
             Debug.Log("YOU LOSE!");
         }
+        
+        leftCannonHP = Mathf.Clamp(leftCannonHP, 0, leftCannonMaxHP);
+        rightCannonHP = Mathf.Clamp(rightCannonHP, 0, rightCannonMaxHP);
+        hullHP = Mathf.Clamp(hullHP, 0, hullMaxHP);
+        sailsHP = Mathf.Clamp(sailsHP, 0, sailsMaxHP);
     }
 
 
