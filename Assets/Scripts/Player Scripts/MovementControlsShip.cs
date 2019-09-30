@@ -7,6 +7,8 @@ using System;
 public class MovementControlsShip : MonoBehaviour
 {
     //VARIABLES
+    private GameManager gm;
+
     public float zeroToMaxPerSecond;
     public float forwardVelocity;
     public int accelerateModeCounter = 0;
@@ -55,12 +57,17 @@ public class MovementControlsShip : MonoBehaviour
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
+        gm = FindObjectOfType<GameManager>();
         forwardVelocity = 0f;
         yaw = transform.eulerAngles.y;
 
         player = FindObjectOfType<PlayerMovement>();
     }
-
+    private void Start()
+    {
+        //transform.position = gm.shipLastCheckpointPos;
+        transform.position = gm.shipLastCheckpointPos.transform.position;
+    }
     private void Update()
     {
         if (!docking)

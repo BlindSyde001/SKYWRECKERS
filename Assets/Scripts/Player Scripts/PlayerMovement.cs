@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
 
     //VARIABLES
     private UIManager UI;
+    private GameManager gm;
 
     public float velocity = 5f;
     public float turnSpeed = 10;
@@ -19,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     private Transform wallClimb;
 
     [NonSerialized]
-    public bool isControllingShip = true;
+    public bool isControllingShip = false;
     public bool isClimbing = false;
     public GameObject shipHP;
     CharacterController controller;
@@ -47,16 +48,21 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject plank;
     public GameObject gameover;
+    
     //UPDATES
     private void Awake()
     {
         ship = FindObjectOfType<MovementControlsShip>();
         controller = GetComponent<CharacterController>();
+        gm = FindObjectOfType<GameManager>();
 
         camera.gameObject.SetActive(!isControllingShip);
         ship.camera.gameObject.SetActive(isControllingShip);
     }
-
+    private void Start()
+    {
+        transform.position = gm.lastCheckpointPos.transform.position;
+    }
     private void Update()
     {
         if (!isControllingShip)
