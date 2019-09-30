@@ -5,18 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LOADSCENE : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    //METHODS
     public void LoadGame()
     {
         SceneManager.LoadScene(1);
