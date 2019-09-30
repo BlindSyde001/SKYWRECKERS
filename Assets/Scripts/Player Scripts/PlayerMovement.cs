@@ -61,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Start()
     {
-        transform.position = gm.lastCheckpointPos.transform.position;
+        transform.position = gm.lastCheckpointPos;
     }
     private void Update()
     {

@@ -5,9 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class LOADSCENE : MonoBehaviour
 {
+    //VARIABLES
+    public GameManager gm;
+
     //METHODS
     public void startGame()
     {
+        gm = FindObjectOfType<GameManager>();
+        if (gm != null)
+        { Destroy(gm.gameObject); }
+
         SceneManager.LoadScene(1);
         Time.timeScale = 1.0f;
         Cursor.visible = false;
@@ -16,9 +23,17 @@ public class LOADSCENE : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        foreach (GameObject _resource in gm.resourceCurrentList)
+        {
+            if (gm.resourceMasterList.Contains(_resource))
+            {
+                return;
+            }
+            else { _resource.SetActive(false); }
+        }
     }
 
-    public void mainmenu()
+    public void Mainmenu()
     {
         SceneManager.LoadScene(0);
     }

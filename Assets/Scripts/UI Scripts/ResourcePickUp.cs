@@ -6,6 +6,7 @@ using TMPro;
 public class ResourcePickUp : MonoBehaviour
 {
     //VARIABLES
+    private static GameManager gm;
     private bool pickUpAllowed; //Bool to allow the player to pick up the gameobject
 
     public InventoryItem item; //Access to resource gameobjects in inventory script
@@ -16,6 +17,10 @@ public class ResourcePickUp : MonoBehaviour
     public TextMeshProUGUI metalText;
 
     //UPDATES
+    private void Awake()
+    {
+        gm = FindObjectOfType<GameManager>();
+    }
     void Start()
     {
         //Hasn't been set up yet
@@ -82,6 +87,7 @@ public class ResourcePickUp : MonoBehaviour
         }
 
         UIManager.Instance.ToggleText("");
-        Destroy(gameObject);
+        gm.resourceCurrentList.Remove(this.gameObject);
+        gameObject.SetActive(false);
     }
 }

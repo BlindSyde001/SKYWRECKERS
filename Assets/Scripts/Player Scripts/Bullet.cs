@@ -16,14 +16,16 @@ public class Bullet : MonoBehaviour
     //METHODS
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("PIRATE") && player)
+        if(other.gameObject.CompareTag("Enemy") && player)
         {
-            other.GetComponentInParent<PirateShipAI>().enemyCurrentHP -= 5;
-            Destroy(this.gameObject);
-        }
-        if (other.gameObject.CompareTag("BIOROCK") && player)
-        {
-            other.GetComponentInParent<BioRockAI>().enemyCurrentHP -= 5;
+            if(other.GetComponentInParent<PirateShipAI>() != null)
+            {
+                other.GetComponentInParent<PirateShipAI>().enemyCurrentHP -= 5;
+            }
+            if(other.GetComponentInParent<BioRockAI>() != null)
+            {
+                other.GetComponentInParent<BioRockAI>().enemyCurrentHP -= 5;
+            }
             Destroy(this.gameObject);
         }
         else if(other.gameObject.CompareTag("ShipGround") && enemy)

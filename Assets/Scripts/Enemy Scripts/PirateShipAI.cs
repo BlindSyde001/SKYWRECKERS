@@ -6,6 +6,8 @@ public class PirateShipAI : EnemyStats
 {
 
     //VARIABLES
+    private GameManager gm;
+
     private Vector3 _direction;
     private Transform playerShip;
     private Quaternion _lookRotation;
@@ -28,6 +30,7 @@ public class PirateShipAI : EnemyStats
 
     private void Awake()
     {
+        gm = FindObjectOfType<GameManager>();
         playerShip = FindObjectOfType<MovementControlsShip>().transform;
         enemyMaxHP = 100;
         enemyCurrentHP = 100;
@@ -41,6 +44,7 @@ public class PirateShipAI : EnemyStats
         }
         if (enemyCurrentHP <= 0)
         {
+            gm.enemyList.Remove(this.gameObject);
             Destroy(this.gameObject);
         }
     }
@@ -70,7 +74,6 @@ public class PirateShipAI : EnemyStats
         transform.position += transform.forward * moveSpeed * Time.deltaTime;
         } else
         {
-           // transform.position = Vector3.Lerp(transform.position, alignPoint.position, 1.2f * Time.deltaTime);
             transform.position = Vector3.MoveTowards(transform.position, alignPoint.position, moveSpeed * Time.deltaTime);
             transform.rotation = Quaternion.Lerp(transform.rotation, alignPoint.rotation, rotateSpeed  * Time.deltaTime);
             if(Vector3.Distance(transform.position, alignPoint.position) < 2)

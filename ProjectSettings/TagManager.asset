@@ -14,6 +14,7 @@ TagManager:
   - BIOROCK
   - PIRATE
   - RepairPoint
+  - RESOURCE
   layers:
   - Default
   - TransparentFX

@@ -19,7 +19,7 @@ public class CheckpointSystem : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             print("CHECK POINT SAVED");
-            gm.lastCheckpointPos = this.gameObject;
+            gm.lastCheckpointPos = transform.position;
         }
     }
 }
