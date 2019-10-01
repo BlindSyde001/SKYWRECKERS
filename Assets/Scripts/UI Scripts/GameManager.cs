@@ -8,9 +8,8 @@ public class GameManager : MonoBehaviour
     private static GameManager instance;
     public Vector3 lastCheckpointPos;
     public Vector3 shipLastCheckpointPos;
-    public List<GameObject> enemyList; //currently redundant but put can be used later
     public List<GameObject> resourceMasterList;
-    public List<GameObject> resourceCurrentList;
+    public List<bool> resourceTaken;
 
     //UPDATES
     private void Awake()
@@ -22,11 +21,6 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(instance);
             lastCheckpointPos = GameObject.Find("Start Point").transform.position;
             shipLastCheckpointPos = GameObject.Find("Start DockPlacement").transform.position;
-
-            foreach (GameObject enemies in GameObject.FindGameObjectsWithTag("PIRATE"))
-                enemyList.Add(enemies);
-            foreach (GameObject _resource in GameObject.FindGameObjectsWithTag("RESOURCE"))
-                resourceCurrentList.Add(_resource);
         }
         else {
             Destroy(gameObject); }
@@ -34,9 +28,17 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Cursor.visible = false;
-            foreach (GameObject _resource in GameObject.FindGameObjectsWithTag("RESOURCE"))
-            {
-                resourceMasterList.Add(_resource);
-            }
+        UpdateList();
+        foreach(GameObject _resource in resourceMasterList)
+        {
+            resourceTaken.Add(_resource.activeSelf);
+        }
+    }
+
+    //METHODS
+    public void UpdateList()
+    {
+        foreach (GameObject _resource in GameObject.FindGameObjectsWithTag("RESOURCE"))
+            resourceMasterList.Add(_resource);
     }
 }

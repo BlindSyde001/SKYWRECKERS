@@ -87,7 +87,6 @@ public class ResourcePickUp : MonoBehaviour
         }
 
         UIManager.Instance.ToggleText("");
-        gm.resourceCurrentList.Remove(this.gameObject);
         gameObject.SetActive(false);
     }
 }

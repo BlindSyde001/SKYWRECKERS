@@ -23,14 +23,6 @@ public class LOADSCENE : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        foreach (GameObject _resource in gm.resourceCurrentList)
-        {
-            if (gm.resourceMasterList.Contains(_resource))
-            {
-                return;
-            }
-            else { _resource.SetActive(false); }
-        }
     }
 
     public void Mainmenu()

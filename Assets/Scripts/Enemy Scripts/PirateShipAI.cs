@@ -44,7 +44,7 @@ public class PirateShipAI : EnemyStats
         }
         if (enemyCurrentHP <= 0)
         {
-            gm.enemyList.Remove(this.gameObject);
+            //gm.enemyList.Remove(this.gameObject);
             Destroy(this.gameObject);
         }
     }
