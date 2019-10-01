@@ -62,6 +62,7 @@ public class ResourcePickUp : MonoBehaviour
         //Inventory.Instance.hasLock = true;
         if (item == InventoryItem.WOOD) //Item is picked up and appears in inventory 
         {
+            gm.savedWoodCount++;
             Inventory.Instance.woodCount++;
             Inventory.Instance.CheckInventory();
             woodText.text = ("Wood " + Inventory.Instance.woodCount + "/10");
@@ -75,12 +76,14 @@ public class ResourcePickUp : MonoBehaviour
         
         if (item == InventoryItem.FABRIC)
         {
+            gm.savedFabricCount++;
             Inventory.Instance.fabricCount++;
             Inventory.Instance.CheckInventory();
             fabricText.text = ("Fabric " + Inventory.Instance.fabricCount + "/10");
         }
         if (item == InventoryItem.METAL)
         {
+            gm.savedMetalCount++;
             Inventory.Instance.metalCount++;
             Inventory.Instance.CheckInventory();
             metalText.text = ("Metal " + Inventory.Instance.metalCount + "/10");
@@ -88,5 +91,6 @@ public class ResourcePickUp : MonoBehaviour
 
         UIManager.Instance.ToggleText("");
         gameObject.SetActive(false);
+        gm.BoolUpdate();
     }
 }

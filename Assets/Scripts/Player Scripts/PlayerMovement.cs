@@ -7,7 +7,6 @@ public class PlayerMovement : MonoBehaviour
 {
 
     //VARIABLES
-    private UIManager UI;
     private GameManager gm;
 
     public float velocity = 5f;
