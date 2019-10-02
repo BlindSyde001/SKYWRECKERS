@@ -65,7 +65,7 @@ public class MovementControlsShip : MonoBehaviour
     }
     private void Start()
     {
-        transform.position = gm.shipLastCheckpointPos;
+        transform.position = gm.shipLastCheckpointPos.transform.position;
     }
     private void Update()
     {

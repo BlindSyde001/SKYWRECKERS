@@ -6,6 +6,7 @@ public class CheckpointSystem : MonoBehaviour
 {
     //VARIABLES
     private GameManager gm;
+    public GameObject dockPos;
 
     //UPDATES
     private void Awake()
@@ -19,7 +20,8 @@ public class CheckpointSystem : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             print("CHECK POINT SAVED");
-            gm.lastCheckpointPos = transform.position;
+            gm.lastCheckpointPos = gameObject;
+            gm.shipLastCheckpointPos = dockPos.gameObject;
         }
     }
 }
