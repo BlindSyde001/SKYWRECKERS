@@ -20,8 +20,8 @@ public class CheckpointSystem : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             print("CHECK POINT SAVED");
-            gm.lastCheckpointPos = gameObject;
-            gm.shipLastCheckpointPos = dockPos.gameObject;
+            gm.lastCheckpointPosName = gameObject.name;
+            gm.shipLastCheckpointPosName = dockPos.name;
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class FileManager : MonoBehaviour
+public class LoadFunctions : MonoBehaviour
 {
     //VARIABLES
     public GameManager gm;
@@ -13,26 +13,42 @@ public class FileManager : MonoBehaviour
     {
         gm = FindObjectOfType<GameManager>();
     }
+
     //METHODS
-    public void startGame()
+    public void NewGame()
     {
-        if (gm != null)
-        { Destroy(gm.gameObject); }
-
+        gm.newGame = true;
         SceneManager.LoadScene(1);
-        gm = FindObjectOfType<GameManager>();
         Time.timeScale = 1.0f;
-        Cursor.visible = false;
     }
 
-    public void lastCheckpoint()
+    public void LoadGame()
     {
+        gm.newGame = false;
+        gm.LoadGameFile();
+        SceneManager.LoadScene(1);
         Time.timeScale = 1.0f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void Mainmenu()
+    public void LastCheckpoint()
+    {
+        gm.newGame = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1.0f;
+    }
+
+    public void MainMenu()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void SaveGame()
+    {
+
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

@@ -22,33 +22,21 @@ public class GameManager : MonoBehaviour
     public SaveState S2;
     public SaveState S3;
 
+    public string lastCheckpointPosName;
+    public string shipLastCheckpointPosName;
+
+    public bool newGame = false;
+
     //UPDATES
     private void Awake()
     {
-        if (instance == null)
+        if (instance == null && instance != this)
         {
             print("START POSITIONS");
             instance = this;
             DontDestroyOnLoad(instance);
-            lastCheckpointPos = GameObject.Find("Start Point");
-            shipLastCheckpointPos = GameObject.Find("Start DockPlacement");
         }
-        else {
-            Destroy(gameObject); }
-    }
-    void Start()
-    {
-        print("START");
-        Cursor.visible = false;
-        if(resourceMasterList.Count == 0)
-        {
-             resourceMasterList.AddRange(GameObject.FindGameObjectsWithTag("RESOURCE")); 
-        }
-        if(resourceTaken.Count == 0)
-        {
-             foreach (GameObject _resource in resourceMasterList)
-             { resourceTaken.Add(_resource.activeSelf); }
-        }
+        else { Destroy(gameObject); }
     }
 
     private void Update()
@@ -56,12 +44,12 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I))
         {
             print("Load");
-            LoadGame();
+            LoadGameFile();
         }
         if (Input.GetKeyDown(KeyCode.Q))
         {
             print("Saved");
-            SaveGame();
+            SaveGameFile();
         }
     }
 
@@ -72,7 +60,7 @@ public class GameManager : MonoBehaviour
         print("updated");
         resourceMasterList.Clear();
         resourceMasterList.AddRange(GameObject.FindGameObjectsWithTag("RESOURCE"));
-        
+
             for (int i = 0; i < resourceMasterList.Count; i++)
             {
                 if (resourceMasterList[i].activeSelf != resourceTaken[i])
@@ -93,9 +81,10 @@ public class GameManager : MonoBehaviour
 
     #region Save & Load
 
-    void SaveGame()
+    public void SaveGameFile()
     {
-        S1.checkPointSaved = lastCheckpointPos.name;
+        S1.checkPointSaved = lastCheckpointPosName;
+        S1.shipCheckPointSaved = shipLastCheckpointPosName;
         S1.resourceTakenSaved = resourceTaken;
 
         FileStream fs = new FileStream("Save.dat", FileMode.Create); //make save file
@@ -104,7 +93,7 @@ public class GameManager : MonoBehaviour
         fs.Close();
     }
 
-    void LoadGame()
+    public void LoadGameFile()
     {
         using (Stream stream = File.Open("Save.dat", FileMode.Open)) //Opens file of name Save 1
         {
@@ -113,10 +102,43 @@ public class GameManager : MonoBehaviour
             S1 = (SaveState)bFormatter.Deserialize(stream); //Overrides the current version of "S1" with the saved version.
         }
 
-        lastCheckpointPos = GameObject.Find(S1.checkPointSaved);
+        lastCheckpointPosName = S1.checkPointSaved;
+        shipLastCheckpointPosName = S1.shipCheckPointSaved;
         resourceTaken = S1.resourceTakenSaved;
     }
     #endregion
+
+    private void OnLevelWasLoaded(int level)
+    {
+        
+        if (level == 1)
+        {
+            if(newGame)
+            {
+                lastCheckpointPos = GameObject.Find("Start Point");
+                shipLastCheckpointPos = GameObject.Find("Start DockPlacement");
+                lastCheckpointPosName = lastCheckpointPos.name;
+                shipLastCheckpointPosName = shipLastCheckpointPos.name;
+                resourceMasterList.Clear();
+                if (resourceMasterList.Count == 0)
+                {
+                    resourceMasterList.AddRange(GameObject.FindGameObjectsWithTag("RESOURCE"));
+                }
+                resourceTaken.Clear();
+                if (resourceTaken.Count == 0)
+                {
+                    foreach (GameObject _resource in resourceMasterList)
+                    { resourceTaken.Add(_resource.activeSelf); }
+                }
+            }
+            else
+            {
+                lastCheckpointPos = GameObject.Find(lastCheckpointPosName);
+                shipLastCheckpointPos = GameObject.Find(shipLastCheckpointPosName);
+                UpdateList();
+            }
+        }
+    }
 }
 
 [System.Serializable]
@@ -126,4 +148,6 @@ public class SaveState
     public List<bool> resourceTakenSaved;
     [SerializeField]
     public string checkPointSaved;
+    [SerializeField]
+    public string shipCheckPointSaved;
 }
