@@ -60,7 +60,6 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Start()
     {
-        print("Player Load");
         transform.position = gm.lastCheckpointPos.transform.position;
     }
     private void Update()
@@ -95,7 +94,6 @@ public class PlayerMovement : MonoBehaviour
             }
 
         }
-            //transform.position = Bedroom.transform.position;
     }
 
     //METHODS

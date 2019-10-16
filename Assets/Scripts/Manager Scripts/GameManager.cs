@@ -18,9 +18,7 @@ public class GameManager : MonoBehaviour
     public int savedMetalCount;
     public int savedFabricCount;
 
-    public SaveState S1;
-    public SaveState S2;
-    public SaveState S3;
+    public List<SaveState> sFile;
 
     public string lastCheckpointPosName;
     public string shipLastCheckpointPosName;
@@ -37,20 +35,6 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(instance);
         }
         else { Destroy(gameObject); }
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            print("Load");
-            LoadGameFile();
-        }
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            print("Saved");
-            SaveGameFile();
-        }
     }
 
     //METHODS
@@ -81,30 +65,30 @@ public class GameManager : MonoBehaviour
 
     #region Save & Load
 
-    public void SaveGameFile()
+    public void SaveGameFile(int x)
     {
-        S1.checkPointSaved = lastCheckpointPosName;
-        S1.shipCheckPointSaved = shipLastCheckpointPosName;
-        S1.resourceTakenSaved = resourceTaken;
+        sFile[x].checkPointSaved = lastCheckpointPosName;
+        sFile[x].shipCheckPointSaved = shipLastCheckpointPosName;
+        sFile[x].resourceTakenSaved = resourceTaken;
 
-        FileStream fs = new FileStream("Save.dat", FileMode.Create); //make save file
+        FileStream fs = new FileStream("Save File " + x + ".dat", FileMode.Create); //make save file
         BinaryFormatter bf = new BinaryFormatter(); // save file ino binary
-        bf.Serialize(fs, S1); // just add this line afterwards
+        bf.Serialize(fs, sFile[x]); // just add this line afterwards
         fs.Close();
     }
 
-    public void LoadGameFile()
+    public void LoadGameFile(int x)
     {
-        using (Stream stream = File.Open("Save.dat", FileMode.Open)) //Opens file of name Save 1
+        using (Stream stream = File.Open("Save File " + x + ".dat", FileMode.Open)) //Opens file of name Save 1
         {
             var bFormatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter(); // Just add
 
-            S1 = (SaveState)bFormatter.Deserialize(stream); //Overrides the current version of "S1" with the saved version.
+            sFile[x] = (SaveState)bFormatter.Deserialize(stream); //Overrides the current version of "S1" with the saved version.
         }
 
-        lastCheckpointPosName = S1.checkPointSaved;
-        shipLastCheckpointPosName = S1.shipCheckPointSaved;
-        resourceTaken = S1.resourceTakenSaved;
+        lastCheckpointPosName = sFile[x].checkPointSaved;
+        shipLastCheckpointPosName = sFile[x].shipCheckPointSaved;
+        resourceTaken = sFile[x].resourceTakenSaved;
     }
     #endregion
 

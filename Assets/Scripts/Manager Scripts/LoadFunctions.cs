@@ -8,7 +8,6 @@ public class LoadFunctions : MonoBehaviour
     //VARIABLES
     public GameManager gm;
 
-
     private void Start()
     {
         gm = FindObjectOfType<GameManager>();
@@ -22,10 +21,10 @@ public class LoadFunctions : MonoBehaviour
         Time.timeScale = 1.0f;
     }
 
-    public void LoadGame()
+    public void LoadGame(int slot)
     {
         gm.newGame = false;
-        gm.LoadGameFile();
+        gm.LoadGameFile(slot);
         SceneManager.LoadScene(1);
         Time.timeScale = 1.0f;
     }
@@ -42,9 +41,9 @@ public class LoadFunctions : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    public void SaveGame()
+    public void SaveGame(int slot)
     {
-
+        gm.SaveGameFile(slot);
     }
 
     public void QuitGame()
