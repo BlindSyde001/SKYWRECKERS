@@ -77,7 +77,6 @@ public class CameraControls : MonoBehaviour
         if(Physics.Raycast(ray, out hit, targetDistance))
         {
             currentDistance = hit.distance;
-            //Debug.Log(hit.collider.name);
         }
         else
         {

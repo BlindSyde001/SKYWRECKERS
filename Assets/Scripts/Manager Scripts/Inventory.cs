@@ -9,6 +9,7 @@ public class Inventory : MonoBehaviour
     //VARIABLES
     public static Inventory Instance;
     private GameManager gm;
+    private UIManager ui;
 
     public int woodCount;
     public int metalCount;
@@ -51,6 +52,7 @@ public class Inventory : MonoBehaviour
     {
         Instance = this;
         gm = FindObjectOfType<GameManager>();
+        ui = FindObjectOfType<UIManager>();
     }
 
     // Start is called before the first frame update
@@ -149,22 +151,22 @@ public class Inventory : MonoBehaviour
     public void WoodUpgrade()
     {
         shipUpgradeWood.SetActive(true); //Place holder to see if the function works
-        UIManager.Instance.hullMaxHP = 140;
+        ui.hullMaxHP = 140;
     }
 
     public void FabricUpgrade()
     {
         //Debug.Log("Fabric Upgrade Complete");
         shipUpgradeFabric.SetActive(true);
-        UIManager.Instance.sailsMaxHP = 120;
+        ui.sailsMaxHP = 120;
     }
 
     public void MetalUpgrade()
     {
         //Debug.Log("Metal Upgrade Complete");
         shipUpgradeMetal.SetActive(true);
-        UIManager.Instance.leftCannonMaxHP = 120;
-        UIManager.Instance.rightCannonMaxHP = 120;
+        ui.leftCannonMaxHP = 120;
+        ui.rightCannonMaxHP = 120;
     }
 
     public IEnumerator UpgradeAvailableTextGone()

@@ -23,6 +23,7 @@ public class MovementControlsShip : MonoBehaviour
     public float speed = 0;
 
     public float dockTime = 5F;
+    public List<GameObject> shipWalls;
 
     public float transitionCooldown = 1F;
     public float transitionTimer = 0F;
@@ -69,6 +70,7 @@ public class MovementControlsShip : MonoBehaviour
     }
     private void Update()
     {
+       
         if (!docking)
         {
             controller.enabled = true;
@@ -138,6 +140,24 @@ public class MovementControlsShip : MonoBehaviour
             StartCoroutine(Dock());
         }
 
+    }
+
+    private void FixedUpdate()
+    {
+        if (forwardVelocity > 0)
+        {
+            foreach (GameObject a in shipWalls)
+            {
+                a.SetActive(true);
+            }
+        }
+        else if (transform.position == dockingPlacement.position)
+        {
+            foreach (GameObject a in shipWalls)
+            {
+                a.SetActive(false);
+            }
+        }
     }
 
     private IEnumerator Dock()
@@ -242,6 +262,13 @@ public class MovementControlsShip : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Dock"))
+        {
+            dockingPlacement = other.transform;
+        }
+    }
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Dock"))
@@ -252,7 +279,7 @@ public class MovementControlsShip : MonoBehaviour
                 if (!docking)
                 {
                     docking = true;
-                    dockingPlacement = other.GetComponent<Dock>().dockingPlacement;
+                    dockingPlacement = other.transform;
                     accelerateModeCounter = 0;
 
                 }

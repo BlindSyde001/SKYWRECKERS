@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
 
     //VARIABLES
     private GameManager gm;
+    public GameObject menu;
+    public GameObject map;
 
     public float velocity = 5f;
     public float turnSpeed = 10;
@@ -64,6 +66,14 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Tab))
+        {
+            menu.SetActive(!menu.activeSelf);
+            if(Time.timeScale != 0)
+            {
+                Time.timeScale = 0;
+            } else { Time.timeScale = 1; }
+        }
         if (!isControllingShip)
         {
             Move();
@@ -159,8 +169,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Rotation()
     {
-        
-        
             float horizontal = Input.GetAxis("Mouse X");
 
             transform.Rotate(new Vector3(0F, horizontal * turnSpeed, 0F) * Time.deltaTime);
@@ -179,8 +187,15 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
+            print("E");
+            if (other.CompareTag("Map Table"))
+            {
+                print("map");
+                map.SetActive(!map.activeSelf);
+            }
             if(other.CompareTag("Wheel") && !ship.docking)
             {
+                print("Wheel");
                 isControllingShip = !isControllingShip;
                 camera.gameObject.SetActive(!isControllingShip);
                 ship.camera.gameObject.SetActive(isControllingShip);
@@ -191,6 +206,7 @@ public class PlayerMovement : MonoBehaviour
                 isClimbing = !isClimbing;
                 wallClimb = other.transform;
             }
+            
         }
 
         if (other.CompareTag("ShipGround"))

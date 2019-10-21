@@ -788,7 +788,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gm: {fileID: 0}
-  x: 0
+  saveOne: {fileID: 165839015}
+  saveTwo: {fileID: 294973872}
+  saveThree: {fileID: 616445283}
 --- !u!1 &397154958
 GameObject:
   m_ObjectHideFlags: 0
@@ -876,7 +878,7 @@ GameObject:
   - component: {fileID: 496809125}
   - component: {fileID: 496809124}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Black Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1132,7 +1134,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 936, y: -195.70728}
+  m_AnchoredPosition: {x: 936, y: -196.28986}
   m_SizeDelta: {x: 1800, y: 340}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &787602380
@@ -1310,16 +1312,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 308320176}
-        m_MethodName: LoadGame
-        m_Mode: 1
+      - m_Target: {fileID: 397154958}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -1528,10 +1530,6 @@ MonoBehaviour:
   savedWoodCount: 0
   savedMetalCount: 0
   savedFabricCount: 0
-  S1:
-    resourceTakenSaved: 
-    checkPointSaved: 
-    shipCheckPointSaved: 
   sFile:
   - resourceTakenSaved: 
     checkPointSaved: 
@@ -1818,7 +1816,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 936, y: -875.7073}
+  m_AnchoredPosition: {x: 936, y: -876.28986}
   m_SizeDelta: {x: 1800, y: 340}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1535862759
@@ -1950,7 +1948,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 936, y: -535.7073}
+  m_AnchoredPosition: {x: 936, y: -536.28986}
   m_SizeDelta: {x: 1800, y: 340}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1576061478
@@ -2059,7 +2057,7 @@ GameObject:
   - component: {fileID: 1684680546}
   - component: {fileID: 1684680545}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Grey Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

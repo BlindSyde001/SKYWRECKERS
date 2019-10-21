@@ -15,6 +15,7 @@ TagManager:
   - PIRATE
   - RepairPoint
   - RESOURCE
+  - Map Table
   layers:
   - Default
   - TransparentFX
