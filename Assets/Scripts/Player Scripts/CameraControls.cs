@@ -22,6 +22,7 @@ public class CameraControls : MonoBehaviour
     public Transform shoulderCam;
     public int changeCounter = 0;
     bool check;
+    bool doubleCheck;
 
     //UPDATES
     private void Start()
@@ -30,37 +31,52 @@ public class CameraControls : MonoBehaviour
     }
 
     private void Update()
+
     {
-        check = playerController.GetComponent<PlayerMovement>().isControllingShip;
-       
-        if(check)
+        if (doubleCheck)
         {
+            check = playerController.GetComponent<PlayerMovement>().isControllingShip;
+       
+            if(check)
+            {
             currentX += Input.GetAxis("Mouse X");
             currentY += Input.GetAxis("Mouse Y");
             currentY = Mathf.Clamp(currentY, yAngleMin, yAngleMax);
 
-        }
+             }
             
 
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            if (check)
+            if (Input.GetKeyDown(KeyCode.V))
             {
+                if (check)
+                {
                 CameraPosChange();
+                 }
             }
-        }
         movePostion();
+
+        }
+
     }
+
+    
 
     private void LateUpdate()
     {
         if (Time.timeScale == 0)
         {
             Cursor.visible = true;
-            this.GetComponent<CameraControls>().enabled = false;
+            doubleCheck = false;
+            
+        } else { doubleCheck = true; }
+
+        if(doubleCheck)
+        {
+            FreeRotateCamera();
+            CameraClipping();
+
         }
-        FreeRotateCamera();
-        CameraClipping();
+        
     }
 
     //METHODS
