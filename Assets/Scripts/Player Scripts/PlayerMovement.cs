@@ -49,6 +49,8 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject plank;
     public GameObject gameover;
+
+    public bool inverted = false;
     
     //UPDATES
     private void Awake()
@@ -174,7 +176,11 @@ public class PlayerMovement : MonoBehaviour
             transform.Rotate(new Vector3(0F, horizontal * turnSpeed, 0F) * Time.deltaTime);
 
             float vertical = Input.GetAxis("Mouse Y");
+        if(inverted)
+        {
             shoulderRot += vertical;
+        } else { shoulderRot -= vertical; }
+            
             shoulderRot = Mathf.Clamp(shoulderRot, -20, 20);
 
             shoulderPos.transform.localEulerAngles = new Vector3(shoulderRot, transform.rotation.y, 0);
@@ -288,4 +294,13 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     #endregion
+
+    public void invertControls()
+    {
+        inverted = true;
+    }
+    public void normalControls()
+    {
+        inverted = false;
+    }
 }

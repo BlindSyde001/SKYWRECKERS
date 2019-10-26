@@ -8,6 +8,7 @@ public class MovementControlsShip : MonoBehaviour
 {
     //VARIABLES
     private GameManager gm;
+    private CameraControls cameraControls;
 
     public float zeroToMaxPerSecond;
     public float forwardVelocity;
@@ -59,6 +60,7 @@ public class MovementControlsShip : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         gm = FindObjectOfType<GameManager>();
+        cameraControls = FindObjectOfType<CameraControls>();
         forwardVelocity = 0f;
         yaw = transform.eulerAngles.y;
 
@@ -100,6 +102,7 @@ public class MovementControlsShip : MonoBehaviour
 
             if (player?.isControllingShip ?? true)
             {
+                SnapToSidesCont();
                 turnCap();
                 ShootingCannons();
                 if (accelerateModeCounter > 0)
@@ -247,7 +250,7 @@ public class MovementControlsShip : MonoBehaviour
 
             case 1:
                 turnSpeed = 50;
-                speed = 5;
+                speed = 2.5f;
                 break;
 
             case 2:
@@ -324,5 +327,17 @@ public class MovementControlsShip : MonoBehaviour
         }
     }
     #endregion
+
+    private void SnapToSidesCont()
+    {
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+           
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            
+        }
+    }
 }
 

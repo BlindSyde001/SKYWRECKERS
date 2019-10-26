@@ -13,8 +13,8 @@ public class CameraControls : MonoBehaviour
     private float targetDistance = 10f;
     private float currentDistance = 10f;
     public float cameraRelocate = 0.2f;
-    private float currentX = 0f;
-    private float currentY = 0f;
+    public float currentX = 0f;
+    public float currentY = 0f;
     private float yAngleMin = -45f;
     private float yAngleMax = 45f;
 
@@ -23,6 +23,8 @@ public class CameraControls : MonoBehaviour
     public int changeCounter = 0;
     bool check;
     bool doubleCheck;
+
+    public Quaternion rotation;
 
     //UPDATES
     private void Start()
@@ -51,7 +53,7 @@ public class CameraControls : MonoBehaviour
                 if (check)
                 {
                 CameraPosChange();
-                 }
+                }
             }
         movePostion();
 
@@ -74,7 +76,6 @@ public class CameraControls : MonoBehaviour
         {
             FreeRotateCamera();
             CameraClipping();
-
         }
         
     }
@@ -82,7 +83,7 @@ public class CameraControls : MonoBehaviour
     //METHODS
     void FreeRotateCamera()
     {
-        Quaternion rotation = Quaternion.Euler(currentY, currentX, 0);
+        rotation = Quaternion.Euler(currentY, currentX, 0);
         transform.rotation = rotation;
     }
 
@@ -156,6 +157,18 @@ public class CameraControls : MonoBehaviour
         cam.transform.position = shoulderCam.transform.position;
 
         movePostion();
+    }
+
+    public void SnaptoLeft()
+    {
+        currentY = 24;
+        currentX = 90;
+        rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(24, 90, 0), 1 * Time.deltaTime);
+    }
+
+    public void SnaptoRight()
+    {
+        rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(24, -90, 0), 1 * Time.deltaTime);
     }
 
 }
