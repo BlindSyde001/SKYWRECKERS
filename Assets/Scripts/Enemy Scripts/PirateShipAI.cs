@@ -12,7 +12,7 @@ public class PirateShipAI : EnemyStats
     private Transform playerShip;
     private Quaternion _lookRotation;
     private float rotateSpeed = 1.2f;
-    public float moveSpeed = 10f;
+    public float moveSpeed = 7f;
 
     public float lookRadius = 120;
     private Transform alignPoint;
