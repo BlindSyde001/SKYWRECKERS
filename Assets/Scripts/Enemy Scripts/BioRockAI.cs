@@ -5,7 +5,7 @@ using UnityEngine;
 public class BioRockAI : EnemyStats
 {
     //VARIABLES
-    private float lookRadius = 130f;
+    private float lookRadius = 150f;
     private MovementControlsShip playerShip;
     public Transform swarmPoint;
     public Rigidbody swarmEnemy;

@@ -215,7 +215,7 @@ public class MovementControlsShip : MonoBehaviour
         }
         else
         {
-            targetRotation = Quaternion.Euler(angle / 2, yaw, 0);
+            targetRotation = Quaternion.Euler(angle / 4, yaw, 0);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, pitchSpeed * Time.deltaTime);
         }
     }

@@ -8,7 +8,12 @@ public class PlayerMovement : MonoBehaviour
 
     //VARIABLES
     private GameManager gm;
+
     public GameObject menu;
+    public GameObject overMenu;
+    public GameObject settingsPanel;
+    public GameObject savePanel;
+    public GameObject inventoryPanel;
     public GameObject map;
 
     public float velocity = 5f;
@@ -70,6 +75,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Tab))
         {
+            overMenu.SetActive(true);
+            inventoryPanel.SetActive(false);
+            savePanel.SetActive(false);
+            settingsPanel.SetActive(false);
             menu.SetActive(!menu.activeSelf);
             if(Time.timeScale != 0)
             {

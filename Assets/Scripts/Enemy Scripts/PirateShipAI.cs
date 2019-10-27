@@ -14,7 +14,7 @@ public class PirateShipAI : EnemyStats
     private float rotateSpeed = 1.2f;
     public float moveSpeed = 7f;
 
-    public float lookRadius = 120;
+    public float lookRadius = 180;
     private Transform alignPoint;
 
     public Transform playerShipLeft;

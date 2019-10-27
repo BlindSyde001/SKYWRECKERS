@@ -101,6 +101,7 @@ public class CameraControls : MonoBehaviour
         }
         cam.transform.localPosition = new Vector3(0, 0, -currentDistance + cameraRelocate);
         Debug.DrawRay(transform.position, -transform.forward * targetDistance);
+        Debug.Log(hit.transform.name);
     }
 
     void CameraPosChange()
