@@ -73,6 +73,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
+        print(isControllingShip);
         if(Input.GetKeyDown(KeyCode.Tab))
         {
             overMenu.SetActive(true);
