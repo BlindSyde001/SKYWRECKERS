@@ -211,12 +211,12 @@ public class MovementControlsShip : MonoBehaviour
         if (accelerateModeCounter == 0)
         {
             targetRotation = Quaternion.Euler(0, yaw, 0);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, pitchSpeed / 2 * Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, pitchSpeed / 4 * Time.deltaTime);
         }
         else
         {
-            targetRotation = Quaternion.Euler(angle / 4, yaw, 0);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, pitchSpeed * Time.deltaTime);
+            targetRotation = Quaternion.Euler(angle / 3, yaw, 0);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, pitchSpeed / 2 * Time.deltaTime);
         }
     }
     void calculateDirectionZ()
@@ -249,7 +249,7 @@ public class MovementControlsShip : MonoBehaviour
                 break;
 
             case 1:
-                turnSpeed = 50;
+                turnSpeed = 20;
                 speed = 2.5f;
                 break;
 

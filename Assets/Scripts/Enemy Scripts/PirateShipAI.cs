@@ -11,7 +11,7 @@ public class PirateShipAI : EnemyStats
     private Vector3 _direction;
     private Transform playerShip;
     private Quaternion _lookRotation;
-    private float rotateSpeed = 1.2f;
+    public float rotateSpeed = 1.2f;
     public float moveSpeed = 7f;
 
     public float lookRadius = 180;
@@ -53,41 +53,42 @@ public class PirateShipAI : EnemyStats
     void comeAlongSideShip()
     {
         //check for which side the ship is on relative to the player and come along side the player on that side
-        float leftDistance = Vector3.Distance(transform.position, playerShipLeft.position);
-        float rightDistance = Vector3.Distance(transform.position, playerShipRight.position);
+        //float leftDistance = Vector3.Distance(transform.position, playerShipLeft.position);
+        //float rightDistance = Vector3.Distance(transform.position, playerShipRight.position);
 
-        if(leftDistance < rightDistance)
-        {
-            alignPoint = playerShipLeft;
-        }
-            
-        else
-        {
-            alignPoint = playerShipRight;
-        }
-         
-        if(Vector3.Distance(transform.position, alignPoint.position) > 4)
-        {
-        _direction = (alignPoint.position - transform.position).normalized;
+        //if(leftDistance < rightDistance)
+        //{
+        //    alignPoint = playerShipLeft;
+        //}
+
+        //else
+        //{
+        //    alignPoint = playerShipRight;
+        //}
+
+        _direction = (playerShip.position - transform.position).normalized;
         _lookRotation = Quaternion.LookRotation(_direction);
-        transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, rotateSpeed * Time.deltaTime);
         transform.position += transform.forward * moveSpeed * Time.deltaTime;
-        } else
+          
+        //Aiming towards player's ship
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, _lookRotation, 20 * Time.deltaTime);
+
+        if (Vector3.Angle(_direction, transform.forward) >= 45 && Vector3.Angle(_direction, transform.forward) <= 135)
         {
-            transform.position = Vector3.MoveTowards(transform.position, alignPoint.position, moveSpeed * Time.deltaTime);
-            transform.rotation = Quaternion.Lerp(transform.rotation, alignPoint.rotation, rotateSpeed  * Time.deltaTime);
-            if(Vector3.Distance(transform.position, alignPoint.position) < 2)
+            if (transform.position.y <= playerShip.transform.position.y + 10 && transform.position.y >= playerShip.transform.position.y - 10)
             {
+                print("Shots Fired!");
+                print(transform.position.y);
+                print(playerShip.transform.position.y);
                 ShootingCannons();
             }
         }
-        print(alignPoint);
     }
 
     #region Cannons
     void ShootingCannons()
     {
-        if (Time.time > nextFire && alignPoint == playerShipLeft)
+        if (Time.time > nextFire)
         {
 
             nextFire = Time.time + fireRate;
@@ -97,18 +98,23 @@ public class PirateShipAI : EnemyStats
                 bulletInstance = Instantiate(bullet, x.position, x.rotation) as Rigidbody;
                 bulletInstance.AddForce(barrelEnd.forward * 4500);
             }
-        }
-        else if (Time.time > nextFire && alignPoint == playerShipRight)
-        {
-
-            nextFire = Time.time + fireRate;
-            Rigidbody bulletInstance;
             foreach (Transform y in bulletEndsLeft)
             {
                 bulletInstance = Instantiate(bullet, y.position, y.rotation) as Rigidbody;
                 bulletInstance.AddForce(barrelEnd.forward * -4500);
             }
         }
+        //else if (Time.time > nextFire)
+        //{
+
+        //    nextFire = Time.time + fireRate;
+        //    Rigidbody bulletInstance;
+        //    foreach (Transform y in bulletEndsLeft)
+        //    {
+        //        bulletInstance = Instantiate(bullet, y.position, y.rotation) as Rigidbody;
+        //        bulletInstance.AddForce(barrelEnd.forward * -4500);
+        //    }
+        //}
     }
     #endregion
     private void OnDrawGizmosSelected()

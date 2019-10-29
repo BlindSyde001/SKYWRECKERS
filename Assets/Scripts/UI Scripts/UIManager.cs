@@ -39,7 +39,7 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         leftCannonHPText.text = "LC " + leftCannonHP + "/" + leftCannonMaxHP;
-        righCannonHPText.text = "RC " + rightCannonHP + "/" + rightCannonHP;
+        righCannonHPText.text = "RC " + rightCannonHP + "/" + rightCannonMaxHP;
         sailsHPText.text = "SL " + sailsHP + "/" + sailsMaxHP;
         hullHPText.text = "HL " + hullHP + "/" + hullMaxHP;
 
