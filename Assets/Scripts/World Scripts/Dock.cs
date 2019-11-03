@@ -5,20 +5,32 @@ using UnityEngine;
 public class Dock : MonoBehaviour
 {
     ////VARIABLES
-    //private MovementControlsShip ship;
+    private UIManager ui;
+    private PlayerMovement player;
 
-    //public Transform newShipPos;
+    //UPDATES
+    private void Awake()
+    {
+        ui = FindObjectOfType<UIManager>();
+        player = FindObjectOfType<PlayerMovement>();
+    }
 
-    //private void Start()
-    //{
-    //    ship = FindObjectOfType<MovementControlsShip>();
-    //}
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("ShipGround") && player.isControllingShip == true)
+        {
+            ui.UIObjectText.text = " Press G to Dock";
+        } else
+        {
+            ui.UIObjectText.text = "";
+        }
+    }
 
-    //private void Update()
-    //{
-    //    if(ship.docking == true)
-    //    {
-    //        newShipPos = transform;
-    //    }
-    //}
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.CompareTag("Player"))
+        {
+            ui.UIObjectText.text = "";
+        }
+    }
 }
