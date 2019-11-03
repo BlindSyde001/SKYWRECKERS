@@ -15,20 +15,24 @@ public class Dock : MonoBehaviour
         player = FindObjectOfType<PlayerMovement>();
     }
 
+    private void Update()
+    {
+        if(ui.UIObjectText.text == "Press G to Dock" && (!player.isControllingShip))
+        {
+            ui.UIObjectText.text = "";
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("ShipGround") && player.isControllingShip == true)
         {
-            ui.UIObjectText.text = " Press G to Dock";
-        } else
-        {
-            ui.UIObjectText.text = "";
+            ui.UIObjectText.text = "Press G to Dock";
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if(other.CompareTag("ShipGround"))
         {
             ui.UIObjectText.text = "";
         }
