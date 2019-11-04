@@ -43,12 +43,12 @@ public class UIManager : MonoBehaviour
         sailsHPText.text = "SL " + sailsHP + "/" + sailsMaxHP;
         hullHPText.text = "HL " + hullHP + "/" + hullMaxHP;
 
-        if(leftCannonHP <= 0 || rightCannonHP <= 0 || sailsHP <= 0 || hullHP <= 0)
-        {
-            Time.timeScale = 0;
-            gameover.SetActive(true);
-            Debug.Log("YOU LOSE!");
-        }
+        //if(leftCannonHP <= 0 || rightCannonHP <= 0 || sailsHP <= 0 || hullHP <= 0)
+        //{
+        //    Time.timeScale = 0;
+        //    gameover.SetActive(true);
+        //    Debug.Log("YOU LOSE!");
+        //}
         
         leftCannonHP = Mathf.Clamp(leftCannonHP, 0, leftCannonMaxHP);
         rightCannonHP = Mathf.Clamp(rightCannonHP, 0, rightCannonMaxHP);
@@ -56,7 +56,20 @@ public class UIManager : MonoBehaviour
         sailsHP = Mathf.Clamp(sailsHP, 0, sailsMaxHP);
     }
 
+    private void FixedUpdate()
+    {
 
+        if (leftCannonHP <= 0 || rightCannonHP <= 0 || sailsHP <= 0 || hullHP <= 0)
+        {
+            Time.timeScale = 0;
+            gameover.SetActive(true);
+            Cursor.visible = true;
+            //if (Time.timeScale == 0)
+            //{
+                //this.GetComponent<PlayerMovement>().enabled = false;
+            //}
+        }
+    }
     //METHODS
     public void ToggleText(string itemName) //Toggle text is individually set in inspector for each item
     {

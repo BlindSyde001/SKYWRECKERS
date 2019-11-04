@@ -42,37 +42,42 @@ public class ShipColliders : MonoBehaviour
     {
         if (ship.docking == false)
         {
-            #region Colliding
-            if (other.CompareTag("Enemy") || other.CompareTag("Ground"))
+            float timerTickr = 0;
+            timerTickr += Time.deltaTime;
+
+            if(timerTickr >= 1)
             {
-                if (sail)
+                #region Colliding
+                if (other.CompareTag("Enemy") || other.CompareTag("Ground"))
                 {
-                    UI.GetComponent<UIManager>().sailsHP -= 5;
-                    Debug.Log("HIT SAIL");
+                    if (sail)
+                    {
+                        UI.GetComponent<UIManager>().sailsHP -= 5;
+                        Debug.Log("HIT SAIL");
+                    }
+                    
+                    if (hull)
+                    {
+                        UI.GetComponent<UIManager>().hullHP -= 5;
+                        Debug.Log("HIT HULL");
+                    }
+                    
+                    if (left)
+                    {
+                        UI.GetComponent<UIManager>().leftCannonHP -= 5;
+                        Debug.Log("HIT LEFT");
+                    }
+                    
+                    if (right)
+                    {
+                        UI.GetComponent<UIManager>().rightCannonHP -= 5;
+                        Debug.Log("HIT RIGHT");
+                    }
+                    timerTickr = 0;
                 }
-
-
-                if (hull)
-                {
-                    UI.GetComponent<UIManager>().hullHP -= 5;
-                    Debug.Log("HIT HULL");
-                }
-
-
-                if (left)
-                {
-                    UI.GetComponent<UIManager>().leftCannonHP -= 5;
-                    Debug.Log("HIT LEFT");
-                }
-
-
-                if (right)
-                {
-                    UI.GetComponent<UIManager>().rightCannonHP -= 5;
-                    Debug.Log("HIT RIGHT");
-                }
+                #endregion
             }
-            #endregion
+           
         }
     }
 
