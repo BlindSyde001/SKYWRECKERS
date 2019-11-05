@@ -73,7 +73,6 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
-        print(isControllingShip);
         if(Input.GetKeyDown(KeyCode.Tab))
         {
             overMenu.SetActive(true);
@@ -202,6 +201,16 @@ public class PlayerMovement : MonoBehaviour
     //CLIMBING - Testing placing climbing mechanic on player. Need to make the bool a toggle so that player can attach and detach freely.
     public void OnTriggerStay(Collider other)
     {
+                bool can = false;
+        if (ship.angle >= -3 && ship.angle <= 3)
+        {
+            can = true;
+        }
+        else
+        {
+            can = false;
+        }
+            print(can);
         if (Input.GetKeyDown(KeyCode.E))
         {
             print("E");
@@ -212,10 +221,13 @@ public class PlayerMovement : MonoBehaviour
             }
             if(other.CompareTag("Wheel") && !ship.docking)
             {
-                print("Wheel");
-                isControllingShip = !isControllingShip;
-                camera.gameObject.SetActive(!isControllingShip);
-                ship.camera.gameObject.SetActive(isControllingShip);
+                if(can)
+                {
+                 print("Wheel");
+                 isControllingShip = !isControllingShip;
+                 camera.gameObject.SetActive(!isControllingShip);
+                 ship.camera.gameObject.SetActive(isControllingShip);
+                }
             }
 
             if (other.CompareTag("Wall"))
