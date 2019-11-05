@@ -99,6 +99,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             transform.position = dockPos.position;
+            transform.rotation = dockPos.rotation;
             shipHP.SetActive(true);
             plank.SetActive(false);
         }
