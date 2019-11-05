@@ -17,7 +17,7 @@ public class MovementControlsShip : MonoBehaviour
 
     public Vector3 input;
     private Quaternion targetRotation;
-    private float angle;
+    public float angle;
     public float pitchSpeed = 1;
     public float turnSpeed = 75F;
     private float yaw;
