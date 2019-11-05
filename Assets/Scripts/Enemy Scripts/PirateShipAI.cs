@@ -11,8 +11,8 @@ public class PirateShipAI : EnemyStats
     private Vector3 _direction;
     private Transform playerShip;
     private Quaternion _lookRotation;
-    public float rotateSpeed = 1.2f;
-    public float moveSpeed = 7f;
+    public float rotateSpeed = 1.5f;
+    public float moveSpeed = 8f;
 
     public float lookRadius = 180;
     private Transform alignPoint;
@@ -24,7 +24,7 @@ public class PirateShipAI : EnemyStats
     public List<Transform> bulletEndsLeft;
     public Rigidbody bullet;
     public Transform barrelEnd;
-    public float fireRate = 1f;
+    public float fireRate = 2f;
     float nextFire;
     //UPDATES
 
