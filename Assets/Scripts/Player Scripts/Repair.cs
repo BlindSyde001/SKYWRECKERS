@@ -103,17 +103,13 @@ public class Repair : MonoBehaviour
         {
             ToolTip.SetActive(false);
         }
-        //if (hull && UI.GetComponent<UIManager>().hullHP < UI.GetComponent<UIManager>().hullMaxHP)
-        //{
-        //    ToolTip.SetActive(true);
-        //}
-        //if (left && UI.GetComponent<UIManager>().leftCannonHP < UI.GetComponent<UIManager>().leftCannonMaxHP)
-        //{
-        //    ToolTip.SetActive(true);
-        //}
-        //if (right && UI.GetComponent<UIManager>().rightCannonHP < UI.GetComponent<UIManager>().rightCannonMaxHP)
-        //{
-        //    ToolTip.SetActive(true);
-        //}
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.CompareTag("Player"))
+        {
+            UI.UIObjectText.text = "Repair Zone";
+        }
     }
 }

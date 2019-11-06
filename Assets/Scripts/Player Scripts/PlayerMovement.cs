@@ -201,7 +201,7 @@ public class PlayerMovement : MonoBehaviour
     //CLIMBING - Testing placing climbing mechanic on player. Need to make the bool a toggle so that player can attach and detach freely.
     public void OnTriggerStay(Collider other)
     {
-                bool can = false;
+        bool can = false;
         if (ship.angle >= -3 && ship.angle <= 3)
         {
             can = true;
@@ -210,7 +210,6 @@ public class PlayerMovement : MonoBehaviour
         {
             can = false;
         }
-            print(can);
         if (Input.GetKeyDown(KeyCode.E))
         {
             print("E");

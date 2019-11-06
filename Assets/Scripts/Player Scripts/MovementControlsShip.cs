@@ -142,7 +142,17 @@ public class MovementControlsShip : MonoBehaviour
         {
             StartCoroutine(Dock());
         }
+        controller.Move((windForce + nudgeVector + movement + transform.forward * forwardVelocity) * Time.deltaTime);
 
+        if (player.isControllingShip)
+            player.transform.position = player.dockPos.position;
+
+
+        movement = Vector3.zero;
+        nudgeVector = Vector3.Lerp(nudgeVector, Vector3.zero, 2f * Time.deltaTime);
+
+        windForce = Vector3.Lerp(windForce, Vector3.zero, 2f * Time.deltaTime);
+        displacement = controller.velocity;
     }
 
     private void FixedUpdate()
@@ -191,17 +201,17 @@ public class MovementControlsShip : MonoBehaviour
 
     private void LateUpdate()
     {
-        controller.Move((windForce + nudgeVector + movement + transform.forward * forwardVelocity) * Time.deltaTime);
+        //controller.Move((windForce + nudgeVector + movement + transform.forward * forwardVelocity) * Time.deltaTime);
 
-        if (player.isControllingShip)
-            player.transform.position = player.dockPos.position;
+        //if (player.isControllingShip)
+        //    player.transform.position = player.dockPos.position;
 
 
-        movement = Vector3.zero;
-        nudgeVector = Vector3.Lerp(nudgeVector, Vector3.zero, 2f * Time.deltaTime);
+        //movement = Vector3.zero;
+        //nudgeVector = Vector3.Lerp(nudgeVector, Vector3.zero, 2f * Time.deltaTime);
 
-        windForce = Vector3.Lerp(windForce, Vector3.zero, 2f * Time.deltaTime);
-        displacement = controller.velocity;
+        //windForce = Vector3.Lerp(windForce, Vector3.zero, 2f * Time.deltaTime);
+        //displacement = controller.velocity;
     }
 
     //METHODS   

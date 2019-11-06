@@ -121,6 +121,8 @@ public class GameManager : MonoBehaviour
                 shipLastCheckpointPos = GameObject.Find(shipLastCheckpointPosName);
                 UpdateList();
             }
+            MovementControlsShip thisThing = FindObjectOfType<MovementControlsShip>();
+            thisThing.transform.position = shipLastCheckpointPos.transform.position;
         }
     }
 }
