@@ -101,8 +101,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7696499258040973858}
+  - component: {fileID: 7023117185459875410}
+  - component: {fileID: 813082406867119828}
+  - component: {fileID: 155563852522820224}
   m_Layer: 0
-  m_Name: woodplank_low (2)
+  m_Name: WoodPlank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -115,11 +118,58 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6671005965665437745}
-  m_LocalRotation: {x: 0.03738755, y: -0.14629379, z: -0.0055330913, w: 0.988519}
+  m_LocalRotation: {x: 0.037387878, y: -0.14629349, z: -0.005533657, w: 0.988519}
   m_LocalPosition: {x: -5.297119, y: 0.13631439, z: -0.90722656}
-  m_LocalScale: {x: 0.70826614, y: 0.70826614, z: 0.70826614}
+  m_LocalScale: {x: 0.7082665, y: 0.7082, z: 0.70826626}
   m_Children:
   - {fileID: 2061276997464015440}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 4.1460004, y: -16.882, z: -1.2570001}
+--- !u!64 &7023117185459875410
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6671005965665437745}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 0}
+--- !u!64 &813082406867119828
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6671005965665437745}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 0}
+--- !u!205 &155563852522820224
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6671005965665437745}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0.22200869, y: -0.4638672, z: 0.17589802}
+  m_Size: 1.1949824
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.014625
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 3461600412214818478}
+  m_Enabled: 1
