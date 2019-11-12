@@ -23,7 +23,7 @@ public class MovementControlsShip : MonoBehaviour
     private float yaw;
     public float speed = 0;
 
-    public float dockTime = 5F;
+    public float dockTime = 3F;
     public List<GameObject> shipWalls;
 
     public float transitionCooldown = 1F;
@@ -175,6 +175,7 @@ public class MovementControlsShip : MonoBehaviour
 
     private IEnumerator Dock()
     {
+        //float distanceTime = Vector3.Distance(transform.position, dockingPlacement.position);
         docking = true;
 
         float time = 0F;
@@ -186,10 +187,12 @@ public class MovementControlsShip : MonoBehaviour
         {
             time += Time.deltaTime;
 
+            //float coolTime = Mathf.Clamp(time / distanceTime, 0, 1);
             controller.enabled = false;
-            transform.position = Vector3.Lerp(startPos, dockingPlacement.position, time / dockTime);
-            transform.rotation = Quaternion.Lerp(startRot, dockingPlacement.rotation, time / dockTime);
+            transform.position = Vector3.Lerp(startPos, dockingPlacement.position, time/dockTime);
+            transform.rotation = Quaternion.Lerp(startRot, dockingPlacement.rotation, time/dockTime);
             forwardVelocity = 0;
+            //accelerateModeCounter = 0;
             controller.enabled = true;
 
             yield return null;
@@ -197,21 +200,6 @@ public class MovementControlsShip : MonoBehaviour
 
         yaw = transform.eulerAngles.y;
         docking = false;
-    }
-
-    private void LateUpdate()
-    {
-        //controller.Move((windForce + nudgeVector + movement + transform.forward * forwardVelocity) * Time.deltaTime);
-
-        //if (player.isControllingShip)
-        //    player.transform.position = player.dockPos.position;
-
-
-        //movement = Vector3.zero;
-        //nudgeVector = Vector3.Lerp(nudgeVector, Vector3.zero, 2f * Time.deltaTime);
-
-        //windForce = Vector3.Lerp(windForce, Vector3.zero, 2f * Time.deltaTime);
-        //displacement = controller.velocity;
     }
 
     //METHODS   
