@@ -24,7 +24,7 @@ Material:
   m_Shader: {fileID: 4800000, guid: 80aa867ac363ac043847b06ad71604cd, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -56,12 +56,38 @@ Material:
         m_Texture: {fileID: 2800000, guid: ec2d41586d0e7b24aa6bef999e187437, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_1DC8281D_Texture:
+        m_Texture: {fileID: 2800000, guid: 73fe469ec21eaee4b8c8aead41182f3e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_57F93954_Texture:
+        m_Texture: {fileID: 2800000, guid: ec2d41586d0e7b24aa6bef999e187437, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_5F7D20DB_Texture:
+        m_Texture: {fileID: 2800000, guid: 2bac583c01196214bb491326bd41945a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_65B5DE27_Texture:
+        m_Texture: {fileID: 2800000, guid: 642af17fd2dfbe84986b2c1c31e71d90, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_FE8FD588_Texture:
+        m_Texture: {fileID: 2800000, guid: 6f5405f9afdfacd47ac51c02d765ddd7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Boolean_8A2B8817: 1
+    - Vector1_47CAE913: 1
+    - Vector1_5D4049A0: 0
+    - Vector1_9D107CA2: 0
+    - Vector1_B19BDCB: 5
+    - Vector1_CF890F5E: 1
+    - Vector1_D67DB071: 5
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -74,7 +100,8 @@ Material:
     - _GlossyReflections: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
-    - _OpacityThreshold: 0.68
+    - _Opacity: 64.05
+    - _OpacityThreshold: 0.26
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _Smoothness: 0.5
@@ -82,16 +109,21 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
+    - _UseAoMap: 1
     - _UseColorMap: 1
     - _UseEmissiveMap: 0
     - _UseMetallicMap: 0
     - _UseNormalMap: 0
+    - _UseOpacityMap: 1
     - _UseRoughnessMap: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
+    - Color_92C313E9: {r: 0, g: 0.9547768, b: 1, a: 0}
+    - Color_9E59BD8F: {r: 0, g: 0.5783103, b: 1, a: 0}
+    - Vector2_51EE95D4: {r: 1, g: 1, b: 0, a: 0}
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _Color: {r: 1, g: 0, b: 0, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _UvOffset: {r: 0, g: 0, b: 0, a: 0}
