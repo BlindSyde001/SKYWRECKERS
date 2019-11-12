@@ -408,6 +408,7 @@ MonoBehaviour:
   slowMod: 0.5
   plank: {fileID: 0}
   gameover: {fileID: 0}
+  Settings: {fileID: 0}
   inverted: 0
 --- !u!54 &3043401754319192002
 Rigidbody:

@@ -17,7 +17,7 @@ public class IslandCollision : MonoBehaviour
             print("SOMETHING HAPPENED");
             Vector3 direction = (transform.position - other.transform.position).normalized;
             direction.y = 0;
-            ship.nudgeVector = direction * 100f;
+            ship.nudgeVector = direction * 50f;
         }
     }
 }

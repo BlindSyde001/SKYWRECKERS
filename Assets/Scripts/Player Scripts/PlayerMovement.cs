@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -54,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject plank;
     public GameObject gameover;
+    public Button Settings;
 
     public bool inverted = false;
     
@@ -75,15 +77,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Tab))
         {
-            overMenu.SetActive(true);
-            inventoryPanel.SetActive(false);
-            savePanel.SetActive(false);
-            settingsPanel.SetActive(false);
-            menu.SetActive(!menu.activeSelf);
-            if(Time.timeScale != 0)
-            {
-                Time.timeScale = 0;
-            } else { Time.timeScale = 1; }
+            MenuActivate();
         }
         if (!isControllingShip)
         {
@@ -324,5 +318,26 @@ public class PlayerMovement : MonoBehaviour
     public void normalControls()
     {
         inverted = false;
+    }
+    public void MenuActivate()
+    {
+        overMenu.SetActive(true);
+        inventoryPanel.SetActive(false);
+        savePanel.SetActive(false);
+        settingsPanel.SetActive(false);
+        menu.SetActive(!menu.activeSelf);
+
+        if(menu.activeSelf == true)
+        {
+            Settings.Select();
+        }
+        if (Time.timeScale != 0)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
     }
 }
