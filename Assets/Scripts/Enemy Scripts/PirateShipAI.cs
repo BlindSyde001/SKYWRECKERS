@@ -60,9 +60,9 @@ public class PirateShipAI : EnemyStats
         {
             if (transform.position.y <= playerShip.transform.position.y + 10 && transform.position.y >= playerShip.transform.position.y - 10)
             {
-                print("Shots Fired!");
-                print(transform.position.y);
-                print(playerShip.transform.position.y);
+                //print("Shots Fired!");
+                //print(transform.position.y);
+                //print(playerShip.transform.position.y);
                 ShootingCannons();
             }
         }

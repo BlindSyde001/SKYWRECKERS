@@ -13,7 +13,7 @@ public class ShipColliders : MonoBehaviour
     public bool right = false;
     public bool hull = false;
     public bool sail = false;
-    
+
 
     public int damage;
     public bool dot = false;
@@ -42,42 +42,43 @@ public class ShipColliders : MonoBehaviour
     {
         if (ship.docking == false)
         {
-            float timerTickr = 0;
-            timerTickr += Time.deltaTime;
-
-            if(timerTickr >= 1)
+            #region Colliding
+            if (other.CompareTag("Enemy") || other.CompareTag("Ground"))
             {
-                #region Colliding
-                if (other.CompareTag("Enemy") || other.CompareTag("Ground"))
+                if (sail)
                 {
-                    if (sail)
-                    {
-                        UI.GetComponent<UIManager>().sailsHP -= 5;
-                        Debug.Log("HIT SAIL");
-                    }
-                    
-                    if (hull)
-                    {
-                        UI.GetComponent<UIManager>().hullHP -= 5;
-                        Debug.Log("HIT HULL");
-                    }
-                    
-                    if (left)
-                    {
-                        UI.GetComponent<UIManager>().leftCannonHP -= 5;
-                        Debug.Log("HIT LEFT");
-                    }
-                    
-                    if (right)
-                    {
-                        UI.GetComponent<UIManager>().rightCannonHP -= 5;
-                        Debug.Log("HIT RIGHT");
-                    }
-                    timerTickr = 0;
+                    UI.GetComponent<UIManager>().sailsHP -= 5;
+                    Vector3 direction = (transform.position - other.transform.position).normalized;
+                    ship.nudgeVector = direction * 80f;
+                    Debug.Log("HIT SAIL");
+                }
+
+                if (hull)
+                {
+                    UI.GetComponent<UIManager>().hullHP -= 5;
+                    Vector3 direction = (transform.position - other.transform.position).normalized;
+                    ship.nudgeVector = direction * 80f;
+                    Debug.Log("HIT HULL");
+                }
+
+                if (left)
+                {
+                    UI.GetComponent<UIManager>().leftCannonHP -= 5;
+                    Vector3 direction = (transform.position - other.transform.position).normalized;
+                    ship.nudgeVector = direction * 80f;
+                    Debug.Log("HIT LEFT");
+                }
+
+                if (right)
+                {
+                    UI.GetComponent<UIManager>().rightCannonHP -= 5;
+                    Vector3 direction = (transform.position - other.transform.position).normalized;
+                    ship.nudgeVector = direction * 80f;
+                    Debug.Log("HIT RIGHT");
                 }
                 #endregion
             }
-           
+
         }
     }
 
@@ -86,38 +87,38 @@ public class ShipColliders : MonoBehaviour
         if (sail)
         {
             UI.GetComponent<UIManager>().sailsHP -= damage;
-            Debug.Log("HIT SAIL");
+            Debug.Log("DT HIT SAIL");
         }
 
 
         if (hull)
         {
             UI.GetComponent<UIManager>().hullHP -= damage;
-            Debug.Log("HIT HULL");
+            Debug.Log("DT HIT HULL");
         }
 
 
         if (left)
         {
             UI.GetComponent<UIManager>().leftCannonHP -= damage;
-            Debug.Log("HIT LEFT");
+            Debug.Log("DT HIT LEFT");
         }
 
 
         if (right)
         {
             UI.GetComponent<UIManager>().rightCannonHP -= damage;
-            Debug.Log("HIT RIGHT");
+            Debug.Log("DT HIT RIGHT");
         }
     }
     public void DOTDamage()
     {
         timerTick += Time.deltaTime;
-        if(dotTicks >= 3)
+        if (dotTicks >= 3)
         {
             dot = false;
         }
-        if(timerTick >= timer)
+        if (timerTick >= timer)
         {
             DamageTaken();
             dotTicks++;
