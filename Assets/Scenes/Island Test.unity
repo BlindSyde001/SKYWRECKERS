@@ -87371,17 +87371,17 @@ PrefabInstance:
     - target: {fileID: 6081008861728712240, guid: 71b308e2284a3b94da67ba5daa1ac43a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2888.93
+      value: 2881.7
       objectReference: {fileID: 0}
     - target: {fileID: 6081008861728712240, guid: 71b308e2284a3b94da67ba5daa1ac43a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 110.05
+      value: 122.82
       objectReference: {fileID: 0}
     - target: {fileID: 6081008861728712240, guid: 71b308e2284a3b94da67ba5daa1ac43a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1665.51
+      value: -1670.4
       objectReference: {fileID: 0}
     - target: {fileID: 6081008861728712240, guid: 71b308e2284a3b94da67ba5daa1ac43a,
         type: 3}
