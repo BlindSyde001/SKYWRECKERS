@@ -10,6 +10,9 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI UIObjectText; //Text that appears when player is near resource gameobject
     public GameObject gameover;
 
+    public int objectiveMarkers = 0;
+    public GameObject endGameCloudWall;
+
     #region SHIP HP
     public TextMeshProUGUI leftCannonHPText;
     public TextMeshProUGUI righCannonHPText;
@@ -42,13 +45,6 @@ public class UIManager : MonoBehaviour
         righCannonHPText.text = "RC " + rightCannonHP + "/" + rightCannonMaxHP;
         sailsHPText.text = "SL " + sailsHP + "/" + sailsMaxHP;
         hullHPText.text = "HL " + hullHP + "/" + hullMaxHP;
-
-        //if(leftCannonHP <= 0 || rightCannonHP <= 0 || sailsHP <= 0 || hullHP <= 0)
-        //{
-        //    Time.timeScale = 0;
-        //    gameover.SetActive(true);
-        //    Debug.Log("YOU LOSE!");
-        //}
         
         leftCannonHP = Mathf.Clamp(leftCannonHP, 0, leftCannonMaxHP);
         rightCannonHP = Mathf.Clamp(rightCannonHP, 0, rightCannonMaxHP);
@@ -64,10 +60,14 @@ public class UIManager : MonoBehaviour
             Time.timeScale = 0;
             gameover.SetActive(true);
             Cursor.visible = true;
-            //if (Time.timeScale == 0)
-            //{
-                //this.GetComponent<PlayerMovement>().enabled = false;
-            //}
+        }
+    }
+
+    private void LateUpdate()
+    {
+        if(objectiveMarkers == 2)
+        {
+            endGameCloudWall.SetActive(false);
         }
     }
     //METHODS
