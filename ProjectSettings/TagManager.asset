@@ -30,18 +30,18 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ragdoll
+  - Ground
+  - Character
+  - StepUp
+  - LowerClimb
+  - Climb
+  - DroppableLedge
+  - Ladder
+  - Vault
+  - Cover
+  - Item
+  - Enemy
   - 
   - 
   - 
