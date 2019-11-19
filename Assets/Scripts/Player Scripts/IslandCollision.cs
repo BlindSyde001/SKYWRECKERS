@@ -16,7 +16,7 @@ public class IslandCollision : MonoBehaviour
     {
         if (other.CompareTag("Ground"))
         {
-            print("SOMETHING HAPPENED");
+            print(other);
             Vector3 direction = (transform.position - other.transform.position).normalized;
             direction.y = 0;
             ship.nudgeVector = direction * 50f;

@@ -3,12 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DiasGames.ThirdPersonSystem.Cameras;
+using DiasGames.ThirdPersonSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
 
     //VARIABLES
     private GameManager gm;
+    public CameraController ccFinal;
 
     public GameObject menu;
     public GameObject overMenu;
@@ -30,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
     public bool isControllingShip = false;
     public bool isClimbing = false;
     public GameObject shipHP;
-    CharacterController controller;
+    //CharacterController controller;
 
     public new Camera camera;
     public GameObject shoulderPos;
@@ -63,11 +66,12 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         ship = FindObjectOfType<MovementControlsShip>();
-        controller = GetComponent<CharacterController>();
+        //controller = GetComponent<CharacterController>();
         gm = FindObjectOfType<GameManager>();
+        ccFinal = FindObjectOfType<CameraController>();
 
-        camera.gameObject.SetActive(!isControllingShip);
-        ship.camera.gameObject.SetActive(isControllingShip);
+        //camera.gameObject.SetActive(!isControllingShip);
+        //ship.camera.gameObject.SetActive(isControllingShip);
     }
     private void Start()
     {
@@ -75,6 +79,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
+
         if(Input.GetKeyDown(KeyCode.Tab))
         {
             MenuActivate();
@@ -88,6 +93,7 @@ public class PlayerMovement : MonoBehaviour
             plank.SetActive(true);
             if(!shipGrounded)
             shipHP.SetActive(false);
+            this.GetComponent<UnityInputManager>().enabled = true;
         }
         else
         {
@@ -95,6 +101,7 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation = dockPos.rotation;
             shipHP.SetActive(true);
             plank.SetActive(false);
+            this.GetComponent<UnityInputManager>().enabled = false;
         }
     }
     public void FixedUpdate()
@@ -114,14 +121,14 @@ public class PlayerMovement : MonoBehaviour
 
     //METHODS
 
-    void playerJumping()
-    {
-        if (!isClimbing && controller.isGrounded && Input.GetKeyDown(KeyCode.Space))
-        {
-            yVelocity = jumpSpeed;
-        }
+    //void playerJumping()
+    //{
+    //    if (!isClimbing && controller.isGrounded && Input.GetKeyDown(KeyCode.Space))
+    //    {
+    //        yVelocity = jumpSpeed;
+    //    }
 
-    }
+    //}
 
     void Move()
     {
@@ -158,7 +165,7 @@ public class PlayerMovement : MonoBehaviour
             yVelocity = 0;
         }
         
-        controller.Move((yVelocity * Vector3.up + movement + (shipGrounded ? ship.displacement : Vector3.zero)) * Time.deltaTime);
+        //controller.Move((yVelocity * Vector3.up + movement + (shipGrounded ? ship.displacement : Vector3.zero)) * Time.deltaTime);
         ship.displacement = Vector3.zero;
         movement = Vector3.zero;
 
@@ -169,8 +176,8 @@ public class PlayerMovement : MonoBehaviour
       //  print("MOVEMENT: " + movement);
         movement = Vector3.zero;
 
-        if (controller.isGrounded)
-            yVelocity = 0F;
+        //if (controller.isGrounded)
+        //    yVelocity = 0F;
     }
 
     private void Rotation()
@@ -218,8 +225,8 @@ public class PlayerMovement : MonoBehaviour
                 {
                  print("Wheel");
                  isControllingShip = !isControllingShip;
-                 camera.gameObject.SetActive(!isControllingShip);
-                 ship.camera.gameObject.SetActive(isControllingShip);
+                 //camera.gameObject.SetActive(!isControllingShip);
+                 //ship.camera.gameObject.SetActive(isControllingShip);
                 }
             }
 

@@ -50,7 +50,7 @@ public class ShipColliders : MonoBehaviour
                     UI.GetComponent<UIManager>().sailsHP -= 5;
                     Vector3 direction = (transform.position - other.transform.position).normalized;
                     ship.nudgeVector = direction * 80f;
-                    Debug.Log("HIT SAIL");
+                    Debug.Log(other);
                 }
 
                 if (hull)
@@ -58,7 +58,7 @@ public class ShipColliders : MonoBehaviour
                     UI.GetComponent<UIManager>().hullHP -= 5;
                     Vector3 direction = (transform.position - other.transform.position).normalized;
                     ship.nudgeVector = direction * 80f;
-                    Debug.Log("HIT HULL");
+                    Debug.Log(other);
                 }
 
                 if (left)
@@ -66,7 +66,7 @@ public class ShipColliders : MonoBehaviour
                     UI.GetComponent<UIManager>().leftCannonHP -= 5;
                     Vector3 direction = (transform.position - other.transform.position).normalized;
                     ship.nudgeVector = direction * 80f;
-                    Debug.Log("HIT LEFT");
+                    Debug.Log(other);
                 }
 
                 if (right)
@@ -74,7 +74,7 @@ public class ShipColliders : MonoBehaviour
                     UI.GetComponent<UIManager>().rightCannonHP -= 5;
                     Vector3 direction = (transform.position - other.transform.position).normalized;
                     ship.nudgeVector = direction * 80f;
-                    Debug.Log("HIT RIGHT");
+                    Debug.Log(other);
                 }
                 #endregion
             }
