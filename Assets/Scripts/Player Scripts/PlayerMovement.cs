@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     //VARIABLES
     private GameManager gm;
     public CameraController ccFinal;
+    private UIManager ui;
 
     public GameObject menu;
     public GameObject overMenu;
@@ -69,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
         //controller = GetComponent<CharacterController>();
         gm = FindObjectOfType<GameManager>();
         ccFinal = FindObjectOfType<CameraController>();
+        ui = FindObjectOfType<UIManager>();
 
         //camera.gameObject.SetActive(!isControllingShip);
         //ship.camera.gameObject.SetActive(isControllingShip);
@@ -223,10 +225,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 if(can)
                 {
-                 print("Wheel");
                  isControllingShip = !isControllingShip;
-                 //camera.gameObject.SetActive(!isControllingShip);
-                 //ship.camera.gameObject.SetActive(isControllingShip);
                 }
             }
 
@@ -241,6 +240,15 @@ public class PlayerMovement : MonoBehaviour
         if (other.CompareTag("ShipGround"))
         {
             shipGrounded = true;
+        }
+
+        if(other.CompareTag("Wheel") && !isControllingShip)
+        {
+            ui.UIObjectText.text = "Press E to take the Wheel";
+        } 
+        else if(other.CompareTag("Wheel") && isControllingShip)
+        {
+            ui.UIObjectText.text = "";
         }
 
         #region REPAIRING SHIP
@@ -288,6 +296,10 @@ public class PlayerMovement : MonoBehaviour
             {
                 other.GetComponent<Repair>().healthSlider.gameObject.SetActive(false);
             }
+        }
+        if(other.CompareTag("Wheel"))
+        {
+            ui.UIObjectText.text = "";
         }
 
     }

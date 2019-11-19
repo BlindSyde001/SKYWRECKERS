@@ -112,4 +112,12 @@ public class Repair : MonoBehaviour
             UI.UIObjectText.text = "Repair Zone";
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            UI.UIObjectText.text = "";
+        }
+    }
 }

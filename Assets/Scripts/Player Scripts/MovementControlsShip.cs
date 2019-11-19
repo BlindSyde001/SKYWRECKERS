@@ -186,13 +186,11 @@ public class MovementControlsShip : MonoBehaviour
         while (time <= dockTime)
         {
             time += Time.deltaTime;
-
-            //float coolTime = Mathf.Clamp(time / distanceTime, 0, 1);
+            
             controller.enabled = false;
             transform.position = Vector3.Lerp(startPos, dockingPlacement.position, time/dockTime);
             transform.rotation = Quaternion.Lerp(startRot, dockingPlacement.rotation, time/dockTime);
             forwardVelocity = 0;
-            //accelerateModeCounter = 0;
             controller.enabled = true;
 
             yield return null;
