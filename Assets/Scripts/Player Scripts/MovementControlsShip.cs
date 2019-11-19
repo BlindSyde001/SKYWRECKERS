@@ -37,7 +37,7 @@ public class MovementControlsShip : MonoBehaviour
     public float fireRate = 1f;
     float nextFire;
 
-    private PlayerMovement player;
+    public PlayerMovement player;
     public new Camera camera;
     public bool docking = false;
 

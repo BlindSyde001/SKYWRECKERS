@@ -81,10 +81,10 @@ public class PlayerMovement : MonoBehaviour
         }
         if (!isControllingShip)
         {
-            Move();
-            ClimbingControls();
-            Rotation();
-            playerJumping();
+            //Move();
+            //ClimbingControls();
+            //Rotation();
+            //playerJumping();
             plank.SetActive(true);
             if(!shipGrounded)
             shipHP.SetActive(false);
