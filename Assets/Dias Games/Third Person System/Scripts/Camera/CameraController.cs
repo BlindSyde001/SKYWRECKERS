@@ -76,8 +76,8 @@ namespace DiasGames.ThirdPersonSystem.Cameras
             base.Awake();
 
             // Lock or unlock the cursor.
-            Cursor.lockState = m_HideCursor ? CursorLockMode.Locked : CursorLockMode.None;
-            Cursor.visible = !m_HideCursor;
+            //Cursor.lockState = m_HideCursor ? CursorLockMode.Locked : CursorLockMode.None;
+            //Cursor.visible = !m_HideCursor;
 
             m_PivotEulers = m_Pivot.localRotation.eulerAngles;
 
@@ -135,11 +135,11 @@ namespace DiasGames.ThirdPersonSystem.Cameras
             CameraRotation(); // Rotate camera by input
             UpdateCameraData(); // Make transition between cameras data
 
-            if (m_HideCursor && Input.GetMouseButtonUp(0)) // Lock cursor when mouse click
-            {
-                Cursor.lockState = m_HideCursor ? CursorLockMode.Locked : CursorLockMode.None;
-                Cursor.visible = !m_HideCursor;
-            }
+            //if (m_HideCursor && Input.GetMouseButtonUp(0)) // Lock cursor when mouse click
+            //{
+            //    Cursor.lockState = m_HideCursor ? CursorLockMode.Locked : CursorLockMode.None;
+            //    Cursor.visible = !m_HideCursor;
+            //}
         }
 
         protected override void LateUpdate()

@@ -43,9 +43,9 @@ public class Inventory : MonoBehaviour
     public TextMeshProUGUI upgradeAvailableText;
 
     //Place Holder Upgrades for Testing
-    public GameObject shipUpgradeWood;
-    public GameObject shipUpgradeFabric;
-    public GameObject shipUpgradeMetal;
+    //public GameObject shipUpgradeWood;
+    //public GameObject shipUpgradeFabric;
+    //public GameObject shipUpgradeMetal;
 
     //UPDATES
     private void Awake()
@@ -150,21 +150,21 @@ public class Inventory : MonoBehaviour
 
     public void WoodUpgrade()
     {
-        shipUpgradeWood.SetActive(true); //Place holder to see if the function works
+        //shipUpgradeWood.SetActive(true); //Place holder to see if the function works
         ui.hullMaxHP = 140;
     }
 
     public void FabricUpgrade()
     {
         //Debug.Log("Fabric Upgrade Complete");
-        shipUpgradeFabric.SetActive(true);
+        //shipUpgradeFabric.SetActive(true);
         ui.sailsMaxHP = 120;
     }
 
     public void MetalUpgrade()
     {
         //Debug.Log("Metal Upgrade Complete");
-        shipUpgradeMetal.SetActive(true);
+        //shipUpgradeMetal.SetActive(true);
         ui.leftCannonMaxHP = 120;
         ui.rightCannonMaxHP = 120;
     }

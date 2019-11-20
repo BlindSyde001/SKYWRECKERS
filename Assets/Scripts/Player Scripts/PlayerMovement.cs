@@ -71,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
         gm = FindObjectOfType<GameManager>();
         ccFinal = FindObjectOfType<CameraController>();
         ui = FindObjectOfType<UIManager>();
+        Cursor.visible = false;
 
         //camera.gameObject.SetActive(!isControllingShip);
         //ship.camera.gameObject.SetActive(isControllingShip);
@@ -352,6 +353,10 @@ public class PlayerMovement : MonoBehaviour
         if(menu.activeSelf == true)
         {
             Settings.Select();
+            Cursor.visible = true;
+        } else
+        {
+            Cursor.visible = false;
         }
         if (Time.timeScale != 0)
         {
