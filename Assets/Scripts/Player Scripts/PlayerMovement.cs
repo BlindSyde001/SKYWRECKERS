@@ -96,6 +96,8 @@ public class PlayerMovement : MonoBehaviour
             if(!shipGrounded)
             shipHP.SetActive(false);
             this.GetComponent<UnityInputManager>().enabled = true;
+            ccFinal.m_UpdateType = AbstractFollowerCamera.UpdateType.FixedUpdate;
+            
         }
         else
         {
@@ -104,6 +106,7 @@ public class PlayerMovement : MonoBehaviour
             shipHP.SetActive(true);
             plank.SetActive(false);
             this.GetComponent<UnityInputManager>().enabled = false;
+            ccFinal.m_UpdateType = AbstractFollowerCamera.UpdateType.LateUpdate;
         }
     }
     public void FixedUpdate()
