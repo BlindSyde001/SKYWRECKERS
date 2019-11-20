@@ -255,6 +255,11 @@ public class PlayerMovement : MonoBehaviour
             ui.UIObjectText.text = "";
         }
 
+        if(other.CompareTag("Map Table"))
+        {
+            ui.UIObjectText.text = "Press E to Access the Map";
+        }
+
         #region REPAIRING SHIP
         if (Input.GetKey(KeyCode.E))
         {
@@ -302,6 +307,11 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         if(other.CompareTag("Wheel"))
+        {
+            ui.UIObjectText.text = "";
+        }
+
+        if(other.CompareTag("Map Table"))
         {
             ui.UIObjectText.text = "";
         }
