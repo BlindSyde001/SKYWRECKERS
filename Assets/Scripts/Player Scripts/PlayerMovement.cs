@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using DiasGames.ThirdPersonSystem.Cameras;
 using DiasGames.ThirdPersonSystem;
+using DiasGames.ThirdPersonSystem.Cameras;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private GameManager gm;
     public CameraController ccFinal;
     private UIManager ui;
+    public CameraData cD;
 
     public GameObject menu;
     public GameObject overMenu;
@@ -82,7 +83,6 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
-
         if(Input.GetKeyDown(KeyCode.Tab))
         {
             MenuActivate();
@@ -124,17 +124,24 @@ public class PlayerMovement : MonoBehaviour
 
         }
     }
+    private void LateUpdate()
+    {
+        if(isControllingShip)
+        {
+            if(Input.GetKeyDown(KeyCode.V) && cD.Offset.z == -1.5f)
+            {
+                cD.Offset.z -= 40;
+            } else if(Input.GetKeyDown(KeyCode.V) && cD.Offset.z == -41.5f)
+            {
+                cD.Offset.z += 40;
+            }
+        } else
+        {
+            cD.Offset.z = -1.5f;
+        }
+    }
 
     //METHODS
-
-    //void playerJumping()
-    //{
-    //    if (!isClimbing && controller.isGrounded && Input.GetKeyDown(KeyCode.Space))
-    //    {
-    //        yVelocity = jumpSpeed;
-    //    }
-
-    //}
 
     void Move()
     {

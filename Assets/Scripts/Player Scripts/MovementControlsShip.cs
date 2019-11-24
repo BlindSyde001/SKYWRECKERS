@@ -307,7 +307,7 @@ public class MovementControlsShip : MonoBehaviour
             foreach (Transform x in bulletEndsRight)
             {
                 bulletInstance = Instantiate(bullet, x.position, x.rotation) as Rigidbody;
-                bulletInstance.AddForce(barrelEnd.forward * 4500);
+                bulletInstance.AddForce(barrelEnd.forward * 9000);
             }
         }
         else if (Input.GetMouseButton(0) && Time.time > nextFire)
@@ -318,7 +318,7 @@ public class MovementControlsShip : MonoBehaviour
             foreach (Transform y in bulletEndsLeft)
             {
                 bulletInstance = Instantiate(bullet, y.position, y.rotation) as Rigidbody;
-                bulletInstance.AddForce(barrelEnd.forward * -4500);
+                bulletInstance.AddForce(barrelEnd.forward * -9000);
             }
         }
     }
