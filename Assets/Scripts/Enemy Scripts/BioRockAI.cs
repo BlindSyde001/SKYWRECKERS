@@ -5,7 +5,7 @@ using UnityEngine;
 public class BioRockAI : EnemyStats
 {
     //VARIABLES
-    private float lookRadius = 150f;
+    private float lookRadius = 350f;
     private MovementControlsShip playerShip;
     public Transform swarmPoint;
     public Rigidbody swarmEnemy;
@@ -17,8 +17,8 @@ public class BioRockAI : EnemyStats
 
     private void Awake()
     {
-        enemyMaxHP = 120;
-        enemyCurrentHP = 120;
+        enemyMaxHP = 500;
+        enemyCurrentHP = 500;
         playerShip = FindObjectOfType<MovementControlsShip>();
     }
     private void Update()
@@ -44,7 +44,7 @@ public class BioRockAI : EnemyStats
 
             Rigidbody swarmInstance;
             swarmInstance = Instantiate(swarmEnemy, swarmPoint.transform.position, swarmPoint.transform.rotation) as Rigidbody;
-            swarmInstance.AddForce(swarmPoint.forward * 100);
+            swarmInstance.AddForce(swarmPoint.forward * 10000);
             cooldownTick = 0;
         }
     }

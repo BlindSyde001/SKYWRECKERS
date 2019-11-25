@@ -243,8 +243,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 7808314223469117477}
   - {fileID: 6235201839063366481}
+  - {fileID: 7808314223469117477}
   m_Father: {fileID: 3029224717068481783}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -399,8 +399,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4939955506860221746}
   - {fileID: 8937764732262481169}
+  - {fileID: 4939955506860221746}
   m_Father: {fileID: 3029224717068481783}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -467,7 +467,7 @@ Transform:
   m_LocalScale: {x: 0.062159378, y: 0.18390524, z: 0.06215939}
   m_Children: []
   m_Father: {fileID: 6739401779952812828}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -3.8750002, y: -35.146, z: 39.338}
 --- !u!33 &2674210738030832756
 MeshFilter:
@@ -770,13 +770,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7059188086416184596}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.21274365, y: 0.21274365, z: 0.21274365}
   m_Children: []
   m_Father: {fileID: 3029224717068481783}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &7059188086416184599
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -876,9 +876,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3029224717068481783}
+  - component: {fileID: 4207447464859398082}
   m_Layer: 0
-  m_Name: Bio-Rock 1
-  m_TagString: Untagged
+  m_Name: Bio-Rock
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -906,6 +907,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4207447464859398082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7568198965605736184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b581af9d276c5aa4e84ea9596b1297fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyMaxHP: 0
+  enemyCurrentHP: 0
+  damage: 0
+  swarmPoint: {fileID: 7059188086416184592}
+  swarmEnemy: {fileID: 5560375710130436466, guid: 28b471133b2f05846ba6b76608e13840,
+    type: 3}
+  cooldownTick: 0
 --- !u!1 &8288465758017742841
 GameObject:
   m_ObjectHideFlags: 0
@@ -1061,7 +1081,7 @@ Transform:
   m_LocalScale: {x: 0.0798541, y: 0.1465455, z: 0.07985412}
   m_Children: []
   m_Father: {fileID: 7819648875784910876}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -3.8750002, y: -189.49199, z: 39.338}
 --- !u!33 &2049586568326160709
 MeshFilter:
@@ -1133,6 +1153,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Island Rock 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6632251013717040740, guid: 4f2f806ccc739094ab94134a721d99e0,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 411214783627066574, guid: 4f2f806ccc739094ab94134a721d99e0,
         type: 3}
@@ -1224,6 +1249,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Island Rock 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4780181709182436160, guid: e944a538ea59ca841997c5cd8a4aca5f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 5317084600382428310, guid: e944a538ea59ca841997c5cd8a4aca5f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1313,6 +1343,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Island Rock 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 315522363757669433, guid: 5d8a667c1831e2d488dd4a567210ad06,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 808551293972705074, guid: 5d8a667c1831e2d488dd4a567210ad06,
         type: 3}
@@ -1404,6 +1439,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Island Rock 3 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4780181709182436160, guid: e944a538ea59ca841997c5cd8a4aca5f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 5317084600382428310, guid: e944a538ea59ca841997c5cd8a4aca5f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1442,7 +1482,7 @@ PrefabInstance:
     - target: {fileID: 5317084600382428310, guid: e944a538ea59ca841997c5cd8a4aca5f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5317084600382428310, guid: e944a538ea59ca841997c5cd8a4aca5f,
         type: 3}
@@ -1493,6 +1533,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Island Rock 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7332354682433166858, guid: e85fdb5de9fe96647a67c3b35d392825,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 4127603243607583342, guid: e85fdb5de9fe96647a67c3b35d392825,
         type: 3}
@@ -1584,6 +1629,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Island Rock 2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7332354682433166858, guid: e85fdb5de9fe96647a67c3b35d392825,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 4127603243607583342, guid: e85fdb5de9fe96647a67c3b35d392825,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1673,6 +1723,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Island Rock 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4912466411006658379, guid: c2f1891004233674ca002ed3699b376a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6777990275298257598, guid: c2f1891004233674ca002ed3699b376a,
         type: 3}
@@ -1764,6 +1819,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Island Rock 4 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 315522363757669433, guid: 5d8a667c1831e2d488dd4a567210ad06,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 808551293972705074, guid: 5d8a667c1831e2d488dd4a567210ad06,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1802,7 +1862,7 @@ PrefabInstance:
     - target: {fileID: 808551293972705074, guid: 5d8a667c1831e2d488dd4a567210ad06,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 808551293972705074, guid: 5d8a667c1831e2d488dd4a567210ad06,
         type: 3}
