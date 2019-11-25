@@ -380,7 +380,7 @@ GameObject:
   - component: {fileID: 2436211562683663929}
   - component: {fileID: 8064097435263618441}
   m_Layer: 0
-  m_Name: Fence_low
+  m_Name: Fence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -418,7 +418,7 @@ LODGroup:
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.005944445
+  - screenRelativeHeight: 0.029120894
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 6720669749585611788}

@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 5317084600382428310}
   - component: {fileID: 2896144087834236017}
   - component: {fileID: 883904813479538052}
-  - component: {fileID: 538565455826310255}
+  - component: {fileID: 2601931366616142431}
   m_Layer: 0
   m_Name: Island Rock 3
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,8 +78,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &538565455826310255
-CapsuleCollider:
+--- !u!64 &2601931366616142431
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -88,7 +88,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.009
-  m_Height: 0.032184996
-  m_Direction: 1
-  m_Center: {x: -0.00061673066, y: -0.0060920073, z: 0.00032234192}
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 3621075647514647035, guid: 5f773bbf863201d4eb3d99396cb3ea87, type: 3}

@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 4127603243607583342}
   - component: {fileID: 2259990541348367619}
   - component: {fileID: 2086621095590300350}
-  - component: {fileID: 5232886194465061281}
+  - component: {fileID: -8213769050916558586}
   m_Layer: 0
   m_Name: Island Rock 2
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,8 +78,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &5232886194465061281
-CapsuleCollider:
+--- !u!64 &-8213769050916558586
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -88,7 +88,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.009
-  m_Height: 0.045405436
-  m_Direction: 1
-  m_Center: {x: -0.000068872236, y: 0.000026222318, z: -0.00015109591}
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4909480568040908655, guid: b85c3d177de311c48873868a77e462d8, type: 3}

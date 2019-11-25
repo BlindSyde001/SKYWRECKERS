@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_Tree Leaves_PineBrown
+  m_Name: Tree Leaves_PineBrown
   m_Shader: {fileID: -6465566751694194690, guid: 4d36dccc52b0ff64ba87fc121bc8986b,
     type: 3}
   m_ShaderKeywords: 

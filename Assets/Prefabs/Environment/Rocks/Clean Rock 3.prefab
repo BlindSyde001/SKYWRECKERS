@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 5452272051949934686}
   - component: {fileID: 2357466806192010630}
   m_Layer: 0
-  m_Name: CleanRock3
-  m_TagString: Untagged
+  m_Name: Clean Rock 3
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,6 +89,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 3848237812612184780, guid: bfa1686931b25734c88af3d7ea58eb10, type: 3}
