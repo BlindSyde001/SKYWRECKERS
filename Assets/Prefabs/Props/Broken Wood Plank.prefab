@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3054916431334345679}
   - component: {fileID: 5772103430976011837}
   m_Layer: 0
-  m_Name: Broken Wood Plank (1)
+  m_Name: Broken Wood Plank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 7050942946973278999}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2825.2808, y: 105.844, z: -1704.9696}
-  m_LocalScale: {x: 4.4839735, y: 4.4839735, z: 4.4839735}
+  m_LocalScale: {x: 8.884436, y: 8.884436, z: 8.884436}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
