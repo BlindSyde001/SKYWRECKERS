@@ -22,7 +22,7 @@ public class BioRockSwarmAI : MonoBehaviour
 
     private void Update()
     {
-        rb.velocity = Vector3.Normalize(playerShip.transform.position - transform.position) * 30f;
+        rb.velocity = Vector3.Normalize(playerShip.transform.position - transform.position) * 60f;
         
     }
     //METHODS
