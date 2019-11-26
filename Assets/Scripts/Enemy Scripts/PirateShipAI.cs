@@ -7,6 +7,7 @@ public class PirateShipAI : EnemyStats
 
     //VARIABLES
     private GameManager gm;
+    private PlayerMovement player;
 
     private Vector3 _direction;
     private Transform playerShip;
@@ -24,6 +25,9 @@ public class PirateShipAI : EnemyStats
     public float fireRate = 2f;
     float nextFire;
 
+    public List<Transform> movePoints;
+    public int currentPos = 0;
+
     public bool charging = false;
     //UPDATES
 
@@ -31,13 +35,14 @@ public class PirateShipAI : EnemyStats
     {
         gm = FindObjectOfType<GameManager>();
         playerShip = FindObjectOfType<MovementControlsShip>().transform;
+        player = FindObjectOfType<PlayerMovement>();
         enemyMaxHP = 400;
         enemyCurrentHP = 400;
     }
 
     private void Update()
     {
-        if(Vector3.Distance(transform.position, playerShip.position) < lookRadius)
+        if(Vector3.Distance(transform.position, playerShip.position) < lookRadius && player.isControllingShip)
         {
             comeAlongSideShip();
             if (Vector3.Distance(transform.position, playerShip.position) < 120f && Vector3.Angle(_direction, transform.forward) <= 15)
@@ -50,6 +55,11 @@ public class PirateShipAI : EnemyStats
                 moveSpeed = moveSpeed / 2.5f;
             }
         }
+        else
+        {
+            Patrol();
+        }
+
         if (enemyCurrentHP <= 0)
         {
             //gm.enemyList.Remove(this.gameObject);
@@ -115,5 +125,21 @@ public class PirateShipAI : EnemyStats
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, lookRadius);
         Gizmos.DrawWireSphere(transform.position, 120f);
+    }
+
+    private void Patrol()
+    {
+        if (Vector3.Distance(movePoints[currentPos].position, transform.position) < 5)
+        {
+            currentPos++;
+            if (currentPos >= movePoints.Count)
+            {
+                currentPos = 0;
+            }
+        }
+        _direction = (movePoints[currentPos].position - transform.position).normalized;
+        _lookRotation = Quaternion.LookRotation(_direction);
+        transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, rotateSpeed * Time.deltaTime);
+        transform.position += transform.forward * moveSpeed * Time.deltaTime;
     }
 }
