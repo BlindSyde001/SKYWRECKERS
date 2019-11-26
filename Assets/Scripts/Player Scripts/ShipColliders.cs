@@ -48,32 +48,44 @@ public class ShipColliders : MonoBehaviour
                 if (sail)
                 {
                     UI.GetComponent<UIManager>().sailsHP -= 15;
+                    if(other.GetComponentInParent<PirateShipAI>() == null)
+                    { 
                     Vector3 direction = (transform.position - other.transform.position).normalized;
                     ship.nudgeVector = direction * 80f;
+                    }
                     Debug.Log(other);
                 }
 
                 if (hull)
                 {
                     UI.GetComponent<UIManager>().hullHP -= 15;
-                    Vector3 direction = (transform.position - other.transform.position).normalized;
-                    ship.nudgeVector = direction * 80f;
+                    if (other.GetComponentInParent<PirateShipAI>() == null)
+                    {
+                        Vector3 direction = (transform.position - other.transform.position).normalized;
+                        ship.nudgeVector = direction * 80f;
+                    }
                     Debug.Log(other);
                 }
 
                 if (left)
                 {
                     UI.GetComponent<UIManager>().leftCannonHP -= 15;
-                    Vector3 direction = (transform.position - other.transform.position).normalized;
-                    ship.nudgeVector = direction * 80f;
+                    if (other.GetComponentInParent<PirateShipAI>() == null)
+                    {
+                        Vector3 direction = (transform.position - other.transform.position).normalized;
+                        ship.nudgeVector = direction * 80f;
+                    }
                     Debug.Log(other);
                 }
 
                 if (right)
                 {
                     UI.GetComponent<UIManager>().rightCannonHP -= 15;
-                    Vector3 direction = (transform.position - other.transform.position).normalized;
-                    ship.nudgeVector = direction * 80f;
+                    if (other.GetComponentInParent<PirateShipAI>() == null)
+                    {
+                        Vector3 direction = (transform.position - other.transform.position).normalized;
+                        ship.nudgeVector = direction * 80f;
+                    }
                     Debug.Log(other);
                 }
                 #endregion

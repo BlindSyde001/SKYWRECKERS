@@ -12,7 +12,7 @@ public class PirateShipAI : EnemyStats
     private Transform playerShip;
     private Quaternion _lookRotation;
     public float rotateSpeed = 1.5f;
-    public float moveSpeed = 16f;
+    public float moveSpeed = 20f;
 
     public float lookRadius = 180;
     private Transform alignPoint;
@@ -23,6 +23,8 @@ public class PirateShipAI : EnemyStats
     public Transform barrelEnd;
     public float fireRate = 2f;
     float nextFire;
+
+    public bool charging = false;
     //UPDATES
 
     private void Awake()
@@ -38,6 +40,15 @@ public class PirateShipAI : EnemyStats
         if(Vector3.Distance(transform.position, playerShip.position) < lookRadius)
         {
             comeAlongSideShip();
+            if (Vector3.Distance(transform.position, playerShip.position) < 120f && Vector3.Angle(_direction, transform.forward) <= 15)
+            {
+                piercingBlow();
+                charging = true;
+            } else if (Vector3.Distance(transform.position, playerShip.position) >= 120f && charging == true)
+            {
+                charging = false;
+                moveSpeed = moveSpeed / 2.5f;
+            }
         }
         if (enemyCurrentHP <= 0)
         {
@@ -49,26 +60,33 @@ public class PirateShipAI : EnemyStats
 
     void comeAlongSideShip()
     {
-        _direction = (playerShip.position - transform.position).normalized;
-        _lookRotation = Quaternion.LookRotation(_direction);
-        transform.position += transform.forward * moveSpeed * Time.deltaTime;
-          
-        //Aiming towards player's ship
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, _lookRotation, 8 * Time.deltaTime);
+         _direction = (playerShip.position - transform.position).normalized;
+         _lookRotation = Quaternion.LookRotation(_direction);
+         transform.position += transform.forward * moveSpeed * Time.deltaTime;
 
-        if (Vector3.Angle(_direction, transform.forward) >= 45 && Vector3.Angle(_direction, transform.forward) <= 135)
-        {
+       if(!charging)
+       {
+          
+         //Aiming towards player's ship
+         transform.rotation = Quaternion.RotateTowards(transform.rotation, _lookRotation, 8 * Time.deltaTime);
+
+         if (Vector3.Angle(_direction, transform.forward) >= 45 && Vector3.Angle(_direction, transform.forward) <= 135)
+         {
             if (transform.position.y <= playerShip.transform.position.y + 10 && transform.position.y >= playerShip.transform.position.y - 10)
             {
                 ShootingCannons();
             }
-        }
+         }
+
+       }
     }
 
-    IEnumerator piercingBlow()
+    private void piercingBlow()
     {
-
-        yield return null;
+        if(!charging)
+        {
+        moveSpeed = 2.5f * moveSpeed;
+        }
     }
 
     #region Cannons

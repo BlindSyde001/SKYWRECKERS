@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 375704432644544755}
   - component: {fileID: 7938718226372203093}
   - component: {fileID: 5419623988830018123}
+  - component: {fileID: 6074639735846808943}
   m_Layer: 0
-  m_Name: Fabric_low
-  m_TagString: Untagged
+  m_Name: FabricPickUp
+  m_TagString: RESOURCE
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,3 +113,20 @@ LODGroup:
     renderers:
     - renderer: {fileID: 375704432644544755}
   m_Enabled: 1
+--- !u!114 &6074639735846808943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092506126724852783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d39ca8b68d1c0474c8511c695e7d204d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: 1
+  message: Press [E] To Pick Up Fabric
+  woodText: {fileID: 0}
+  fabricText: {fileID: 0}
+  metalText: {fileID: 0}

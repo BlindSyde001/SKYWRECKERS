@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 4027015507897951715}
   - component: {fileID: 6701336858379925100}
   - component: {fileID: 2557477249214644812}
+  - component: {fileID: 339045218091286719}
   m_Layer: 0
-  m_Name: MetalPickUp_low
-  m_TagString: Untagged
+  m_Name: MetalPickUp
+  m_TagString: RESOURCE
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,3 +113,20 @@ LODGroup:
     renderers:
     - renderer: {fileID: 4027015507897951715}
   m_Enabled: 1
+--- !u!114 &339045218091286719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3449197972396249407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d39ca8b68d1c0474c8511c695e7d204d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: 2
+  message: Press [E] To Pick Up Metal
+  woodText: {fileID: 0}
+  fabricText: {fileID: 0}
+  metalText: {fileID: 0}

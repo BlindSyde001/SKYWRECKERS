@@ -102,7 +102,6 @@ public class MovementControlsShip : MonoBehaviour
 
             if (player?.isControllingShip ?? true)
             {
-                SnapToSidesCont();
                 turnCap();
                 ShootingCannons();
                 if (accelerateModeCounter > 0)
@@ -323,17 +322,5 @@ public class MovementControlsShip : MonoBehaviour
         }
     }
     #endregion
-
-    private void SnapToSidesCont()
-    {
-        if(Input.GetKeyDown(KeyCode.Alpha1))
-        {
-           
-        }
-        if(Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            
-        }
-    }
 }
 
