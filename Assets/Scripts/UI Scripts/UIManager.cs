@@ -67,7 +67,7 @@ public class UIManager : MonoBehaviour
     {
         if(Inventory.Instance.woodCount == 10 && Inventory.Instance.metalCount == 10 && Inventory.Instance.fabricCount == 10)
         {
-            endGameCloudWall.SetActive(false);
+            endGameCloudWall.SetActive(true);
         }
     }
     //METHODS

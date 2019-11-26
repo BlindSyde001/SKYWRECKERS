@@ -171,7 +171,7 @@ public class Inventory : MonoBehaviour
 
     public IEnumerator UpgradeAvailableTextGone()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
 
         upgradeAvailableText.gameObject.SetActive(false);
     }
