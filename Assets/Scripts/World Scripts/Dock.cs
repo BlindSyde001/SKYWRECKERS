@@ -28,6 +28,7 @@ public class Dock : MonoBehaviour
     {
         if(other.CompareTag("ShipGround") && player.isControllingShip == true)
         {
+            Debug.Log("in docking range");
             ui.UIObjectText.text = "Press G to Dock";
 
             if(!mapReveal)
@@ -42,6 +43,7 @@ public class Dock : MonoBehaviour
     {
         if(other.CompareTag("ShipGround"))
         {
+            print("EXITED DOCKING");
             ui.UIObjectText.text = "";
         }
     }

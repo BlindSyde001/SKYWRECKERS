@@ -472,10 +472,13 @@ namespace DiasGames.ThirdPersonSystem
         /// </summary>
         private void CheckGround()
         {
-            if (Physics.Raycast(transform.position + (Vector3.up * 0.1f), Vector3.down, out m_GroundHit, GroundCheckDistance, m_GroundMask, QueryTriggerInteraction.Ignore))
-            {
+            Debug.DrawRay(transform.position + (Vector3.up * 0.1f), Vector3.down * GroundCheckDistance, Color.white, 0.5f);
+            //if (Physics.Raycast(transform.position + (Vector3.up * 0.1f), Vector3.down, out m_GroundHit, GroundCheckDistance, m_GroundMask, QueryTriggerInteraction.Ignore))
+            if (Physics.SphereCast(transform.position + (Vector3.up * 0.5f), 0.3f, Vector3.down, out m_GroundHit, GroundCheckDistance, m_GroundMask, QueryTriggerInteraction.Ignore))
+                {
                 if (m_GroundHit.normal.y > Mathf.Cos(m_MaxAngleSlope * Mathf.Deg2Rad)) // Calculate the angle of the ground. If it's higher than maxSlope, don't be grounded
                 {
+
                     if (!IsGrounded)
                     {
                         OnGrounded.Invoke();
@@ -486,6 +489,7 @@ namespace DiasGames.ThirdPersonSystem
                     return;
                 }
             }
+            
 
             IsGrounded = false;
             GroundNormal = Vector3.up;

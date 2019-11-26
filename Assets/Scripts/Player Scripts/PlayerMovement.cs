@@ -30,9 +30,9 @@ public class PlayerMovement : MonoBehaviour
     private const float yAngleMin = -45f;
     private const float yAngleMax = 45f;
     private Transform wallClimb;
+    public bool isControllingShip = false;
 
     [NonSerialized]
-    public bool isControllingShip = false;
     public bool isClimbing = false;
     public GameObject shipHP;
     //CharacterController controller;
@@ -237,6 +237,10 @@ public class PlayerMovement : MonoBehaviour
                 if(can)
                 {
                  isControllingShip = !isControllingShip;
+                    if(isControllingShip)
+                    {
+                        ui.UIObjectText.text = "";
+                    }
                 }
             }
 
@@ -257,10 +261,10 @@ public class PlayerMovement : MonoBehaviour
         {
             ui.UIObjectText.text = "Press E to take the Wheel";
         } 
-        else if(other.CompareTag("Wheel") && isControllingShip)
-        {
-            ui.UIObjectText.text = "";
-        }
+        //else if(other.CompareTag("Wheel") && isControllingShip)
+        //{
+        //    ui.UIObjectText.text = "";
+        //}
 
         if(other.CompareTag("Map Table"))
         {

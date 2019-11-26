@@ -12,7 +12,7 @@ public class PirateShipAI : EnemyStats
     private Transform playerShip;
     private Quaternion _lookRotation;
     public float rotateSpeed = 1.5f;
-    public float moveSpeed = 8f;
+    public float moveSpeed = 16f;
 
     public float lookRadius = 180;
     private Transform alignPoint;
@@ -29,8 +29,8 @@ public class PirateShipAI : EnemyStats
     {
         gm = FindObjectOfType<GameManager>();
         playerShip = FindObjectOfType<MovementControlsShip>().transform;
-        enemyMaxHP = 100;
-        enemyCurrentHP = 100;
+        enemyMaxHP = 400;
+        enemyCurrentHP = 400;
     }
 
     private void Update()
@@ -54,7 +54,7 @@ public class PirateShipAI : EnemyStats
         transform.position += transform.forward * moveSpeed * Time.deltaTime;
           
         //Aiming towards player's ship
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, _lookRotation, 20 * Time.deltaTime);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, _lookRotation, 8 * Time.deltaTime);
 
         if (Vector3.Angle(_direction, transform.forward) >= 45 && Vector3.Angle(_direction, transform.forward) <= 135)
         {
@@ -63,6 +63,12 @@ public class PirateShipAI : EnemyStats
                 ShootingCannons();
             }
         }
+    }
+
+    IEnumerator piercingBlow()
+    {
+
+        yield return null;
     }
 
     #region Cannons
@@ -90,5 +96,6 @@ public class PirateShipAI : EnemyStats
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, lookRadius);
+        Gizmos.DrawWireSphere(transform.position, 120f);
     }
 }

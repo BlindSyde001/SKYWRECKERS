@@ -3622,7 +3622,7 @@ MonoBehaviour:
   damage: 0
   rotateSpeed: 1.8
   moveSpeed: 12
-  lookRadius: 400
+  lookRadius: 600
   bulletEndsRight:
   - {fileID: 8698489555310559378}
   - {fileID: 3887238508450345418}
@@ -4321,11 +4321,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6395794040206135258}
     m_Modifications:
-    - target: {fileID: 6276191752412399976, guid: 3849c058b6ab69c49bd003b8a1ed9f8e,
-        type: 3}
-      propertyPath: m_Name
-      value: WhiteSmoke
-      objectReference: {fileID: 0}
     - target: {fileID: 6276191752411977032, guid: 3849c058b6ab69c49bd003b8a1ed9f8e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4396,6 +4391,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.004441351
       objectReference: {fileID: 0}
+    - target: {fileID: 6276191752412399976, guid: 3849c058b6ab69c49bd003b8a1ed9f8e,
+        type: 3}
+      propertyPath: m_Name
+      value: WhiteSmoke
+      objectReference: {fileID: 0}
     - target: {fileID: 6276191752431374344, guid: 3849c058b6ab69c49bd003b8a1ed9f8e,
         type: 3}
       propertyPath: looping
@@ -4446,11 +4446,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6395794040206135258}
     m_Modifications:
-    - target: {fileID: 6276191752412399976, guid: 3849c058b6ab69c49bd003b8a1ed9f8e,
-        type: 3}
-      propertyPath: m_Name
-      value: WhiteSmoke (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 6276191752411977032, guid: 3849c058b6ab69c49bd003b8a1ed9f8e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4521,6 +4516,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.004441351
       objectReference: {fileID: 0}
+    - target: {fileID: 6276191752412399976, guid: 3849c058b6ab69c49bd003b8a1ed9f8e,
+        type: 3}
+      propertyPath: m_Name
+      value: WhiteSmoke (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 6276191752431374344, guid: 3849c058b6ab69c49bd003b8a1ed9f8e,
         type: 3}
       propertyPath: looping
@@ -4571,11 +4571,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6395794040206135258}
     m_Modifications:
-    - target: {fileID: 6276191752412399976, guid: 3849c058b6ab69c49bd003b8a1ed9f8e,
-        type: 3}
-      propertyPath: m_Name
-      value: WhiteSmoke (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 6276191752411977032, guid: 3849c058b6ab69c49bd003b8a1ed9f8e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4646,6 +4641,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.004441351
       objectReference: {fileID: 0}
+    - target: {fileID: 6276191752412399976, guid: 3849c058b6ab69c49bd003b8a1ed9f8e,
+        type: 3}
+      propertyPath: m_Name
+      value: WhiteSmoke (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 6276191752431374344, guid: 3849c058b6ab69c49bd003b8a1ed9f8e,
         type: 3}
       propertyPath: looping
@@ -4696,11 +4696,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6395794040206135258}
     m_Modifications:
-    - target: {fileID: 6276191752412399976, guid: 3849c058b6ab69c49bd003b8a1ed9f8e,
-        type: 3}
-      propertyPath: m_Name
-      value: WhiteSmoke (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 6276191752411977032, guid: 3849c058b6ab69c49bd003b8a1ed9f8e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4770,6 +4765,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.004441351
+      objectReference: {fileID: 0}
+    - target: {fileID: 6276191752412399976, guid: 3849c058b6ab69c49bd003b8a1ed9f8e,
+        type: 3}
+      propertyPath: m_Name
+      value: WhiteSmoke (2)
       objectReference: {fileID: 0}
     - target: {fileID: 6276191752431374344, guid: 3849c058b6ab69c49bd003b8a1ed9f8e,
         type: 3}
