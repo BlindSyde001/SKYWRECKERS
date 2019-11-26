@@ -14,9 +14,9 @@ public class GameManager : MonoBehaviour
     public List<GameObject> resourceMasterList;
     public List<bool> resourceTaken;
 
-    public int savedWoodCount;
-    public int savedMetalCount;
-    public int savedFabricCount;
+    public int currentWoodCount;
+    public int currentMetalCount;
+    public int currentFabricCount;
 
     public List<SaveState> sFile;
 
@@ -70,6 +70,9 @@ public class GameManager : MonoBehaviour
         sFile[x].checkPointSaved = lastCheckpointPosName;
         sFile[x].shipCheckPointSaved = shipLastCheckpointPosName;
         sFile[x].resourceTakenSaved = resourceTaken;
+        sFile[x].savedWoodCount = currentWoodCount;
+        sFile[x].savedMetalCount = currentMetalCount;
+        sFile[x].savedFabricCount = currentFabricCount;
 
         FileStream fs = new FileStream("Save File " + x + ".dat", FileMode.Create); //make save file
         BinaryFormatter bf = new BinaryFormatter(); // save file ino binary
@@ -89,6 +92,9 @@ public class GameManager : MonoBehaviour
         lastCheckpointPosName = sFile[x].checkPointSaved;
         shipLastCheckpointPosName = sFile[x].shipCheckPointSaved;
         resourceTaken = sFile[x].resourceTakenSaved;
+        currentWoodCount = sFile[x].savedWoodCount;
+        currentMetalCount = sFile[x].savedMetalCount;
+        currentFabricCount = sFile[x].savedFabricCount;
     }
     #endregion
 
@@ -136,4 +142,10 @@ public class SaveState
     public string checkPointSaved;
     [SerializeField]
     public string shipCheckPointSaved;
+    [SerializeField]
+    public int savedWoodCount;
+    [SerializeField]
+    public int savedMetalCount;
+    [SerializeField]
+    public int savedFabricCount;
 }

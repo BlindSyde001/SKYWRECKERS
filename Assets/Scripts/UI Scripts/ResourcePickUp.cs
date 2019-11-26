@@ -16,6 +16,8 @@ public class ResourcePickUp : MonoBehaviour
     public TextMeshProUGUI fabricText;
     public TextMeshProUGUI metalText;
 
+    public bool startUpResourceCount = false;
+
     //UPDATES
     private void Awake()
     {
@@ -24,9 +26,9 @@ public class ResourcePickUp : MonoBehaviour
     void Start()
     {
         //Hasn't been set up yet
-        TextMeshProUGUI woodText = GetComponent<TextMeshProUGUI>(); //getting access to the text
-        TextMeshProUGUI fabricText = GetComponent<TextMeshProUGUI>();
-        TextMeshProUGUI metalText = GetComponent<TextMeshProUGUI>();
+        //TextMeshProUGUI woodText = GetComponent<TextMeshProUGUI>(); //getting access to the text
+        //TextMeshProUGUI fabricText = GetComponent<TextMeshProUGUI>();
+        //TextMeshProUGUI metalText = GetComponent<TextMeshProUGUI>();
     }
     
 
@@ -34,6 +36,18 @@ public class ResourcePickUp : MonoBehaviour
     {
         if (pickUpAllowed && Input.GetKeyDown(KeyCode.E)) //Kept putting me back on the ship with E key
             PickUp();
+    }
+
+    private void LateUpdate()
+    {
+        if(startUpResourceCount == false)
+        {
+         Debug.Log("Count Instance");
+         woodText.text = ("Wood " + Inventory.Instance.woodCount + "/10");
+         fabricText.text = ("Fabric " + Inventory.Instance.fabricCount + "/10");
+         metalText.text = ("Metal " + Inventory.Instance.metalCount + "/10");
+         startUpResourceCount = true;
+        }
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -62,7 +76,7 @@ public class ResourcePickUp : MonoBehaviour
         //Inventory.Instance.hasLock = true;
         if (item == InventoryItem.WOOD) //Item is picked up and appears in inventory 
         {
-            gm.savedWoodCount++;
+            gm.currentWoodCount++;
             Inventory.Instance.woodCount++;
             Inventory.Instance.CheckInventory();
             woodText.text = ("Wood " + Inventory.Instance.woodCount + "/10");
@@ -76,14 +90,14 @@ public class ResourcePickUp : MonoBehaviour
         
         if (item == InventoryItem.FABRIC)
         {
-            gm.savedFabricCount++;
+            gm.currentFabricCount++;
             Inventory.Instance.fabricCount++;
             Inventory.Instance.CheckInventory();
             fabricText.text = ("Fabric " + Inventory.Instance.fabricCount + "/10");
         }
         if (item == InventoryItem.METAL)
         {
-            gm.savedMetalCount++;
+            gm.currentMetalCount++;
             Inventory.Instance.metalCount++;
             Inventory.Instance.CheckInventory();
             metalText.text = ("Metal " + Inventory.Instance.metalCount + "/10");

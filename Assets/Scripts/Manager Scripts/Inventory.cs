@@ -60,9 +60,9 @@ public class Inventory : MonoBehaviour
     {
         //upgradeTableText.text = ""; //Text is blank to start the game
         hasWood = hasMetal = hasFabric = false; //Player has not picked up any items yet
-        woodCount = gm.savedWoodCount;
-        metalCount = gm.savedMetalCount;
-        fabricCount = gm.savedFabricCount;
+        woodCount = gm.currentWoodCount;
+        metalCount = gm.currentMetalCount;
+        fabricCount = gm.currentFabricCount;
     }
     
     // Update is called once per frame
