@@ -7,6 +7,8 @@ public class Dock : MonoBehaviour
     ////VARIABLES
     private UIManager ui;
     private PlayerMovement player;
+    private bool mapReveal = false;
+    public GameObject mapSection;
 
     //UPDATES
     private void Awake()
@@ -27,6 +29,12 @@ public class Dock : MonoBehaviour
         if(other.CompareTag("ShipGround") && player.isControllingShip == true)
         {
             ui.UIObjectText.text = "Press G to Dock";
+
+            if(!mapReveal)
+            {
+                mapSection.SetActive(true);
+                mapReveal = true;
+            }
         }
     }
 
