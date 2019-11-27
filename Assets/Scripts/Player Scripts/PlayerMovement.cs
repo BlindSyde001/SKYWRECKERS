@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
     private const float yAngleMax = 45f;
     private Transform wallClimb;
     public bool isControllingShip = false;
+    public bool accessingMap = false;
 
     [NonSerialized]
     public bool isClimbing = false;
@@ -96,7 +97,11 @@ public class PlayerMovement : MonoBehaviour
             plank.SetActive(true);
             if(!shipGrounded)
             shipHP.SetActive(false);
-            this.GetComponent<UnityInputManager>().enabled = true;
+            if(!accessingMap)
+            {
+               print("POP");
+               this.GetComponent<UnityInputManager>().enabled = true;
+            }
             ccFinal.m_UpdateType = AbstractFollowerCamera.UpdateType.FixedUpdate;
             
         }
@@ -178,19 +183,11 @@ public class PlayerMovement : MonoBehaviour
             yVelocity = 0;
         }
         
-        //controller.Move((yVelocity * Vector3.up + movement + (shipGrounded ? ship.displacement : Vector3.zero)) * Time.deltaTime);
         ship.displacement = Vector3.zero;
         movement = Vector3.zero;
-
-        //Vector3 newMove = Vector3.Lerp(controller.velocity, movement, Time.deltaTime * 5f);
+        
         ship.displacement = Vector3.zero;
-        //controller.Move((yVelocity * Vector3.up + newMove + (shipGrounded ? ship.displacement : Vector3.zero)) * Time.deltaTime);
-       // print(controller.velocity);
-      //  print("MOVEMENT: " + movement);
         movement = Vector3.zero;
-
-        //if (controller.isGrounded)
-        //    yVelocity = 0F;
     }
 
     private void Rotation()
@@ -231,6 +228,16 @@ public class PlayerMovement : MonoBehaviour
             {
                 print("map");
                 map.SetActive(!map.activeSelf);
+
+                if(map.activeSelf == true)
+                {
+                    accessingMap = true;
+                    this.GetComponent<UnityInputManager>().enabled = false;
+                } else
+                {
+                    accessingMap = false;
+                }
+
             }
             if(other.CompareTag("Wheel") && !ship.docking)
             {
@@ -261,10 +268,6 @@ public class PlayerMovement : MonoBehaviour
         {
             ui.UIObjectText.text = "Press E to take the Wheel";
         } 
-        //else if(other.CompareTag("Wheel") && isControllingShip)
-        //{
-        //    ui.UIObjectText.text = "";
-        //}
 
         if(other.CompareTag("Map Table"))
         {

@@ -139,7 +139,7 @@ public class PirateShipAI : EnemyStats
         }
         _direction = (movePoints[currentPos].position - transform.position).normalized;
         _lookRotation = Quaternion.LookRotation(_direction);
-        transform.rotation = Quaternion.Slerp(transform.rotation, _lookRotation, rotateSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, _lookRotation, 8 * Time.deltaTime);
         transform.position += transform.forward * moveSpeed * Time.deltaTime;
     }
 }

@@ -11,7 +11,7 @@ public class WhaleAI : EnemyStats
     //VARIABLES
     public Vector3 moveDirection;
     public float moveDistance;
-    public float moveSpeed = 10f;
+    public float moveSpeed = 50f;
 
     private Vector3 startPosition;
 
