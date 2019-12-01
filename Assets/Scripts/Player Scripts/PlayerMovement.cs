@@ -36,7 +36,6 @@ public class PlayerMovement : MonoBehaviour
     [NonSerialized]
     public bool isClimbing = false;
     public GameObject shipHP;
-    //CharacterController controller;
 
     public new Camera camera;
     public GameObject shoulderPos;
@@ -64,19 +63,17 @@ public class PlayerMovement : MonoBehaviour
     public Button Settings;
 
     public bool inverted = false;
+
+    public List<GameObject> dockingIcons;
     
     //UPDATES
     private void Awake()
     {
         ship = FindObjectOfType<MovementControlsShip>();
-        //controller = GetComponent<CharacterController>();
         gm = FindObjectOfType<GameManager>();
         ccFinal = FindObjectOfType<CameraController>();
         ui = FindObjectOfType<UIManager>();
         Cursor.visible = false;
-
-        //camera.gameObject.SetActive(!isControllingShip);
-        //ship.camera.gameObject.SetActive(isControllingShip);
     }
     private void Start()
     {
@@ -90,10 +87,6 @@ public class PlayerMovement : MonoBehaviour
         }
         if (!isControllingShip)
         {
-            //Move();
-            //ClimbingControls();
-            //Rotation();
-            //playerJumping();
             plank.SetActive(true);
             if(!shipGrounded)
             shipHP.SetActive(false);
@@ -103,7 +96,6 @@ public class PlayerMovement : MonoBehaviour
                this.GetComponent<UnityInputManager>().enabled = true;
             }
             ccFinal.m_UpdateType = AbstractFollowerCamera.UpdateType.FixedUpdate;
-            
         }
         else
         {
@@ -247,6 +239,23 @@ public class PlayerMovement : MonoBehaviour
                     if(isControllingShip)
                     {
                         ui.UIObjectText.text = "";
+                        foreach (GameObject dI in dockingIcons)
+                        {
+                            if (dI.activeSelf == false)
+                            {
+                                dI.SetActive(true);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        foreach (GameObject dI in dockingIcons)
+                        {
+                            if (dI.activeSelf == true)
+                            {
+                                dI.SetActive(false);
+                            }
+                        }
                     }
                 }
             }
