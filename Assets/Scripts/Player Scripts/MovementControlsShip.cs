@@ -50,6 +50,7 @@ public class MovementControlsShip : MonoBehaviour
     Vector3 windForce = Vector3.zero;
 
     bool floorBarrier = false;
+    public bool gettingRammed = false;
 
     [NonSerialized]
     public Vector3 displacement;
@@ -122,7 +123,7 @@ public class MovementControlsShip : MonoBehaviour
                 forwardVelocity = 0;
             }
 
-            if (forwardVelocity > 0.01)
+            if (forwardVelocity > 0.01 && !gettingRammed)
             {
                 if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
                 {
@@ -132,6 +133,9 @@ public class MovementControlsShip : MonoBehaviour
                 if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
                 {
                     yaw += turnSpeed * Time.deltaTime;
+                } else if(gettingRammed)
+                {
+                    yaw = transform.eulerAngles.y;
                 }
                 rotation();
             }

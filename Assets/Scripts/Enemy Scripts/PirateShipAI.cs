@@ -29,6 +29,11 @@ public class PirateShipAI : EnemyStats
     public int currentPos = 0;
 
     public bool charging = false;
+    public bool piercingBlowCheck = false;
+
+    //public Transform frontCheck;
+    //public Transform backCheck;
+    //private Vector3 collisionPoint;
     //UPDATES
 
     private void Awake()
@@ -49,9 +54,11 @@ public class PirateShipAI : EnemyStats
             {
                 piercingBlow();
                 charging = true;
+                piercingBlowCheck = true;
             } else if (Vector3.Distance(transform.position, playerShip.position) >= 120f && charging == true)
             {
                 charging = false;
+                piercingBlowCheck = false;
                 moveSpeed = moveSpeed / 2.5f;
             }
         }
@@ -62,7 +69,6 @@ public class PirateShipAI : EnemyStats
 
         if (enemyCurrentHP <= 0)
         {
-            //gm.enemyList.Remove(this.gameObject);
             Destroy(this.gameObject);
         }
     }
@@ -142,4 +148,6 @@ public class PirateShipAI : EnemyStats
         transform.rotation = Quaternion.RotateTowards(transform.rotation, _lookRotation, 8 * Time.deltaTime);
         transform.position += transform.forward * moveSpeed * Time.deltaTime;
     }
+
+    
 }
