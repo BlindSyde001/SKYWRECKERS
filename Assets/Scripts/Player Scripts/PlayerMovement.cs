@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject menu;
     public GameObject overMenu;
+    public GameObject controlsPanel;
     public GameObject settingsPanel;
     public GameObject savePanel;
     public GameObject inventoryPanel;
@@ -379,6 +380,7 @@ public class PlayerMovement : MonoBehaviour
         overMenu.SetActive(true);
         inventoryPanel.SetActive(false);
         savePanel.SetActive(false);
+        controlsPanel.SetActive(false);
         settingsPanel.SetActive(false);
         menu.SetActive(!menu.activeSelf);
 
