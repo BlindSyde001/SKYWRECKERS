@@ -92,7 +92,6 @@ public class PlayerMovement : MonoBehaviour
             shipHP.SetActive(false);
             if(!accessingMap)
             {
-               print("POP");
                this.GetComponent<UnityInputManager>().enabled = true;
             }
             ccFinal.m_UpdateType = AbstractFollowerCamera.UpdateType.FixedUpdate;

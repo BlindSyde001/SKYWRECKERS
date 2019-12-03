@@ -24,6 +24,7 @@ public class ShipColliders : MonoBehaviour
 
     public Transform frontCheck;
     public Transform backCheck;
+    public Transform nR;
     private Vector3 collisionPoint;
 
     private Vector3 _direction;
@@ -131,7 +132,7 @@ public class ShipColliders : MonoBehaviour
                     _direction = (ship.transform.position - other.transform.forward).normalized;
                     _lookRotation = Quaternion.LookRotation(-_direction);
 
-                    ship.transform.rotation = Quaternion.RotateTowards(transform.rotation, other.transform.rotation, 20 * Time.deltaTime);
+                    ship.transform.rotation = Quaternion.RotateTowards(transform.rotation, nR.rotation, 20 * Time.deltaTime);
                     ship.gettingRammed = true;
                 }
 

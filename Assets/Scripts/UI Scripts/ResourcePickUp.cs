@@ -73,6 +73,11 @@ public class ResourcePickUp : MonoBehaviour
     //METHODS
     private void PickUp()
     {
+
+        UIManager.Instance.ToggleText("");
+        gameObject.SetActive(false);
+        gm.BoolUpdate();
+
         //Inventory.Instance.hasLock = true;
         if (item == InventoryItem.WOOD) //Item is picked up and appears in inventory 
         {
@@ -80,12 +85,12 @@ public class ResourcePickUp : MonoBehaviour
             Inventory.Instance.woodCount++;
             Inventory.Instance.CheckInventory();
             woodText.text = ("Wood " + Inventory.Instance.woodCount + "/10");
-            if (Inventory.Instance.woodCount == 10)
-            {
-                print("Getting rid of text");
-                //Inventory.Instance.upgradeAvailableText.gameObject.SetActive(true);
-                Inventory.Instance.StartCoroutine(Inventory.Instance.UpgradeAvailableTextGone());
-            }
+            //if (Inventory.Instance.woodCount == 10)
+            //{
+            //    print("Getting rid of text");
+            //    //Inventory.Instance.upgradeAvailableText.gameObject.SetActive(true);
+            //    Inventory.Instance.StartCoroutine(Inventory.Instance.UpgradeAvailableTextGone());
+            //}
         } 
         
         if (item == InventoryItem.FABRIC)
@@ -102,9 +107,5 @@ public class ResourcePickUp : MonoBehaviour
             Inventory.Instance.CheckInventory();
             metalText.text = ("Metal " + Inventory.Instance.metalCount + "/10");
         }
-
-        UIManager.Instance.ToggleText("");
-        gameObject.SetActive(false);
-        gm.BoolUpdate();
     }
 }
