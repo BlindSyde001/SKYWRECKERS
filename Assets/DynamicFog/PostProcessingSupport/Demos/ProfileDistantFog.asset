@@ -51,10 +51,10 @@ MonoBehaviour:
     value: 0.122
   distance:
     overrideState: 1
-    value: 0.051
+    value: 0.091
   distanceFallOff:
     overrideState: 1
-    value: 1.22
+    value: 0.06
   maxDistance:
     overrideState: 1
     value: 1.2
@@ -87,10 +87,10 @@ MonoBehaviour:
     value: {x: 1, y: 0, z: 1}
   color:
     overrideState: 1
-    value: {r: 0.5097454, g: 0.74302167, b: 0.745283, a: 0.63529414}
+    value: {r: 0.52954787, g: 0.63964343, b: 0.6415094, a: 0.63529414}
   color2:
     overrideState: 1
-    value: {r: 0.50980395, g: 0.7411765, b: 0.74509805, a: 0.30588236}
+    value: {r: 0.8396226, g: 0.8396226, b: 0.8396226, a: 0.30588236}
   skyHaze:
     overrideState: 1
     value: 500
