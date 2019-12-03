@@ -22,6 +22,13 @@ public class ShipColliders : MonoBehaviour
     float timerTick = 0f;
     int dotTicks = 0;
 
+    public Transform frontCheck;
+    public Transform backCheck;
+    private Vector3 collisionPoint;
+
+    private Vector3 _direction;
+    private Quaternion _lookRotation;
+
     //UPDATES
     private void Awake()
     {
@@ -42,7 +49,7 @@ public class ShipColliders : MonoBehaviour
     {
         if (ship.docking == false)
         {
-            #region Colliding
+            #region Colliding DPS
             if (other.CompareTag("Enemy") || other.CompareTag("Ground"))
             {
                 if (sail)
@@ -88,9 +95,55 @@ public class ShipColliders : MonoBehaviour
                     }
                     Debug.Log(other);
                 }
-                #endregion
             }
+            #endregion
+            #region Pirate Ship Collision
+            if(other.GetComponentInParent<PirateShipAI>() != null)
+            {
+                print("Its Working");
+                collisionPoint = other.transform.position;
+            }
+            #endregion
+        }
+    }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.GetComponentInParent<PirateShipAI>() != null)
+        {
+             PirateShipAI pS = other.GetComponentInParent<PirateShipAI>();
+
+            if(pS.piercingBlowCheck)
+            {
+                MovementControlsShip ship = transform.GetComponentInParent<MovementControlsShip>();
+                if (Vector3.Distance(collisionPoint, frontCheck.position) < Vector3.Distance(collisionPoint, backCheck.position))
+                {
+                    print("Front Check");
+                    _direction = (ship.transform.position - other.transform.forward).normalized;
+                    _lookRotation = Quaternion.LookRotation(_direction);
+
+                    ship.transform.rotation = Quaternion.RotateTowards(transform.rotation, other.transform.rotation, 20 * Time.deltaTime);
+                    ship.gettingRammed = true;
+                }
+                else if (Vector3.Distance(collisionPoint, frontCheck.position) > Vector3.Distance(collisionPoint, backCheck.position))
+                {
+                    print("Back Check");
+                    _direction = (ship.transform.position - other.transform.forward).normalized;
+                    _lookRotation = Quaternion.LookRotation(-_direction);
+
+                    ship.transform.rotation = Quaternion.RotateTowards(transform.rotation, other.transform.rotation, 20 * Time.deltaTime);
+                    ship.gettingRammed = true;
+                }
+
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.GetComponentInParent<PirateShipAI>() != null)
+        {
+            transform.GetComponentInParent<MovementControlsShip>().gettingRammed = false;
         }
     }
 
