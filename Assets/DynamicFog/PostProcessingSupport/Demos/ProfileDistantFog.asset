@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settings:
   - {fileID: 114119248156409954}
+  - {fileID: 4051994440239070243}
 --- !u!114 &114119248156409954
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -40,29 +41,29 @@ MonoBehaviour:
     overrideState: 0
     value: 0.2
   alpha:
-    overrideState: 0
+    overrideState: 1
     value: 1
   noiseStrength:
     overrideState: 1
     value: 0.303
   noiseScale:
     overrideState: 1
-    value: 1
+    value: 0.122
   distance:
     overrideState: 1
-    value: 0.013
+    value: 0.051
   distanceFallOff:
     overrideState: 1
-    value: 1.137
+    value: 1.22
   maxDistance:
-    overrideState: 0
-    value: 1.017
+    overrideState: 1
+    value: 1.2
   maxDistanceFallOff:
     overrideState: 0
     value: 0.058
   height:
     overrideState: 1
-    value: 26
+    value: 350
   maxHeight:
     overrideState: 1
     value: 12
@@ -70,8 +71,8 @@ MonoBehaviour:
     overrideState: 1
     value: 1
   baselineheight:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 50
   clipUnderBaseline:
     overrideState: 0
     value: 0
@@ -79,31 +80,31 @@ MonoBehaviour:
     overrideState: 0
     value: 0
   speed:
-    overrideState: 0
-    value: 0.01
+    overrideState: 1
+    value: 0.05
   windDirection:
-    overrideState: 0
+    overrideState: 1
     value: {x: 1, y: 0, z: 1}
   color:
-    overrideState: 0
-    value: {r: 0.23529409, g: 0.8509804, b: 0.83191854, a: 1}
+    overrideState: 1
+    value: {r: 0.5097454, g: 0.74302167, b: 0.745283, a: 0.63529414}
   color2:
-    overrideState: 0
-    value: {r: 0.3584906, g: 0.22763252, b: 0.17079033, a: 1}
+    overrideState: 1
+    value: {r: 0.50980395, g: 0.7411765, b: 0.74509805, a: 0.30588236}
   skyHaze:
     overrideState: 1
-    value: 151
+    value: 500
   skySpeed:
-    overrideState: 0
-    value: 0.322
+    overrideState: 1
+    value: 0.198
   skyNoiseStrength:
-    overrideState: 0
-    value: 0.678
+    overrideState: 1
+    value: 1
   skyAlpha:
     overrideState: 1
-    value: 0.391
+    value: 1
   useDirectionalLightAsSun:
-    overrideState: 1
+    overrideState: 0
     value: 1
   fogOfWarEnabled:
     overrideState: 0
@@ -126,3 +127,31 @@ MonoBehaviour:
   scatteringColor:
     overrideState: 0
     value: {r: 1, g: 1, b: 0.8, a: 1}
+--- !u!114 &4051994440239070243
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 556797029e73b2347956b6579e77e05b, type: 3}
+  m_Name: DepthOfField
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  focusDistance:
+    overrideState: 1
+    value: 100
+  aperture:
+    overrideState: 1
+    value: 3.8
+  focalLength:
+    overrideState: 1
+    value: 237
+  kernelSize:
+    overrideState: 1
+    value: 0
