@@ -133,12 +133,13 @@ public class MovementControlsShip : MonoBehaviour
                 if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
                 {
                     yaw += turnSpeed * Time.deltaTime;
-                } else if(gettingRammed)
+                } 
+                rotation();
+            }
+            else if(gettingRammed)
                 {
                     yaw = transform.eulerAngles.y;
                 }
-                rotation();
-            }
             #endregion
         }
         else

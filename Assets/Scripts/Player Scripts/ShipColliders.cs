@@ -29,6 +29,11 @@ public class ShipColliders : MonoBehaviour
 
     private Vector3 _direction;
     private Quaternion _lookRotation;
+    public bool limit = false;
+
+    public Quaternion x;
+    public float timeV;
+    public float cD = 2.5f;
 
     //UPDATES
     private void Awake()
@@ -42,6 +47,11 @@ public class ShipColliders : MonoBehaviour
         if (dot)
         {
             DOTDamage();
+        }
+
+        if(Time.time > timeV && limit)
+        {
+            limit = false;
         }
     }
 
@@ -101,7 +111,6 @@ public class ShipColliders : MonoBehaviour
             #region Pirate Ship Collision
             if(other.GetComponentInParent<PirateShipAI>() != null)
             {
-                print("Its Working");
                 collisionPoint = other.transform.position;
             }
             #endregion
@@ -117,25 +126,24 @@ public class ShipColliders : MonoBehaviour
             if(pS.piercingBlowCheck)
             {
                 MovementControlsShip ship = transform.GetComponentInParent<MovementControlsShip>();
-                if (Vector3.Distance(collisionPoint, frontCheck.position) < Vector3.Distance(collisionPoint, backCheck.position))
+                if (Vector3.Distance(collisionPoint, frontCheck.position) < Vector3.Distance(collisionPoint, backCheck.position) && !limit)
                 {
                     print("Front Check");
-                    _direction = (ship.transform.position - other.transform.forward).normalized;
-                    _lookRotation = Quaternion.LookRotation(_direction);
-
-                    ship.transform.rotation = Quaternion.RotateTowards(transform.rotation, other.transform.rotation, 20 * Time.deltaTime);
+                    x = other.transform.rotation;
                     ship.gettingRammed = true;
+                    limit = true;
+                    timeV = Time.time + cD;
                 }
-                else if (Vector3.Distance(collisionPoint, frontCheck.position) > Vector3.Distance(collisionPoint, backCheck.position))
+                else if (Vector3.Distance(collisionPoint, frontCheck.position) > Vector3.Distance(collisionPoint, backCheck.position) && !limit)
                 {
                     print("Back Check");
-                    _direction = (ship.transform.position - other.transform.forward).normalized;
-                    _lookRotation = Quaternion.LookRotation(-_direction);
-
-                    ship.transform.rotation = Quaternion.RotateTowards(transform.rotation, nR.rotation, 20 * Time.deltaTime);
+                    x = nR.transform.rotation;
                     ship.gettingRammed = true;
+                    limit = true;
+                    timeV = Time.time + cD;
                 }
 
+                ship.transform.rotation = Quaternion.RotateTowards(transform.rotation, x, 20 * Time.deltaTime);
             }
         }
     }
@@ -144,6 +152,7 @@ public class ShipColliders : MonoBehaviour
     {
         if(other.GetComponentInParent<PirateShipAI>() != null)
         {
+            print("LEFT");
             transform.GetComponentInParent<MovementControlsShip>().gettingRammed = false;
         }
     }
