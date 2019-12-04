@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using DiasGames.ThirdPersonSystem;
+using DiasGames.ThirdPersonSystem.Cameras;
 
 public enum InventoryItem { WOOD, FABRIC, METAL }
 public class Inventory : MonoBehaviour
 {
     //VARIABLES
     public static Inventory Instance;
+    private PlayerMovement player;
     private GameManager gm;
     private UIManager ui;
 
@@ -42,10 +45,8 @@ public class Inventory : MonoBehaviour
     public TextMeshProUGUI upgradeTableText;
     public TextMeshProUGUI upgradeAvailableText;
 
-    //Place Holder Upgrades for Testing
-    //public GameObject shipUpgradeWood;
-    //public GameObject shipUpgradeFabric;
-    //public GameObject shipUpgradeMetal;
+    private float cD = 3f;
+    private float timeV;
 
     //UPDATES
     private void Awake()
@@ -53,6 +54,7 @@ public class Inventory : MonoBehaviour
         Instance = this;
         gm = FindObjectOfType<GameManager>();
         ui = FindObjectOfType<UIManager>();
+        player = FindObjectOfType<PlayerMovement>();
     }
 
     // Start is called before the first frame update
@@ -64,8 +66,21 @@ public class Inventory : MonoBehaviour
         metalCount = gm.currentMetalCount;
         fabricCount = gm.currentFabricCount;
     }
-    
+
     // Update is called once per frame
+
+    private void Update()
+    {
+        if(upgradeAvailableText.gameObject.activeSelf == true)
+        {
+        timeV += Time.deltaTime;
+        if(timeV > cD)
+            {
+                timeV = 0f;
+                upgradeAvailableText.gameObject.SetActive(false);
+            }
+        }
+    }
 
     private void FixedUpdate()
     {
@@ -77,6 +92,28 @@ public class Inventory : MonoBehaviour
         Cursor.visible = true; //Turing cursor on so players can interact with menu
     }
 
+    public void Toggle()
+    {
+        //upgradeTableText.text = "Press [E] To Access Ship Upgrades";
+        if (upgradePanel.activeSelf == false)
+        {
+            upgradePanel.SetActive(true);
+        }
+        else
+        {
+            upgradePanel.SetActive(false);
+        }
+        CursorOn();
+        if (player.accessingMap == false)
+        {
+            player.accessingMap = true;
+        }
+        else
+        {
+            player.accessingMap = false;
+        }
+        CheckInventory();
+    }
 
     public void ShipUpgradeSettingsOff() //Turn off all settings for the upgrade panel
     {
@@ -101,11 +138,7 @@ public class Inventory : MonoBehaviour
         //upgradeTableText.gameObject.SetActive(true);
         if (other.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.E))
         {
-            //upgradeTableText.text = "Press [E] To Access Ship Upgrades";
-            upgradePanel.SetActive(true);
-            CursorOn();
-            Time.timeScale = 0f;
-            CheckInventory();
+            Toggle();
         }
     }
 
@@ -136,6 +169,7 @@ public class Inventory : MonoBehaviour
             //Debug.Log("Fabric Upgrade Available");
             fabricButton.SetActive(true);
             lockedFabricButton.SetActive(false);
+            upgradeAvailableText.gameObject.SetActive(true);
             hasFabric = true;
         }
 
@@ -144,6 +178,7 @@ public class Inventory : MonoBehaviour
             //Debug.Log("Metal Upgrade Available");
             metalButton.SetActive(true);
             lockedMetalButton.SetActive(false);
+            upgradeAvailableText.gameObject.SetActive(true);
             hasMetal = true;
         }
     }
