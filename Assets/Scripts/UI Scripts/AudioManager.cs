@@ -31,6 +31,7 @@ public class AudioManager : MonoBehaviour
     #region Fields
     private AudioSource musicSource;
     private AudioSource musicSource2;
+    private AudioSource BGSource;
     private AudioSource sfxSource;
     #endregion
     private bool musicSourcePlaying;
@@ -41,10 +42,12 @@ public class AudioManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
         musicSource = this.gameObject.AddComponent<AudioSource>();
         musicSource2 = this.gameObject.AddComponent<AudioSource>();
+        BGSource = this.gameObject.AddComponent<AudioSource>();
         sfxSource = this.gameObject.AddComponent<AudioSource>();
 
         musicSource.loop = true;
         musicSource2.loop = true;
+        BGSource.loop = true;
     }
 
     //METHODS
@@ -100,22 +103,22 @@ public class AudioManager : MonoBehaviour
         sfxSource.PlayOneShot(clip, volume);
     }
     
-    /*public void PrimaryMusic(AudioClip musicClip, float volume)
-    {
-        AudioSource activeSource = musicSource;
+    //public void PrimaryMusic(AudioClip musicClip, float volume)
+    //{
+    //    AudioSource activeSource = BGSource;
 
-        activeSource.clip = musicClip;
-        activeSource.volume = volume;
-        activeSource.Play();
+    //    activeSource.clip = musicClip;
+    //    activeSource.volume = volume;
+    //    activeSource.Play();
 
-    }
-    public void SecondaryMusic(AudioClip musicClip, float volume)
-    {
-        AudioSource activeSource = musicSource2;
+    //}
+    //public void SecondaryMusic(AudioClip musicClip, float volume)
+    //{
+    //    AudioSource activeSource = musicSource2;
 
-        activeSource.clip = musicClip;
-        activeSource.volume = volume;
-        activeSource.Play();
+    //    activeSource.clip = musicClip;
+    //    activeSource.volume = volume;
+    //    activeSource.Play();
 
-    }*/
+    //}
 }

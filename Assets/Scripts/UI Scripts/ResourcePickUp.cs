@@ -7,6 +7,7 @@ public class ResourcePickUp : MonoBehaviour
 {
     //VARIABLES
     private static GameManager gm;
+    private AudioManager _audioManager;
     private bool pickUpAllowed; //Bool to allow the player to pick up the gameobject
 
     public InventoryItem item; //Access to resource gameobjects in inventory script
@@ -16,12 +17,17 @@ public class ResourcePickUp : MonoBehaviour
     public TextMeshProUGUI fabricText;
     public TextMeshProUGUI metalText;
 
+    public AudioClip woodClip;
+    public AudioClip fabricClip;
+    public AudioClip metalClip;
+
     public bool startUpResourceCount = false;
 
     //UPDATES
     private void Awake()
     {
         gm = FindObjectOfType<GameManager>();
+        _audioManager = FindObjectOfType<AudioManager>().GetComponent<AudioManager>();
     }
     void Start()
     {
@@ -81,20 +87,16 @@ public class ResourcePickUp : MonoBehaviour
         //Inventory.Instance.hasLock = true;
         if (item == InventoryItem.WOOD) //Item is picked up and appears in inventory 
         {
+            _audioManager.PlaySFX(woodClip, 1f);
             gm.currentWoodCount++;
             Inventory.Instance.woodCount++;
             Inventory.Instance.CheckInventory();
             woodText.text = ("Wood " + Inventory.Instance.woodCount + "/10");
-            //if (Inventory.Instance.woodCount == 10)
-            //{
-            //    print("Getting rid of text");
-            //    //Inventory.Instance.upgradeAvailableText.gameObject.SetActive(true);
-            //    Inventory.Instance.StartCoroutine(Inventory.Instance.UpgradeAvailableTextGone());
-            //}
         } 
         
         if (item == InventoryItem.FABRIC)
         {
+            _audioManager.PlaySFX(fabricClip, 1f);
             gm.currentFabricCount++;
             Inventory.Instance.fabricCount++;
             Inventory.Instance.CheckInventory();
@@ -102,6 +104,7 @@ public class ResourcePickUp : MonoBehaviour
         }
         if (item == InventoryItem.METAL)
         {
+            _audioManager.PlaySFX(metalClip, 1f);
             gm.currentMetalCount++;
             Inventory.Instance.metalCount++;
             Inventory.Instance.CheckInventory();

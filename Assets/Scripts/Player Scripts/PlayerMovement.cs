@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
     //VARIABLES
     private GameManager gm;
+    private AudioManager _audioManager;
     public CameraController ccFinal;
     private UIManager ui;
     public CameraData cD;
@@ -26,6 +27,9 @@ public class PlayerMovement : MonoBehaviour
     public float velocity = 5f;
     public float turnSpeed = 10;
     public float jumpSpeed = 7f;
+
+    public AudioClip exploration;
+    public AudioClip wind;
 
     public float distance = 2f;
     private const float yAngleMin = -45f;
@@ -74,6 +78,7 @@ public class PlayerMovement : MonoBehaviour
         gm = FindObjectOfType<GameManager>();
         ccFinal = FindObjectOfType<CameraController>();
         ui = FindObjectOfType<UIManager>();
+        _audioManager = FindObjectOfType<AudioManager>().GetComponent<AudioManager>();
         Cursor.visible = false;
     }
     private void Start()
@@ -239,6 +244,7 @@ public class PlayerMovement : MonoBehaviour
                     if(isControllingShip)
                     {
                         ui.UIObjectText.text = "";
+                        _audioManager.PlayMusicWithFade(exploration, 1f);
                         foreach (GameObject dI in dockingIcons)
                         {
                             if (dI.activeSelf == false)
@@ -249,6 +255,7 @@ public class PlayerMovement : MonoBehaviour
                     }
                     else
                     {
+                        _audioManager.PlayMusicWithFade(wind, 1f);
                         foreach (GameObject dI in dockingIcons)
                         {
                             if (dI.activeSelf == true)
