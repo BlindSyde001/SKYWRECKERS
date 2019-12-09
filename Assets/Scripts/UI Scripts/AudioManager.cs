@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -33,6 +34,7 @@ public class AudioManager : MonoBehaviour
     private AudioSource sfxSource;
     #endregion
     private bool musicSourcePlaying;
+
     //UPDATES
     private void Awake()
     {
@@ -46,21 +48,20 @@ public class AudioManager : MonoBehaviour
     }
 
     //METHODS
-    public void PlayMusic(AudioClip musicClip)
+    public void PlayMusic(AudioClip musicClip, float volume)
     {
+        //Determine which music source is active
         AudioSource activeSource = (musicSourcePlaying) ? musicSource : musicSource2;
 
         activeSource.clip = musicClip;
-        activeSource.volume = 1;
+        activeSource.volume = volume;
         activeSource.Play();
     }
     public void PlayMusicWithFade(AudioClip newClip, float transitionTime = 1f)
     {
         AudioSource activeSource = (musicSourcePlaying) ? musicSource : musicSource2;
         StartCoroutine(UpdateMusicWithFade(activeSource, newClip, transitionTime));
-
     }
-
     private IEnumerator UpdateMusicWithFade(AudioSource activeSource, AudioClip newClip, float transitionTime = 1f)
     {
         if(!activeSource.isPlaying)
@@ -90,26 +91,31 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySFX(AudioClip clip)
     {
+        //OneShot allows for overlapping sounds, unlike Play which cuts the clip short
         sfxSource.PlayOneShot(clip);
     }
     public void PlaySFX(AudioClip clip, float volume)
     {
+        //Adjusted for Sound volume
         sfxSource.PlayOneShot(clip, volume);
     }
-
-
-    // EXAMPLE OF HOW TO REFERNCE THE AUDIO CLIP
-    /*private AudioSource leftMouse; //AudioSource will be created for left mouse click
-
-    private void Awake()
+    
+    /*public void PrimaryMusic(AudioClip musicClip, float volume)
     {
-        DontDestroyOnLoad(this.gameObject);
-        leftMouse = this.gameObject.AddComponent<AudioSource>(); //AudioSource added to scene
+        AudioSource activeSource = musicSource;
+
+        activeSource.clip = musicClip;
+        activeSource.volume = volume;
+        activeSource.Play();
+
     }
-
-    public void lmSFX(AudioClip clip) //left mouse click
+    public void SecondaryMusic(AudioClip musicClip, float volume)
     {
-        leftMouse.PlayOneShot(clip);
-    }*/
+        AudioSource activeSource = musicSource2;
 
+        activeSource.clip = musicClip;
+        activeSource.volume = volume;
+        activeSource.Play();
+
+    }*/
 }
