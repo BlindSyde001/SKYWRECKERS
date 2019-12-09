@@ -65,7 +65,7 @@ public class UIManager : MonoBehaviour
 
     private void LateUpdate()
     {
-        if(Inventory.Instance.woodCount == 10 && Inventory.Instance.metalCount == 10 && Inventory.Instance.fabricCount == 10)
+        if(Inventory.Instance.woodCount >= 5 && Inventory.Instance.metalCount >= 5 && Inventory.Instance.fabricCount >= 5)
         {
             endGameCloudWall.SetActive(true);
         }
