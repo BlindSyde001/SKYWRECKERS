@@ -3373,6 +3373,8 @@ MonoBehaviour:
   wind: {fileID: 8300000, guid: 952326a29e342cb46a80c3398e8a4f5d, type: 3}
   jump: {fileID: 8300000, guid: e16415e015f858147b18ec5fed8da766, type: 3}
   climb: {fileID: 8300000, guid: 7719ac2ee2984b5418db3361c7cdebfa, type: 3}
+  playerCannon: {fileID: 8300000, guid: 6105532a983510f47b9c8f246cfd3dcd, type: 3}
+  enemyCannon: {fileID: 8300000, guid: 0006a198987d1894bb8537a0cce12e85, type: 3}
 --- !u!1 &1191808145
 GameObject:
   m_ObjectHideFlags: 0

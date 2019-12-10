@@ -41,7 +41,7 @@ namespace DiasGames.ThirdPersonSystem
             }
 
             IsPressed = Input.GetButton(InputName);
-
+            Debug.Log(IsPressed);
             if (lastTime < Time.fixedTime)
             {
                 lastTime = Time.fixedTime + Time.maximumDeltaTime;
@@ -179,11 +179,6 @@ namespace DiasGames.ThirdPersonSystem
             // calculate camera relative direction to move:
             Vector3 CamForward = Vector3.Scale(m_Camera.forward, new Vector3(1, 0, 1)).normalized;
             m_RelativeInput = m_Move.y * CamForward + m_Move.x * m_Camera.right;
-
-            if(m_Move.x != 0 || m_Move.y != 0)
-            {
-                print("Moving");
-            }
 
         }
 

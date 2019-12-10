@@ -41,6 +41,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip wind;
     public AudioClip jump;
     public AudioClip climb;
+    public AudioClip playerCannon;
+    public AudioClip enemyCannon;
     #endregion
     private bool musicSourcePlaying;
 

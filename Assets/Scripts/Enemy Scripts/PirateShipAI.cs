@@ -128,7 +128,7 @@ public class PirateShipAI : EnemyStats
     {
         if (Time.time > nextFire)
         {
-
+            _audioManager.PlaySFX(_audioManager.enemyCannon);
             nextFire = Time.time + fireRate;
             Rigidbody bulletInstance;
             foreach (Transform x in bulletEndsRight)
