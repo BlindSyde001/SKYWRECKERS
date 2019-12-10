@@ -85,4 +85,13 @@ public class UIManager : MonoBehaviour
     {
         UIObjectText.text = itemName;
     }
+
+
+    public IEnumerator UiImage(Image x)
+    {
+        x.canvasRenderer.SetAlpha(1);
+        yield return new WaitForSeconds(1);
+        x.CrossFadeAlpha(0, 3, false);
+        yield return null;
+    }
 }

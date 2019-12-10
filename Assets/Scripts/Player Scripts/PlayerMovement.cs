@@ -81,6 +81,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         transform.position = gm.lastCheckpointPos.transform.position;
+        StartCoroutine(ui.UiImage(ui.playerControls));
     }
     private void Update()
     {
@@ -96,10 +97,6 @@ public class PlayerMovement : MonoBehaviour
             if(!accessingMap)
             {
                this.GetComponent<UnityInputManager>().enabled = true;
-                if(Input.GetButton("Horizontal") || Input.GetButton("Vertical"))
-                {
-                    print("Movement");
-                }
             }
             ccFinal.m_UpdateType = AbstractFollowerCamera.UpdateType.FixedUpdate;
         }
@@ -229,6 +226,7 @@ public class PlayerMovement : MonoBehaviour
                  isControllingShip = !isControllingShip;
                     if(isControllingShip)
                     {
+                        ui.StartCoroutine(ui.UiImage(ui.shipControls));
                         ui.UIObjectText.text = "";
                         _audioManager.PlayMusicWithFade(_audioManager.exploration, 5f);
                         foreach (GameObject dI in dockingIcons)
@@ -241,6 +239,7 @@ public class PlayerMovement : MonoBehaviour
                     }
                     else
                     {
+                        ui.StartCoroutine(ui.UiImage(ui.playerControls));
                         _audioManager.PlayMusicWithFade(_audioManager.wind, 5f);
                         foreach (GameObject dI in dockingIcons)
                         {
