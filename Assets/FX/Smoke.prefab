@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2256238692507629155}
   - component: {fileID: 1821925667788078829}
   - component: {fileID: 422341721243889455}
+  - component: {fileID: 6198042102394785459}
   m_Layer: 0
   m_Name: Smoke
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 592912863419452274}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 7188643065431097398}
   m_Father: {fileID: 0}
@@ -4832,6 +4833,22 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &6198042102394785459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592912863419452274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26ae30f689ebbd946a7aa1c1ac4516f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smokeFX: {fileID: 592912863419452274}
+  emberFX: {fileID: 3473541381277561620}
+  smoke: {fileID: 2256238692507629155}
+  ember: {fileID: 9170724575399467526}
 --- !u!1 &3473541381277561620
 GameObject:
   m_ObjectHideFlags: 0
@@ -4859,7 +4876,7 @@ Transform:
   m_GameObject: {fileID: 3473541381277561620}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1.0000002, z: 1.0000002}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 3919692949108474901}
   m_RootOrder: 0

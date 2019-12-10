@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public bool player = false;
     public bool enemy = false;
-
+    public GameObject smokeFX;
     //UPDATES
     void Start()
     {
@@ -18,7 +18,8 @@ public class Bullet : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Enemy") && player)
         {
-            if(other.GetComponentInParent<PirateShipAI>() != null)
+            Instantiate(smokeFX, transform.position, transform.rotation);
+            if (other.GetComponentInParent<PirateShipAI>() != null)
             {
                 other.GetComponentInParent<PirateShipAI>().enemyCurrentHP -= 5;
             }
@@ -30,6 +31,7 @@ public class Bullet : MonoBehaviour
         }
         else if(other.gameObject.CompareTag("ShipGround") && enemy)
         {
+            Instantiate(smokeFX, transform.position, transform.rotation);
             other.GetComponent<ShipColliders>().damage = 3;
             other.GetComponent<ShipColliders>().DamageTaken();
             print("CANNON SHOT");

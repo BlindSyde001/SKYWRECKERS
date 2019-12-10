@@ -107,6 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: 1
   enemy: 0
+  smokeFX: {fileID: 592912863419452274, guid: b3373d866b1825e43a295d85bac602e3, type: 3}
 --- !u!54 &8701019695713855190
 Rigidbody:
   m_ObjectHideFlags: 0
