@@ -80,28 +80,28 @@ public class AudioManager : MonoBehaviour
             activeSource.Play();
         }
 
-            print("Activated enum");
-            float t = 0.0f;
+        print("Activated enum");
+        float t = 0.0f;
 
-            //Fade out
-            for(t = 0; t < transitionTime; t += Time.deltaTime)
-            {
-                activeSource.volume = (1 - (t / transitionTime));
-                yield return null;
-            }
-            print(activeSource.clip.name);
-            activeSource.Stop();
-            activeSource.clip = newClip;
-            activeSource.Play();
-            print(activeSource.clip.name);
+        //Fade out
+        for (t = 0; t < transitionTime; t += Time.deltaTime)
+        {
+            activeSource.volume = (1 - (t / transitionTime));
+            yield return null;
+        }
+        print(activeSource.clip.name);
+        activeSource.Stop();
+        activeSource.clip = newClip;
+        activeSource.Play();
+        print(activeSource.clip.name);
 
-            //Fade in
-            for (t = 0; t < transitionTime; t += Time.deltaTime)
-            {
-                activeSource.volume = ((t / transitionTime));
-                yield return null;
-            }
-        
+        //Fade in
+        for (t = 0; t < transitionTime; t += Time.deltaTime)
+        {
+            activeSource.volume = ((t / transitionTime));
+            yield return null;
+        }
+
     }
 
     public void PlaySFX(AudioClip clip)
@@ -114,23 +114,13 @@ public class AudioManager : MonoBehaviour
         //Adjusted for Sound volume
         sfxSource.PlayOneShot(clip, volume);
     }
-    
-    //public void PrimaryMusic(AudioClip musicClip, float volume)
-    //{
-    //    AudioSource activeSource = BGSource;
 
-    //    activeSource.clip = musicClip;
-    //    activeSource.volume = volume;
-    //    activeSource.Play();
+    public void PrimaryMusic(AudioClip musicClip, float volume)
+    {
+        AudioSource activeSource = BGSource;
 
-    //}
-    //public void SecondaryMusic(AudioClip musicClip, float volume)
-    //{
-    //    AudioSource activeSource = musicSource2;
-
-    //    activeSource.clip = musicClip;
-    //    activeSource.volume = volume;
-    //    activeSource.Play();
-
-    //}
+        activeSource.clip = musicClip;
+        activeSource.volume = volume;
+        activeSource.Play();
+    }
 }

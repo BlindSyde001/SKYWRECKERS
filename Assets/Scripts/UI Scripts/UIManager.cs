@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class UIManager : MonoBehaviour
@@ -12,6 +13,12 @@ public class UIManager : MonoBehaviour
 
     public int objectiveMarkers = 0;
     public GameObject endGameCloudWall;
+
+    #region UI Image
+    public Image shipControls;
+    public Image playerControls;
+    public Image climbingControls;
+    #endregion
 
     #region SHIP HP
     public TextMeshProUGUI leftCannonHPText;
@@ -33,6 +40,9 @@ public class UIManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        shipControls.canvasRenderer.SetAlpha(0);
+        playerControls.canvasRenderer.SetAlpha(0);
+        climbingControls.canvasRenderer.SetAlpha(0);
     }
 
     void Start()

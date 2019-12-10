@@ -218,21 +218,6 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             print("E");
-            if (other.CompareTag("Map Table"))
-            {
-                print("map");
-                map.SetActive(!map.activeSelf);
-
-                if(map.activeSelf == true)
-                {
-                    accessingMap = true;
-                    this.GetComponent<UnityInputManager>().enabled = false;
-                } else
-                {
-                    accessingMap = false;
-                }
-
-            }
             if(other.CompareTag("Wheel") && !ship.docking)
             {
                 if(can)
@@ -262,6 +247,21 @@ public class PlayerMovement : MonoBehaviour
                         }
                     }
                 }
+            }
+            if (other.CompareTag("Map Table"))
+            {
+                print("map");
+                map.SetActive(!map.activeSelf);
+
+                if(map.activeSelf == true)
+                {
+                    accessingMap = true;
+                    this.GetComponent<UnityInputManager>().enabled = false;
+                } else
+                {
+                    accessingMap = false;
+                }
+
             }
 
             if (other.CompareTag("Wall"))

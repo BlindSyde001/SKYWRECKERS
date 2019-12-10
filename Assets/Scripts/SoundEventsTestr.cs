@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SoundEventsTestr : MonoBehaviour
 {
@@ -16,35 +17,15 @@ public class SoundEventsTestr : MonoBehaviour
         _audioManager = FindObjectOfType<AudioManager>().GetComponent<AudioManager>();
     }
 
+    //METHODS
     public void Turnon()
     {
         _audioManager.PlaySFX(_audioManager.jump);
     }
-    //public void Turnoff()
-    //{
-    //    print("Jump" + jumpcheck);
-    //    jumpcheck = false;
-    //}
 
     public void TurnonClimb()
     {
         _audioManager.PlaySFX(_audioManager.climb);
     }
-    //public void TurnoffClimb()
-    //{
-    //    print("Climb" + climbcheck);
-    //    climbcheck = false;
-    //}
-
-    //public void TurnonRun()
-    //{
-    //    print("Run" + jumpcheck);
-    //    jumpcheck = true;
-    //}
-    //public void TurnoffRun()
-    //{
-    //    print("Run" + runcheck);
-    //    runcheck = false;
-    //}
 
 }
