@@ -28,9 +28,6 @@ public class PlayerMovement : MonoBehaviour
     public float turnSpeed = 10;
     public float jumpSpeed = 7f;
 
-    public AudioClip exploration;
-    public AudioClip wind;
-
     public float distance = 2f;
     private const float yAngleMin = -45f;
     private const float yAngleMax = 45f;
@@ -244,7 +241,7 @@ public class PlayerMovement : MonoBehaviour
                     if(isControllingShip)
                     {
                         ui.UIObjectText.text = "";
-                        _audioManager.PlayMusicWithFade(exploration, 1f);
+                        _audioManager.PlayMusicWithFade(_audioManager.exploration, 5f);
                         foreach (GameObject dI in dockingIcons)
                         {
                             if (dI.activeSelf == false)
@@ -255,7 +252,7 @@ public class PlayerMovement : MonoBehaviour
                     }
                     else
                     {
-                        _audioManager.PlayMusicWithFade(wind, 1f);
+                        _audioManager.PlayMusicWithFade(_audioManager.wind, 5f);
                         foreach (GameObject dI in dockingIcons)
                         {
                             if (dI.activeSelf == true)

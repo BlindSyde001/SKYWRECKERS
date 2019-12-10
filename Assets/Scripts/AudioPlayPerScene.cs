@@ -7,7 +7,7 @@ public class AudioPlayPerScene : MonoBehaviour
 {
     //VARIABLES
     private AudioManager _audioManager;
-    public AudioClip musicClip;
+    public AudioClip clip;
     public float volume;
 
     //UPDATES
@@ -17,7 +17,7 @@ public class AudioPlayPerScene : MonoBehaviour
     }
     private void Start()
     {
-        _audioManager.PlayMusic(musicClip, volume);
+        _audioManager.PlayMusic(clip, volume);
     }
 
     //METHODS

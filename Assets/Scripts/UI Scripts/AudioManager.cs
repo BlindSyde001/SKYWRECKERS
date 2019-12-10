@@ -34,6 +34,14 @@ public class AudioManager : MonoBehaviour
     private AudioSource BGSource;
     private AudioSource sfxSource;
     #endregion
+    #region SoundClips
+    public AudioClip exploration;
+    public AudioClip intense;
+    public AudioClip suspense;
+    public AudioClip wind;
+    public AudioClip jump;
+    public AudioClip climb;
+    #endregion
     private bool musicSourcePlaying;
 
     //UPDATES
@@ -67,9 +75,12 @@ public class AudioManager : MonoBehaviour
     }
     private IEnumerator UpdateMusicWithFade(AudioSource activeSource, AudioClip newClip, float transitionTime = 1f)
     {
-        if(!activeSource.isPlaying)
+        if (!activeSource.isPlaying)
         {
             activeSource.Play();
+        }
+
+            print("Activated enum");
             float t = 0.0f;
 
             //Fade out
@@ -78,10 +89,11 @@ public class AudioManager : MonoBehaviour
                 activeSource.volume = (1 - (t / transitionTime));
                 yield return null;
             }
-
+            print(activeSource.clip.name);
             activeSource.Stop();
             activeSource.clip = newClip;
             activeSource.Play();
+            print(activeSource.clip.name);
 
             //Fade in
             for (t = 0; t < transitionTime; t += Time.deltaTime)
@@ -89,7 +101,7 @@ public class AudioManager : MonoBehaviour
                 activeSource.volume = ((t / transitionTime));
                 yield return null;
             }
-        }
+        
     }
 
     public void PlaySFX(AudioClip clip)
