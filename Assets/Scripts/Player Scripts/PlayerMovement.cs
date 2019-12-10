@@ -96,6 +96,10 @@ public class PlayerMovement : MonoBehaviour
             if(!accessingMap)
             {
                this.GetComponent<UnityInputManager>().enabled = true;
+                if(Input.GetButton("Horizontal") || Input.GetButton("Vertical"))
+                {
+                    print("Movement");
+                }
             }
             ccFinal.m_UpdateType = AbstractFollowerCamera.UpdateType.FixedUpdate;
         }

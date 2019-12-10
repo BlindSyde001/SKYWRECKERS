@@ -41,7 +41,7 @@ namespace DiasGames.ThirdPersonSystem
             }
 
             IsPressed = Input.GetButton(InputName);
-            Debug.Log(IsPressed);
+
             if (lastTime < Time.fixedTime)
             {
                 lastTime = Time.fixedTime + Time.maximumDeltaTime;

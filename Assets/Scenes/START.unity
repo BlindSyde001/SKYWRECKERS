@@ -97,7 +97,7 @@ LightmapSettings:
     m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -3371,8 +3371,8 @@ MonoBehaviour:
   intense: {fileID: 8300000, guid: 29964b8c371a17745a7893626083fcde, type: 3}
   suspense: {fileID: 8300000, guid: 0938c26f86a5d5d4d9ab03401e4cb410, type: 3}
   wind: {fileID: 8300000, guid: 952326a29e342cb46a80c3398e8a4f5d, type: 3}
-  jump: {fileID: 8300000, guid: e16415e015f858147b18ec5fed8da766, type: 3}
-  climb: {fileID: 8300000, guid: 7719ac2ee2984b5418db3361c7cdebfa, type: 3}
+  jump: {fileID: 8300000, guid: 3e16a52591bfc59488b5923244d8a3c1, type: 3}
+  climb: {fileID: 8300000, guid: 19618d79a85aaff4eacc3900b89d0962, type: 3}
   playerCannon: {fileID: 8300000, guid: 6105532a983510f47b9c8f246cfd3dcd, type: 3}
   enemyCannon: {fileID: 8300000, guid: 0006a198987d1894bb8537a0cce12e85, type: 3}
 --- !u!1 &1191808145

@@ -472,7 +472,7 @@ namespace DiasGames.ThirdPersonSystem
         /// </summary>
         private void CheckGround()
         {
-            Debug.DrawRay(transform.position + (Vector3.up * 0.1f), Vector3.down * GroundCheckDistance, Color.white, 0.5f);
+            Debug.DrawRay(transform.position + (Vector3.up * 0.1f), Vector3.down * GroundCheckDistance, Color.white, 0.1f);
             //if (Physics.Raycast(transform.position + (Vector3.up * 0.1f), Vector3.down, out m_GroundHit, GroundCheckDistance, m_GroundMask, QueryTriggerInteraction.Ignore))
             if (Physics.SphereCast(transform.position + (Vector3.up * 0.5f), 0.3f, Vector3.down, out m_GroundHit, GroundCheckDistance, m_GroundMask, QueryTriggerInteraction.Ignore))
                 {
@@ -484,12 +484,13 @@ namespace DiasGames.ThirdPersonSystem
                         OnGrounded.Invoke();
                     }
 
+                    print("Is Grounded");
                     IsGrounded = true;
                     GroundNormal = m_GroundHit.normal;
                     return;
                 }
             }
-            
+            print("Not Grounded");
 
             IsGrounded = false;
             GroundNormal = Vector3.up;
