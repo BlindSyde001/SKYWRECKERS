@@ -203,6 +203,7 @@ public class MovementControlsShip : MonoBehaviour
         }
 
         yaw = transform.eulerAngles.y;
+        angle = 0;
         docking = false;
         player.isControllingShip = false;
     }

@@ -408,4 +408,20 @@ public class PlayerMovement : MonoBehaviour
             Time.timeScale = 1;
         }
     }
+
+    public void BackFromMap()
+    {
+        print("map");
+        map.SetActive(!map.activeSelf);
+
+        if (map.activeSelf == true)
+        {
+            accessingMap = true;
+            this.GetComponent<UnityInputManager>().enabled = false;
+        }
+        else
+        {
+            accessingMap = false;
+        }
+    }
 }
