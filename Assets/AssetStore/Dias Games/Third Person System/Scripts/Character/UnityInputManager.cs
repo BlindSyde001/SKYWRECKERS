@@ -51,6 +51,7 @@ namespace DiasGames.ThirdPersonSystem
 
             if (IsPressed)
             {
+                //still holding
                 if (!hasPressed)
                 {
                     WasPressed = true;
@@ -60,6 +61,7 @@ namespace DiasGames.ThirdPersonSystem
             }
             else
             {
+                //has let button go
                 if (hasPressed)
                 {
                     WasPressed = false;
@@ -174,7 +176,6 @@ namespace DiasGames.ThirdPersonSystem
                 m_Move.x = Input.GetAxis("Horizontal");
                 m_Move.y = Input.GetAxis("Vertical");
             }
-
             // calculate camera relative direction to move:
             Vector3 CamForward = Vector3.Scale(m_Camera.forward, new Vector3(1, 0, 1)).normalized;
             m_RelativeInput = m_Move.y * CamForward + m_Move.x * m_Camera.right;

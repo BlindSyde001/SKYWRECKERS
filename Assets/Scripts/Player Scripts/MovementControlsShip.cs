@@ -48,6 +48,7 @@ public class MovementControlsShip : MonoBehaviour
     private Vector3 movement;
     public Vector3 nudgeVector = Vector3.zero;
     Vector3 windForce = Vector3.zero;
+    private AudioManager _audioManager;
 
     bool floorBarrier = false;
     public bool gettingRammed = false;
@@ -62,6 +63,7 @@ public class MovementControlsShip : MonoBehaviour
         controller = GetComponent<CharacterController>();
         gm = FindObjectOfType<GameManager>();
         cameraControls = FindObjectOfType<CameraControls>();
+        _audioManager = FindObjectOfType<AudioManager>().GetComponent<AudioManager>();
         forwardVelocity = 0f;
         yaw = transform.eulerAngles.y;
 
@@ -202,6 +204,7 @@ public class MovementControlsShip : MonoBehaviour
 
         yaw = transform.eulerAngles.y;
         docking = false;
+        player.isControllingShip = false;
     }
 
     //METHODS   
@@ -305,7 +308,7 @@ public class MovementControlsShip : MonoBehaviour
     {
         if (Input.GetMouseButton(1) && Time.time > nextFire)
         {
-
+            _audioManager.PlaySFX(_audioManager.playerCannon);
             nextFire = Time.time + fireRate;
             Rigidbody bulletInstance;
             foreach (Transform x in bulletEndsRight)
@@ -316,7 +319,7 @@ public class MovementControlsShip : MonoBehaviour
         }
         else if (Input.GetMouseButton(0) && Time.time > nextFire)
         {
-
+            _audioManager.PlaySFX(_audioManager.playerCannon);
             nextFire = Time.time + fireRate;
             Rigidbody bulletInstance;
             foreach (Transform y in bulletEndsLeft)

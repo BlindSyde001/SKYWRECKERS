@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class CheckpointSystem : MonoBehaviour
@@ -8,13 +9,17 @@ public class CheckpointSystem : MonoBehaviour
     //VARIABLES
     private GameManager gm;
     public GameObject dockPos;
-    public GameObject checkpointtext;
-    public TextMeshProUGUI reachedtext;
+    public Image checkpointtext;
 
     //UPDATES
     private void Awake()
     {
         gm = FindObjectOfType<GameManager>();
+        checkpointtext.canvasRenderer.SetAlpha(0);
+    }
+    private void Update()
+    {
+
     }
 
     //METHODS
@@ -29,9 +34,9 @@ public class CheckpointSystem : MonoBehaviour
     }
     IEnumerator savedCheckPoint()
     {
-        checkpointtext.SetActive(true);
-        reachedtext.text = "Checkpoint Saved";
-        yield return new WaitForSeconds(3);
-        checkpointtext.SetActive(false);
+        checkpointtext.canvasRenderer.SetAlpha(1);
+        yield return new WaitForSeconds(2);
+        checkpointtext.CrossFadeAlpha(0, 3, false);
+        yield return null;
     }
 }

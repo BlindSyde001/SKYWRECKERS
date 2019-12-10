@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class UIManager : MonoBehaviour
@@ -12,6 +13,12 @@ public class UIManager : MonoBehaviour
 
     public int objectiveMarkers = 0;
     public GameObject endGameCloudWall;
+
+    #region UI Image
+    public Image shipControls;
+    public Image playerControls;
+    public Image climbingControls;
+    #endregion
 
     #region SHIP HP
     public TextMeshProUGUI leftCannonHPText;
@@ -33,6 +40,9 @@ public class UIManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        shipControls.canvasRenderer.SetAlpha(0);
+        playerControls.canvasRenderer.SetAlpha(0);
+        climbingControls.canvasRenderer.SetAlpha(0);
     }
 
     void Start()
@@ -65,7 +75,7 @@ public class UIManager : MonoBehaviour
 
     private void LateUpdate()
     {
-        if(Inventory.Instance.woodCount == 10 && Inventory.Instance.metalCount == 10 && Inventory.Instance.fabricCount == 10)
+        if(Inventory.Instance.woodCount >= 5 && Inventory.Instance.metalCount >= 5 && Inventory.Instance.fabricCount >= 5)
         {
             endGameCloudWall.SetActive(true);
         }
@@ -74,5 +84,14 @@ public class UIManager : MonoBehaviour
     public void ToggleText(string itemName) //Toggle text is individually set in inspector for each item
     {
         UIObjectText.text = itemName;
+    }
+
+
+    public IEnumerator UiImage(Image x)
+    {
+        x.canvasRenderer.SetAlpha(1);
+        yield return new WaitForSeconds(1);
+        x.CrossFadeAlpha(0, 3, false);
+        yield return null;
     }
 }

@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
     //VARIABLES
     private GameManager gm;
+    private AudioManager _audioManager;
     public CameraController ccFinal;
     private UIManager ui;
     public CameraData cD;
@@ -74,11 +75,13 @@ public class PlayerMovement : MonoBehaviour
         gm = FindObjectOfType<GameManager>();
         ccFinal = FindObjectOfType<CameraController>();
         ui = FindObjectOfType<UIManager>();
+        _audioManager = FindObjectOfType<AudioManager>().GetComponent<AudioManager>();
         Cursor.visible = false;
     }
     private void Start()
     {
         transform.position = gm.lastCheckpointPos.transform.position;
+        StartCoroutine(ui.UiImage(ui.playerControls));
     }
     private void Update()
     {
@@ -216,6 +219,38 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             print("E");
+            if(other.CompareTag("Wheel") && !ship.docking)
+            {
+                if(can)
+                {
+                 isControllingShip = !isControllingShip;
+                    if(isControllingShip)
+                    {
+                        ui.StartCoroutine(ui.UiImage(ui.shipControls));
+                        ui.UIObjectText.text = "";
+                        _audioManager.PlayMusicWithFade(_audioManager.exploration, 5f);
+                        foreach (GameObject dI in dockingIcons)
+                        {
+                            if (dI.activeSelf == false)
+                            {
+                                dI.SetActive(true);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        ui.StartCoroutine(ui.UiImage(ui.playerControls));
+                        _audioManager.PlayMusicWithFade(_audioManager.wind, 5f);
+                        foreach (GameObject dI in dockingIcons)
+                        {
+                            if (dI.activeSelf == true)
+                            {
+                                dI.SetActive(false);
+                            }
+                        }
+                    }
+                }
+            }
             if (other.CompareTag("Map Table"))
             {
                 print("map");
@@ -230,34 +265,6 @@ public class PlayerMovement : MonoBehaviour
                     accessingMap = false;
                 }
 
-            }
-            if(other.CompareTag("Wheel") && !ship.docking)
-            {
-                if(can)
-                {
-                 isControllingShip = !isControllingShip;
-                    if(isControllingShip)
-                    {
-                        ui.UIObjectText.text = "";
-                        foreach (GameObject dI in dockingIcons)
-                        {
-                            if (dI.activeSelf == false)
-                            {
-                                dI.SetActive(true);
-                            }
-                        }
-                    }
-                    else
-                    {
-                        foreach (GameObject dI in dockingIcons)
-                        {
-                            if (dI.activeSelf == true)
-                            {
-                                dI.SetActive(false);
-                            }
-                        }
-                    }
-                }
             }
 
             if (other.CompareTag("Wall"))

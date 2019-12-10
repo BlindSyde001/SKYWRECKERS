@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using System.Linq;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;

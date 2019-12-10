@@ -8,6 +8,7 @@ public class PirateShipAI : EnemyStats
     //VARIABLES
     private GameManager gm;
     private PlayerMovement player;
+    private AudioManager _audioManager;
 
     private Vector3 _direction;
     private Transform playerShip;
@@ -30,6 +31,7 @@ public class PirateShipAI : EnemyStats
 
     public bool charging = false;
     public bool piercingBlowCheck = false;
+    private bool soundCheck = false;
 
     //public Transform frontCheck;
     //public Transform backCheck;
@@ -41,6 +43,7 @@ public class PirateShipAI : EnemyStats
         gm = FindObjectOfType<GameManager>();
         playerShip = FindObjectOfType<MovementControlsShip>().transform;
         player = FindObjectOfType<PlayerMovement>();
+        _audioManager = FindObjectOfType<AudioManager>().GetComponent<AudioManager>();
         enemyMaxHP = 400;
         enemyCurrentHP = 400;
     }
@@ -49,6 +52,12 @@ public class PirateShipAI : EnemyStats
     {
         if(Vector3.Distance(transform.position, playerShip.position) < lookRadius && player.isControllingShip)
         {
+            if (!soundCheck)
+            {
+                _audioManager.PlayMusicWithFade(_audioManager.intense, 3f);
+                soundCheck = true;
+            }
+
             comeAlongSideShip();
             if (Vector3.Distance(transform.position, playerShip.position) < 120f && Vector3.Angle(_direction, transform.forward) <= 15)
             {
@@ -65,10 +74,19 @@ public class PirateShipAI : EnemyStats
         else
         {
             Patrol();
+
+            if(soundCheck)
+            {
+                _audioManager.PlayMusicWithFade(_audioManager.exploration, 3f);
+                soundCheck = false;
+            }
         }
 
         if (enemyCurrentHP <= 0)
         {
+
+            _audioManager.PlayMusicWithFade(_audioManager.exploration, 3f);
+            soundCheck = false;
             Destroy(this.gameObject);
         }
     }
@@ -110,7 +128,7 @@ public class PirateShipAI : EnemyStats
     {
         if (Time.time > nextFire)
         {
-
+            _audioManager.PlaySFX(_audioManager.enemyCannon);
             nextFire = Time.time + fireRate;
             Rigidbody bulletInstance;
             foreach (Transform x in bulletEndsRight)

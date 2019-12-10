@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 83835267}
   - component: {fileID: 83835266}
   - component: {fileID: 83835265}
+  - component: {fileID: 83835268}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -203,6 +204,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &83835268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83835264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07c8cde4228e43448a16c9a1a8e9c613, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 653bf353cee90a941a0a20351675aff3, type: 3}
+  volume: 0.5
 --- !u!1 &158701344
 GameObject:
   m_ObjectHideFlags: 0
@@ -3277,6 +3292,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1165352430}
   - component: {fileID: 1165352429}
+  - component: {fileID: 1165352431}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3339,6 +3355,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1165352431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165352428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec0163487e53c2499732296d0aca793, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exploration: {fileID: 8300000, guid: 653bf353cee90a941a0a20351675aff3, type: 3}
+  intense: {fileID: 8300000, guid: 29964b8c371a17745a7893626083fcde, type: 3}
+  suspense: {fileID: 8300000, guid: 0938c26f86a5d5d4d9ab03401e4cb410, type: 3}
+  wind: {fileID: 8300000, guid: 952326a29e342cb46a80c3398e8a4f5d, type: 3}
+  jump: {fileID: 8300000, guid: 3e16a52591bfc59488b5923244d8a3c1, type: 3}
+  climb: {fileID: 8300000, guid: 19618d79a85aaff4eacc3900b89d0962, type: 3}
+  playerCannon: {fileID: 8300000, guid: 6105532a983510f47b9c8f246cfd3dcd, type: 3}
+  enemyCannon: {fileID: 8300000, guid: 0006a198987d1894bb8537a0cce12e85, type: 3}
 --- !u!1 &1191808145
 GameObject:
   m_ObjectHideFlags: 0
