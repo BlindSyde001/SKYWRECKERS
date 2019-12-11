@@ -97,7 +97,7 @@ LightmapSettings:
     m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -296,6 +296,36 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1 &506123851
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 506123852}
+  m_Layer: 0
+  m_Name: Small_Random_Island_#1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &506123852
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506123851}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &923277903
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -311,7 +341,7 @@ PrefabInstance:
     - target: {fileID: 1016283770606483910, guid: 48ed6b1103e7c3d42910ea107cc5f4c9,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4053742607961459669, guid: 48ed6b1103e7c3d42910ea107cc5f4c9,
         type: 3}
@@ -815,6 +845,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerShip
       objectReference: {fileID: 0}
+    - target: {fileID: 3854049952323653070, guid: ead4c4ccbf71e7042b4b7e63ec190d00,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1217496393821724020, guid: ead4c4ccbf71e7042b4b7e63ec190d00,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1015,6 +1050,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floating Islands
       objectReference: {fileID: 0}
+    - target: {fileID: 3181421587467687136, guid: 6839b99c55c89be49899ffd456e80dcd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3181421587467687137, guid: 6839b99c55c89be49899ffd456e80dcd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1084,6 +1124,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: C Island Small
       objectReference: {fileID: 0}
+    - target: {fileID: 7768122325502158865, guid: 771837eef1e22bb489389771b0e4ae64,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7768122325502158864, guid: 771837eef1e22bb489389771b0e4ae64,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1152,6 +1197,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Island_SimpleUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342127588138066371, guid: ed65b1289e9265641ad727deaa6a8a43,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1342127588138066369, guid: ed65b1289e9265641ad727deaa6a8a43,
         type: 3}
