@@ -1,5 +1,371 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &99854876
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 99854877}
+  - component: {fileID: 99854880}
+  - component: {fileID: 99854879}
+  - component: {fileID: 99854878}
+  m_Layer: 14
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &99854877
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99854876}
+  m_LocalRotation: {x: -0.0067077195, y: 0.0000000074505797, z: 0.00000008940696,
+    w: 0.9999775}
+  m_LocalPosition: {x: -0.00374, y: -0.00521, z: -0.00132}
+  m_LocalScale: {x: 0.0059135, y: 0.001, z: 0.02017096}
+  m_Children: []
+  m_Father: {fileID: 5287420657089510528}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -0.76900005, y: 0, z: 0}
+--- !u!33 &99854880
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99854876}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &99854879
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99854876}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &99854878
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99854876}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &886954922
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 886954923}
+  - component: {fileID: 886954926}
+  - component: {fileID: 886954925}
+  - component: {fileID: 886954924}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &886954923
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886954922}
+  m_LocalRotation: {x: -0, y: 0.24931654, z: -0, w: 0.96842206}
+  m_LocalPosition: {x: 6.403, y: 0, z: -2.861}
+  m_LocalScale: {x: 1, y: 6.7899, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5287420656224992291}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 28.874, z: 0}
+--- !u!33 &886954926
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886954922}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &886954925
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886954922}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &886954924
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886954922}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &743256569785352284
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 291446419704334668}
+  - component: {fileID: 8306980564792620570}
+  - component: {fileID: 7474402353157676996}
+  - component: {fileID: 7035028509884756576}
+  m_Layer: 0
+  m_Name: IslandRock1_low (25)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &291446419704334668
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743256569785352284}
+  m_LocalRotation: {x: -0.69508654, y: 0.042684965, z: 0.7172269, w: -0.02486606}
+  m_LocalPosition: {x: 0.36, y: -4.498451, z: -31.14}
+  m_LocalScale: {x: 500.00024, y: 500.00018, z: 500.0003}
+  m_Children: []
+  m_Father: {fileID: 3426315913938504239}
+  m_RootOrder: 61
+  m_LocalEulerAnglesHint: {x: -1.5280001, y: -88.276, z: 185.454}
+--- !u!33 &8306980564792620570
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743256569785352284}
+  m_Mesh: {fileID: -5479662632764488291, guid: 31ed189407afc3b4ea62076876840e23, type: 3}
+--- !u!23 &7474402353157676996
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743256569785352284}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 0a25ed83c337079479dedbbb5e4d5691, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!64 &7035028509884756576
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743256569785352284}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -5479662632764488291, guid: 31ed189407afc3b4ea62076876840e23, type: 3}
+--- !u!1 &2090076605643273939
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 503341328121298144}
+  - component: {fileID: 8172419439598336766}
+  - component: {fileID: 3677272870686470348}
+  - component: {fileID: 8978704554662250463}
+  m_Layer: 18
+  m_Name: rock3_low (32)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &503341328121298144
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090076605643273939}
+  m_LocalRotation: {x: 0.708034, y: -0.69158393, z: -0.07049124, w: 0.12421984}
+  m_LocalPosition: {x: -13.12, y: 14.24, z: 37.77}
+  m_LocalScale: {x: 80.628265, y: 53.5425, z: 144.35522}
+  m_Children: []
+  m_Father: {fileID: 3426315913850881780}
+  m_RootOrder: 31
+  m_LocalEulerAnglesHint: {x: -184.497, y: 375.812, z: 89.27799}
+--- !u!33 &8172419439598336766
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090076605643273939}
+  m_Mesh: {fileID: 3848237812612184780, guid: bfa1686931b25734c88af3d7ea58eb10, type: 3}
+--- !u!23 &3677272870686470348
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090076605643273939}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 29373f09a6c466a4b85fefc0b4490c0b, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &8978704554662250463
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090076605643273939}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01516981, y: 0.002, z: 0.026478661}
+  m_Center: {x: -0.0007580301, y: -0.004, z: -0.0027688895}
 --- !u!1 &2637758587375710498
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,7 +668,6 @@ Transform:
   - {fileID: 5287420657257331920}
   - {fileID: 5287420655760188117}
   - {fileID: 5287420656202182609}
-  - {fileID: 5287420656366171437}
   - {fileID: 5287420655707679139}
   - {fileID: 5287420657408937786}
   - {fileID: 5287420656217362382}
@@ -312,6 +677,7 @@ Transform:
   - {fileID: 5287420657488799480}
   - {fileID: 5287420656635578210}
   - {fileID: 5287420657397372323}
+  - {fileID: 503341328121298144}
   m_Father: {fileID: 3426315914396566426}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -403,6 +769,7 @@ Transform:
   - {fileID: 5287420657415636411}
   - {fileID: 5287420655860129614}
   - {fileID: 5287420656073041412}
+  - {fileID: 291446419704334668}
   m_Father: {fileID: 3426315914396566426}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1690,6 +2057,7 @@ GameObject:
   - component: {fileID: 5287420655603268370}
   - component: {fileID: 5287420655603268380}
   - component: {fileID: 5287420655603268371}
+  - component: {fileID: 1765038613334764749}
   m_Layer: 0
   m_Name: IslandRock1_low (19)
   m_TagString: Untagged
@@ -1705,7 +2073,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5287420655603268369}
   m_LocalRotation: {x: -0.69508654, y: 0.04268496, z: 0.7172269, w: -0.024866058}
-  m_LocalPosition: {x: -3.52, y: -4.4984546, z: -30.73}
+  m_LocalPosition: {x: -2.46, y: -4.4984546, z: -28.43}
   m_LocalScale: {x: 500.00003, y: 499.9999, z: 500}
   m_Children: []
   m_Father: {fileID: 3426315913938504239}
@@ -1756,6 +2124,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &1765038613334764749
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287420655603268369}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -5479662632764488291, guid: 31ed189407afc3b4ea62076876840e23, type: 3}
 --- !u!1 &5287420655629207059
 GameObject:
   m_ObjectHideFlags: 0
@@ -1983,6 +2365,7 @@ GameObject:
   - component: {fileID: 5287420655644889048}
   - component: {fileID: 5287420655644889050}
   - component: {fileID: 5287420655644889049}
+  - component: {fileID: 962710742250836637}
   m_Layer: 0
   m_Name: IslandRock2_low
   m_TagString: Untagged
@@ -2049,6 +2432,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &962710742250836637
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287420655644889055}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4909480568040908655, guid: b85c3d177de311c48873868a77e462d8, type: 3}
 --- !u!1 &5287420655651382400
 GameObject:
   m_ObjectHideFlags: 0
@@ -2572,6 +2969,7 @@ GameObject:
   - component: {fileID: 5287420655701392220}
   - component: {fileID: 5287420655701392222}
   - component: {fileID: 5287420655701392221}
+  - component: {fileID: 454731551206074625}
   m_Layer: 0
   m_Name: IslandRock2_low (1)
   m_TagString: Untagged
@@ -2638,6 +3036,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &454731551206074625
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287420655701392211}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4909480568040908655, guid: b85c3d177de311c48873868a77e462d8, type: 3}
 --- !u!1 &5287420655705236073
 GameObject:
   m_ObjectHideFlags: 0
@@ -2808,7 +3220,7 @@ Transform:
   m_LocalScale: {x: 80.628265, y: 53.5425, z: 144.35522}
   m_Children: []
   m_Father: {fileID: 3426315913850881780}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: -184.497, y: 375.812, z: 89.27799}
 --- !u!33 &5287420655707679149
 MeshFilter:
@@ -3406,6 +3818,7 @@ GameObject:
   - component: {fileID: 5287420655779659481}
   - component: {fileID: 5287420655779659483}
   - component: {fileID: 5287420655779659482}
+  - component: {fileID: 4597847786409534354}
   m_Layer: 0
   m_Name: IslandRock2_low (3)
   m_TagString: Untagged
@@ -3472,6 +3885,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &4597847786409534354
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287420655779659480}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4909480568040908655, guid: b85c3d177de311c48873868a77e462d8, type: 3}
 --- !u!1 &5287420655786514744
 GameObject:
   m_ObjectHideFlags: 0
@@ -4173,6 +4600,7 @@ GameObject:
   - component: {fileID: 5287420655860129614}
   - component: {fileID: 5287420655860129608}
   - component: {fileID: 5287420655860129615}
+  - component: {fileID: 1319045635399602445}
   m_Layer: 0
   m_Name: IslandRock3_low (9)
   m_TagString: Untagged
@@ -4239,6 +4667,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &1319045635399602445
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287420655860129613}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 3621075647514647035, guid: 5f773bbf863201d4eb3d99396cb3ea87, type: 3}
 --- !u!1 &5287420655872505729
 GameObject:
   m_ObjectHideFlags: 0
@@ -5796,6 +6238,7 @@ GameObject:
   - component: {fileID: 5287420656012585135}
   - component: {fileID: 5287420656012585129}
   - component: {fileID: 5287420656012585128}
+  - component: {fileID: 3558292093724133241}
   m_Layer: 0
   m_Name: IslandRock2_low (6)
   m_TagString: Untagged
@@ -5862,6 +6305,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &3558292093724133241
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287420656012585134}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4909480568040908655, guid: b85c3d177de311c48873868a77e462d8, type: 3}
 --- !u!1 &5287420656019722279
 GameObject:
   m_ObjectHideFlags: 0
@@ -6405,7 +6862,7 @@ Transform:
   m_LocalScale: {x: 80.628265, y: 53.5425, z: 144.35522}
   m_Children: []
   m_Father: {fileID: 3426315913850881780}
-  m_RootOrder: 28
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: -165, y: 316.338, z: 89.99999}
 --- !u!33 &5287420656059375627
 MeshFilter:
@@ -6553,6 +7010,7 @@ GameObject:
   - component: {fileID: 5287420656073041412}
   - component: {fileID: 5287420656073041414}
   - component: {fileID: 5287420656073041413}
+  - component: {fileID: 998470665605050304}
   m_Layer: 0
   m_Name: IslandRock3_low (10)
   m_TagString: Untagged
@@ -6619,6 +7077,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &998470665605050304
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287420656073041531}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 3621075647514647035, guid: 5f773bbf863201d4eb3d99396cb3ea87, type: 3}
 --- !u!1 &5287420656074332621
 GameObject:
   m_ObjectHideFlags: 0
@@ -6736,6 +7208,7 @@ GameObject:
   - component: {fileID: 5287420656081878341}
   - component: {fileID: 5287420656081878343}
   - component: {fileID: 5287420656081878342}
+  - component: {fileID: 3261961974122106285}
   m_Layer: 0
   m_Name: IslandRock_low (2)
   m_TagString: Untagged
@@ -6802,6 +7275,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &3261961974122106285
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287420656081878340}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 62247543586656980, guid: bfa7193a424869e419898f4274b78133, type: 3}
 --- !u!1 &5287420656085182641
 GameObject:
   m_ObjectHideFlags: 0
@@ -6844,6 +7331,7 @@ GameObject:
   - component: {fileID: 5287420656085413282}
   - component: {fileID: 5287420656085413292}
   - component: {fileID: 5287420656085413283}
+  - component: {fileID: 860501851280603671}
   m_Layer: 0
   m_Name: IslandRock2_low (7)
   m_TagString: Untagged
@@ -6910,6 +7398,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &860501851280603671
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287420656085413281}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4909480568040908655, guid: b85c3d177de311c48873868a77e462d8, type: 3}
 --- !u!1 &5287420656087760540
 GameObject:
   m_ObjectHideFlags: 0
@@ -6941,7 +7443,7 @@ Transform:
   m_LocalScale: {x: 80.628265, y: 53.5425, z: 144.35522}
   m_Children: []
   m_Father: {fileID: 3426315913850881780}
-  m_RootOrder: 27
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: -195, y: 316.338, z: 89.99999}
 --- !u!33 &5287420656087760543
 MeshFilter:
@@ -7619,7 +8121,7 @@ Transform:
   m_LocalScale: {x: 80.628265, y: 53.5425, z: 144.35522}
   m_Children: []
   m_Father: {fileID: 3426315913850881780}
-  m_RootOrder: 26
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: -180, y: 316.338, z: 89.99999}
 --- !u!33 &5287420656112434525
 MeshFilter:
@@ -8357,6 +8859,7 @@ GameObject:
   - component: {fileID: 5287420656200603447}
   - component: {fileID: 5287420656200603441}
   - component: {fileID: 5287420656200603440}
+  - component: {fileID: 2847364765138929190}
   m_Layer: 0
   m_Name: IslandRock1_low (1)
   m_TagString: Untagged
@@ -8423,6 +8926,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &2847364765138929190
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287420656200603446}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -5479662632764488291, guid: 31ed189407afc3b4ea62076876840e23, type: 3}
 --- !u!1 &5287420656202028882
 GameObject:
   m_ObjectHideFlags: 0
@@ -8737,11 +9254,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5287420656217362381}
   m_LocalRotation: {x: 0.71100926, y: -0.6933061, z: -0.036225177, w: 0.11171554}
-  m_LocalPosition: {x: -15.13, y: 18, z: 47}
+  m_LocalPosition: {x: -17.06, y: 18, z: 39.33}
   m_LocalScale: {x: 80.628265, y: 53.5425, z: 106.55437}
   m_Children: []
   m_Father: {fileID: 3426315913850881780}
-  m_RootOrder: 25
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: -186.236, y: 371.985, z: 89.211}
 --- !u!33 &5287420656217362376
 MeshFilter:
@@ -8840,6 +9357,7 @@ Transform:
   - {fileID: 5287420657656883444}
   - {fileID: 5287420657581516217}
   - {fileID: 5287420656608625949}
+  - {fileID: 886954923}
   m_Father: {fileID: 3426315914396566426}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -276.888, z: 0}
@@ -11090,97 +11608,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1 &5287420656366171436
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5287420656366171437}
-  - component: {fileID: 5287420656366171439}
-  - component: {fileID: 5287420656366171438}
-  - component: {fileID: 3426315913642637959}
-  m_Layer: 18
-  m_Name: rock3_low (22)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5287420656366171437
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5287420656366171436}
-  m_LocalRotation: {x: 0.7030867, y: -0.6974933, z: -0.06918684, w: 0.11993959}
-  m_LocalPosition: {x: -13.24, y: 14.23, z: 37.93}
-  m_LocalScale: {x: 80.628265, y: 53.5425, z: 144.35522}
-  m_Children: []
-  m_Father: {fileID: 3426315913850881780}
-  m_RootOrder: 22
-  m_LocalEulerAnglesHint: {x: -184.137, y: 375.38397, z: 90.101}
---- !u!33 &5287420656366171439
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5287420656366171436}
-  m_Mesh: {fileID: 3848237812612184780, guid: bfa1686931b25734c88af3d7ea58eb10, type: 3}
---- !u!23 &5287420656366171438
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5287420656366171436}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 29373f09a6c466a4b85fefc0b4490c0b, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!65 &3426315913642637959
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5287420656366171436}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.01516981, y: 0.002, z: 0.026478661}
-  m_Center: {x: -0.0007580301, y: -0.004, z: -0.0027688895}
 --- !u!1 &5287420656371437657
 GameObject:
   m_ObjectHideFlags: 0
@@ -11713,6 +12140,7 @@ GameObject:
   - component: {fileID: 5287420656397730383}
   - component: {fileID: 5287420656397730377}
   - component: {fileID: 5287420656397730376}
+  - component: {fileID: 8494883542291812441}
   m_Layer: 0
   m_Name: IslandRock3_low (4)
   m_TagString: Untagged
@@ -11779,6 +12207,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &8494883542291812441
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287420656397730382}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 3621075647514647035, guid: 5f773bbf863201d4eb3d99396cb3ea87, type: 3}
 --- !u!1 &5287420656407578695
 GameObject:
   m_ObjectHideFlags: 0
@@ -11821,6 +12263,7 @@ GameObject:
   - component: {fileID: 5287420656413024433}
   - component: {fileID: 5287420656413024435}
   - component: {fileID: 5287420656413024434}
+  - component: {fileID: 4343047854669789687}
   m_Layer: 0
   m_Name: IslandRock3_low (1)
   m_TagString: Untagged
@@ -11887,6 +12330,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &4343047854669789687
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287420656413024432}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 3621075647514647035, guid: 5f773bbf863201d4eb3d99396cb3ea87, type: 3}
 --- !u!1 &5287420656417919795
 GameObject:
   m_ObjectHideFlags: 0
@@ -12021,6 +12478,7 @@ GameObject:
   - component: {fileID: 5287420656427804297}
   - component: {fileID: 5287420656427804299}
   - component: {fileID: 5287420656427804298}
+  - component: {fileID: 714563053476014801}
   m_Layer: 0
   m_Name: IslandRock1_low (20)
   m_TagString: Untagged
@@ -12087,6 +12545,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &714563053476014801
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287420656427804296}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -5479662632764488291, guid: 31ed189407afc3b4ea62076876840e23, type: 3}
 --- !u!1 &5287420656430680386
 GameObject:
   m_ObjectHideFlags: 0
@@ -12179,6 +12651,7 @@ GameObject:
   - component: {fileID: 5287420656437692761}
   - component: {fileID: 5287420656437692763}
   - component: {fileID: 5287420656437692762}
+  - component: {fileID: 6326067689503119890}
   m_Layer: 0
   m_Name: IslandRock2_low (2)
   m_TagString: Untagged
@@ -12245,6 +12718,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &6326067689503119890
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287420656437692760}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4909480568040908655, guid: b85c3d177de311c48873868a77e462d8, type: 3}
 --- !u!1 &5287420656439095303
 GameObject:
   m_ObjectHideFlags: 0
@@ -12892,7 +13379,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5287420656513491915
 Transform:
   m_ObjectHideFlags: 0
@@ -12901,7 +13388,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5287420656513491914}
   m_LocalRotation: {x: 0.7022014, y: -0.7022013, z: -0.08314789, w: 0.08314442}
-  m_LocalPosition: {x: -19.01, y: 10.58, z: 43.39}
+  m_LocalPosition: {x: -19.13, y: 10.58, z: 43.42}
   m_LocalScale: {x: 1400, y: 1250, z: 500}
   m_Children: []
   m_Father: {fileID: 3426315913850881780}
@@ -13177,6 +13664,7 @@ GameObject:
   - component: {fileID: 5287420656525428160}
   - component: {fileID: 5287420656525428162}
   - component: {fileID: 5287420656525428161}
+  - component: {fileID: 1731729588539364520}
   m_Layer: 0
   m_Name: IslandRock3_low (5)
   m_TagString: Untagged
@@ -13243,6 +13731,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &1731729588539364520
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287420656525428167}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 3621075647514647035, guid: 5f773bbf863201d4eb3d99396cb3ea87, type: 3}
 --- !u!1 &5287420656540612038
 GameObject:
   m_ObjectHideFlags: 0
@@ -13331,6 +13833,7 @@ GameObject:
   - component: {fileID: 5287420656542413492}
   - component: {fileID: 5287420656542413494}
   - component: {fileID: 5287420656542413493}
+  - component: {fileID: 6982192517616122162}
   m_Layer: 0
   m_Name: IslandRock3_low (6)
   m_TagString: Untagged
@@ -13397,6 +13900,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &6982192517616122162
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287420656542413483}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 3621075647514647035, guid: 5f773bbf863201d4eb3d99396cb3ea87, type: 3}
 --- !u!1 &5287420656543208497
 GameObject:
   m_ObjectHideFlags: 0
@@ -13882,6 +14399,7 @@ GameObject:
   - component: {fileID: 5287420656574132387}
   - component: {fileID: 5287420656574132397}
   - component: {fileID: 5287420656574132396}
+  - component: {fileID: 3356257112035869931}
   m_Layer: 0
   m_Name: IslandRock3_low (3)
   m_TagString: Untagged
@@ -13948,6 +14466,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &3356257112035869931
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287420656574132386}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 3621075647514647035, guid: 5f773bbf863201d4eb3d99396cb3ea87, type: 3}
 --- !u!1 &5287420656599460330
 GameObject:
   m_ObjectHideFlags: 0
@@ -14545,7 +15077,7 @@ Transform:
   m_LocalScale: {x: 80.628265, y: 53.5425, z: 144.35522}
   m_Children: []
   m_Father: {fileID: 3426315913850881780}
-  m_RootOrder: 30
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: -179.677, y: 316.338, z: 89.99999}
 --- !u!33 &5287420656635578220
 MeshFilter:
@@ -15048,6 +15580,7 @@ GameObject:
   - component: {fileID: 5287420656661460367}
   - component: {fileID: 5287420656661460361}
   - component: {fileID: 5287420656661460360}
+  - component: {fileID: 2461431577464237196}
   m_Layer: 0
   m_Name: IslandRock1_low (22)
   m_TagString: Untagged
@@ -15114,6 +15647,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &2461431577464237196
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287420656661460366}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -5479662632764488291, guid: 31ed189407afc3b4ea62076876840e23, type: 3}
 --- !u!1 &5287420656678322837
 GameObject:
   m_ObjectHideFlags: 0
@@ -15237,6 +15784,7 @@ GameObject:
   - component: {fileID: 5287420656700719256}
   - component: {fileID: 5287420656700719258}
   - component: {fileID: 5287420656700719257}
+  - component: {fileID: 7431890495605931741}
   m_Layer: 0
   m_Name: IslandRock2_low (4)
   m_TagString: Untagged
@@ -15303,6 +15851,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &7431890495605931741
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287420656700719263}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4909480568040908655, guid: b85c3d177de311c48873868a77e462d8, type: 3}
 --- !u!1 &5287420656710394245
 GameObject:
   m_ObjectHideFlags: 0
@@ -15934,6 +16496,7 @@ GameObject:
   - component: {fileID: 5287420656759762608}
   - component: {fileID: 5287420656759762610}
   - component: {fileID: 5287420656759762609}
+  - component: {fileID: 6128087215442034402}
   m_Layer: 0
   m_Name: IslandRock1_low
   m_TagString: Untagged
@@ -16000,6 +16563,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &6128087215442034402
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287420656759762615}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -5479662632764488291, guid: 31ed189407afc3b4ea62076876840e23, type: 3}
 --- !u!1 &5287420656761771784
 GameObject:
   m_ObjectHideFlags: 0
@@ -17389,6 +17966,7 @@ GameObject:
   - component: {fileID: 5287420656855245341}
   - component: {fileID: 5287420656855245343}
   - component: {fileID: 5287420656855245342}
+  - component: {fileID: 4753521478631483054}
   m_Layer: 0
   m_Name: IslandRock1_low (21)
   m_TagString: Untagged
@@ -17455,6 +18033,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &4753521478631483054
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287420656855245340}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -5479662632764488291, guid: 31ed189407afc3b4ea62076876840e23, type: 3}
 --- !u!1 &5287420656860819259
 GameObject:
   m_ObjectHideFlags: 0
@@ -18128,6 +18720,7 @@ GameObject:
   - component: {fileID: 5287420656904198048}
   - component: {fileID: 5287420656904198050}
   - component: {fileID: 5287420656904198049}
+  - component: {fileID: 5117097748009038882}
   m_Layer: 0
   m_Name: IslandRock2_low (9)
   m_TagString: Untagged
@@ -18194,6 +18787,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &5117097748009038882
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287420656904198055}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4909480568040908655, guid: b85c3d177de311c48873868a77e462d8, type: 3}
 --- !u!1 &5287420656905082987
 GameObject:
   m_ObjectHideFlags: 0
@@ -18304,7 +18911,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5287420656910606179
 Transform:
   m_ObjectHideFlags: 0
@@ -18313,7 +18920,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5287420656910606178}
   m_LocalRotation: {x: 0.6683664, y: 0.025699837, z: 0.74290985, w: 0.026663568}
-  m_LocalPosition: {x: 10.73999, y: 5.8200006, z: 63.296753}
+  m_LocalPosition: {x: 10.33, y: 5.8200006, z: 63.81}
   m_LocalScale: {x: 500, y: 1250, z: 250}
   m_Children: []
   m_Father: {fileID: 3426315913850881780}
@@ -18532,6 +19139,7 @@ GameObject:
   - component: {fileID: 5287420656934016733}
   - component: {fileID: 5287420656934016735}
   - component: {fileID: 5287420656934016734}
+  - component: {fileID: 107444120779587617}
   m_Layer: 0
   m_Name: IslandRock2_low (8)
   m_TagString: Untagged
@@ -18598,6 +19206,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &107444120779587617
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287420656934016732}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4909480568040908655, guid: b85c3d177de311c48873868a77e462d8, type: 3}
 --- !u!1 &5287420656934043348
 GameObject:
   m_ObjectHideFlags: 0
@@ -18717,6 +19339,7 @@ GameObject:
   - component: {fileID: 5287420656951055930}
   - component: {fileID: 5287420656951056068}
   - component: {fileID: 5287420656951055931}
+  - component: {fileID: 2533293990033017274}
   m_Layer: 0
   m_Name: IslandRock1_low (18)
   m_TagString: Untagged
@@ -18783,6 +19406,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &2533293990033017274
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287420656951055929}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -5479662632764488291, guid: 31ed189407afc3b4ea62076876840e23, type: 3}
 --- !u!1 &5287420656952799557
 GameObject:
   m_ObjectHideFlags: 0
@@ -19467,6 +20104,7 @@ GameObject:
   - component: {fileID: 5287420657040656074}
   - component: {fileID: 5287420657040656084}
   - component: {fileID: 5287420657040656075}
+  - component: {fileID: 6670486602526449319}
   m_Layer: 0
   m_Name: IslandRock1_low (8)
   m_TagString: Untagged
@@ -19533,6 +20171,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &6670486602526449319
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287420657040656073}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -5479662632764488291, guid: 31ed189407afc3b4ea62076876840e23, type: 3}
 --- !u!1 &5287420657044439346
 GameObject:
   m_ObjectHideFlags: 0
@@ -19606,6 +20258,7 @@ GameObject:
   - component: {fileID: 5287420657055391835}
   - component: {fileID: 5287420657055391845}
   - component: {fileID: 5287420657055391844}
+  - component: {fileID: 3395098779679127652}
   m_Layer: 0
   m_Name: IslandRock2_low (15)
   m_TagString: Untagged
@@ -19672,6 +20325,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &3395098779679127652
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287420657055391834}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4909480568040908655, guid: b85c3d177de311c48873868a77e462d8, type: 3}
 --- !u!1 &5287420657057050728
 GameObject:
   m_ObjectHideFlags: 0
@@ -20037,9 +20704,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5287420657089510535}
   m_LocalRotation: {x: 0.7010579, y: -0.7010577, z: -0.09229493, w: 0.09229143}
-  m_LocalPosition: {x: -23.39, y: 9.88, z: 27.37}
+  m_LocalPosition: {x: -21.75, y: 9.88, z: 33.92}
   m_LocalScale: {x: 1400, y: 1250, z: 1400}
-  m_Children: []
+  m_Children:
+  - {fileID: 99854877}
   m_Father: {fileID: 3426315913850881780}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: -180, y: 375, z: 89.99999}
@@ -20113,6 +20781,7 @@ GameObject:
   - component: {fileID: 5287420657090994598}
   - component: {fileID: 5287420657090994592}
   - component: {fileID: 5287420657090994599}
+  - component: {fileID: 1242930014277492320}
   m_Layer: 0
   m_Name: IslandRock1_low (16)
   m_TagString: Untagged
@@ -20179,6 +20848,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &1242930014277492320
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287420657090994597}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -5479662632764488291, guid: 31ed189407afc3b4ea62076876840e23, type: 3}
 --- !u!1 &5287420657092971247
 GameObject:
   m_ObjectHideFlags: 0
@@ -21281,6 +21964,7 @@ GameObject:
   - component: {fileID: 5287420657222617313}
   - component: {fileID: 5287420657222617315}
   - component: {fileID: 5287420657222617314}
+  - component: {fileID: 4476876492133682999}
   m_Layer: 0
   m_Name: IslandRock2_low (11)
   m_TagString: Untagged
@@ -21347,6 +22031,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &4476876492133682999
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287420657222617312}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4909480568040908655, guid: b85c3d177de311c48873868a77e462d8, type: 3}
 --- !u!1 &5287420657223611049
 GameObject:
   m_ObjectHideFlags: 0
@@ -22654,6 +23352,7 @@ GameObject:
   - component: {fileID: 5287420657321108274}
   - component: {fileID: 5287420657321108284}
   - component: {fileID: 5287420657321108275}
+  - component: {fileID: 2477221488946502492}
   m_Layer: 0
   m_Name: IslandRock3_low (2)
   m_TagString: Untagged
@@ -22720,6 +23419,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &2477221488946502492
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287420657321108273}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 3621075647514647035, guid: 5f773bbf863201d4eb3d99396cb3ea87, type: 3}
 --- !u!1 &5287420657330059678
 GameObject:
   m_ObjectHideFlags: 0
@@ -23207,6 +23920,7 @@ GameObject:
   - component: {fileID: 5287420657388611327}
   - component: {fileID: 5287420657388611321}
   - component: {fileID: 5287420657388611320}
+  - component: {fileID: 3123666190426189747}
   m_Layer: 0
   m_Name: IslandRock4_low
   m_TagString: Untagged
@@ -23273,6 +23987,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &3123666190426189747
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287420657388611326}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 5006379022673311141, guid: b2a9f2c55bc618d4da0162f1ecf68777, type: 3}
 --- !u!1 &5287420657391398467
 GameObject:
   m_ObjectHideFlags: 0
@@ -23284,6 +24012,7 @@ GameObject:
   - component: {fileID: 5287420657391398476}
   - component: {fileID: 5287420657391398478}
   - component: {fileID: 5287420657391398477}
+  - component: {fileID: 2434039467189761281}
   m_Layer: 0
   m_Name: IslandRock1_low (5)
   m_TagString: Untagged
@@ -23350,6 +24079,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &2434039467189761281
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287420657391398467}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -5479662632764488291, guid: 31ed189407afc3b4ea62076876840e23, type: 3}
 --- !u!1 &5287420657397372322
 GameObject:
   m_ObjectHideFlags: 0
@@ -23381,7 +24124,7 @@ Transform:
   m_LocalScale: {x: 1250.0011, y: 1250.0015, z: 1250}
   m_Children: []
   m_Father: {fileID: 3426315913850881780}
-  m_RootOrder: 31
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: -180, y: 135, z: 0}
 --- !u!33 &5287420657397372334
 MeshFilter:
@@ -23550,7 +24293,7 @@ Transform:
   m_LocalScale: {x: 80.628265, y: 53.5425, z: 144.35522}
   m_Children: []
   m_Father: {fileID: 3426315913850881780}
-  m_RootOrder: 24
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: -184.468, y: 372.75598, z: 89.409}
 --- !u!33 &5287420657408937924
 MeshFilter:
@@ -24187,6 +24930,7 @@ GameObject:
   - component: {fileID: 5287420657461640868}
   - component: {fileID: 5287420657461640870}
   - component: {fileID: 5287420657461640869}
+  - component: {fileID: 8884744409468345667}
   m_Layer: 0
   m_Name: IslandRock3_low
   m_TagString: Untagged
@@ -24253,6 +24997,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &8884744409468345667
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287420657461640859}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 3621075647514647035, guid: 5f773bbf863201d4eb3d99396cb3ea87, type: 3}
 --- !u!1 &5287420657472223405
 GameObject:
   m_ObjectHideFlags: 0
@@ -24525,6 +25283,7 @@ GameObject:
   - component: {fileID: 5287420657483712745}
   - component: {fileID: 5287420657483712747}
   - component: {fileID: 5287420657483712746}
+  - component: {fileID: 6991656617219401767}
   m_Layer: 0
   m_Name: IslandRock2_low (5)
   m_TagString: Untagged
@@ -24591,6 +25350,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &6991656617219401767
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287420657483712744}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4909480568040908655, guid: b85c3d177de311c48873868a77e462d8, type: 3}
 --- !u!1 &5287420657485377505
 GameObject:
   m_ObjectHideFlags: 0
@@ -24807,7 +25580,7 @@ Transform:
   m_LocalScale: {x: 80.628265, y: 53.5425, z: 144.35522}
   m_Children: []
   m_Father: {fileID: 3426315913850881780}
-  m_RootOrder: 29
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: -195, y: 316.338, z: 89.99999}
 --- !u!33 &5287420657488799482
 MeshFilter:
@@ -25849,6 +26622,7 @@ GameObject:
   - component: {fileID: 5287420657560476772}
   - component: {fileID: 5287420657560476774}
   - component: {fileID: 5287420657560476773}
+  - component: {fileID: 257424872923871684}
   m_Layer: 0
   m_Name: IslandRock2_low (10)
   m_TagString: Untagged
@@ -25915,6 +26689,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &257424872923871684
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287420657560476763}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4909480568040908655, guid: b85c3d177de311c48873868a77e462d8, type: 3}
 --- !u!1 &5287420657575458588
 GameObject:
   m_ObjectHideFlags: 0
@@ -26192,6 +26980,7 @@ GameObject:
   - component: {fileID: 5287420657605708747}
   - component: {fileID: 5287420657605708757}
   - component: {fileID: 5287420657605708756}
+  - component: {fileID: 4954519706298164004}
   m_Layer: 0
   m_Name: IslandRock1_low (17)
   m_TagString: Untagged
@@ -26258,6 +27047,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &4954519706298164004
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5287420657605708746}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -5479662632764488291, guid: 31ed189407afc3b4ea62076876840e23, type: 3}
 --- !u!1 &5287420657605983116
 GameObject:
   m_ObjectHideFlags: 0
@@ -27162,7 +27965,7 @@ PrefabInstance:
     - target: {fileID: 772613640000202183, guid: 84f151aa1111012469e011c2ec107ad7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.16
+      value: -16.52
       objectReference: {fileID: 0}
     - target: {fileID: 772613640000202183, guid: 84f151aa1111012469e011c2ec107ad7,
         type: 3}
@@ -27172,7 +27975,7 @@ PrefabInstance:
     - target: {fileID: 772613640000202183, guid: 84f151aa1111012469e011c2ec107ad7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 33.27
+      value: 39.82
       objectReference: {fileID: 0}
     - target: {fileID: 772613640000202183, guid: 84f151aa1111012469e011c2ec107ad7,
         type: 3}
@@ -27316,15 +28119,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7300e9f3f61cac64e908fcece2277ba5, type: 3}
---- !u!1 &4880002746811835302 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5555185027174226600, guid: 7300e9f3f61cac64e908fcece2277ba5,
-    type: 3}
-  m_PrefabInstance: {fileID: 1057989661754898702}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8494379869641150901 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8884654842276948155, guid: 7300e9f3f61cac64e908fcece2277ba5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1057989661754898702}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4880002746811835302 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5555185027174226600, guid: 7300e9f3f61cac64e908fcece2277ba5,
     type: 3}
   m_PrefabInstance: {fileID: 1057989661754898702}
   m_PrefabAsset: {fileID: 0}
@@ -27628,15 +28431,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2199354202296497739}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &3567565121325145252 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3388718398770621167, guid: 561058cf0d0ec2547926da0fa9596572,
-    type: 3}
-  m_PrefabInstance: {fileID: 2199354202296497739}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4433383028402064688 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2522902678888233851, guid: 561058cf0d0ec2547926da0fa9596572,
+    type: 3}
+  m_PrefabInstance: {fileID: 2199354202296497739}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3567565121325145252 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3388718398770621167, guid: 561058cf0d0ec2547926da0fa9596572,
     type: 3}
   m_PrefabInstance: {fileID: 2199354202296497739}
   m_PrefabAsset: {fileID: 0}
@@ -27809,15 +28612,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7300e9f3f61cac64e908fcece2277ba5, type: 3}
---- !u!1 &7231342810119051643 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5555185027174226600, guid: 7300e9f3f61cac64e908fcece2277ba5,
-    type: 3}
-  m_PrefabInstance: {fileID: 2976062010819691475}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5909208833119382376 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8884654842276948155, guid: 7300e9f3f61cac64e908fcece2277ba5,
+    type: 3}
+  m_PrefabInstance: {fileID: 2976062010819691475}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7231342810119051643 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5555185027174226600, guid: 7300e9f3f61cac64e908fcece2277ba5,
     type: 3}
   m_PrefabInstance: {fileID: 2976062010819691475}
   m_PrefabAsset: {fileID: 0}
@@ -27980,15 +28783,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7300e9f3f61cac64e908fcece2277ba5, type: 3}
---- !u!1 &7385314521821179017 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5555185027174226600, guid: 7300e9f3f61cac64e908fcece2277ba5,
-    type: 3}
-  m_PrefabInstance: {fileID: 3128334008675907105}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5775498964643716762 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8884654842276948155, guid: 7300e9f3f61cac64e908fcece2277ba5,
+    type: 3}
+  m_PrefabInstance: {fileID: 3128334008675907105}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7385314521821179017 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5555185027174226600, guid: 7300e9f3f61cac64e908fcece2277ba5,
     type: 3}
   m_PrefabInstance: {fileID: 3128334008675907105}
   m_PrefabAsset: {fileID: 0}
@@ -28087,7 +28890,7 @@ PrefabInstance:
     - target: {fileID: 772613640000202183, guid: 84f151aa1111012469e011c2ec107ad7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.9
+      value: -17.26
       objectReference: {fileID: 0}
     - target: {fileID: 772613640000202183, guid: 84f151aa1111012469e011c2ec107ad7,
         type: 3}
@@ -28097,7 +28900,7 @@ PrefabInstance:
     - target: {fileID: 772613640000202183, guid: 84f151aa1111012469e011c2ec107ad7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 28.98
+      value: 35.53
       objectReference: {fileID: 0}
     - target: {fileID: 772613640000202183, guid: 84f151aa1111012469e011c2ec107ad7,
         type: 3}
@@ -28786,9 +29589,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 491c203a754890d4a939dcd876f6b8c4, type: 3}
---- !u!1 &6556109923077475586 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7870965002471651230, guid: 491c203a754890d4a939dcd876f6b8c4,
+--- !u!4 &7999201087806829894 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6395794040206135258, guid: 491c203a754890d4a939dcd876f6b8c4,
     type: 3}
   m_PrefabInstance: {fileID: 4017408551850408604}
   m_PrefabAsset: {fileID: 0}
@@ -28798,9 +29601,9 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4017408551850408604}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &7999201087806829894 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6395794040206135258, guid: 491c203a754890d4a939dcd876f6b8c4,
+--- !u!1 &6556109923077475586 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7870965002471651230, guid: 491c203a754890d4a939dcd876f6b8c4,
     type: 3}
   m_PrefabInstance: {fileID: 4017408551850408604}
   m_PrefabAsset: {fileID: 0}
@@ -30036,7 +30839,7 @@ PrefabInstance:
     - target: {fileID: 772613640000202183, guid: 84f151aa1111012469e011c2ec107ad7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.46
+      value: -17.82
       objectReference: {fileID: 0}
     - target: {fileID: 772613640000202183, guid: 84f151aa1111012469e011c2ec107ad7,
         type: 3}
@@ -30046,7 +30849,7 @@ PrefabInstance:
     - target: {fileID: 772613640000202183, guid: 84f151aa1111012469e011c2ec107ad7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 23.43
+      value: 29.98
       objectReference: {fileID: 0}
     - target: {fileID: 772613640000202183, guid: 84f151aa1111012469e011c2ec107ad7,
         type: 3}
@@ -30585,15 +31388,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7300e9f3f61cac64e908fcece2277ba5, type: 3}
---- !u!1 &3595376765919914212 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5555185027174226600, guid: 7300e9f3f61cac64e908fcece2277ba5,
-    type: 3}
-  m_PrefabInstance: {fileID: 9003438134298456652}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &557885355799321335 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8884654842276948155, guid: 7300e9f3f61cac64e908fcece2277ba5,
+    type: 3}
+  m_PrefabInstance: {fileID: 9003438134298456652}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3595376765919914212 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5555185027174226600, guid: 7300e9f3f61cac64e908fcece2277ba5,
     type: 3}
   m_PrefabInstance: {fileID: 9003438134298456652}
   m_PrefabAsset: {fileID: 0}
