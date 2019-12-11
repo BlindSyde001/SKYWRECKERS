@@ -45,16 +45,16 @@ MonoBehaviour:
     value: 1
   noiseStrength:
     overrideState: 1
-    value: 0.303
+    value: 0.49
   noiseScale:
     overrideState: 1
     value: 0.122
   distance:
     overrideState: 1
-    value: 0.091
+    value: 0.05
   distanceFallOff:
     overrideState: 1
-    value: 0.06
+    value: 0.0001
   maxDistance:
     overrideState: 1
     value: 1.2
