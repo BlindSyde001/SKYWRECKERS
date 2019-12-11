@@ -8,6 +8,7 @@ public class ShipColliders : MonoBehaviour
     private UIManager UI;
     public UIManager hitPos;
     MovementControlsShip ship;
+    public List<bool> booleans;
 
     public bool left = false;
     public bool right = false;
@@ -116,7 +117,6 @@ public class ShipColliders : MonoBehaviour
             #endregion
         }
     }
-
     private void OnTriggerStay(Collider other)
     {
         if(other.GetComponentInParent<PirateShipAI>() != null)
@@ -147,7 +147,6 @@ public class ShipColliders : MonoBehaviour
             }
         }
     }
-
     private void OnTriggerExit(Collider other)
     {
         if(other.GetComponentInParent<PirateShipAI>() != null)
@@ -156,7 +155,6 @@ public class ShipColliders : MonoBehaviour
             transform.GetComponentInParent<MovementControlsShip>().gettingRammed = false;
         }
     }
-
     public void DamageTaken()
     {
         if (sail)
@@ -199,5 +197,17 @@ public class ShipColliders : MonoBehaviour
             dotTicks++;
             timerTick = 0;
         }
+    }
+
+    public void UIHealth(bool x)
+    {
+        foreach (bool a in booleans)
+        {
+            if(a == true)
+            {
+                x = a;
+            }
+        }
+
     }
 }
