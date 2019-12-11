@@ -1643,6 +1643,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 470.44217
       objectReference: {fileID: 0}
+    - target: {fileID: 2828732883587173971, guid: ead4c4ccbf71e7042b4b7e63ec190d00,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 539747486421133175, guid: ead4c4ccbf71e7042b4b7e63ec190d00,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -1741,6 +1746,11 @@ PrefabInstance:
     - target: {fileID: 7804555412557739193, guid: ead4c4ccbf71e7042b4b7e63ec190d00,
         type: 3}
       propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6416147934543208300, guid: ead4c4ccbf71e7042b4b7e63ec190d00,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1774119416974068604, guid: ead4c4ccbf71e7042b4b7e63ec190d00,
