@@ -8,7 +8,6 @@ public class ShipColliders : MonoBehaviour
     private UIManager UI;
     public UIManager hitPos;
     MovementControlsShip ship;
-    public List<bool> booleans;
 
     public bool left = false;
     public bool right = false;
@@ -42,7 +41,6 @@ public class ShipColliders : MonoBehaviour
         UI = FindObjectOfType<UIManager>();
         ship = FindObjectOfType<MovementControlsShip>();
     }
-
     private void Update()
     {
         if (dot)
@@ -197,17 +195,5 @@ public class ShipColliders : MonoBehaviour
             dotTicks++;
             timerTick = 0;
         }
-    }
-
-    public void UIHealth(bool x)
-    {
-        foreach (bool a in booleans)
-        {
-            if(a == true)
-            {
-                x = a;
-            }
-        }
-
     }
 }

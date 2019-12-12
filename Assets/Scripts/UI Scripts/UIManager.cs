@@ -13,13 +13,18 @@ public class UIManager : MonoBehaviour
 
     public int objectiveMarkers = 0;
     public GameObject endGameCloudWall;
+    public List<ParticleSystem> endGameCloud;
 
-    #region UI Image
+    #region UI Controls Image
     public Image shipControls;
     public Image playerControls;
     public Image climbingControls;
     #endregion
-
+    #region UI HP Image
+    public List<GameObject> green;
+    public List<GameObject> yellow;
+    public List<GameObject> red;
+    #endregion
     #region SHIP HP
     public TextMeshProUGUI leftCannonHPText;
     public TextMeshProUGUI righCannonHPText;
@@ -64,20 +69,93 @@ public class UIManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-
         if (leftCannonHP <= 0 || rightCannonHP <= 0 || sailsHP <= 0 || hullHP <= 0)
         {
             Time.timeScale = 0;
             gameover.SetActive(true);
             Cursor.visible = true;
         }
+        #region HP UI Change
+        #region LC
+        if(leftCannonHP <= 50 && leftCannonHP > 25)
+        {
+            yellow[0].SetActive(true);
+            red[0].SetActive(false);
+            if(leftCannonHP <= 25)
+            {
+                red[0].SetActive(true);
+            }
+        } else if(leftCannonHP > 50)
+        {
+            green[0].SetActive(true);
+            yellow[0].SetActive(false);
+            red[0].SetActive(false);
+        }
+        #endregion
+        #region RC
+        if (rightCannonHP <= 50 && rightCannonHP > 25)
+        {
+            yellow[1].SetActive(true);
+            red[1].SetActive(false);
+            if (rightCannonHP <= 25)
+            {
+                red[1].SetActive(true);
+            }
+        }
+        else if (rightCannonHP > 50)
+        {
+            green[1].SetActive(true);
+            yellow[1].SetActive(false);
+            red[1].SetActive(false);
+        }
+        #endregion
+        #region Hull
+        if (hullHP <= 50 && hullHP > 25)
+        {
+            yellow[2].SetActive(true);
+            red[2].SetActive(false);
+            if (hullHP <= 25)
+            {
+                red[2].SetActive(true);
+            }
+        }
+        else if (hullHP > 50)
+        {
+            green[2].SetActive(true);
+            yellow[2].SetActive(false);
+            red[2].SetActive(false);
+        }
+        #endregion
+        #region Sails
+        if (sailsHP <= 50 && sailsHP > 25)
+        {
+            yellow[3].SetActive(true);
+            red[3].SetActive(false);
+            if (sailsHP <= 25)
+            {
+                red[3].SetActive(true);
+            }
+        }
+        else if (sailsHP > 50)
+        {
+            green[3].SetActive(true);
+            yellow[3].SetActive(false);
+            red[3].SetActive(false);
+        }
+        #endregion
+        #endregion
     }
 
     private void LateUpdate()
     {
         if(Inventory.Instance.woodCount >= 5 && Inventory.Instance.metalCount >= 5 && Inventory.Instance.fabricCount >= 5)
         {
-            endGameCloudWall.SetActive(true);
+            endGameCloudWall.GetComponent<EndGameWall>().enabled = true;
+            endGameCloudWall.GetComponent<BoxCollider>().isTrigger = true;
+            foreach (ParticleSystem a in endGameCloud)
+            {
+                a.enableEmission = false;
+            }
         }
     }
     //METHODS

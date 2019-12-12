@@ -8279,7 +8279,7 @@ Transform:
   - {fileID: 6391408022656845926}
   - {fileID: 1153890260168781624}
   m_Father: {fileID: 5371132010975569773}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1123313471882257538
 GameObject:
@@ -9031,7 +9031,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2233065150366568112}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9188,7 +9188,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2233065150366568112}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9576,7 +9576,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2233065150366568112}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9733,7 +9733,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2233065150366568112}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9888,6 +9888,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2233065150063833521}
+  - {fileID: 5371132010975569773}
   - {fileID: 2233065150219222222}
   - {fileID: 2233065150324657856}
   - {fileID: 2233065150052783988}
@@ -10104,7 +10105,6 @@ RectTransform:
   - {fileID: 433663128169962010}
   - {fileID: 6384643372310320229}
   - {fileID: 7495183979041519661}
-  - {fileID: 5371132010975569773}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10189,9 +10189,13 @@ MonoBehaviour:
   gameover: {fileID: 1306565213}
   objectiveMarkers: 0
   endGameCloudWall: {fileID: 0}
+  endGameCloud: []
   shipControls: {fileID: 0}
   playerControls: {fileID: 0}
   climbingControls: {fileID: 0}
+  green: []
+  yellow: []
+  red: []
   leftCannonHPText: {fileID: 2233065150324657857}
   righCannonHPText: {fileID: 2233065150219222223}
   sailsHPText: {fileID: 2233065150052783989}
@@ -15015,15 +15019,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8410761445015166838}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -646.0864, y: -374.09583, z: 0.28799748}
-  m_LocalScale: {x: 2.6666667, y: 2.6666667, z: 2.6666667}
+  m_LocalPosition: {x: -0.08642578, y: -7.0957947, z: 0.28799745}
+  m_LocalScale: {x: 2.6666665, y: 2.6666665, z: 2.6666665}
   m_Children:
   - {fileID: 3047283938709164883}
-  - {fileID: 1702431365651142620}
-  - {fileID: 5992933624024371004}
   - {fileID: 625312473677248862}
-  m_Father: {fileID: 2233065150684141298}
-  m_RootOrder: 15
+  - {fileID: 5992933624024371004}
+  - {fileID: 1702431365651142620}
+  m_Father: {fileID: 2233065150366568112}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8439019477892966503
 GameObject:
@@ -15939,7 +15943,7 @@ Transform:
   - {fileID: 2766269837973597566}
   - {fileID: 6343279174132716136}
   m_Father: {fileID: 5371132010975569773}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9141251101891216104
 GameObject:

@@ -10,6 +10,7 @@ public class Bullet : MonoBehaviour
     //UPDATES
     void Start()
     {
+        Instantiate(smokeFX, transform.position, transform.rotation);
         Destroy(gameObject, 3f);
     }
 
