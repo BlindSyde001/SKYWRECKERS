@@ -49,6 +49,7 @@ public class MovementControlsShip : MonoBehaviour
     public Vector3 nudgeVector = Vector3.zero;
     Vector3 windForce = Vector3.zero;
     private AudioManager _audioManager;
+    public GameObject smokeFX;
 
     bool floorBarrier = false;
     public bool gettingRammed = false;
@@ -314,6 +315,8 @@ public class MovementControlsShip : MonoBehaviour
             Rigidbody bulletInstance;
             foreach (Transform x in bulletEndsRight)
             {
+                smokeFX.transform.localScale = new Vector3(1, 1, 1);
+                Instantiate(smokeFX, x.transform.position, x.transform.rotation, x.transform);
                 bulletInstance = Instantiate(bullet, x.position, x.rotation) as Rigidbody;
                 bulletInstance.AddForce(barrelEnd.forward * 9000);
             }
@@ -325,6 +328,8 @@ public class MovementControlsShip : MonoBehaviour
             Rigidbody bulletInstance;
             foreach (Transform y in bulletEndsLeft)
             {
+                smokeFX.transform.localScale = new Vector3(1, 1, 1);
+                Instantiate(smokeFX, y.transform.position, y.transform.rotation, y.transform);
                 bulletInstance = Instantiate(bullet, y.position, y.rotation) as Rigidbody;
                 bulletInstance.AddForce(barrelEnd.forward * -9000);
             }

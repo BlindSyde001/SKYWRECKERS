@@ -3686,6 +3686,7 @@ MonoBehaviour:
   climb: {fileID: 8300000, guid: 19618d79a85aaff4eacc3900b89d0962, type: 3}
   playerCannon: {fileID: 8300000, guid: 6105532a983510f47b9c8f246cfd3dcd, type: 3}
   enemyCannon: {fileID: 8300000, guid: 0006a198987d1894bb8537a0cce12e85, type: 3}
+  cannonHit: {fileID: 8300000, guid: 426f4621c7cad7f48b4714b04b88886f, type: 3}
 --- !u!1 &1191808145
 GameObject:
   m_ObjectHideFlags: 0
