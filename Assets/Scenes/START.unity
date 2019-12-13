@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 653bf353cee90a941a0a20351675aff3, type: 3}
-  volume: 0.25
+  volume: 0.5
 --- !u!1 &158701344
 GameObject:
   m_ObjectHideFlags: 0
@@ -5194,7 +5194,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 85, y: -1.920166}
+  m_AnchoredPosition: {x: 85, y: -1.920044}
   m_SizeDelta: {x: -48, y: -8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1684680545
