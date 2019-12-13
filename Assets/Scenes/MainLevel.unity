@@ -273,8 +273,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 333cb1cb9ce74164b83acc827c841482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dockPos: {fileID: 0}
-  checkpointtext: {fileID: 0}
+  dockPos: {fileID: 817052887}
+  checkpointtext: {fileID: 2233065149524839423}
 --- !u!135 &21377370
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2968,8 +2968,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 333cb1cb9ce74164b83acc827c841482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dockPos: {fileID: 0}
-  checkpointtext: {fileID: 0}
+  dockPos: {fileID: 2138765201}
+  checkpointtext: {fileID: 2233065149524839423}
 --- !u!135 &322958551
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3175,8 +3175,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 333cb1cb9ce74164b83acc827c841482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dockPos: {fileID: 0}
-  checkpointtext: {fileID: 0}
+  dockPos: {fileID: 2138765201}
+  checkpointtext: {fileID: 2233065149524839423}
 --- !u!135 &362044651
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4190,8 +4190,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 333cb1cb9ce74164b83acc827c841482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dockPos: {fileID: 0}
-  checkpointtext: {fileID: 0}
+  dockPos: {fileID: 2138765201}
+  checkpointtext: {fileID: 2233065149524839423}
 --- !u!135 &487706850
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6055,7 +6055,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 697716130}
   m_LocalRotation: {x: -0, y: 0.7285546, z: -0, w: 0.6849878}
-  m_LocalPosition: {x: 2360.57, y: 106.695, z: -4225.37}
+  m_LocalPosition: {x: 2369.87, y: 106.695, z: -4224.23}
   m_LocalScale: {x: 0.20000003, y: 0.20000003, z: 0.20000003}
   m_Children: []
   m_Father: {fileID: 540220758}
@@ -7152,6 +7152,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1686666219}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &800171944
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 800171945}
+  m_Layer: 0
+  m_Name: BOUNDARIES
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &800171945
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800171944}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2837.23, y: 106.695, z: -1706.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &806301864
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12098,8 +12128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 333cb1cb9ce74164b83acc827c841482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dockPos: {fileID: 0}
-  checkpointtext: {fileID: 0}
+  dockPos: {fileID: 817052887}
+  checkpointtext: {fileID: 2233065149524839423}
 --- !u!135 &1185992874
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -12835,8 +12865,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 333cb1cb9ce74164b83acc827c841482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dockPos: {fileID: 0}
-  checkpointtext: {fileID: 0}
+  dockPos: {fileID: 817052887}
+  checkpointtext: {fileID: 2233065149524839423}
 --- !u!135 &1207271346
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -13514,8 +13544,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 333cb1cb9ce74164b83acc827c841482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dockPos: {fileID: 0}
-  checkpointtext: {fileID: 0}
+  dockPos: {fileID: 2138765201}
+  checkpointtext: {fileID: 2233065149524839423}
 --- !u!135 &1338419808
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -18352,8 +18382,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 333cb1cb9ce74164b83acc827c841482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dockPos: {fileID: 0}
-  checkpointtext: {fileID: 0}
+  dockPos: {fileID: 2138765201}
+  checkpointtext: {fileID: 2233065149524839423}
 --- !u!135 &1778755450
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -225,7 +225,7 @@ public class MovementControlsShip : MonoBehaviour
     }
     void calculateDirectionZ()
     {
-        if (transform.position.y <= -30)
+        if (transform.position.y <= 40)
         {
             windForce = Vector3.Lerp(windForce, new Vector3(0, 10, 0), 2f * Time.deltaTime);
             floorBarrier = true;
