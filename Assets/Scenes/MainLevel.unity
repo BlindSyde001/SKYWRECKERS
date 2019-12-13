@@ -1355,7 +1355,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 156042403}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -11064,7 +11064,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1085058041}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -15140,7 +15140,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1458529302}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -22533,6 +22533,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2233065150684141302, guid: 18d6f57cec3a9bd4fa7044994ce31ab7,
         type: 3}
+      propertyPath: endGameClouds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233065150684141302, guid: 18d6f57cec3a9bd4fa7044994ce31ab7,
+        type: 3}
       propertyPath: endGameCloudWall
       value: 
       objectReference: {fileID: 1192253792}
@@ -22631,6 +22636,21 @@ PrefabInstance:
       propertyPath: yellow.Array.data[3]
       value: 
       objectReference: {fileID: 762630781}
+    - target: {fileID: 2233065150684141302, guid: 18d6f57cec3a9bd4fa7044994ce31ab7,
+        type: 3}
+      propertyPath: endGameClouds.Array.data[0]
+      value: 
+      objectReference: {fileID: 1556141856}
+    - target: {fileID: 2233065150684141302, guid: 18d6f57cec3a9bd4fa7044994ce31ab7,
+        type: 3}
+      propertyPath: endGameClouds.Array.data[1]
+      value: 
+      objectReference: {fileID: 432043416}
+    - target: {fileID: 2233065150684141302, guid: 18d6f57cec3a9bd4fa7044994ce31ab7,
+        type: 3}
+      propertyPath: endGameClouds.Array.data[2]
+      value: 
+      objectReference: {fileID: 28864323}
     - target: {fileID: 1066855696, guid: 18d6f57cec3a9bd4fa7044994ce31ab7, type: 3}
       propertyPath: m_textInfo.characterCount
       value: 0
