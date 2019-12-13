@@ -85,13 +85,13 @@ public class UIManager : MonoBehaviour
             if(leftCannonHP <= 25)
             {
                 red[0].SetActive(true);
-            }else if(leftCannonHP > 50)
+            }
+        }else if(leftCannonHP > 50)
             {
                 green[0].SetActive(true);
                 yellow[0].SetActive(false);
                 red[0].SetActive(false);
             }
-        }
         #endregion
         #region RC
         if (rightCannonHP <= 50 && rightCannonHP > 25)
@@ -102,13 +102,12 @@ public class UIManager : MonoBehaviour
             {
                 red[1].SetActive(true);
             }
-            else if (rightCannonHP > 50)
+        }else if (rightCannonHP > 50)
             {
                 green[1].SetActive(true);
                 yellow[1].SetActive(false);
                 red[1].SetActive(false);
             }
-        }
         #endregion
         #region Hull
         if (hullHP <= 50 && hullHP > 25)
@@ -118,14 +117,13 @@ public class UIManager : MonoBehaviour
             if (hullHP <= 25)
             {
                 red[2].SetActive(true);
-            }
-            else if (hullHP > 50)
+            }  
+        }else if (hullHP > 50)
             {
                 green[2].SetActive(true);
                 yellow[2].SetActive(false);
                 red[2].SetActive(false);
             }
-        }
         #endregion
         #region Sails
         if (sailsHP <= 50 && sailsHP > 25)
@@ -136,13 +134,12 @@ public class UIManager : MonoBehaviour
             {
                 red[3].SetActive(true);
             }
-            else if (sailsHP > 50)
+        }  else if (sailsHP > 50)
             {
                 green[3].SetActive(true);
                 yellow[3].SetActive(false);
                 red[3].SetActive(false);
             }
-        }
         #endregion
         #endregion
     }

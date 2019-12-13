@@ -9003,7 +9003,7 @@ PrefabInstance:
       objectReference: {fileID: 906981065}
     - target: {fileID: 923278839, guid: 48ed6b1103e7c3d42910ea107cc5f4c9, type: 3}
       propertyPath: dockingIcons.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 923278839, guid: 48ed6b1103e7c3d42910ea107cc5f4c9, type: 3}
       propertyPath: menu
@@ -9073,19 +9073,19 @@ PrefabInstance:
     - target: {fileID: 923278839, guid: 48ed6b1103e7c3d42910ea107cc5f4c9, type: 3}
       propertyPath: dockingIcons.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 853958060}
     - target: {fileID: 923278839, guid: 48ed6b1103e7c3d42910ea107cc5f4c9, type: 3}
       propertyPath: dockingIcons.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1018922966}
     - target: {fileID: 923278839, guid: 48ed6b1103e7c3d42910ea107cc5f4c9, type: 3}
       propertyPath: dockingIcons.Array.data[3]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1575306252}
     - target: {fileID: 923278839, guid: 48ed6b1103e7c3d42910ea107cc5f4c9, type: 3}
       propertyPath: dockingIcons.Array.data[4]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1408170530}
     - target: {fileID: 923278839, guid: 48ed6b1103e7c3d42910ea107cc5f4c9, type: 3}
       propertyPath: controlsPanel
       value: 
@@ -9098,6 +9098,10 @@ PrefabInstance:
       propertyPath: wind
       value: 
       objectReference: {fileID: 8300000, guid: 952326a29e342cb46a80c3398e8a4f5d, type: 3}
+    - target: {fileID: 923278839, guid: 48ed6b1103e7c3d42910ea107cc5f4c9, type: 3}
+      propertyPath: dockingIcons.Array.data[5]
+      value: 
+      objectReference: {fileID: 832362867}
     - target: {fileID: 1324324503, guid: 48ed6b1103e7c3d42910ea107cc5f4c9, type: 3}
       propertyPath: shipClippingParts.Array.data[0]
       value: 
