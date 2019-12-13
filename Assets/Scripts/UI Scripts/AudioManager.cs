@@ -43,7 +43,6 @@ public class AudioManager : MonoBehaviour
     public AudioClip climb;
     public AudioClip playerCannon;
     public AudioClip enemyCannon;
-    public AudioClip cannonHit;
     #endregion
     private bool musicSourcePlaying;
 

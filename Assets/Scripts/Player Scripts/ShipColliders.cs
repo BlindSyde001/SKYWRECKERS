@@ -41,6 +41,7 @@ public class ShipColliders : MonoBehaviour
         UI = FindObjectOfType<UIManager>();
         ship = FindObjectOfType<MovementControlsShip>();
     }
+
     private void Update()
     {
         if (dot)
@@ -115,6 +116,7 @@ public class ShipColliders : MonoBehaviour
             #endregion
         }
     }
+
     private void OnTriggerStay(Collider other)
     {
         if(other.GetComponentInParent<PirateShipAI>() != null)
@@ -145,6 +147,7 @@ public class ShipColliders : MonoBehaviour
             }
         }
     }
+
     private void OnTriggerExit(Collider other)
     {
         if(other.GetComponentInParent<PirateShipAI>() != null)
@@ -153,6 +156,7 @@ public class ShipColliders : MonoBehaviour
             transform.GetComponentInParent<MovementControlsShip>().gettingRammed = false;
         }
     }
+
     public void DamageTaken()
     {
         if (sail)

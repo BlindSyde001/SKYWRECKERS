@@ -4,16 +4,10 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    //VARIABLES
     public bool player = false;
     public bool enemy = false;
-    private AudioManager _audioManager;
 
     //UPDATES
-    private void Awake()
-    {
-        _audioManager = FindObjectOfType<AudioManager>().GetComponent<AudioManager>();
-    }
     void Start()
     {
         Destroy(gameObject, 3f);
@@ -24,7 +18,7 @@ public class Bullet : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Enemy") && player)
         {
-            if (other.GetComponentInParent<PirateShipAI>() != null)
+            if(other.GetComponentInParent<PirateShipAI>() != null)
             {
                 other.GetComponentInParent<PirateShipAI>().enemyCurrentHP -= 5;
             }
@@ -36,7 +30,6 @@ public class Bullet : MonoBehaviour
         }
         else if(other.gameObject.CompareTag("ShipGround") && enemy)
         {
-            _audioManager.PlaySFX(_audioManager.cannonHit);
             other.GetComponent<ShipColliders>().damage = 3;
             other.GetComponent<ShipColliders>().DamageTaken();
             print("CANNON SHOT");
