@@ -191,7 +191,7 @@ public class MovementControlsShip : MonoBehaviour
                 a.SetActive(false);
             }
         }
-        zRotato = Mathf.Clamp(zRotato, -45, 45);
+        zRotato = Mathf.Clamp(zRotato, -35, 35);
     }
 
     private IEnumerator Dock()
