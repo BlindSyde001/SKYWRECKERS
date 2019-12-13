@@ -20,10 +20,12 @@ public class FX : MonoBehaviour
     private IEnumerator ExplosionInstance()
     {
         smoke.enableEmission = true;
-        ember.enableEmission = true;
+        if (ember != null)
+            ember.enableEmission = true;
         yield return new WaitForSeconds(0.5f);
         smoke.enableEmission = false;
-        ember.enableEmission = false;
+        if (ember != null)
+            ember.enableEmission = false;
         Destroy(gameObject, 0.5f);
         yield return null;
     }
