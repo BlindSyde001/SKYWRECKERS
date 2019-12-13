@@ -187,6 +187,7 @@ public class Inventory : MonoBehaviour
     {
         //shipUpgradeWood.SetActive(true); //Place holder to see if the function works
         ui.hullMaxHP = 140;
+        ui.hullHP = 140;
     }
 
     public void FabricUpgrade()
@@ -194,6 +195,7 @@ public class Inventory : MonoBehaviour
         //Debug.Log("Fabric Upgrade Complete");
         //shipUpgradeFabric.SetActive(true);
         ui.sailsMaxHP = 120;
+        ui.sailsHP = 120;
     }
 
     public void MetalUpgrade()
@@ -202,6 +204,8 @@ public class Inventory : MonoBehaviour
         //shipUpgradeMetal.SetActive(true);
         ui.leftCannonMaxHP = 120;
         ui.rightCannonMaxHP = 120;
+        ui.leftCannonHP = 120;
+        ui.rightCannonHP = 120;
     }
 
     public IEnumerator UpgradeAvailableTextGone()
