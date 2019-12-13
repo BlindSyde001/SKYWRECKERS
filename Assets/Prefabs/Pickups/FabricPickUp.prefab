@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7938718226372203093}
   - component: {fileID: 5419623988830018123}
   - component: {fileID: 6074639735846808943}
+  - component: {fileID: 7658364415916108530}
   m_Layer: 0
   m_Name: FabricPickUp
   m_TagString: RESOURCE
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 2092506126724852783}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2694.2407, y: 103.76501, z: -1910.0531}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 13.271099, y: 13.271099, z: 13.271099}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -130,3 +131,20 @@ MonoBehaviour:
   woodText: {fileID: 0}
   fabricText: {fileID: 0}
   metalText: {fileID: 0}
+  woodClip: {fileID: 8300000, guid: b5fa613b18f2bae46836ed4e4fd7c186, type: 3}
+  fabricClip: {fileID: 8300000, guid: fd8a5a06dbeca7849b6062b3554094e1, type: 3}
+  metalClip: {fileID: 8300000, guid: 0f3d43f086016774aaa54ff51563726a, type: 3}
+  startUpResourceCount: 0
+--- !u!65 &7658364415916108530
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092506126724852783}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.11, y: 0.14, z: 0.11}
+  m_Center: {x: 0.000015258789, y: 0, z: 0}

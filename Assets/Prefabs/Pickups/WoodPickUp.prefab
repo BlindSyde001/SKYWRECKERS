@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 7681819397888806348}
   m_LocalRotation: {x: -0.6427876, y: 0, z: 0, w: 0.7660445}
   m_LocalPosition: {x: -49.395, y: -5.527, z: -71.002}
-  m_LocalScale: {x: 0.327901, y: 0.059580587, z: 0.79255646}
+  m_LocalScale: {x: 0.43804294, y: 0.0795937, z: 1.0587761}
   m_Children:
   - {fileID: 2137625245032470534}
   m_Father: {fileID: 0}
@@ -64,6 +64,10 @@ MonoBehaviour:
   woodText: {fileID: 0}
   fabricText: {fileID: 0}
   metalText: {fileID: 0}
+  woodClip: {fileID: 0}
+  fabricClip: {fileID: 0}
+  metalClip: {fileID: 0}
+  startUpResourceCount: 0
 --- !u!54 &7681819397888806342
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -147,11 +151,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -2440946772179987774, guid: 28bf9cd14eb7a2941a353dbe332f53fb,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 28b0732e2fac484408af9d9da47daed3, type: 2}
     - target: {fileID: 9174797561493476552, guid: 28bf9cd14eb7a2941a353dbe332f53fb,
         type: 3}
       propertyPath: m_LocalRotation.y
@@ -192,6 +191,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: -2440946772179987774, guid: 28bf9cd14eb7a2941a353dbe332f53fb,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 28b0732e2fac484408af9d9da47daed3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28bf9cd14eb7a2941a353dbe332f53fb, type: 3}
 --- !u!4 &2137625245032470534 stripped
