@@ -11427,6 +11427,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5420547354982408836, guid: 771837eef1e22bb489389771b0e4ae64,
+        type: 3}
+      propertyPath: m_LODs.Array.data[0].screenRelativeHeight
+      value: 0.2509493
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 771837eef1e22bb489389771b0e4ae64, type: 3}
 --- !u!4 &1026419326 stripped
@@ -21535,46 +21540,6 @@ PrefabInstance:
     - target: {fileID: 3446751264445457741, guid: 5e9387f6c75e7034c8276ad3800d7b30,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3446751264445457741, guid: 5e9387f6c75e7034c8276ad3800d7b30,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3446751264445457741, guid: 5e9387f6c75e7034c8276ad3800d7b30,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3446751264445457741, guid: 5e9387f6c75e7034c8276ad3800d7b30,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2451378617642513567, guid: 5e9387f6c75e7034c8276ad3800d7b30,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.83
-      objectReference: {fileID: 0}
-    - target: {fileID: 2451378617642513567, guid: 5e9387f6c75e7034c8276ad3800d7b30,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 13.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2451378617642513567, guid: 5e9387f6c75e7034c8276ad3800d7b30,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.29
-      objectReference: {fileID: 0}
-    - target: {fileID: 1202379797219418127, guid: 5e9387f6c75e7034c8276ad3800d7b30,
-        type: 3}
-      propertyPath: m_LODs.Array.data[0].screenRelativeHeight
-      value: 0.19923013
-      objectReference: {fileID: 0}
-    - target: {fileID: 910855814712281237, guid: 5e9387f6c75e7034c8276ad3800d7b30,
-        type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
