@@ -21,6 +21,7 @@ public class MovementControlsShip : MonoBehaviour
     public float pitchSpeed = 1;
     public float turnSpeed = 75F;
     private float yaw;
+    public float zRotato;
     public float speed = 0;
 
     public float dockTime = 3F;
@@ -67,6 +68,7 @@ public class MovementControlsShip : MonoBehaviour
         _audioManager = FindObjectOfType<AudioManager>().GetComponent<AudioManager>();
         forwardVelocity = 0f;
         yaw = transform.eulerAngles.y;
+        zRotato = transform.eulerAngles.z;
 
         player = FindObjectOfType<PlayerMovement>();
     }
@@ -76,7 +78,11 @@ public class MovementControlsShip : MonoBehaviour
     }
     private void Update()
     {
-       
+       if(Input.GetKeyDown(KeyCode.L))
+        {
+            print("WORLD" + transform.rotation.y);
+            print("Local" + transform.localRotation.y);
+        }
         if (!docking)
         {
             controller.enabled = true;
@@ -114,10 +120,6 @@ public class MovementControlsShip : MonoBehaviour
                     calculateDirectionZ();
                 }
             }
-            else
-            {
-                //GetComponent<Rigidbody>().isKinematic = true;
-            }
 
             accelerateModeCounter = Mathf.Clamp(accelerateModeCounter, 0, 3);
             forwardVelocity = Mathf.SmoothDamp(forwardVelocity, speed, ref speedVelocity, zeroToMaxPerSecond);
@@ -131,17 +133,28 @@ public class MovementControlsShip : MonoBehaviour
                 if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
                 {
                     yaw -= turnSpeed * Time.deltaTime;
+                    zRotato -= turnSpeed * Time.deltaTime;
+                }
+                if (zRotato > 0)
+                {
+                    zRotato -= (turnSpeed / 2) * Time.deltaTime;
                 }
 
                 if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
                 {
                     yaw += turnSpeed * Time.deltaTime;
-                } 
+                    zRotato += turnSpeed * Time.deltaTime;
+                } if(zRotato < 0)
+                {
+                    zRotato += (turnSpeed / 2) * Time.deltaTime;
+                }
+
                 rotation();
             }
             else if(gettingRammed)
                 {
                     yaw = transform.eulerAngles.y;
+                zRotato = transform.eulerAngles.z;
                 }
             #endregion
         }
@@ -178,6 +191,7 @@ public class MovementControlsShip : MonoBehaviour
                 a.SetActive(false);
             }
         }
+        zRotato = Mathf.Clamp(zRotato, -45, 45);
     }
 
     private IEnumerator Dock()
@@ -204,6 +218,7 @@ public class MovementControlsShip : MonoBehaviour
         }
 
         yaw = transform.eulerAngles.y;
+        zRotato = transform.eulerAngles.z;
         docking = false;
         player.isControllingShip = false;
     }
@@ -219,7 +234,7 @@ public class MovementControlsShip : MonoBehaviour
         }
         else
         {
-            targetRotation = Quaternion.Euler(angle / 3, yaw, 0);
+            targetRotation = Quaternion.Euler(angle / 3, yaw, -zRotato);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, pitchSpeed / 2 * Time.deltaTime);
         }
     }

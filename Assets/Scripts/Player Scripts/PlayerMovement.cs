@@ -138,6 +138,7 @@ public class PlayerMovement : MonoBehaviour
         } else
         {
             cD.Offset.z = -1.5f;
+            ShipToNormal();
         }
     }
 
@@ -184,7 +185,10 @@ public class PlayerMovement : MonoBehaviour
         ship.displacement = Vector3.zero;
         movement = Vector3.zero;
     }
+    public void ShipToNormal()
+    {
 
+    }
     private void Rotation()
     {
             float horizontal = Input.GetAxis("Mouse X");
@@ -208,8 +212,9 @@ public class PlayerMovement : MonoBehaviour
     public void OnTriggerStay(Collider other)
     {
         bool can = false;
-        if (ship.angle >= -3 && ship.angle <= 3)
+        if (ship.angle >= -3 && ship.angle <= 3 && ship.transform.rotation.z >= -0.025 && ship.transform.rotation.z <= 0.025)
         {
+            print(ship.transform.rotation.z);
             can = true;
         }
         else
